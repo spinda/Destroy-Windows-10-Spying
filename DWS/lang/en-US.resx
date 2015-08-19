@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
+    <value>Delete all windows 10 metro apps</value>
+  </data>
+  <data name="btnDeleteOneDrive" xml:space="preserve">
+    <value>Delete One Drive</value>
+  </data>
+  <data name="btnOpenAndEditHosts" xml:space="preserve">
+    <value>Open and edit HOSTS file</value>
+  </data>
+  <data name="btnProfessionalMode" xml:space="preserve">
+    <value>Enable professional mode</value>
+  </data>
+  <data name="btnRestoreSystem" xml:space="preserve">
+    <value>Restore System</value>
+  </data>
+  <data name="checkBoxAddToHosts" xml:space="preserve">
+    <value>Add spy domains to hosts file, and block in Windows Firewall</value>
+  </data>
+  <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
+    <value>Create system restore point</value>
+  </data>
+  <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
+    <value>Delete windows 10 metro apps</value>
+  </data>
+  <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
+    <value>Disable private settings</value>
+  </data>
+  <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
+    <value>Disable windows defender</value>
+  </data>
+  <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
+    <value>Delete keylogger and telemetry</value>
+  </data>
+  <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
+    <value>Set default windows photo viewer</value>
+  </data>
+  <data name="checkBoxSPYTasks" xml:space="preserve">
+    <value>Disable SPY tasks</value>
+  </data>
+  <data name="Compele" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="CompleteMSG" xml:space="preserve">
+    <value>Complete!
+A restart is required to disable all spyware.
+Restart now?</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteApps" xml:space="preserve">
+    <value>Delete apps</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ErrorMSG" xml:space="preserve">
+    <value>Complete. Errors - {0}
+A restart is required to disable all spyware.
+Restart now?</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="labelInfoDeleteMetroApps" xml:space="preserve">
+    <value>METRO applications are deleted permanently, without the possibility of recovery.</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="PressOkAndWait15" xml:space="preserve">
+    <value>Press OK, and wait 15 minutes.</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="Really" xml:space="preserve">
+    <value>Really?</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Requires restart.
+Restart now?</value>
+  </data>
+  <data name="RunOnlyWin10" xml:space="preserve">
+    <value>This program works only on Windows 10</value>
+  </data>
+  <data name="tabPageAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="tabPageMain" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="tabPageReadMe" xml:space="preserve">
+    <value>ReadME</value>
+  </data>
+  <data name="tabPageSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="tabPageUtilites" xml:space="preserve">
+    <value>Utilites</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+</root>
