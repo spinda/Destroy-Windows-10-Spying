@@ -1022,5 +1022,10 @@ namespace DWS_Lite
                 }
             }
         }
+
+        private void linkLabelSourceCode_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying");
+        }
     }
 }

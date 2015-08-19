@@ -88,6 +88,7 @@
             this.richTextBoxReadMeEn = new System.Windows.Forms.RichTextBox();
             this.tabPageReadMeRu = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.linkLabelSourceCode = new System.Windows.Forms.LinkLabel();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -735,6 +736,7 @@
             // groupBoxLinks
             // 
             this.groupBoxLinks.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxLinks.Controls.Add(this.linkLabelSourceCode);
             this.groupBoxLinks.Controls.Add(this.linkLabel1);
             this.groupBoxLinks.Controls.Add(this.linkLabel5);
             this.groupBoxLinks.Controls.Add(this.linkLabel4);
@@ -763,7 +765,7 @@
             // 
             this.linkLabel5.AutoSize = true;
             this.linkLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel5.Location = new System.Drawing.Point(6, 36);
+            this.linkLabel5.Location = new System.Drawing.Point(298, 17);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(127, 13);
             this.linkLabel5.TabIndex = 7;
@@ -776,7 +778,7 @@
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabel4.Location = new System.Drawing.Point(139, 36);
+            this.linkLabel4.Location = new System.Drawing.Point(163, 37);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(263, 13);
             this.linkLabel4.TabIndex = 5;
@@ -788,7 +790,7 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Location = new System.Drawing.Point(78, 17);
+            this.linkLabel2.Location = new System.Drawing.Point(72, 17);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(50, 13);
             this.linkLabel2.TabIndex = 3;
@@ -800,7 +802,7 @@
             // 
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel3.Location = new System.Drawing.Point(134, 17);
+            this.linkLabel3.Location = new System.Drawing.Point(123, 17);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(174, 13);
             this.linkLabel3.TabIndex = 4;
@@ -911,6 +913,18 @@
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
+            // linkLabelSourceCode
+            // 
+            this.linkLabelSourceCode.AutoSize = true;
+            this.linkLabelSourceCode.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabelSourceCode.Location = new System.Drawing.Point(6, 37);
+            this.linkLabelSourceCode.Name = "linkLabelSourceCode";
+            this.linkLabelSourceCode.Size = new System.Drawing.Size(116, 13);
+            this.linkLabelSourceCode.TabIndex = 8;
+            this.linkLabelSourceCode.TabStop = true;
+            this.linkLabelSourceCode.Text = "Source code on GitHub";
+            this.linkLabelSourceCode.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSourceCode_LinkClicked);
+            // 
             // DestroyWindowsSpyingMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1008,6 +1022,7 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.GroupBox groupBoxLanguage;
         private System.Windows.Forms.ComboBox comboBoxLanguageSelect;
+        private System.Windows.Forms.LinkLabel linkLabelSourceCode;
     }
 }
 
