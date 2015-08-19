@@ -515,7 +515,7 @@ namespace DWS_Lite
                 ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS Spynet block 2\" dir=out interface=any action=block remoteip=191.236.0.0/14");
                 output("Add Windows Firewall rule: \"MS Spynet block 2\"");
                 ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 1\"");
-                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS telemetry block 1\" dir=out interface=any action=block remoteip=65.52.0.0/13");
+                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS telemetry block 1\" dir=out interface=any action=block remoteip=65.52.0.0-65.55.0.0");
                 output("Add Windows Firewall rule: \"MS telemetry block 1\"");
                 ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 2\"");
                 ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS telemetry block 2\" dir=out interface=any action=block remoteip=204.79.195.0-204.79.197.255");
