@@ -74,6 +74,7 @@
             this.tabPageAbout = new System.Windows.Forms.TabPage();
             this.linkLabelOtherThanks = new System.Windows.Forms.LinkLabel();
             this.groupBoxLinks = new System.Windows.Forms.GroupBox();
+            this.linkLabelSourceCode = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
@@ -88,7 +89,7 @@
             this.richTextBoxReadMeEn = new System.Windows.Forms.RichTextBox();
             this.tabPageReadMeRu = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.linkLabelSourceCode = new System.Windows.Forms.LinkLabel();
+            this.btnReportNewBug = new System.Windows.Forms.Button();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -710,6 +711,7 @@
             this.tabPageAbout.BackColor = System.Drawing.Color.White;
             this.tabPageAbout.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageAbout.Controls.Add(this.btnReportNewBug);
             this.tabPageAbout.Controls.Add(this.linkLabelOtherThanks);
             this.tabPageAbout.Controls.Add(this.groupBoxLinks);
             this.tabPageAbout.Controls.Add(this.label1);
@@ -748,6 +750,18 @@
             this.groupBoxLinks.TabIndex = 8;
             this.groupBoxLinks.TabStop = false;
             this.groupBoxLinks.Text = "Links";
+            // 
+            // linkLabelSourceCode
+            // 
+            this.linkLabelSourceCode.AutoSize = true;
+            this.linkLabelSourceCode.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabelSourceCode.Location = new System.Drawing.Point(6, 37);
+            this.linkLabelSourceCode.Name = "linkLabelSourceCode";
+            this.linkLabelSourceCode.Size = new System.Drawing.Size(116, 13);
+            this.linkLabelSourceCode.TabIndex = 8;
+            this.linkLabelSourceCode.TabStop = true;
+            this.linkLabelSourceCode.Text = "Source code on GitHub";
+            this.linkLabelSourceCode.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSourceCode_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -913,17 +927,17 @@
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
-            // linkLabelSourceCode
+            // btnReportNewBug
             // 
-            this.linkLabelSourceCode.AutoSize = true;
-            this.linkLabelSourceCode.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelSourceCode.Location = new System.Drawing.Point(6, 37);
-            this.linkLabelSourceCode.Name = "linkLabelSourceCode";
-            this.linkLabelSourceCode.Size = new System.Drawing.Size(116, 13);
-            this.linkLabelSourceCode.TabIndex = 8;
-            this.linkLabelSourceCode.TabStop = true;
-            this.linkLabelSourceCode.Text = "Source code on GitHub";
-            this.linkLabelSourceCode.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSourceCode_LinkClicked);
+            this.btnReportNewBug.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportNewBug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportNewBug.Location = new System.Drawing.Point(6, 289);
+            this.btnReportNewBug.Name = "btnReportNewBug";
+            this.btnReportNewBug.Size = new System.Drawing.Size(151, 23);
+            this.btnReportNewBug.TabIndex = 10;
+            this.btnReportNewBug.Text = "Report a new bug";
+            this.btnReportNewBug.UseVisualStyleBackColor = false;
+            this.btnReportNewBug.Click += new System.EventHandler(this.btnReportNewBug_Click);
             // 
             // DestroyWindowsSpyingMainForm
             // 
@@ -1023,6 +1037,7 @@
         private System.Windows.Forms.GroupBox groupBoxLanguage;
         private System.Windows.Forms.ComboBox comboBoxLanguageSelect;
         private System.Windows.Forms.LinkLabel linkLabelSourceCode;
+        private System.Windows.Forms.Button btnReportNewBug;
     }
 }
 

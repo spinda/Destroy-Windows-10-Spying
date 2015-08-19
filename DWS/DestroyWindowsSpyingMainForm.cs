@@ -1027,5 +1027,10 @@ namespace DWS_Lite
         {
             Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying");
         }
+
+        private void btnReportNewBug_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying/issues/new");
+        }
     }
 }
