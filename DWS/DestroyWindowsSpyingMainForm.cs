@@ -142,10 +142,10 @@ namespace DWS_Lite
             btnEnableWindowsUpdate.Text = GetTranslateText("Enable") + " Windows Update";
             checkBoxDeleteApp3d.Text = GetTranslateText("Delete") + " Builder 3D";
             checkBoxDeleteAppCamera.Text = GetTranslateText("Delete") + " Camera";
-            checkBoxDeleteMailCalendarMaps.Text = GetTranslateText("Delete") + "Mail, Calendar, Maps";
+            checkBoxDeleteMailCalendarMaps.Text = GetTranslateText("Delete") + " Mail, Calendar, Maps";
             checkBoxDeleteAppBing.Text = GetTranslateText("Delete") + " Money, Sports, News, Weather";
             checkBoxDeleteAppZune.Text = GetTranslateText("Delete") + " Groove Music, Film TV";
-            checkBoxDeleteAppPeopleOneNote.Text = GetTranslateText("Delete") + "People, OneNote";
+            checkBoxDeleteAppPeopleOneNote.Text = GetTranslateText("Delete") + " People, OneNote";
             checkBoxDeleteAppPhone.Text = GetTranslateText("Delete") + " Phone Companion";
             checkBoxDeleteAppPhotos.Text = GetTranslateText("Delete") + " Photos";
             checkBoxDeleteAppSolit.Text = GetTranslateText("Delete") + " Solitaire Collection";
