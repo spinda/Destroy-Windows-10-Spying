@@ -103,6 +103,11 @@ namespace DWS_Lite
                 rm = lang.ru_RU.ResourceManager;
                 comboBoxLanguageSelect.Text = "ru-RU | Русский";
             }
+            else if (currentlang.IndexOf("fr") > -1)
+            {
+                rm = lang.fr_FR.ResourceManager;
+                comboBoxLanguageSelect.Text = "fr-FR | French";
+            }
             else
             {
                 rm = lang.en_US.ResourceManager;
@@ -981,7 +986,12 @@ namespace DWS_Lite
                 rm = lang.ru_RU.ResourceManager;
                 ChangeLanguage();
             }
-            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "en-US")
+            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "fr-FR")
+            {
+                rm = lang.fr_FR.ResourceManager;
+                ChangeLanguage();
+            }
+            if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "en-US")
             {
                 rm = lang.en_US.ResourceManager;
                 ChangeLanguage();

@@ -63,6 +63,11 @@
     <Compile Include="DestroyWindowsSpyingMainForm.Designer.cs">
       <DependentUpon>DestroyWindowsSpyingMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="lang\fr-FR.Designer.cs">
+      <DependentUpon>fr-FR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="lang\ru-RU.Designer.cs">
       <DependentUpon>ru-RU.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -78,6 +83,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DestroyWindowsSpyingMainForm.resx">
       <DependentUpon>DestroyWindowsSpyingMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lang\fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>fr-FR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="lang\ru-RU.resx">
       <Generator>ResXFileCodeGenerator</Generator>
