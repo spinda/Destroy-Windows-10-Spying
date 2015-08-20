@@ -74,6 +74,7 @@
             this.tabPageAbout = new System.Windows.Forms.TabPage();
             this.linkLabelOtherThanks = new System.Windows.Forms.LinkLabel();
             this.groupBoxLinks = new System.Windows.Forms.GroupBox();
+            this.linkLabelSourceCode = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
@@ -88,7 +89,6 @@
             this.richTextBoxReadMeEn = new System.Windows.Forms.RichTextBox();
             this.tabPageReadMeRu = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.linkLabelSourceCode = new System.Windows.Forms.LinkLabel();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -421,7 +421,6 @@
             this.checkBoxSPYTasks.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxSPYTasks.Checked = true;
             this.checkBoxSPYTasks.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxSPYTasks.Enabled = false;
             this.checkBoxSPYTasks.Location = new System.Drawing.Point(6, 108);
             this.checkBoxSPYTasks.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxSPYTasks.Name = "checkBoxSPYTasks";
@@ -437,7 +436,6 @@
             this.checkBoxSetDefaultPhoto.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxSetDefaultPhoto.Checked = true;
             this.checkBoxSetDefaultPhoto.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxSetDefaultPhoto.Enabled = false;
             this.checkBoxSetDefaultPhoto.Location = new System.Drawing.Point(6, 91);
             this.checkBoxSetDefaultPhoto.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxSetDefaultPhoto.Name = "checkBoxSetDefaultPhoto";
@@ -453,7 +451,6 @@
             this.checkBoxDisableWindowsDefender.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxDisableWindowsDefender.Checked = true;
             this.checkBoxDisableWindowsDefender.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxDisableWindowsDefender.Enabled = false;
             this.checkBoxDisableWindowsDefender.Location = new System.Drawing.Point(6, 74);
             this.checkBoxDisableWindowsDefender.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxDisableWindowsDefender.Name = "checkBoxDisableWindowsDefender";
@@ -469,7 +466,6 @@
             this.checkBoxDisablePrivateSettings.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxDisablePrivateSettings.Checked = true;
             this.checkBoxDisablePrivateSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxDisablePrivateSettings.Enabled = false;
             this.checkBoxDisablePrivateSettings.Location = new System.Drawing.Point(6, 57);
             this.checkBoxDisablePrivateSettings.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxDisablePrivateSettings.Name = "checkBoxDisablePrivateSettings";
@@ -485,7 +481,6 @@
             this.checkBoxAddToHosts.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxAddToHosts.Checked = true;
             this.checkBoxAddToHosts.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxAddToHosts.Enabled = false;
             this.checkBoxAddToHosts.Location = new System.Drawing.Point(6, 40);
             this.checkBoxAddToHosts.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxAddToHosts.Name = "checkBoxAddToHosts";
@@ -501,7 +496,6 @@
             this.checkBoxKeyLoggerAndTelemetry.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxKeyLoggerAndTelemetry.Checked = true;
             this.checkBoxKeyLoggerAndTelemetry.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxKeyLoggerAndTelemetry.Enabled = false;
             this.checkBoxKeyLoggerAndTelemetry.Location = new System.Drawing.Point(6, 23);
             this.checkBoxKeyLoggerAndTelemetry.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxKeyLoggerAndTelemetry.Name = "checkBoxKeyLoggerAndTelemetry";
@@ -517,7 +511,6 @@
             this.checkBoxCreateSystemRestorePoint.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxCreateSystemRestorePoint.Checked = true;
             this.checkBoxCreateSystemRestorePoint.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCreateSystemRestorePoint.Enabled = false;
             this.checkBoxCreateSystemRestorePoint.Location = new System.Drawing.Point(6, 6);
             this.checkBoxCreateSystemRestorePoint.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxCreateSystemRestorePoint.Name = "checkBoxCreateSystemRestorePoint";
@@ -526,7 +519,6 @@
             this.checkBoxCreateSystemRestorePoint.Text = "Create system restore point";
             this.checkBoxCreateSystemRestorePoint.UseVisualStyleBackColor = false;
             this.checkBoxCreateSystemRestorePoint.Visible = false;
-            this.checkBoxCreateSystemRestorePoint.CheckedChanged += new System.EventHandler(this.checkBoxCreateSystemRestorePoint_CheckedChanged);
             // 
             // tabPageUtilites
             // 
@@ -574,7 +566,6 @@
             // btnDeleteOneDrive
             // 
             this.btnDeleteOneDrive.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDeleteOneDrive.Enabled = false;
             this.btnDeleteOneDrive.ForeColor = System.Drawing.Color.Black;
             this.btnDeleteOneDrive.Location = new System.Drawing.Point(223, 32);
             this.btnDeleteOneDrive.Name = "btnDeleteOneDrive";
@@ -588,7 +579,6 @@
             // btnDeleteMetroAppsInfo
             // 
             this.btnDeleteMetroAppsInfo.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDeleteMetroAppsInfo.Enabled = false;
             this.btnDeleteMetroAppsInfo.ForeColor = System.Drawing.Color.Black;
             this.btnDeleteMetroAppsInfo.Location = new System.Drawing.Point(199, 32);
             this.btnDeleteMetroAppsInfo.Name = "btnDeleteMetroAppsInfo";
@@ -638,7 +628,6 @@
             this.groupBoxUACEdit.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxUACEdit.Controls.Add(this.btnEnableUac);
             this.groupBoxUACEdit.Controls.Add(this.btnDisableUac);
-            this.groupBoxUACEdit.Enabled = false;
             this.groupBoxUACEdit.Location = new System.Drawing.Point(8, 61);
             this.groupBoxUACEdit.Name = "groupBoxUACEdit";
             this.groupBoxUACEdit.Size = new System.Drawing.Size(214, 80);
@@ -694,7 +683,6 @@
             // btnDeleteAllWindows10Apps
             // 
             this.btnDeleteAllWindows10Apps.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDeleteAllWindows10Apps.Enabled = false;
             this.btnDeleteAllWindows10Apps.ForeColor = System.Drawing.Color.Black;
             this.btnDeleteAllWindows10Apps.Location = new System.Drawing.Point(8, 32);
             this.btnDeleteAllWindows10Apps.Name = "btnDeleteAllWindows10Apps";
@@ -748,6 +736,18 @@
             this.groupBoxLinks.TabIndex = 8;
             this.groupBoxLinks.TabStop = false;
             this.groupBoxLinks.Text = "Links";
+            // 
+            // linkLabelSourceCode
+            // 
+            this.linkLabelSourceCode.AutoSize = true;
+            this.linkLabelSourceCode.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabelSourceCode.Location = new System.Drawing.Point(6, 37);
+            this.linkLabelSourceCode.Name = "linkLabelSourceCode";
+            this.linkLabelSourceCode.Size = new System.Drawing.Size(116, 13);
+            this.linkLabelSourceCode.TabIndex = 8;
+            this.linkLabelSourceCode.TabStop = true;
+            this.linkLabelSourceCode.Text = "Source code on GitHub";
+            this.linkLabelSourceCode.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSourceCode_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -912,18 +912,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(431, 368);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            // 
-            // linkLabelSourceCode
-            // 
-            this.linkLabelSourceCode.AutoSize = true;
-            this.linkLabelSourceCode.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelSourceCode.Location = new System.Drawing.Point(6, 37);
-            this.linkLabelSourceCode.Name = "linkLabelSourceCode";
-            this.linkLabelSourceCode.Size = new System.Drawing.Size(116, 13);
-            this.linkLabelSourceCode.TabIndex = 8;
-            this.linkLabelSourceCode.TabStop = true;
-            this.linkLabelSourceCode.Text = "Source code on GitHub";
-            this.linkLabelSourceCode.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSourceCode_LinkClicked);
             // 
             // DestroyWindowsSpyingMainForm
             // 

@@ -9,6 +9,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
+using System.Net;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -27,11 +28,10 @@ namespace DWS_Lite
         private string ShellCmdLocation = null;
         private string system32location = null;
         private string logfilename = "DWS.log";
-        private string language = "en-US";
-        private StreamWriter logfileStreamWriter;
 
         public DestroyWindowsSpyingMainForm(string[] args)
         {
+            // Re create log file
             try
             {
                 if (!File.Exists(logfilename))
@@ -43,12 +43,13 @@ namespace DWS_Lite
                     File.Delete(logfilename);
                     File.Create(logfilename).Close();
                 }
-                logfileStreamWriter = new StreamWriter(logfilename);
             }
             catch (Exception)
             {
-
+                
             }
+
+            // Check windows version
             using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\"))
             {
                 // в value массив из байт
@@ -61,6 +62,7 @@ namespace DWS_Lite
                     Process.GetCurrentProcess().Kill();
                 }
             }
+            //Check SYSNATIVE (x64)
             if (File.Exists(path + @"Windows\Sysnative\cmd.exe"))
             {
                 ShellCmdLocation = path + @"Windows\Sysnative\cmd.exe";
@@ -78,6 +80,7 @@ namespace DWS_Lite
             labelBuildDataTime.Text = "Build number:" + Properties.Resources.build_number + "  |  Build Time:" +
                                       Properties.Resources.build_datatime;
             string langname = null;
+            // check args lang
             for (int i = 0; i < args.Length; i++)
             {
                 if (args[i].IndexOf("/lang=") > -1)
@@ -97,13 +100,13 @@ namespace DWS_Lite
             }
             if (currentlang.IndexOf("ru") > -1)
             {
-                language = "ru-RU";
                 rm = lang.ru_RU.ResourceManager;
+                comboBoxLanguageSelect.Text = "ru-RU | Русский";
             }
             else
             {
-                language = "en-US";
                 rm = lang.en_US.ResourceManager;
+                comboBoxLanguageSelect.Text = "en-US | English";
             }
         }
 
@@ -189,10 +192,7 @@ namespace DWS_Lite
                 if (value == 0)
                 {
                     checkBoxCreateSystemRestorePoint.Checked = false;
-                }
-                else
-                {
-                    checkBoxCreateSystemRestorePoint.Checked = true;
+                    checkBoxCreateSystemRestorePoint.Enabled = false;
                 }
             }
         }
@@ -255,12 +255,15 @@ namespace DWS_Lite
 
         private void outputnoinvoke(string str, bool split = false)
         {
-            logfileStreamWriter.WriteLine(str);
+            DateTime temp = DateTime.Now;
+            str = "[" + temp.Hour.ToString() + ":" + temp.Minute.ToString() + ":" + temp.Second.ToString() + "] " + str;
+            File.WriteAllText(logfilename, File.ReadAllText(logfilename) + str + "\n");
             Console.WriteLine(str);
             LogOutputTextBox.Text += str + "\n";
             if (split)
             {
-                logfileStreamWriter.WriteLine("==========================");
+
+                File.WriteAllText(logfilename, File.ReadAllText(logfilename) + "==========================\n");
                 Console.WriteLine("==========================");
                 LogOutputTextBox.Text += "==========================\n";
             }
@@ -505,7 +508,6 @@ namespace DWS_Lite
                     output("Error add HOSTS");
                 }
                 ProcStartargs(ShellCmdLocation, "/c ipconfig /flushdns");
-                //netsh advfirewall firewall delete rule name="MS telemetry block 1"
 
                 output("Add hosts MS complete.");
                 ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 1\"");
@@ -772,9 +774,6 @@ namespace DWS_Lite
                 new Thread(() =>
                 {
                     DeleteWindows10MetroApp(null);
-                    output(ProcStartargs("powershell",
-                        "-command \"Get-AppxProvisionedPackage -online | Remove-AppxProvisionedPackage -online \""));
-                    output(ProcStartargs("powershell", "-command \"Get-AppxPackage -AllUsers | Remove-AppxPackage\""));
                     Invoke(new MethodInvoker(delegate
                     {
                         EnableOrDisableTab(true);
@@ -842,13 +841,11 @@ namespace DWS_Lite
 
         private void DestroyWindowsSpyingMainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            logfileStreamWriter.Close();
             Process.GetCurrentProcess().Kill();
         }
 
         private void DestroyWindowsSpyingMainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            logfileStreamWriter.Close();
             Process.GetCurrentProcess().Kill();
         }
 
@@ -887,27 +884,16 @@ namespace DWS_Lite
 
         private void ProfessionalModeSet(bool enableordisable)
         {
-            checkBoxCreateSystemRestorePoint.Enabled = enableordisable;
             checkBoxCreateSystemRestorePoint.Visible = enableordisable;
-            checkBoxKeyLoggerAndTelemetry.Enabled = enableordisable;
             checkBoxKeyLoggerAndTelemetry.Visible = enableordisable;
-            checkBoxAddToHosts.Enabled = enableordisable;
             checkBoxAddToHosts.Visible = enableordisable;
-            checkBoxDisablePrivateSettings.Enabled = enableordisable;
             checkBoxDisablePrivateSettings.Visible = enableordisable;
-            checkBoxDisableWindowsDefender.Enabled = enableordisable;
             checkBoxDisableWindowsDefender.Visible = enableordisable;
-            checkBoxSetDefaultPhoto.Enabled = enableordisable;
             checkBoxSetDefaultPhoto.Visible = enableordisable;
-            checkBoxSPYTasks.Enabled = enableordisable;
             checkBoxSPYTasks.Visible = enableordisable;
-            btnDeleteAllWindows10Apps.Enabled = enableordisable;
             btnDeleteAllWindows10Apps.Visible = enableordisable;
-            groupBoxUACEdit.Enabled = enableordisable;
             groupBoxUACEdit.Visible = enableordisable;
-            btnDeleteMetroAppsInfo.Enabled = enableordisable;
             btnDeleteMetroAppsInfo.Visible = enableordisable;
-            btnDeleteOneDrive.Enabled = enableordisable;
             btnDeleteOneDrive.Visible = enableordisable;
             if (enableordisable)
             {
@@ -992,34 +978,13 @@ namespace DWS_Lite
         {
             if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "ru-RU")
             {
-                language = "ru-RU";
                 rm = lang.ru_RU.ResourceManager;
                 ChangeLanguage();
             }
             else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "en-US")
             {
-                language = "en-US";
                 rm = lang.en_US.ResourceManager;
                 ChangeLanguage();
-            }
-        }
-
-        private void checkBoxCreateSystemRestorePoint_CheckedChanged(object sender, EventArgs e)
-        {
-             using (
-                var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore\")
-                )
-            {
-                // в value массив из байт
-                int value = Convert.ToInt32(key.GetValue("RPSessionInterval"));
-                key.Close();
-                if (value == 0)
-                {
-                    checkBoxCreateSystemRestorePoint.Checked = false;
-                }
-                else
-                {
-                }
             }
         }
 
