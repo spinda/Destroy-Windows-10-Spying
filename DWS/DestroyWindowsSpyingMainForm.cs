@@ -453,12 +453,10 @@ namespace DWS_Lite
                 ProcStartargs(ShellCmdLocation, "/c net stop diagnosticshub.standardcollector.service ");
                 ProcStartargs(ShellCmdLocation, "/c net stop dmwappushservice ");
                 ProcStartargs(ShellCmdLocation, "/c net stop WMPNetworkSvc ");
-                ProcStartargs(ShellCmdLocation, "/c net stop WSearch ");
                 ProcStartargs(ShellCmdLocation, "/c sc config DiagTrack start=disabled ");
                 ProcStartargs(ShellCmdLocation, "/c sc config diagnosticshub.standardcollector.service start=disabled ");
                 ProcStartargs(ShellCmdLocation, "/c sc config dmwappushservice start=disabled ");
                 ProcStartargs(ShellCmdLocation, "/c sc config WMPNetworkSvc start=disabled ");
-                ProcStartargs(ShellCmdLocation, "/c sc config WSearch start=disabled ");
                 ProcStartargs(ShellCmdLocation, "/c REG ADD HKLM\\SYSTEM\\ControlSet001\\Control\\WMI\\AutoLogger\\AutoLogger-Diagtrack-Listener /v Start /t REG_DWORD /d 0 /f");
                 ProcStartargs(ShellCmdLocation, "/c net stop dmwappushservice");
                 ProcStartargs(ShellCmdLocation, "/c net stop diagtrack");
@@ -521,12 +519,6 @@ namespace DWS_Lite
                 ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 2\"");
                 ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS Spynet block 2\" dir=out interface=any action=block remoteip=191.236.0.0/14");
                 output("Add Windows Firewall rule: \"MS Spynet block 2\"");
-                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 1\"");
-                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS telemetry block 1\" dir=out interface=any action=block remoteip=65.52.0.0-65.55.0.0");
-                output("Add Windows Firewall rule: \"MS telemetry block 1\"");
-                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 2\"");
-                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS telemetry block 2\" dir=out interface=any action=block remoteip=204.79.195.0-204.79.197.255");
-                output("Add Windows Firewall rule: \"MS telemetry block 2\"");
 
             }
             progressbaradd(20); //45
