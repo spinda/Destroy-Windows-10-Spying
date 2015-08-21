@@ -317,6 +317,24 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove all old DWS firewall rules.
+        /// </summary>
+        internal static string RemoveAllOldFirewallRules {
+            get {
+                return ResourceManager.GetString("RemoveAllOldFirewallRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report a bug.
+        /// </summary>
+        internal static string ReportABug {
+            get {
+                return ResourceManager.GetString("ReportABug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nécessite un redémarrage.
         ///Redémarrer maintenant ?.
         /// </summary>

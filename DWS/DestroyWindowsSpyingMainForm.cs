@@ -151,6 +151,8 @@ namespace DWS_Lite
             checkBoxDeleteAppSolit.Text = GetTranslateText("Delete") + " Solitaire Collection";
             checkBoxDeleteAppVoice.Text = GetTranslateText("Delete") + " Voice Recorder";
             checkBoxDeleteAppXBOX.Text = GetTranslateText("Delete") + " XBOX";
+            btnRemoveOldFirewallRules.Text = GetTranslateText("RemoveAllOldFirewallRules");
+            btnReportABug.Text = GetTranslateText("ReportABug");
             groupBoxLinks.Text = GetTranslateText("Links");
         }
 
@@ -513,12 +515,9 @@ namespace DWS_Lite
                 ProcStartargs(ShellCmdLocation, "/c ipconfig /flushdns");
 
                 output("Add hosts MS complete.");
-                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 1\"");
+                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block\"");
                 ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS Spynet block 1\" dir=out interface=any action=block remoteip=23.96.0.0/13");
-                output("Add Windows Firewall rule: \"MS Spynet block 1\"");
-                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 2\"");
-                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS Spynet block 2\" dir=out interface=any action=block remoteip=191.236.0.0/14");
-                output("Add Windows Firewall rule: \"MS Spynet block 2\"");
+                output("Add Windows Firewall rule: \"MS Spynet block\"");
 
             }
             progressbaradd(20); //45
@@ -993,6 +992,20 @@ namespace DWS_Lite
         private void linkLabelSourceCode_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying");
+        }
+
+        private void btnRemoveOldFirewallRules_Click(object sender, EventArgs e)
+        {
+            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 1\"");
+            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 2\"");
+            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 1\"");
+            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 2\"");
+            MessageBox.Show(GetTranslateText("CompleteMSG"), GetTranslateText("Info"));
+        }
+
+        private void btnReportABug_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying/issues/new");
         }
     }
 }

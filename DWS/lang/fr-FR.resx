@@ -230,4 +230,10 @@ Redémarrer maintenant ?</value>
   <data name="DestroyWindowsSpying" xml:space="preserve">
     <value>Détruire les Espions de Windows 10</value>
   </data>
+  <data name="RemoveAllOldFirewallRules" xml:space="preserve">
+    <value>Remove all old DWS firewall rules</value>
+  </data>
+  <data name="ReportABug" xml:space="preserve">
+    <value>Report a bug</value>
+  </data>
 </root>

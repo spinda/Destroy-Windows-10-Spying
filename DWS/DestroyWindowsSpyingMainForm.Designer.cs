@@ -88,7 +88,9 @@
             this.tabPageReadMeEn = new System.Windows.Forms.TabPage();
             this.richTextBoxReadMeEn = new System.Windows.Forms.RichTextBox();
             this.tabPageReadMeRu = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxReadMeRU = new System.Windows.Forms.RichTextBox();
+            this.btnReportABug = new System.Windows.Forms.Button();
+            this.btnRemoveOldFirewallRules = new System.Windows.Forms.Button();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -525,6 +527,7 @@
             this.tabPageUtilites.BackColor = System.Drawing.Color.White;
             this.tabPageUtilites.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageUtilites.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageUtilites.Controls.Add(this.btnRemoveOldFirewallRules);
             this.tabPageUtilites.Controls.Add(this.groupBoxLanguage);
             this.tabPageUtilites.Controls.Add(this.btnDeleteOneDrive);
             this.tabPageUtilites.Controls.Add(this.btnDeleteMetroAppsInfo);
@@ -699,6 +702,7 @@
             this.tabPageAbout.BackColor = System.Drawing.Color.White;
             this.tabPageAbout.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageAbout.Controls.Add(this.btnReportABug);
             this.tabPageAbout.Controls.Add(this.linkLabelOtherThanks);
             this.tabPageAbout.Controls.Add(this.groupBoxLinks);
             this.tabPageAbout.Controls.Add(this.label1);
@@ -893,7 +897,7 @@
             // 
             // tabPageReadMeRu
             // 
-            this.tabPageReadMeRu.Controls.Add(this.richTextBox1);
+            this.tabPageReadMeRu.Controls.Add(this.richTextBoxReadMeRU);
             this.tabPageReadMeRu.Location = new System.Drawing.Point(4, 22);
             this.tabPageReadMeRu.Name = "tabPageReadMeRu";
             this.tabPageReadMeRu.Padding = new System.Windows.Forms.Padding(3);
@@ -902,17 +906,41 @@
             this.tabPageReadMeRu.Text = "Прочитай меня (РУС)";
             this.tabPageReadMeRu.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // richTextBoxReadMeRU
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.White;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(431, 368);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBoxReadMeRU.BackColor = System.Drawing.Color.White;
+            this.richTextBoxReadMeRU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxReadMeRU.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxReadMeRU.Location = new System.Drawing.Point(3, 3);
+            this.richTextBoxReadMeRU.Name = "richTextBoxReadMeRU";
+            this.richTextBoxReadMeRU.ReadOnly = true;
+            this.richTextBoxReadMeRU.Size = new System.Drawing.Size(431, 368);
+            this.richTextBoxReadMeRU.TabIndex = 1;
+            this.richTextBoxReadMeRU.Text = resources.GetString("richTextBoxReadMeRU.Text");
+            // 
+            // btnReportABug
+            // 
+            this.btnReportABug.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportABug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportABug.Location = new System.Drawing.Point(8, 279);
+            this.btnReportABug.Name = "btnReportABug";
+            this.btnReportABug.Size = new System.Drawing.Size(138, 23);
+            this.btnReportABug.TabIndex = 10;
+            this.btnReportABug.Text = "Report a bug";
+            this.btnReportABug.UseVisualStyleBackColor = false;
+            this.btnReportABug.Click += new System.EventHandler(this.btnReportABug_Click);
+            // 
+            // btnRemoveOldFirewallRules
+            // 
+            this.btnRemoveOldFirewallRules.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRemoveOldFirewallRules.ForeColor = System.Drawing.Color.Green;
+            this.btnRemoveOldFirewallRules.Location = new System.Drawing.Point(223, 207);
+            this.btnRemoveOldFirewallRules.Name = "btnRemoveOldFirewallRules";
+            this.btnRemoveOldFirewallRules.Size = new System.Drawing.Size(214, 23);
+            this.btnRemoveOldFirewallRules.TabIndex = 6;
+            this.btnRemoveOldFirewallRules.Text = "Remove all old DWS firewall rules";
+            this.btnRemoveOldFirewallRules.UseVisualStyleBackColor = false;
+            this.btnRemoveOldFirewallRules.Click += new System.EventHandler(this.btnRemoveOldFirewallRules_Click);
             // 
             // DestroyWindowsSpyingMainForm
             // 
@@ -1008,10 +1036,12 @@
         private System.Windows.Forms.TabPage tabPageReadMeEn;
         private System.Windows.Forms.RichTextBox richTextBoxReadMeEn;
         private System.Windows.Forms.TabPage tabPageReadMeRu;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBoxReadMeRU;
         private System.Windows.Forms.GroupBox groupBoxLanguage;
         private System.Windows.Forms.ComboBox comboBoxLanguageSelect;
         private System.Windows.Forms.LinkLabel linkLabelSourceCode;
+        private System.Windows.Forms.Button btnReportABug;
+        private System.Windows.Forms.Button btnRemoveOldFirewallRules;
     }
 }
 

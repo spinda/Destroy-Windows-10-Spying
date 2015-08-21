@@ -227,4 +227,10 @@ Restart now?</value>
   <data name="Warning" xml:space="preserve">
     <value>Warning</value>
   </data>
+  <data name="RemoveAllOldFirewallRules" xml:space="preserve">
+    <value>Remove all old DWS firewall rules</value>
+  </data>
+  <data name="ReportABug" xml:space="preserve">
+    <value>Report a bug</value>
+  </data>
 </root>

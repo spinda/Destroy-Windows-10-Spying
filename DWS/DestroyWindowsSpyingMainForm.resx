@@ -139,7 +139,7 @@ Thanks testers: moldabekovm, artemiy, DiamondMonday.
 Thanks: @WzorNET , @MicrosoftInside , @rgadguard , @DiamondMonday , @Ratiborus58
 Other thanks: Чёрная поганка, Архангел.</value>
   </data>
-  <data name="richTextBox1.Text" xml:space="preserve">
+  <data name="richTextBoxReadMeRU.Text" xml:space="preserve">
     <value>1.5
 
 Изменения:
@@ -153,7 +153,6 @@ Other thanks: Чёрная поганка, Архангел.</value>
 8. В утилитах добавлена быстрая кнопка восстановления системы.
 9. Фикс отключения центра обновлений (в последних версиях).
 10. В профессиональных настройках можно выбрать что нужно отключить.
-11. Русский язык вырезан. (Он в программе не нужен. Там и так всё понятно)
 
 !!! ВНИМАНИЕ !!!
 НЕКОТОРЫЕ ДЕЙСТВИЯ ДАННОЙ ПРОГРАММЫ НЕОБРАТИМЫ !!!
