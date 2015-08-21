@@ -58,6 +58,7 @@
             this.checkBoxKeyLoggerAndTelemetry = new System.Windows.Forms.CheckBox();
             this.checkBoxCreateSystemRestorePoint = new System.Windows.Forms.CheckBox();
             this.tabPageUtilites = new System.Windows.Forms.TabPage();
+            this.btnRemoveOldFirewallRules = new System.Windows.Forms.Button();
             this.groupBoxLanguage = new System.Windows.Forms.GroupBox();
             this.comboBoxLanguageSelect = new System.Windows.Forms.ComboBox();
             this.btnDeleteOneDrive = new System.Windows.Forms.Button();
@@ -72,6 +73,7 @@
             this.btnRestoreSystem = new System.Windows.Forms.Button();
             this.btnDeleteAllWindows10Apps = new System.Windows.Forms.Button();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
+            this.btnReportABug = new System.Windows.Forms.Button();
             this.linkLabelOtherThanks = new System.Windows.Forms.LinkLabel();
             this.groupBoxLinks = new System.Windows.Forms.GroupBox();
             this.linkLabelSourceCode = new System.Windows.Forms.LinkLabel();
@@ -89,8 +91,6 @@
             this.richTextBoxReadMeEn = new System.Windows.Forms.RichTextBox();
             this.tabPageReadMeRu = new System.Windows.Forms.TabPage();
             this.richTextBoxReadMeRU = new System.Windows.Forms.RichTextBox();
-            this.btnReportABug = new System.Windows.Forms.Button();
-            this.btnRemoveOldFirewallRules = new System.Windows.Forms.Button();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -542,6 +542,18 @@
             this.tabPageUtilites.TabIndex = 2;
             this.tabPageUtilites.Text = "Utilites";
             // 
+            // btnRemoveOldFirewallRules
+            // 
+            this.btnRemoveOldFirewallRules.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRemoveOldFirewallRules.ForeColor = System.Drawing.Color.Green;
+            this.btnRemoveOldFirewallRules.Location = new System.Drawing.Point(223, 207);
+            this.btnRemoveOldFirewallRules.Name = "btnRemoveOldFirewallRules";
+            this.btnRemoveOldFirewallRules.Size = new System.Drawing.Size(214, 23);
+            this.btnRemoveOldFirewallRules.TabIndex = 6;
+            this.btnRemoveOldFirewallRules.Text = "Remove all old DWS firewall rules";
+            this.btnRemoveOldFirewallRules.UseVisualStyleBackColor = false;
+            this.btnRemoveOldFirewallRules.Click += new System.EventHandler(this.btnRemoveOldFirewallRules_Click);
+            // 
             // groupBoxLanguage
             // 
             this.groupBoxLanguage.BackColor = System.Drawing.Color.Transparent;
@@ -713,6 +725,18 @@
             this.tabPageAbout.Size = new System.Drawing.Size(445, 400);
             this.tabPageAbout.TabIndex = 3;
             this.tabPageAbout.Text = "About";
+            // 
+            // btnReportABug
+            // 
+            this.btnReportABug.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportABug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportABug.Location = new System.Drawing.Point(8, 279);
+            this.btnReportABug.Name = "btnReportABug";
+            this.btnReportABug.Size = new System.Drawing.Size(138, 23);
+            this.btnReportABug.TabIndex = 10;
+            this.btnReportABug.Text = "Report a bug";
+            this.btnReportABug.UseVisualStyleBackColor = false;
+            this.btnReportABug.Click += new System.EventHandler(this.btnReportABug_Click);
             // 
             // linkLabelOtherThanks
             // 
@@ -918,30 +942,6 @@
             this.richTextBoxReadMeRU.TabIndex = 1;
             this.richTextBoxReadMeRU.Text = resources.GetString("richTextBoxReadMeRU.Text");
             // 
-            // btnReportABug
-            // 
-            this.btnReportABug.BackColor = System.Drawing.Color.Transparent;
-            this.btnReportABug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportABug.Location = new System.Drawing.Point(8, 279);
-            this.btnReportABug.Name = "btnReportABug";
-            this.btnReportABug.Size = new System.Drawing.Size(138, 23);
-            this.btnReportABug.TabIndex = 10;
-            this.btnReportABug.Text = "Report a bug";
-            this.btnReportABug.UseVisualStyleBackColor = false;
-            this.btnReportABug.Click += new System.EventHandler(this.btnReportABug_Click);
-            // 
-            // btnRemoveOldFirewallRules
-            // 
-            this.btnRemoveOldFirewallRules.BackColor = System.Drawing.SystemColors.Control;
-            this.btnRemoveOldFirewallRules.ForeColor = System.Drawing.Color.Green;
-            this.btnRemoveOldFirewallRules.Location = new System.Drawing.Point(223, 207);
-            this.btnRemoveOldFirewallRules.Name = "btnRemoveOldFirewallRules";
-            this.btnRemoveOldFirewallRules.Size = new System.Drawing.Size(214, 23);
-            this.btnRemoveOldFirewallRules.TabIndex = 6;
-            this.btnRemoveOldFirewallRules.Text = "Remove all old DWS firewall rules";
-            this.btnRemoveOldFirewallRules.UseVisualStyleBackColor = false;
-            this.btnRemoveOldFirewallRules.Click += new System.EventHandler(this.btnRemoveOldFirewallRules_Click);
-            // 
             // DestroyWindowsSpyingMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -954,7 +954,7 @@
             this.MaximizeBox = false;
             this.Name = "DestroyWindowsSpyingMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DWS Lite 1.5 build ";
+            this.Text = "*UNSTABLE* DWS Lite 1.5 build ";
             this.TransparencyKey = System.Drawing.Color.Magenta;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DestroyWindowsSpyingMainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DestroyWindowsSpyingMainForm_FormClosed);

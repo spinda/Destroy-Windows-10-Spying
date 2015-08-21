@@ -516,7 +516,7 @@ namespace DWS_Lite
 
                 output("Add hosts MS complete.");
                 ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block\"");
-                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS Spynet block 1\" dir=out interface=any action=block remoteip=23.96.0.0/13");
+                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS Spynet block\" dir=out interface=any action=block remoteip=23.96.0.0/13");
                 output("Add Windows Firewall rule: \"MS Spynet block\"");
 
             }
