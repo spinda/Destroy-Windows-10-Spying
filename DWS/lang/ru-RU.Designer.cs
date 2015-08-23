@@ -180,9 +180,9 @@ namespace DWS_Lite.lang {
         /// <summary>
         ///   Looks up a localized string similar to Завершено.
         /// </summary>
-        internal static string Compele {
+        internal static string Complete {
             get {
-                return ResourceManager.GetString("Compele", resourceCulture);
+                return ResourceManager.GetString("Complete", resourceCulture);
             }
         }
         

@@ -657,7 +657,7 @@ namespace DWS_Lite
             {
                 if (fatalerrors == 0)
                 {
-                    StatusCommandsLable.Text = "Destroy Windows 10 Spying - "+ GetTranslateText("Compele") +"!";
+                    StatusCommandsLable.Text = "Destroy Windows 10 Spying - " + GetTranslateText("Complete") + "!";
                     StatusCommandsLable.ForeColor = Color.DarkGreen;
                     if (
                         MessageBox.Show(GetTranslateText("CompleteMSG"), GetTranslateText("Info"),
@@ -964,7 +964,7 @@ namespace DWS_Lite
                 }
                 Invoke(new MethodInvoker(delegate
                 {
-                    MessageBox.Show(GetTranslateText("Compele"), GetTranslateText("Info"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }));
                 EnableOrDisableTab(true);
             }).Start();
@@ -1000,7 +1000,7 @@ namespace DWS_Lite
             ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 2\"");
             ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 1\"");
             ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 2\"");
-            MessageBox.Show(GetTranslateText("Compele"), GetTranslateText("Info"));
+            MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"));
         }
 
         private void btnReportABug_Click(object sender, EventArgs e)
