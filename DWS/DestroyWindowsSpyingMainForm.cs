@@ -1000,7 +1000,7 @@ namespace DWS_Lite
             ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 2\"");
             ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 1\"");
             ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 2\"");
-            MessageBox.Show(GetTranslateText("CompleteMSG"), GetTranslateText("Info"));
+            MessageBox.Show(GetTranslateText("Compele"), GetTranslateText("Info"));
         }
 
         private void btnReportABug_Click(object sender, EventArgs e)

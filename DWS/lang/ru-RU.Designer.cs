@@ -326,7 +326,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Требудется перезагрузка
+        ///   Looks up a localized string similar to Требуется перезагрузка
         ///Перезагрузить сейчас?.
         /// </summary>
         internal static string Restart {

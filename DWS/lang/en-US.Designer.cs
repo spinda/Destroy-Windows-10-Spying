@@ -381,7 +381,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Utilites.
+        ///   Looks up a localized string similar to Utilities.
         /// </summary>
         internal static string tabPageUtilites {
             get {
