@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DestroyWindowsSpyingMainForm));
             this.FormTabsControl = new System.Windows.Forms.TabControl();
             this.tabPageMain = new System.Windows.Forms.TabPage();
+            this.btnDestroyWindows78Spy = new System.Windows.Forms.Button();
             this.LogOutputTextBox = new System.Windows.Forms.RichTextBox();
             this.StatusCommandsLable = new System.Windows.Forms.Label();
             this.ProgressBarStatus = new System.Windows.Forms.ProgressBar();
@@ -59,8 +60,6 @@
             this.checkBoxCreateSystemRestorePoint = new System.Windows.Forms.CheckBox();
             this.tabPageUtilites = new System.Windows.Forms.TabPage();
             this.btnRemoveOldFirewallRules = new System.Windows.Forms.Button();
-            this.groupBoxLanguage = new System.Windows.Forms.GroupBox();
-            this.comboBoxLanguageSelect = new System.Windows.Forms.ComboBox();
             this.btnDeleteOneDrive = new System.Windows.Forms.Button();
             this.btnDeleteMetroAppsInfo = new System.Windows.Forms.Button();
             this.groupBoxWindowsUpdate = new System.Windows.Forms.GroupBox();
@@ -73,6 +72,8 @@
             this.btnRestoreSystem = new System.Windows.Forms.Button();
             this.btnDeleteAllWindows10Apps = new System.Windows.Forms.Button();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
+            this.groupBoxLanguage = new System.Windows.Forms.GroupBox();
+            this.comboBoxLanguageSelect = new System.Windows.Forms.ComboBox();
             this.btnReportABug = new System.Windows.Forms.Button();
             this.linkLabelOtherThanks = new System.Windows.Forms.LinkLabel();
             this.groupBoxLinks = new System.Windows.Forms.GroupBox();
@@ -95,10 +96,10 @@
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
             this.tabPageUtilites.SuspendLayout();
-            this.groupBoxLanguage.SuspendLayout();
             this.groupBoxWindowsUpdate.SuspendLayout();
             this.groupBoxUACEdit.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
+            this.groupBoxLanguage.SuspendLayout();
             this.groupBoxLinks.SuspendLayout();
             this.tabPageReadMe.SuspendLayout();
             this.tabControlReadMERUEN.SuspendLayout();
@@ -125,6 +126,7 @@
             this.tabPageMain.BackColor = System.Drawing.Color.White;
             this.tabPageMain.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageMain.Controls.Add(this.btnDestroyWindows78Spy);
             this.tabPageMain.Controls.Add(this.LogOutputTextBox);
             this.tabPageMain.Controls.Add(this.StatusCommandsLable);
             this.tabPageMain.Controls.Add(this.ProgressBarStatus);
@@ -135,6 +137,20 @@
             this.tabPageMain.Size = new System.Drawing.Size(445, 400);
             this.tabPageMain.TabIndex = 0;
             this.tabPageMain.Text = "Main";
+            // 
+            // btnDestroyWindows78Spy
+            // 
+            this.btnDestroyWindows78Spy.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDestroyWindows78Spy.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnDestroyWindows78Spy.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDestroyWindows78Spy.Location = new System.Drawing.Point(8, 6);
+            this.btnDestroyWindows78Spy.Name = "btnDestroyWindows78Spy";
+            this.btnDestroyWindows78Spy.Size = new System.Drawing.Size(429, 50);
+            this.btnDestroyWindows78Spy.TabIndex = 4;
+            this.btnDestroyWindows78Spy.Text = "Destroy Windows 7/8.1 Spying\r\nKB3080149 | KB3075249";
+            this.btnDestroyWindows78Spy.UseVisualStyleBackColor = false;
+            this.btnDestroyWindows78Spy.Visible = false;
+            this.btnDestroyWindows78Spy.Click += new System.EventHandler(this.btnDestroyWindows78Spy_Click);
             // 
             // LogOutputTextBox
             // 
@@ -528,7 +544,6 @@
             this.tabPageUtilites.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageUtilites.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPageUtilites.Controls.Add(this.btnRemoveOldFirewallRules);
-            this.tabPageUtilites.Controls.Add(this.groupBoxLanguage);
             this.tabPageUtilites.Controls.Add(this.btnDeleteOneDrive);
             this.tabPageUtilites.Controls.Add(this.btnDeleteMetroAppsInfo);
             this.tabPageUtilites.Controls.Add(this.groupBoxWindowsUpdate);
@@ -553,31 +568,6 @@
             this.btnRemoveOldFirewallRules.Text = "Remove all old DWS firewall rules";
             this.btnRemoveOldFirewallRules.UseVisualStyleBackColor = false;
             this.btnRemoveOldFirewallRules.Click += new System.EventHandler(this.btnRemoveOldFirewallRules_Click);
-            // 
-            // groupBoxLanguage
-            // 
-            this.groupBoxLanguage.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxLanguage.Controls.Add(this.comboBoxLanguageSelect);
-            this.groupBoxLanguage.Location = new System.Drawing.Point(223, 147);
-            this.groupBoxLanguage.Name = "groupBoxLanguage";
-            this.groupBoxLanguage.Size = new System.Drawing.Size(214, 54);
-            this.groupBoxLanguage.TabIndex = 11;
-            this.groupBoxLanguage.TabStop = false;
-            this.groupBoxLanguage.Text = "Language\\Язык";
-            // 
-            // comboBoxLanguageSelect
-            // 
-            this.comboBoxLanguageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLanguageSelect.FormattingEnabled = true;
-            this.comboBoxLanguageSelect.Items.AddRange(new object[] {
-            "en-US | English",
-            "ru-RU | Русский",
-            "fr-FR | French"});
-            this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
-            this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
-            this.comboBoxLanguageSelect.Size = new System.Drawing.Size(202, 21);
-            this.comboBoxLanguageSelect.TabIndex = 0;
-            this.comboBoxLanguageSelect.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnDeleteOneDrive
             // 
@@ -714,6 +704,7 @@
             this.tabPageAbout.BackColor = System.Drawing.Color.White;
             this.tabPageAbout.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageAbout.Controls.Add(this.groupBoxLanguage);
             this.tabPageAbout.Controls.Add(this.btnReportABug);
             this.tabPageAbout.Controls.Add(this.linkLabelOtherThanks);
             this.tabPageAbout.Controls.Add(this.groupBoxLinks);
@@ -725,6 +716,31 @@
             this.tabPageAbout.Size = new System.Drawing.Size(445, 400);
             this.tabPageAbout.TabIndex = 3;
             this.tabPageAbout.Text = "About";
+            // 
+            // groupBoxLanguage
+            // 
+            this.groupBoxLanguage.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxLanguage.Controls.Add(this.comboBoxLanguageSelect);
+            this.groupBoxLanguage.Location = new System.Drawing.Point(221, 248);
+            this.groupBoxLanguage.Name = "groupBoxLanguage";
+            this.groupBoxLanguage.Size = new System.Drawing.Size(214, 54);
+            this.groupBoxLanguage.TabIndex = 12;
+            this.groupBoxLanguage.TabStop = false;
+            this.groupBoxLanguage.Text = "Language\\Язык";
+            // 
+            // comboBoxLanguageSelect
+            // 
+            this.comboBoxLanguageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLanguageSelect.FormattingEnabled = true;
+            this.comboBoxLanguageSelect.Items.AddRange(new object[] {
+            "en-US | English",
+            "ru-RU | Русский",
+            "fr-FR | French"});
+            this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
+            this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
+            this.comboBoxLanguageSelect.Size = new System.Drawing.Size(202, 21);
+            this.comboBoxLanguageSelect.TabIndex = 0;
+            this.comboBoxLanguageSelect.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguageSelect_SelectedIndexChanged);
             // 
             // btnReportABug
             // 
@@ -954,7 +970,7 @@
             this.MaximizeBox = false;
             this.Name = "DestroyWindowsSpyingMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "*UNSTABLE* DWS Lite 1.5 build ";
+            this.Text = "DWS Lite 1.5 build ";
             this.TransparencyKey = System.Drawing.Color.Magenta;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DestroyWindowsSpyingMainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DestroyWindowsSpyingMainForm_FormClosed);
@@ -963,11 +979,11 @@
             this.tabPageSettings.ResumeLayout(false);
             this.tabPageSettings.PerformLayout();
             this.tabPageUtilites.ResumeLayout(false);
-            this.groupBoxLanguage.ResumeLayout(false);
             this.groupBoxWindowsUpdate.ResumeLayout(false);
             this.groupBoxUACEdit.ResumeLayout(false);
             this.tabPageAbout.ResumeLayout(false);
             this.tabPageAbout.PerformLayout();
+            this.groupBoxLanguage.ResumeLayout(false);
             this.groupBoxLinks.ResumeLayout(false);
             this.groupBoxLinks.PerformLayout();
             this.tabPageReadMe.ResumeLayout(false);
@@ -1037,11 +1053,12 @@
         private System.Windows.Forms.RichTextBox richTextBoxReadMeEn;
         private System.Windows.Forms.TabPage tabPageReadMeRu;
         private System.Windows.Forms.RichTextBox richTextBoxReadMeRU;
-        private System.Windows.Forms.GroupBox groupBoxLanguage;
-        private System.Windows.Forms.ComboBox comboBoxLanguageSelect;
         private System.Windows.Forms.LinkLabel linkLabelSourceCode;
         private System.Windows.Forms.Button btnReportABug;
         private System.Windows.Forms.Button btnRemoveOldFirewallRules;
+        private System.Windows.Forms.GroupBox groupBoxLanguage;
+        private System.Windows.Forms.ComboBox comboBoxLanguageSelect;
+        private System.Windows.Forms.Button btnDestroyWindows78Spy;
     }
 }
 

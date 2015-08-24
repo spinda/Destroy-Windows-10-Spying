@@ -48,16 +48,16 @@ namespace DWS_Lite
             {
                 
             }
-
+            int WindowsBuildNumber = 0;
             // Check windows version
             using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\"))
             {
                 // в value массив из байт
-                int value = Convert.ToInt32(key.GetValue("CurrentBuildNumber"));
+                WindowsBuildNumber = Convert.ToInt32(key.GetValue("CurrentBuildNumber"));
                 key.Close();
-                if (value < 10000)
+                if (WindowsBuildNumber < 7600)
                 {
-                    MessageBox.Show("This program works only on Windows 10", "Error", MessageBoxButtons.OK,
+                    MessageBox.Show("Minimum windows version - 7", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     Process.GetCurrentProcess().Kill();
                 }
@@ -90,6 +90,15 @@ namespace DWS_Lite
             }
             SetLanguage(langname);
             ChangeLanguage();
+            // check Win 7 or 8.1
+            if (WindowsBuildNumber < 10000)
+            {
+                tabPageUtilites.Enabled = false;
+                tabPageSettings.Enabled = false;
+                btnDestroyWindowsSpying.Visible = false;
+                btnDestroyWindows78Spy.Visible = true;
+            }
+            //------------------------------------------
         }
 
         void SetLanguage(string currentlang = null)
@@ -484,41 +493,7 @@ namespace DWS_Lite
             progressbaradd(15); //25
             if (checkBoxAddToHosts.Checked)
             {
-                try
-                {
-                    string hostslocation = system32location + @"drivers\etc\hosts";
-                    string hosts = null;
-                    if (File.Exists(hostslocation))
-                    {
-                        hosts = File.ReadAllText(hostslocation);
-                        File.SetAttributes(hostslocation, FileAttributes.Normal);
-                        DeleteFile(hostslocation);
-                    }
-                    File.Create(hostslocation).Close();
-                    File.WriteAllText(hostslocation, hosts + "\r\n");
-                    for (int i = 0; i < HostsDomains.hostsdomains.Length; i++)
-                    {
-                        if (hosts.IndexOf(HostsDomains.hostsdomains[i]) == -1)
-                        {
-                            ProcStartargs(ShellCmdLocation,
-                                "/c echo " + "0.0.0.0 " + HostsDomains.hostsdomains[i] + " >> \"" + hostslocation +
-                                "\"");
-                            output("Add to hosts - " + HostsDomains.hostsdomains[i]);
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    fatalerrors++;
-                    output("Error add HOSTS");
-                }
-                ProcStartargs(ShellCmdLocation, "/c ipconfig /flushdns");
-
-                output("Add hosts MS complete.");
-                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block\"");
-                ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS Spynet block\" dir=out interface=any action=block remoteip=23.96.0.0/13");
-                output("Add Windows Firewall rule: \"MS Spynet block\"");
-
+                disablehostsandaddfirewall();
             }
             progressbaradd(20); //45
             if (checkBoxDisablePrivateSettings.Checked)
@@ -680,6 +655,47 @@ namespace DWS_Lite
                     }
                 }
             }
+        }
+
+
+        // Win 7/8.1 
+        void disablehostsandaddfirewall()
+        {
+            try
+            {
+                string hostslocation = system32location + @"drivers\etc\hosts";
+                string hosts = null;
+                if (File.Exists(hostslocation))
+                {
+                    hosts = File.ReadAllText(hostslocation);
+                    File.SetAttributes(hostslocation, FileAttributes.Normal);
+                    DeleteFile(hostslocation);
+                }
+                File.Create(hostslocation).Close();
+                File.WriteAllText(hostslocation, hosts + "\r\n");
+                for (int i = 0; i < HostsDomains.hostsdomains.Length; i++)
+                {
+                    if (hosts.IndexOf(HostsDomains.hostsdomains[i]) == -1)
+                    {
+                        ProcStartargs(ShellCmdLocation,
+                            "/c echo " + "0.0.0.0 " + HostsDomains.hostsdomains[i] + " >> \"" + hostslocation +
+                            "\"");
+                        output("Add to hosts - " + HostsDomains.hostsdomains[i]);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                fatalerrors++;
+                output("Error add HOSTS");
+            }
+            ProcStartargs(ShellCmdLocation, "/c ipconfig /flushdns");
+
+            output("Add hosts MS complete.");
+            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block\"");
+            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall add rule name=\"MS Spynet block\" dir=out interface=any action=block remoteip=23.96.0.0/13");
+            output("Add Windows Firewall rule: \"MS Spynet block\"");
+
         }
 
         private void RemoveWindows10Apps()
@@ -970,7 +986,26 @@ namespace DWS_Lite
             }).Start();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void linkLabelSourceCode_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying");
+        }
+
+        private void btnRemoveOldFirewallRules_Click(object sender, EventArgs e)
+        {
+            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 1\"");
+            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 2\"");
+            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 1\"");
+            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 2\"");
+            MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"));
+        }
+
+        private void btnReportABug_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying/issues/new");
+        }
+
+        private void comboBoxLanguageSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "ru-RU")
             {
@@ -989,23 +1024,20 @@ namespace DWS_Lite
             }
         }
 
-        private void linkLabelSourceCode_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnDestroyWindows78Spy_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying");
-        }
-
-        private void btnRemoveOldFirewallRules_Click(object sender, EventArgs e)
-        {
-            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 1\"");
-            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS Spynet block 2\"");
-            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 1\"");
-            ProcStartargs(ShellCmdLocation, "/c netsh advfirewall firewall delete rule name=\"MS telemetry block 2\"");
-            MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"));
-        }
-
-        private void btnReportABug_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying/issues/new");
+            btnDestroyWindows78Spy.Enabled = false;
+            fatalerrors = 0;
+            new Thread(() =>
+            {
+                disablehostsandaddfirewall();
+                Invoke(new MethodInvoker(delegate
+                {
+                    btnDestroyWindows78Spy.Enabled = true;
+                    MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"), MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }));
+            }).Start();
         }
     }
 }
