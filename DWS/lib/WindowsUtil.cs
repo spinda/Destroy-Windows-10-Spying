@@ -37,7 +37,7 @@ namespace DWS_Lite.lib
         }
         public static bool isLUAEnabled()
         {
-            return Convert.ToBoolean(readSubKeyValue(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\", "EnableLUA"));
+            return !Convert.ToBoolean(readSubKeyValue(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\", "EnableLUA"));
         }
 
         public static int isSystemRestoreEnabled()
