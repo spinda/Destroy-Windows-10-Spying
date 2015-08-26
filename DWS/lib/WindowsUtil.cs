@@ -40,9 +40,9 @@ namespace DWS_Lite.lib
             return Convert.ToBoolean(readSubKeyValue(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\", "EnableLUA"));
         }
 
-        public static bool isSystemRestoreEnabled()
+        public static int isSystemRestoreEnabled()
         {
-            return Convert.ToBoolean(readSubKeyValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore\", "RPSessionInterval"));
+            return Convert.ToInt32(readSubKeyValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore\", "RPSessionInterval"));
         }
 
         public static string getSystemProductName()

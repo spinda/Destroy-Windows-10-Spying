@@ -202,7 +202,7 @@ namespace DWS_Lite
                 btnDisableUac.Enabled = true;
             }
 
-            if (WindowsUtil.isSystemRestoreEnabled())
+            if (WindowsUtil.isSystemRestoreEnabled() == 0)
             {
                 checkBoxCreateSystemRestorePoint.Checked = false;
                 checkBoxCreateSystemRestorePoint.Enabled = false;
