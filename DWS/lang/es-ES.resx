@@ -118,122 +118,117 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
-    <value>Supprimer toutes les applications Metro de Windows 10</value>
+    <value>Eliminar todas las apps Metro de Windows 10</value>
   </data>
   <data name="btnDeleteOneDrive" xml:space="preserve">
-    <value>Supprimer OneDrive</value>
+    <value>Eliminar One Drive</value>
   </data>
   <data name="btnOpenAndEditHosts" xml:space="preserve">
-    <value>Ouvrir et Modifier le fichier HOSTS</value>
+    <value>Abrir y editar el archivo HOSTS</value>
   </data>
   <data name="btnProfessionalMode" xml:space="preserve">
-    <value>Activer le Mode Professionnel</value>
+    <value>Habilitar modo profesional</value>
   </data>
   <data name="btnRestoreSystem" xml:space="preserve">
-    <value>Restaurer le Système</value>
+    <value>Restaurar sistema</value>
   </data>
   <data name="checkBoxAddToHosts" xml:space="preserve">
-    <value>Ajouter des domaines espion au fichier HOSTS et bloquer dans le pare-feu Windows</value>
+    <value>Añadir dominios espía al archivo Hosts, y bloquearlos en el Firewall de Windows</value>
   </data>
   <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
-    <value>Créer un point de restauration système</value>
+    <value>Crear punto de restauración</value>
   </data>
   <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
-    <value>Supprimer les applications Métro de Windows 10</value>
+    <value>Eliminar Apps Metro de Windows 10</value>
   </data>
   <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
-    <value>Désactiver les paramètres privés</value>
+    <value>Deshabilitar configuración privada</value>
   </data>
   <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
-    <value>Désactiver Windows Defender</value>
+    <value>Deshabilitar Windows Defender</value>
   </data>
   <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
-    <value>Supprimer le KeyLogger et la Télémétrie</value>
+    <value>Eliminar Keylogger y Telemetría</value>
   </data>
   <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
-    <value>Visionneuse de photos Windows par défaut</value>
+    <value>Establecer el visor de imágenes por defecto de Windows</value>
   </data>
   <data name="checkBoxSPYTasks" xml:space="preserve">
-    <value>Désactiver les tâches de l'Espion</value>
+    <value>Deshabilitar tareas espía</value>
   </data>
-  <data name="Complete" xml:space="preserve">
-    <value>Complete</value>
+  <data name="Compele" xml:space="preserve">
+    <value>Finalizado</value>
   </data>
   <data name="CompleteMSG" xml:space="preserve">
-    <value>Fini!
-Un redémarrage est nécessaire pour désactiver tous les logiciels espions.
-Redémarrer maintenant ?</value>
+    <value>Finalizado!
+Un reinicio es necesario para deshabilitar todo el spyware. Reiniciar ahora?</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Supprimer</value>
+    <value>Eliminar</value>
   </data>
   <data name="DeleteApps" xml:space="preserve">
-    <value>Supprimer les applications</value>
+    <value>Eliminar apps</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Désactiver</value>
+    <value>Deshabilitar</value>
   </data>
   <data name="Enable" xml:space="preserve">
-    <value>Activer</value>
+    <value>Habilitar</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Erreur</value>
+    <value>Error</value>
   </data>
   <data name="ErrorMSG" xml:space="preserve">
-    <value>Fini avec des erreurs - {0}
-Un redémarrage est nécessaire pour désactiver tous les logiciels espions.
-Redémarrer maintenant?</value>
+    <value>Finalizado. Errores - {0}
+Un reinicio es necesario para deshabilitar todo el spyware. Reiniciar ahora?</value>
   </data>
   <data name="Info" xml:space="preserve">
     <value>Info</value>
   </data>
   <data name="labelInfoDeleteMetroApps" xml:space="preserve">
-    <value>Les applications METRO sont définitivement supprimés, sans possibilité de récupération.</value>
+    <value>Las aplicaciones METRO son eliminadas permanentemente, sin posibilidad de recuperación.</value>
   </data>
   <data name="Links" xml:space="preserve">
-    <value>Liens</value>
+    <value>Links</value>
   </data>
   <data name="PressOkAndWait15" xml:space="preserve">
-    <value>Appuyez sur OK et attendez 15 minutes.</value>
+    <value>Presiona OK, y espera 15 minutos.</value>
   </data>
   <data name="Question" xml:space="preserve">
-    <value>Question</value>
+    <value>Pregunta</value>
   </data>
   <data name="Really" xml:space="preserve">
-    <value>Vraiment ?</value>
+    <value>¿Estás seguro?</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Nécessite un redémarrage.
-Redémarrer maintenant ?</value>
+    <value>Requiere un reinicio.
+¿Reiniciar ahora?</value>
   </data>
   <data name="RunOnlyWin10" xml:space="preserve">
-    <value>Ce programme ne fonctionne que sur Windows 10</value>
+    <value>Esta aplicación solo funciona en Windows 10</value>
   </data>
   <data name="tabPageAbout" xml:space="preserve">
-    <value>À propos</value>
+    <value>Acerca de</value>
   </data>
   <data name="tabPageMain" xml:space="preserve">
     <value>Principal</value>
   </data>
   <data name="tabPageReadMe" xml:space="preserve">
-    <value>Lisez Moi</value>
+    <value>Léeme</value>
   </data>
   <data name="tabPageSettings" xml:space="preserve">
-    <value>Paramètres</value>
+    <value>Configuración</value>
   </data>
   <data name="tabPageUtilites" xml:space="preserve">
-    <value>Utilitaires</value>
+    <value>Utilidades</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Attention</value>
-  </data>
-  <data name="DestroyWindowsSpying" xml:space="preserve">
-    <value>Détruire les Espions de Windows 10</value>
+    <value>Advertencia</value>
   </data>
   <data name="RemoveAllOldFirewallRules" xml:space="preserve">
-    <value>Remove all old DWS firewall rules</value>
+    <value>Eliminar todas las reglas anteriores de DWS</value>
   </data>
   <data name="ReportABug" xml:space="preserve">
-    <value>Report a bug</value>
+    <value>Informar de un error</value>
   </data>
 </root>

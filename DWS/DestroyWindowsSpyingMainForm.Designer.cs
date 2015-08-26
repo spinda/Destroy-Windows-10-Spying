@@ -92,6 +92,8 @@
             this.richTextBoxReadMeEn = new System.Windows.Forms.RichTextBox();
             this.tabPageReadMeRu = new System.Windows.Forms.TabPage();
             this.richTextBoxReadMeRU = new System.Windows.Forms.RichTextBox();
+            this.tabPageReadMeES = new System.Windows.Forms.TabPage();
+            this.richTextBoxReadMeEs = new System.Windows.Forms.RichTextBox();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -105,6 +107,7 @@
             this.tabControlReadMERUEN.SuspendLayout();
             this.tabPageReadMeEn.SuspendLayout();
             this.tabPageReadMeRu.SuspendLayout();
+            this.tabPageReadMeES.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormTabsControl
@@ -735,7 +738,8 @@
             this.comboBoxLanguageSelect.Items.AddRange(new object[] {
             "en-US | English",
             "ru-RU | Русский",
-            "fr-FR | French"});
+            "fr-FR | French",
+            "es-ES | Spanish"});
             this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
             this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
             this.comboBoxLanguageSelect.Size = new System.Drawing.Size(202, 21);
@@ -905,6 +909,7 @@
             // 
             this.tabControlReadMERUEN.Controls.Add(this.tabPageReadMeEn);
             this.tabControlReadMERUEN.Controls.Add(this.tabPageReadMeRu);
+            this.tabControlReadMERUEN.Controls.Add(this.tabPageReadMeES);
             this.tabControlReadMERUEN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlReadMERUEN.Location = new System.Drawing.Point(0, 0);
             this.tabControlReadMERUEN.Name = "tabControlReadMERUEN";
@@ -958,6 +963,28 @@
             this.richTextBoxReadMeRU.TabIndex = 1;
             this.richTextBoxReadMeRU.Text = resources.GetString("richTextBoxReadMeRU.Text");
             // 
+            // tabPageReadMeES
+            // 
+            this.tabPageReadMeES.Controls.Add(this.richTextBoxReadMeEs);
+            this.tabPageReadMeES.Location = new System.Drawing.Point(4, 22);
+            this.tabPageReadMeES.Name = "tabPageReadMeES";
+            this.tabPageReadMeES.Size = new System.Drawing.Size(437, 374);
+            this.tabPageReadMeES.TabIndex = 2;
+            this.tabPageReadMeES.Text = "Léeme (ES)";
+            this.tabPageReadMeES.UseVisualStyleBackColor = true;
+            // 
+            // richTextBoxReadMeEs
+            // 
+            this.richTextBoxReadMeEs.BackColor = System.Drawing.Color.White;
+            this.richTextBoxReadMeEs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxReadMeEs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxReadMeEs.Location = new System.Drawing.Point(0, 0);
+            this.richTextBoxReadMeEs.Name = "richTextBoxReadMeEs";
+            this.richTextBoxReadMeEs.ReadOnly = true;
+            this.richTextBoxReadMeEs.Size = new System.Drawing.Size(437, 374);
+            this.richTextBoxReadMeEs.TabIndex = 1;
+            this.richTextBoxReadMeEs.Text = resources.GetString("richTextBoxReadMeEs.Text");
+            // 
             // DestroyWindowsSpyingMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -990,6 +1017,7 @@
             this.tabControlReadMERUEN.ResumeLayout(false);
             this.tabPageReadMeEn.ResumeLayout(false);
             this.tabPageReadMeRu.ResumeLayout(false);
+            this.tabPageReadMeES.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1059,6 +1087,8 @@
         private System.Windows.Forms.GroupBox groupBoxLanguage;
         private System.Windows.Forms.ComboBox comboBoxLanguageSelect;
         private System.Windows.Forms.Button btnDestroyWindows78Spy;
+        private System.Windows.Forms.TabPage tabPageReadMeES;
+        private System.Windows.Forms.RichTextBox richTextBoxReadMeEs;
     }
 }
 

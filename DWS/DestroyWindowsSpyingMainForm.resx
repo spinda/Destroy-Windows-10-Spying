@@ -162,4 +162,26 @@ Other thanks: Чёрная поганка, Архангел.</value>
 Огромное спасибо людям: @WzorNET , @MicrosoftInside , @rgadguard , @DiamondMonday , @Ratiborus58
 Огромное спасибо другим людям: Чёрная поганка, Архангел.</value>
   </data>
+  <data name="richTextBoxReadMeEs.Text" xml:space="preserve">
+    <value>1.5
+
+Cambios:
+1. La aplicación se rescribe desde cero. Su tamaño se reduce.
+2. Cambios forzados en el archivo HOSTS. No deberían de ocurrir problemas.
+3. Hosts ahora utilizan la dirección IP 0.0.0.0 .
+4. La aplicación crea un punto de restauración.
+5. La configuración está dividida en 2 tipos. Profesional y normal.
+6. Añadida una comprobación si está habilitado o deshabilitado UAC.
+7. Un menú más expandido para Eliminar aplicaciones.
+8. La utilidad añade un botón para Restaurar el Sistema.
+9. Solucionado el desactivar Windows Update.
+
+!!! ATENCIÓN !!!
+ESTA APLICACIÓN CAUSA ALGUNOS CAMBIOS IRREVERSIBLES !!!
+SI NO SABES EL SIGNIFICADO DE ALGUNAS FUNCIONES, NO HABILITES EL MODO PROFESIONAL !!!
+
+Gracias a los testers: moldabekovm, artemiy, DiamondMonday.
+Gracias: @WzorNET , @MicrosoftInside , @rgadguard , @DiamondMonday , @Ratiborus58
+Gracias adicionales: Чёрная поганка, Архангел.</value>
+  </data>
 </root>
