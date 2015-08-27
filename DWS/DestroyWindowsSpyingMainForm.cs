@@ -366,13 +366,13 @@ namespace DWS_Lite
         private void SetRegValueHKCU(string regkeyfolder, string paramname, string paramvalue,
             Microsoft.Win32.RegistryValueKind keytype)
         {
+
+            RegistryKey myKey = Registry.CurrentUser.OpenSubKey(regkeyfolder, true);
             try
             {
-                RegistryKey myKey = Registry.CurrentUser.OpenSubKey(regkeyfolder, true);
                 if (myKey != null)
                 {
                     myKey.SetValue(paramname, paramvalue, keytype);
-                    myKey.Close();
                 }
             }
             catch (Exception ex)
@@ -380,6 +380,8 @@ namespace DWS_Lite
                 fatalerrors++;
                 output(GetTranslateText("Error") + ": " + ex.Message);
             }
+
+            myKey.Close();
         }
 
         private void DeleteWindows10MetroApp(string appname)
@@ -390,13 +392,13 @@ namespace DWS_Lite
         private void SetRegValueHKLM(string regkeyfolder, string paramname, string paramvalue,
             Microsoft.Win32.RegistryValueKind keytype)
         {
+
+            RegistryKey myKey = Registry.LocalMachine.OpenSubKey(regkeyfolder, true);
             try
             {
-                RegistryKey myKey = Registry.LocalMachine.OpenSubKey(regkeyfolder, true);
                 if (myKey != null)
                 {
                     myKey.SetValue(paramname, paramvalue, keytype);
-                    myKey.Close();
                 }
             }
             catch (Exception ex)
@@ -404,6 +406,7 @@ namespace DWS_Lite
                 fatalerrors++;
                 output(GetTranslateText("Error") + ": " + ex.Message);
             }
+            myKey.Close();
         }
 
         private void LogOutputTextBox_TextChanged(object sender, EventArgs e)

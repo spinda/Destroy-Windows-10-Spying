@@ -28,6 +28,7 @@ namespace DWS_Lite.lib
             catch (Exception ex)   //This exception is thrown
             {
                 MessageBox.Show("Error while reading registry key: " + subKey + "\\" + keyName + ". ErrorMessage: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                rkSubKey.Close();
                 return null;
             }
         }

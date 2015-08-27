@@ -853,10 +853,10 @@
             this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel3.Location = new System.Drawing.Point(123, 17);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(174, 13);
+            this.linkLabel3.Size = new System.Drawing.Size(175, 13);
             this.linkLabel3.TabIndex = 4;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Best windows acticator (KMS Auto)\r\n";
+            this.linkLabel3.Text = "Best windows activator (KMS Auto)";
             this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // label1
