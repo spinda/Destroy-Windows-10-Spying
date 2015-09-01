@@ -686,6 +686,70 @@ namespace DWS_Lite
         {
             try
             {
+                string[] hostsdomains =
+                {
+                    "vortex.data.microsoft.com",
+                    "vortex-win.data.microsoft.com",
+                    "telecommand.telemetry.microsoft.com",
+                    "telecommand.telemetry.microsoft.com.nsatc.net",
+                    "oca.telemetry.microsoft.com",
+                    "sqm.telemetry.microsoft.com",
+                    "sqm.telemetry.microsoft.com.nsatc.net",
+                    "watson.telemetry.microsoft.com",
+                    "watson.telemetry.microsoft.com.nsatc.net",
+                    "redir.metaservices.microsoft.com",
+                    "choice.microsoft.com",
+                    "choice.microsoft.com.nsatc.net",
+                    "wes.df.telemetry.microsoft.com",
+                    "services.wes.df.telemetry.microsoft.com",
+                    "sqm.df.telemetry.microsoft.com",
+                    "telemetry.microsoft.com",
+                    "watson.ppe.telemetry.microsoft.com",
+                    "telemetry.appex.bing.net",
+                    "telemetry.urs.microsoft.com",
+                    "telemetry.appex.bing.net:443",
+                    "settings-sandbox.data.microsoft.com",
+                    "survey.watson.microsoft.com",
+                    "watson.live.com",
+                    "watson.microsoft.com",
+                    "statsfe2.ws.microsoft.com",
+                    "corpext.msitadfs.glbdns2.microsoft.com",
+                    "compatexchange.cloudapp.net",
+                    "a-0001.a-msedge.net",
+                    "statsfe2.update.microsoft.com.akadns.net",
+                    "sls.update.microsoft.com.akadns.net",
+                    "fe2.update.microsoft.com.akadns.net",
+                    "diagnostics.support.microsoft.com",
+                    "corp.sts.microsoft.com",
+                    "statsfe1.ws.microsoft.com",
+                    "feedback.windows.com",
+                    "feedback.microsoft-hohm.com",
+                    "feedback.search.microsoft.com",
+                    "rad.msn.com",
+                    "preview.msn.com",
+                    "ad.doubleclick.net",
+                    "ads.msn.com",
+                    "ads1.msads.net",
+                    "ads1.msn.com",
+                    "a.ads1.msn.com",
+                    "a.ads2.msn.com",
+                    "adnexus.net",
+                    "adnxs.com",
+                    "az361816.vo.msecnd.net",
+                    "az512334.vo.msecnd.net",
+                    "ssw.live.com",
+                    "ca.telemetry.microsoft.com",
+                    "i1.services.social.microsoft.com",
+                    "i1.services.social.microsoft.com.nsatc.net",
+                    "df.telemetry.microsoft.com",
+                    "reports.wes.df.telemetry.microsoft.com",
+                    "cs1.wpc.v0cdn.net",
+                    "vortex-sandbox.data.microsoft.com",
+                    "oca.telemetry.microsoft.com.nsatc.net",
+                    "pre.footprintpredict.com",
+                    "spynet2.microsoft.com",
+                    "spynetalt.microsoft.com"
+                };
                 string hostslocation = system32location + @"drivers\etc\hosts";
                 string hosts = null;
                 if (File.Exists(hostslocation))
@@ -696,14 +760,14 @@ namespace DWS_Lite
                 }
                 File.Create(hostslocation).Close();
                 File.WriteAllText(hostslocation, hosts + "\r\n");
-                for (int i = 0; i < HostsDomains.hostsdomains.Length; i++)
+                for (int i = 0; i < hostsdomains.Length; i++)
                 {
-                    if (hosts.IndexOf(HostsDomains.hostsdomains[i]) == -1)
+                    if (hosts.IndexOf(hostsdomains[i]) == -1)
                     {
                         ProcStartargs(ShellCmdLocation,
-                            "/c echo " + "0.0.0.0 " + HostsDomains.hostsdomains[i] + " >> \"" + hostslocation +
+                            "/c echo " + "0.0.0.0 " + hostsdomains[i] + " >> \"" + hostslocation +
                             "\"");
-                        output("Add to hosts - " + HostsDomains.hostsdomains[i]);
+                        output("Add to hosts - " + hostsdomains[i]);
                     }
                 }
             }
@@ -715,17 +779,7 @@ namespace DWS_Lite
             ProcessUtil.RunCmd("/c ipconfig /flushdns");
 
             output("Add hosts MS complete.");
-            ProcessUtil.RunCmd("/c netsh advfirewall firewall delete rule name=\"MS Spynet block\"");
-            ProcessUtil.RunCmd("/c netsh advfirewall firewall add rule name=\"MS Spynet block\" dir=out interface=any action=block remoteip=23.96.0.0/13");
-            output("Add Windows Firewall rule: \"MS Spynet block\"");
-            ProcessUtil.RunCmd("/c route -p add 23.218.212.69 MASK 255.255.255.255 0.0.0.0");
-            ProcessUtil.RunCmd("/c route -p add 65.55.108.23 MASK 255.255.255.255 0.0.0.0");
-            ProcessUtil.RunCmd("/c route -p add 65.39.117.230 MASK 255.255.255.255 0.0.0.0");
-            ProcessUtil.RunCmd("/c route -p add 134.170.30.202 MASK 255.255.255.255 0.0.0.0");
-            ProcessUtil.RunCmd("/c route -p add 137.116.81.24 MASK 255.255.255.255 0.0.0.0");
-            ProcessUtil.RunCmd("/c route -p add 204.79.197.200 MASK 255.255.255.255 0.0.0.0");
-            ProcessUtil.RunCmd("/c route -p add 23.218.212.69 MASK 255.255.255.255 0.0.0.0");
-
+            BlockIpAddr();
         }
 
         private void RemoveWindows10Apps()
@@ -1067,6 +1121,7 @@ namespace DWS_Lite
             {
                 disablehostsandaddfirewall();
                 disablespytasks();
+                DeleteUpdatesWin78();
                 Invoke(new MethodInvoker(delegate
                 {
                     btnDestroyWindows78Spy.Enabled = true;
@@ -1074,6 +1129,98 @@ namespace DWS_Lite
                         MessageBoxIcon.Information);
                 }));
             }).Start();
+        }
+
+        void DeleteUpdatesWin78()
+        {
+            string[] updatesnumberlist =
+            {
+                    "3080149",
+                    "3075249",
+                    "2952664",
+                    "3035583",
+                    "3068708",
+                    "3022345",
+                    "3021917",
+                    "2976978",
+                    "3044374",
+                    "2990214",
+                    "971033",
+                    "3075851"
+            };
+            for (int i = 0; i < updatesnumberlist.Length; i++)
+            {
+                ProcessUtil.RunCmd("/c start /wait wusa /uninstall /norestart /quiet /kb:" + updatesnumberlist[i]);
+                output("Remove update KB" + updatesnumberlist[i]);
+            }
+        }
+
+        void BlockIpAddr()
+        {
+            string[] IpAddr =
+            {
+                "111.221.29.177",
+                "111.221.29.253",
+                "131.253.40.37",
+                "134.170.30.202",
+                "134.170.115.60",
+                "134.170.165.248",
+                "134.170.165.253",
+                "134.170.185.70",
+                "137.116.81.24",
+                "137.117.235.16",
+                "157.55.129.21",
+                "157.55.133.204",
+                "157.56.121.89",
+                "157.56.91.77",
+                "168.63.108.233",
+                "184.86.56.12",
+                "185.13.160.61",
+                "191.232.139.254",
+                "191.232.80.58",
+                "191.232.80.62",
+                "191.237.208.126",
+                "204.79.197.200",
+                "207.46.101.29",
+                "207.46.114.58",
+                "207.46.223.94",
+                "207.68.166.254",
+                "212.30.134.204",
+                "212.30.134.205",
+                "23.102.21.4",
+                "23.99.10.11",
+                "23.218.212.69",
+                "64.4.54.22",
+                "64.4.54.32",
+                "64.4.6.100",
+                "65.39.117.230",
+                "65.52.100.11",
+                "65.52.100.7",
+                "65.52.100.9",
+                "65.52.100.91",
+                "65.52.100.92",
+                "65.52.100.93",
+                "65.52.100.94",
+                "65.52.108.29",
+                "65.55.108.23",
+                "65.55.138.114",
+                "65.55.138.126",
+                "65.55.138.186",
+                "65.55.252.63",
+                "65.55.252.71",
+                "65.55.252.92",
+                "65.55.252.93",
+                "65.55.29.238",
+                "65.55.39.10"
+            };
+            for (int i = 0; i < IpAddr.Length; i++)
+            {
+                ProcessUtil.RunCmd("/c route -p ADD " + IpAddr[i] + " MASK 255.255.255.255 0.0.0.0");
+                ProcessUtil.RunCmd("/c netsh advfirewall firewall delete rule name=\"" + IpAddr[i] + "_Block\"");
+                ProcessUtil.RunCmd("/c netsh advfirewall firewall add rule name=\"" + IpAddr[i] + "_Block\" dir=out interface=any action=block remoteip=" + IpAddr[i]);
+                output("Add Windows Firewall rule: \"" + IpAddr[i] + "_Block\"");
+            }
+            output("Ip list blocked");
         }
     }
 }

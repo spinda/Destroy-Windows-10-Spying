@@ -150,7 +150,7 @@
             this.btnDestroyWindows78Spy.Name = "btnDestroyWindows78Spy";
             this.btnDestroyWindows78Spy.Size = new System.Drawing.Size(429, 50);
             this.btnDestroyWindows78Spy.TabIndex = 4;
-            this.btnDestroyWindows78Spy.Text = "Destroy Windows 7/8.1 Spying\r\nKB3080149 | KB3075249";
+            this.btnDestroyWindows78Spy.Text = "Destroy Windows 7/8.1 Spying\r\nRemove updates, tasks, and other )";
             this.btnDestroyWindows78Spy.UseVisualStyleBackColor = false;
             this.btnDestroyWindows78Spy.Visible = false;
             this.btnDestroyWindows78Spy.Click += new System.EventHandler(this.btnDestroyWindows78Spy_Click);
