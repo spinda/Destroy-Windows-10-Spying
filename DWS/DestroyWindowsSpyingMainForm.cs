@@ -31,6 +31,7 @@ namespace DWS_Lite
         private string ShellCmdLocation = null;
         private string system32location = null;
         private string logfilename = "DWS.log";
+        private bool Win10 = true;
 
         public DestroyWindowsSpyingMainForm(string[] args)
         {
@@ -53,7 +54,36 @@ namespace DWS_Lite
 
             SetLanguage(getLang(args));
             ChangeLanguage();
+            StealthMode(args);
+        }
 
+        void StealthMode(string[] args)
+        {
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i].IndexOf("/deleteapp=") > -1)
+                {
+                    DeleteWindows10MetroApp(args[i].Replace("/deleteapp=", null));
+                    Process.GetCurrentProcess().Kill();
+                }
+                if (args[i].IndexOf("/destroy") > -1)
+                {
+                    this.WindowState = FormWindowState.Minimized;
+                    this.ShowInTaskbar = false;
+                    //Windows 10
+                    if (Win10)
+                    {
+                        DWSThread();
+                    }
+                    else
+                    {
+                        disablehostsandaddfirewall();
+                        disablespytasks();
+                        DeleteUpdatesWin78();
+                    }
+                    Process.GetCurrentProcess().Kill();
+                }
+            }
         }
 
         private string getLang(string[] args)
@@ -83,10 +113,10 @@ namespace DWS_Lite
                 system32location = path + @"Windows\System32\";
             }
         }
+
         private void CheckWindowsVersion()
         {
             int WindowsBuildNumber = WindowsUtil.getWindowsBuildNumber();
-
 
             if (WindowsBuildNumber < 7600)
             {
@@ -98,6 +128,7 @@ namespace DWS_Lite
             // check Win 7 or 8.1
             if (WindowsBuildNumber < 10000)
             {
+                Win10 = false;
                 tabPageUtilites.Enabled = false;
                 tabPageSettings.Enabled = false;
                 btnDestroyWindowsSpying.Visible = false;
@@ -127,6 +158,11 @@ namespace DWS_Lite
                 rm = lang.es_ES.ResourceManager;
                 comboBoxLanguageSelect.Text = "es-ES | Spanish";
             }
+            else if (currentlang.IndexOf("pt") > -1)
+            {
+                rm = lang.pt_BR.ResourceManager;
+                comboBoxLanguageSelect.Text = "pt-BR | Portuguese";
+            }
             else
             {
                 rm = lang.en_US.ResourceManager;
@@ -136,6 +172,7 @@ namespace DWS_Lite
 
         void ChangeLanguage()
         {
+            ReadmeRichTextBox.Text = GetTranslateText("ReadMeTextBox");
             tabPageMain.Text = GetTranslateText("tabPageMain");
             tabPageAbout.Text = GetTranslateText("tabPageAbout");
             tabPageReadMe.Text = GetTranslateText("tabPageReadMe");
@@ -360,9 +397,6 @@ namespace DWS_Lite
 
         }
 
-
-
-
         private void SetRegValueHKCU(string regkeyfolder, string paramname, string paramvalue,
             Microsoft.Win32.RegistryValueKind keytype)
         {
@@ -434,7 +468,7 @@ namespace DWS_Lite
             }).Start();
         }
 
-        private void DWSThread()
+        private void  DWSThread()
         {
             if (checkBoxCreateSystemRestorePoint.Checked)
             {
@@ -544,9 +578,18 @@ namespace DWS_Lite
             progressbaradd(10); //55
             if (checkBoxDisableWindowsDefender.Checked)
             {
-                SetRegValueHKLM(@"SOFTWARE\Policies\Microsoft\Windows Defender", "DisableAntiSpyware", "1",
-                    RegistryValueKind.DWord);
-                output("Disable Windows Defender.");
+                try
+                {
+                    SetRegValueHKLM(@"SOFTWARE\Policies\Microsoft\Windows Defender", "DisableAntiSpyware", "1",
+                        RegistryValueKind.DWord);
+                    output("Disable Windows Defender.");
+                }
+                catch (Exception ex)
+                {
+                    output("Error disable windows Defender");
+                    output(ex.Message);
+                    fatalerrors++;
+                }
             }
             progressbaradd(5); //60
             if (checkBoxSetDefaultPhoto.Checked)
@@ -611,6 +654,7 @@ namespace DWS_Lite
                         DialogResult.Yes)
                     {
                         Process.Start("shutdown.exe", "-r -t 0");
+                        Process.GetCurrentProcess().Kill();
                     }
                 }
                 else
@@ -623,6 +667,7 @@ namespace DWS_Lite
                         DialogResult.Yes)
                     {
                         Process.Start("shutdown.exe", "-r -t 0");
+                        Process.GetCurrentProcess().Kill();
                     }
                 }
             }
@@ -962,7 +1007,7 @@ namespace DWS_Lite
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://goo.gl/uzXaHM");
+            Process.Start("http://goo.gl/Xb9sy7");
         }
 
         private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1104,6 +1149,11 @@ namespace DWS_Lite
             else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "es-ES")
             {
                 rm = lang.es_ES.ResourceManager;
+                ChangeLanguage();
+            }
+            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "pt-BR")
+            {
+                rm = lang.pt_BR.ResourceManager;
                 ChangeLanguage();
             }
             else

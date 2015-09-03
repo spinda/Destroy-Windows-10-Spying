@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DestroyWindowsSpyingMainForm));
             this.FormTabsControl = new System.Windows.Forms.TabControl();
             this.tabPageMain = new System.Windows.Forms.TabPage();
             this.btnDestroyWindows78Spy = new System.Windows.Forms.Button();
@@ -87,13 +86,7 @@
             this.About_Info = new System.Windows.Forms.Label();
             this.labelBuildDataTime = new System.Windows.Forms.Label();
             this.tabPageReadMe = new System.Windows.Forms.TabPage();
-            this.tabControlReadMERUEN = new System.Windows.Forms.TabControl();
-            this.tabPageReadMeEn = new System.Windows.Forms.TabPage();
-            this.richTextBoxReadMeEn = new System.Windows.Forms.RichTextBox();
-            this.tabPageReadMeRu = new System.Windows.Forms.TabPage();
-            this.richTextBoxReadMeRU = new System.Windows.Forms.RichTextBox();
-            this.tabPageReadMeES = new System.Windows.Forms.TabPage();
-            this.richTextBoxReadMeEs = new System.Windows.Forms.RichTextBox();
+            this.ReadmeRichTextBox = new System.Windows.Forms.RichTextBox();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -104,10 +97,6 @@
             this.groupBoxLanguage.SuspendLayout();
             this.groupBoxLinks.SuspendLayout();
             this.tabPageReadMe.SuspendLayout();
-            this.tabControlReadMERUEN.SuspendLayout();
-            this.tabPageReadMeEn.SuspendLayout();
-            this.tabPageReadMeRu.SuspendLayout();
-            this.tabPageReadMeES.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormTabsControl
@@ -739,7 +728,8 @@
             "en-US | English",
             "ru-RU | Русский",
             "fr-FR | French",
-            "es-ES | Spanish"});
+            "es-ES | Spanish",
+            "pt-BR | Portuguese"});
             this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
             this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
             this.comboBoxLanguageSelect.Size = new System.Drawing.Size(202, 21);
@@ -814,12 +804,12 @@
             // 
             this.linkLabel5.AutoSize = true;
             this.linkLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel5.Location = new System.Drawing.Point(298, 17);
+            this.linkLabel5.Location = new System.Drawing.Point(128, 37);
             this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(127, 13);
+            this.linkLabel5.Size = new System.Drawing.Size(113, 13);
             this.linkLabel5.TabIndex = 7;
             this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "forum RU (rutracker.org)";
+            this.linkLabel5.Text = "Тема на rutracker.org";
             this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
             // 
             // linkLabel4
@@ -827,19 +817,19 @@
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabel4.Location = new System.Drawing.Point(163, 37);
+            this.linkLabel4.Location = new System.Drawing.Point(247, 37);
             this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(263, 13);
+            this.linkLabel4.Size = new System.Drawing.Size(110, 13);
             this.linkLabel4.TabIndex = 5;
             this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "forum RU,EN (support, and other) (multi-cheats.com)";
+            this.linkLabel4.Text = "Thread on MDL forum";
             this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Location = new System.Drawing.Point(72, 17);
+            this.linkLabel2.Location = new System.Drawing.Point(78, 17);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(50, 13);
             this.linkLabel2.TabIndex = 3;
@@ -851,7 +841,7 @@
             // 
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel3.Location = new System.Drawing.Point(123, 17);
+            this.linkLabel3.Location = new System.Drawing.Point(134, 17);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(175, 13);
             this.linkLabel3.TabIndex = 4;
@@ -897,7 +887,7 @@
             // 
             // tabPageReadMe
             // 
-            this.tabPageReadMe.Controls.Add(this.tabControlReadMERUEN);
+            this.tabPageReadMe.Controls.Add(this.ReadmeRichTextBox);
             this.tabPageReadMe.Location = new System.Drawing.Point(4, 22);
             this.tabPageReadMe.Name = "tabPageReadMe";
             this.tabPageReadMe.Size = new System.Drawing.Size(445, 400);
@@ -905,85 +895,17 @@
             this.tabPageReadMe.Text = "ReadME";
             this.tabPageReadMe.UseVisualStyleBackColor = true;
             // 
-            // tabControlReadMERUEN
+            // ReadmeRichTextBox
             // 
-            this.tabControlReadMERUEN.Controls.Add(this.tabPageReadMeEn);
-            this.tabControlReadMERUEN.Controls.Add(this.tabPageReadMeRu);
-            this.tabControlReadMERUEN.Controls.Add(this.tabPageReadMeES);
-            this.tabControlReadMERUEN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlReadMERUEN.Location = new System.Drawing.Point(0, 0);
-            this.tabControlReadMERUEN.Name = "tabControlReadMERUEN";
-            this.tabControlReadMERUEN.SelectedIndex = 0;
-            this.tabControlReadMERUEN.Size = new System.Drawing.Size(445, 400);
-            this.tabControlReadMERUEN.TabIndex = 0;
-            // 
-            // tabPageReadMeEn
-            // 
-            this.tabPageReadMeEn.Controls.Add(this.richTextBoxReadMeEn);
-            this.tabPageReadMeEn.Location = new System.Drawing.Point(4, 22);
-            this.tabPageReadMeEn.Name = "tabPageReadMeEn";
-            this.tabPageReadMeEn.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageReadMeEn.Size = new System.Drawing.Size(437, 374);
-            this.tabPageReadMeEn.TabIndex = 0;
-            this.tabPageReadMeEn.Text = "Read ME (ENG)";
-            this.tabPageReadMeEn.UseVisualStyleBackColor = true;
-            // 
-            // richTextBoxReadMeEn
-            // 
-            this.richTextBoxReadMeEn.BackColor = System.Drawing.Color.White;
-            this.richTextBoxReadMeEn.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxReadMeEn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxReadMeEn.Location = new System.Drawing.Point(3, 3);
-            this.richTextBoxReadMeEn.Name = "richTextBoxReadMeEn";
-            this.richTextBoxReadMeEn.ReadOnly = true;
-            this.richTextBoxReadMeEn.Size = new System.Drawing.Size(431, 368);
-            this.richTextBoxReadMeEn.TabIndex = 0;
-            this.richTextBoxReadMeEn.Text = resources.GetString("richTextBoxReadMeEn.Text");
-            // 
-            // tabPageReadMeRu
-            // 
-            this.tabPageReadMeRu.Controls.Add(this.richTextBoxReadMeRU);
-            this.tabPageReadMeRu.Location = new System.Drawing.Point(4, 22);
-            this.tabPageReadMeRu.Name = "tabPageReadMeRu";
-            this.tabPageReadMeRu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageReadMeRu.Size = new System.Drawing.Size(437, 374);
-            this.tabPageReadMeRu.TabIndex = 1;
-            this.tabPageReadMeRu.Text = "Прочитай меня (РУС)";
-            this.tabPageReadMeRu.UseVisualStyleBackColor = true;
-            // 
-            // richTextBoxReadMeRU
-            // 
-            this.richTextBoxReadMeRU.BackColor = System.Drawing.Color.White;
-            this.richTextBoxReadMeRU.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxReadMeRU.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxReadMeRU.Location = new System.Drawing.Point(3, 3);
-            this.richTextBoxReadMeRU.Name = "richTextBoxReadMeRU";
-            this.richTextBoxReadMeRU.ReadOnly = true;
-            this.richTextBoxReadMeRU.Size = new System.Drawing.Size(431, 368);
-            this.richTextBoxReadMeRU.TabIndex = 1;
-            this.richTextBoxReadMeRU.Text = resources.GetString("richTextBoxReadMeRU.Text");
-            // 
-            // tabPageReadMeES
-            // 
-            this.tabPageReadMeES.Controls.Add(this.richTextBoxReadMeEs);
-            this.tabPageReadMeES.Location = new System.Drawing.Point(4, 22);
-            this.tabPageReadMeES.Name = "tabPageReadMeES";
-            this.tabPageReadMeES.Size = new System.Drawing.Size(437, 374);
-            this.tabPageReadMeES.TabIndex = 2;
-            this.tabPageReadMeES.Text = "Léeme (ES)";
-            this.tabPageReadMeES.UseVisualStyleBackColor = true;
-            // 
-            // richTextBoxReadMeEs
-            // 
-            this.richTextBoxReadMeEs.BackColor = System.Drawing.Color.White;
-            this.richTextBoxReadMeEs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxReadMeEs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxReadMeEs.Location = new System.Drawing.Point(0, 0);
-            this.richTextBoxReadMeEs.Name = "richTextBoxReadMeEs";
-            this.richTextBoxReadMeEs.ReadOnly = true;
-            this.richTextBoxReadMeEs.Size = new System.Drawing.Size(437, 374);
-            this.richTextBoxReadMeEs.TabIndex = 1;
-            this.richTextBoxReadMeEs.Text = resources.GetString("richTextBoxReadMeEs.Text");
+            this.ReadmeRichTextBox.BackColor = System.Drawing.Color.White;
+            this.ReadmeRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ReadmeRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReadmeRichTextBox.Location = new System.Drawing.Point(0, 0);
+            this.ReadmeRichTextBox.Name = "ReadmeRichTextBox";
+            this.ReadmeRichTextBox.ReadOnly = true;
+            this.ReadmeRichTextBox.Size = new System.Drawing.Size(445, 400);
+            this.ReadmeRichTextBox.TabIndex = 0;
+            this.ReadmeRichTextBox.Text = "";
             // 
             // DestroyWindowsSpyingMainForm
             // 
@@ -997,7 +919,7 @@
             this.MaximizeBox = false;
             this.Name = "DestroyWindowsSpyingMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DWS Lite 1.5 build ";
+            this.Text = "DWS Lite                       build ";
             this.TransparencyKey = System.Drawing.Color.Magenta;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DestroyWindowsSpyingMainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DestroyWindowsSpyingMainForm_FormClosed);
@@ -1014,10 +936,6 @@
             this.groupBoxLinks.ResumeLayout(false);
             this.groupBoxLinks.PerformLayout();
             this.tabPageReadMe.ResumeLayout(false);
-            this.tabControlReadMERUEN.ResumeLayout(false);
-            this.tabPageReadMeEn.ResumeLayout(false);
-            this.tabPageReadMeRu.ResumeLayout(false);
-            this.tabPageReadMeES.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1076,19 +994,13 @@
         private System.Windows.Forms.Button btnDeleteOneDrive;
         private System.Windows.Forms.Label labelInfoDeleteMetroApps;
         private System.Windows.Forms.TabPage tabPageReadMe;
-        private System.Windows.Forms.TabControl tabControlReadMERUEN;
-        private System.Windows.Forms.TabPage tabPageReadMeEn;
-        private System.Windows.Forms.RichTextBox richTextBoxReadMeEn;
-        private System.Windows.Forms.TabPage tabPageReadMeRu;
-        private System.Windows.Forms.RichTextBox richTextBoxReadMeRU;
         private System.Windows.Forms.LinkLabel linkLabelSourceCode;
         private System.Windows.Forms.Button btnReportABug;
         private System.Windows.Forms.Button btnRemoveOldFirewallRules;
         private System.Windows.Forms.GroupBox groupBoxLanguage;
         private System.Windows.Forms.ComboBox comboBoxLanguageSelect;
         private System.Windows.Forms.Button btnDestroyWindows78Spy;
-        private System.Windows.Forms.TabPage tabPageReadMeES;
-        private System.Windows.Forms.RichTextBox richTextBoxReadMeEs;
+        private System.Windows.Forms.RichTextBox ReadmeRichTextBox;
     }
 }
 

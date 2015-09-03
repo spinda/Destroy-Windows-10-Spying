@@ -236,4 +236,19 @@ Redémarrer maintenant ?</value>
   <data name="ReportABug" xml:space="preserve">
     <value>Report a bug</value>
   </data>
+  <data name="ReadMeTextBox" xml:space="preserve">
+    <value>This program destroys spying on Windows 7/8/8.1/10.
+The program is open source code, which is on github.
+This program completely destroys spying. Removes some elements of telemetry and the other turns off, disables Windows Defender, Cortana, and much more. As the program disables Windows Update, which allows you to remain anonymous and not to receive updates of new spyware.
+The delete Metro applications is very good, because they work in the background, and devour memory, and some of them spying on you.
+Also, the program blocks many IP address of Microsoft, which are the data, and adds the most spyware to hosts.
+Almost all of the program is irreversible and should not be rolled back even after a system restore point.
+At the moment it is the most effective program. The program is developing and improving a large community of users of Windows 10, some help to rewrite the code to a more productive, and some help with the translation of the program into other languages.
+
+Arguments for the command line:
+/lang= - set the language of the program starts. Example: /lang=en
+/deleteapp= - allows you to delete an application Metro in Windows. Example: /deleteapp=bing or /deleteapp=note
+/destroy - an argument for removing spyware.
+IMPORTANT! Arguments /destroy and /deleteapp= can not be combined, and the argument /deleteapp= can not be used several times.</value>
+  </data>
 </root>

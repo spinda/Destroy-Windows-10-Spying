@@ -22,14 +22,14 @@ namespace DWS_Lite.lang {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class en_US {
+    internal class pt_BR {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal en_US() {
+        internal pt_BR() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace DWS_Lite.lang {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DWS_Lite.lang.en-US", typeof(en_US).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DWS_Lite.lang.pt-BR", typeof(pt_BR).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete all windows 10 metro apps.
+        ///   Looks up a localized string similar to Eliminar todos os apps Metro do Windows 10.
         /// </summary>
         internal static string btnDeleteAllWindows10Apps {
             get {
@@ -70,7 +70,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete One Drive.
+        ///   Looks up a localized string similar to Eliminar One Drive.
         /// </summary>
         internal static string btnDeleteOneDrive {
             get {
@@ -79,7 +79,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open and edit HOSTS file.
+        ///   Looks up a localized string similar to Abrir e editar o arquivo HOSTS.
         /// </summary>
         internal static string btnOpenAndEditHosts {
             get {
@@ -88,7 +88,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable professional mode.
+        ///   Looks up a localized string similar to Habilitar modo profissional.
         /// </summary>
         internal static string btnProfessionalMode {
             get {
@@ -97,7 +97,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restore System.
+        ///   Looks up a localized string similar to Restaurar sistema.
         /// </summary>
         internal static string btnRestoreSystem {
             get {
@@ -106,7 +106,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add spy domains to hosts file, and block in Windows Firewall.
+        ///   Looks up a localized string similar to Adicionar domínios de espionagem no arquivo hosts e bloquear no Firewall do Windows.
         /// </summary>
         internal static string checkBoxAddToHosts {
             get {
@@ -115,7 +115,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create system restore point.
+        ///   Looks up a localized string similar to Criar ponto de restauração.
         /// </summary>
         internal static string checkBoxCreateSystemRestorePoint {
             get {
@@ -124,7 +124,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete windows 10 metro apps.
+        ///   Looks up a localized string similar to Eliminar Apps Metro do Windows 10.
         /// </summary>
         internal static string checkBoxDeleteWindows10Apps {
             get {
@@ -133,7 +133,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable private settings.
+        ///   Looks up a localized string similar to Desabilitar configuracões privadas.
         /// </summary>
         internal static string checkBoxDisablePrivateSettings {
             get {
@@ -142,7 +142,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable windows defender.
+        ///   Looks up a localized string similar to Desabilitar Windows Defender.
         /// </summary>
         internal static string checkBoxDisableWindowsDefender {
             get {
@@ -151,7 +151,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete keylogger and telemetry.
+        ///   Looks up a localized string similar to Eliminar Keylogger e Telemetría.
         /// </summary>
         internal static string checkBoxKeyLoggerAndTelemetry {
             get {
@@ -160,7 +160,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set default windows photo viewer.
+        ///   Looks up a localized string similar to Definir visualizador de fotos padrão do Windows .
         /// </summary>
         internal static string checkBoxSetDefaultPhoto {
             get {
@@ -169,7 +169,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable SPY tasks.
+        ///   Looks up a localized string similar to Desabilitar tareas de espionagem.
         /// </summary>
         internal static string checkBoxSPYTasks {
             get {
@@ -178,18 +178,18 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Complete.
+        ///   Looks up a localized string similar to Concluído.
         /// </summary>
-        internal static string Complete {
+        internal static string Compele {
             get {
-                return ResourceManager.GetString("Complete", resourceCulture);
+                return ResourceManager.GetString("Compele", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Complete!
-        ///A restart is required to disable all spyware.
-        ///Restart now?.
+        ///   Looks up a localized string similar to Concluído!
+        ///Uma reinicialização é necessária para desativar todos os spywares.
+        ///Reiniciar agora?.
         /// </summary>
         internal static string CompleteMSG {
             get {
@@ -198,7 +198,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete.
+        ///   Looks up a localized string similar to Eliminar.
         /// </summary>
         internal static string Delete {
             get {
@@ -207,7 +207,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete apps.
+        ///   Looks up a localized string similar to Eliminar apps.
         /// </summary>
         internal static string DeleteApps {
             get {
@@ -216,7 +216,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable.
+        ///   Looks up a localized string similar to Desabilitar.
         /// </summary>
         internal static string Disable {
             get {
@@ -225,7 +225,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable.
+        ///   Looks up a localized string similar to Habilitar.
         /// </summary>
         internal static string Enable {
             get {
@@ -243,9 +243,9 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Complete. Errors - {0}
-        ///A restart is required to disable all spyware.
-        ///Restart now?.
+        ///   Looks up a localized string similar to Finalizado. Erros - {0}
+        ///Uma reinicialização é necessária para desativar todos os spywares.
+        ///Reiniciar agora?.
         /// </summary>
         internal static string ErrorMSG {
             get {
@@ -263,7 +263,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to METRO applications are deleted permanently, without the possibility of recovery..
+        ///   Looks up a localized string similar to Os aplicativos METRO são apagados permanentemente, sem a possibilidade de recuperação..
         /// </summary>
         internal static string labelInfoDeleteMetroApps {
             get {
@@ -281,7 +281,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Press OK, and wait 15 minutes..
+        ///   Looks up a localized string similar to Presione OK, e aguarde 15 minutos..
         /// </summary>
         internal static string PressOkAndWait15 {
             get {
@@ -290,7 +290,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Question.
+        ///   Looks up a localized string similar to Pregunta.
         /// </summary>
         internal static string Question {
             get {
@@ -311,7 +311,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Really?.
+        ///   Looks up a localized string similar to Tem certeza?.
         /// </summary>
         internal static string Really {
             get {
@@ -320,7 +320,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove all old DWS firewall rules.
+        ///   Looks up a localized string similar to Remover todas as regras antigas de firewall do DWS.
         /// </summary>
         internal static string RemoveAllOldFirewallRules {
             get {
@@ -329,7 +329,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Report a bug.
+        ///   Looks up a localized string similar to Informar um erro.
         /// </summary>
         internal static string ReportABug {
             get {
@@ -338,8 +338,8 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Requires restart.
-        ///Restart now?.
+        ///   Looks up a localized string similar to É necessário reiniciar.
+        ///Reiniciar agora?.
         /// </summary>
         internal static string Restart {
             get {
@@ -348,7 +348,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This program works only on Windows 10.
+        ///   Looks up a localized string similar to Este aplicativo funciona somente no Windows 10.
         /// </summary>
         internal static string RunOnlyWin10 {
             get {
@@ -357,7 +357,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About.
+        ///   Looks up a localized string similar to Sobre.
         /// </summary>
         internal static string tabPageAbout {
             get {
@@ -366,7 +366,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Main.
+        ///   Looks up a localized string similar to Principal.
         /// </summary>
         internal static string tabPageMain {
             get {
@@ -375,7 +375,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ReadME.
+        ///   Looks up a localized string similar to Leia-me.
         /// </summary>
         internal static string tabPageReadMe {
             get {
@@ -384,7 +384,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings.
+        ///   Looks up a localized string similar to Configurações.
         /// </summary>
         internal static string tabPageSettings {
             get {
@@ -393,7 +393,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Utilities.
+        ///   Looks up a localized string similar to Utilidades.
         /// </summary>
         internal static string tabPageUtilites {
             get {
@@ -402,7 +402,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Warning.
+        ///   Looks up a localized string similar to Cuidado.
         /// </summary>
         internal static string Warning {
             get {

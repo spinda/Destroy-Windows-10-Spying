@@ -73,6 +73,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="lang\pt-BR.Designer.cs">
+      <DependentUpon>pt-BR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="lang\ru-RU.Designer.cs">
       <DependentUpon>ru-RU.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -99,6 +104,10 @@
     <EmbeddedResource Include="lang\fr-FR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>fr-FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lang\pt-BR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>pt-BR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="lang\ru-RU.resx">
       <Generator>ResXFileCodeGenerator</Generator>

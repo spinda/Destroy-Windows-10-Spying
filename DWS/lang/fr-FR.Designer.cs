@@ -308,6 +308,18 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This program destroys spying on Windows 7/8/8.1/10.
+        ///The program is open source code, which is on github.
+        ///This program completely destroys spying. Removes some elements of telemetry and the other turns off, disables Windows Defender, Cortana, and much more. As the program disables Windows Update, which allows you to remain anonymous and not to receive updates of new spyware.
+        ///The delete Metro applications is very good, because they work in the background, and devour memory, and some of them spying on you.        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReadMeTextBox {
+            get {
+                return ResourceManager.GetString("ReadMeTextBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vraiment ?.
         /// </summary>
         internal static string Really {

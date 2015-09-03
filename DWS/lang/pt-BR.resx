@@ -117,4 +117,135 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
+    <value>Eliminar todos os apps Metro do Windows 10</value>
+  </data>
+  <data name="btnDeleteOneDrive" xml:space="preserve">
+    <value>Eliminar One Drive</value>
+  </data>
+  <data name="btnOpenAndEditHosts" xml:space="preserve">
+    <value>Abrir e editar o arquivo HOSTS</value>
+  </data>
+  <data name="btnProfessionalMode" xml:space="preserve">
+    <value>Habilitar modo profissional</value>
+  </data>
+  <data name="btnRestoreSystem" xml:space="preserve">
+    <value>Restaurar sistema</value>
+  </data>
+  <data name="checkBoxAddToHosts" xml:space="preserve">
+    <value>Adicionar domínios de espionagem no arquivo hosts e bloquear no Firewall do Windows</value>
+  </data>
+  <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
+    <value>Criar ponto de restauração</value>
+  </data>
+  <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
+    <value>Eliminar Apps Metro do Windows 10</value>
+  </data>
+  <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
+    <value>Desabilitar configuracões privadas</value>
+  </data>
+  <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
+    <value>Desabilitar Windows Defender</value>
+  </data>
+  <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
+    <value>Eliminar Keylogger e Telemetría</value>
+  </data>
+  <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
+    <value>Definir visualizador de fotos padrão do Windows </value>
+  </data>
+  <data name="checkBoxSPYTasks" xml:space="preserve">
+    <value>Desabilitar tareas de espionagem</value>
+  </data>
+  <data name="Compele" xml:space="preserve">
+    <value>Concluído</value>
+  </data>
+  <data name="CompleteMSG" xml:space="preserve">
+    <value>Concluído!
+Uma reinicialização é necessária para desativar todos os spywares.
+Reiniciar agora?</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="DeleteApps" xml:space="preserve">
+    <value>Eliminar apps</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Desabilitar</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Habilitar</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ErrorMSG" xml:space="preserve">
+    <value>Finalizado. Erros - {0}
+Uma reinicialização é necessária para desativar todos os spywares.
+Reiniciar agora?</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="labelInfoDeleteMetroApps" xml:space="preserve">
+    <value>Os aplicativos METRO são apagados permanentemente, sem a possibilidade de recuperação.</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="PressOkAndWait15" xml:space="preserve">
+    <value>Presione OK, e aguarde 15 minutos.</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Pregunta</value>
+  </data>
+  <data name="Really" xml:space="preserve">
+    <value>Tem certeza?</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>É necessário reiniciar.
+Reiniciar agora?</value>
+  </data>
+  <data name="RunOnlyWin10" xml:space="preserve">
+    <value>Este aplicativo funciona somente no Windows 10</value>
+  </data>
+  <data name="tabPageAbout" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="tabPageMain" xml:space="preserve">
+    <value>Principal</value>
+  </data>
+  <data name="tabPageReadMe" xml:space="preserve">
+    <value>Leia-me</value>
+  </data>
+  <data name="tabPageSettings" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="tabPageUtilites" xml:space="preserve">
+    <value>Utilidades</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Cuidado</value>
+  </data>
+  <data name="RemoveAllOldFirewallRules" xml:space="preserve">
+    <value>Remover todas as regras antigas de firewall do DWS</value>
+  </data>
+  <data name="ReportABug" xml:space="preserve">
+    <value>Informar um erro</value>
+  </data>
+  <data name="ReadMeTextBox" xml:space="preserve">
+    <value>This program destroys spying on Windows 7/8/8.1/10.
+The program is open source code, which is on github.
+This program completely destroys spying. Removes some elements of telemetry and the other turns off, disables Windows Defender, Cortana, and much more. As the program disables Windows Update, which allows you to remain anonymous and not to receive updates of new spyware.
+The delete Metro applications is very good, because they work in the background, and devour memory, and some of them spying on you.
+Also, the program blocks many IP address of Microsoft, which are the data, and adds the most spyware to hosts.
+Almost all of the program is irreversible and should not be rolled back even after a system restore point.
+At the moment it is the most effective program. The program is developing and improving a large community of users of Windows 10, some help to rewrite the code to a more productive, and some help with the translation of the program into other languages.
+
+Arguments for the command line:
+/lang= - set the language of the program starts. Example: /lang=en
+/deleteapp= - allows you to delete an application Metro in Windows. Example: /deleteapp=bing or /deleteapp=note
+/destroy - an argument for removing spyware.
+IMPORTANT! Arguments /destroy and /deleteapp= can not be combined, and the argument /deleteapp= can not be used several times.</value>
+  </data>
 </root>

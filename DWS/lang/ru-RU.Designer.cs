@@ -299,6 +299,18 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Данная программа уничтожает шпионство на Windows 7/8/8.1/10.
+        ///У программы открытый исходный код,который находится на github.
+        ///Данная программа уничтожает шпионство полностью. Удаляет некоторые элементы Телеметрии,а остальные отключает, отключает Windows Defender, Кортану,и многое другое. Так же программа отключает Windows Update, что позволяет вам остаться анонимным, и не получать новых шпионских обновлений.
+        ///Функция удаления Metro приложений очень хороша, т.к. они работают в фоновом режиме, и жрут оператив [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReadMeTextBox {
+            get {
+                return ResourceManager.GetString("ReadMeTextBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Реально? О_о.
         /// </summary>
         internal static string Really {
