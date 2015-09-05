@@ -12,6 +12,7 @@ using System.Management;
 using System.Net;
 using System.Resources;
 using System.Runtime.InteropServices;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -35,8 +36,8 @@ namespace DWS_Lite
 
         public DestroyWindowsSpyingMainForm(string[] args)
         {
-            InitializeComponent();
 
+            InitializeComponent();
             // Re create log file
             FileUtil.RecreateLogFile(logfilename);
             // Check windows version
@@ -400,8 +401,8 @@ namespace DWS_Lite
         private void SetRegValueHKCU(string regkeyfolder, string paramname, string paramvalue,
             Microsoft.Win32.RegistryValueKind keytype)
         {
-
-            RegistryKey myKey = Registry.CurrentUser.OpenSubKey(regkeyfolder, true);
+            Registry.CurrentUser.CreateSubKey(regkeyfolder).Close();
+            RegistryKey myKey = Registry.CurrentUser.OpenSubKey(regkeyfolder, RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
             try
             {
                 if (myKey != null)
@@ -426,8 +427,8 @@ namespace DWS_Lite
         private void SetRegValueHKLM(string regkeyfolder, string paramname, string paramvalue,
             Microsoft.Win32.RegistryValueKind keytype)
         {
-
-            RegistryKey myKey = Registry.LocalMachine.OpenSubKey(regkeyfolder, true);
+            Registry.LocalMachine.CreateSubKey(regkeyfolder).Close();
+            RegistryKey myKey = Registry.LocalMachine.OpenSubKey(regkeyfolder, RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
             try
             {
                 if (myKey != null)
