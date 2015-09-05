@@ -133,7 +133,7 @@
     <value>Restaurer le Système</value>
   </data>
   <data name="checkBoxAddToHosts" xml:space="preserve">
-    <value>Ajouter des domaines espion au fichier HOSTS et bloquer dans le pare-feu Windows</value>
+    <value>Ajouter des domaines espion au fichier HOSTS et bloquer les IP dans le pare-feu Windows</value>
   </data>
   <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
     <value>Créer un point de restauration système</value>
@@ -151,13 +151,13 @@
     <value>Supprimer le KeyLogger et la Télémétrie</value>
   </data>
   <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
-    <value>Visionneuse de photos Windows par défaut</value>
+    <value>Mettre la Visionneuse de photos Windows par défaut</value>
   </data>
   <data name="checkBoxSPYTasks" xml:space="preserve">
     <value>Désactiver les tâches de l'Espion</value>
   </data>
   <data name="Complete" xml:space="preserve">
-    <value>Complete</value>
+    <value>Fini</value>
   </data>
   <data name="CompleteMSG" xml:space="preserve">
     <value>Fini!
@@ -188,7 +188,7 @@ Redémarrer maintenant?</value>
     <value>Info</value>
   </data>
   <data name="labelInfoDeleteMetroApps" xml:space="preserve">
-    <value>Les applications METRO sont définitivement supprimés, sans possibilité de récupération.</value>
+    <value>Les applications Metro seront définitivement supprimés, sans possibilité de les réinstaller.</value>
   </data>
   <data name="Links" xml:space="preserve">
     <value>Liens</value>
@@ -231,24 +231,24 @@ Redémarrer maintenant ?</value>
     <value>Détruire les Espions de Windows 10</value>
   </data>
   <data name="RemoveAllOldFirewallRules" xml:space="preserve">
-    <value>Remove all old DWS firewall rules</value>
+    <value>Enlever les anciennes règles DWS du pare-feu Windows</value>
   </data>
   <data name="ReportABug" xml:space="preserve">
-    <value>Report a bug</value>
+    <value>Signaler un bug</value>
   </data>
   <data name="ReadMeTextBox" xml:space="preserve">
-    <value>This program destroys spying on Windows 7/8/8.1/10.
-The program is open source code, which is on github.
-This program completely destroys spying. Removes some elements of telemetry and the other turns off, disables Windows Defender, Cortana, and much more. As the program disables Windows Update, which allows you to remain anonymous and not to receive updates of new spyware.
-The delete Metro applications is very good, because they work in the background, and devour memory, and some of them spying on you.
-Also, the program blocks many IP address of Microsoft, which are the data, and adds the most spyware to hosts.
-Almost all of the program is irreversible and should not be rolled back even after a system restore point.
-At the moment it is the most effective program. The program is developing and improving a large community of users of Windows 10, some help to rewrite the code to a more productive, and some help with the translation of the program into other languages.
+    <value>Ce logiciel supprime les espions de Windows 7/8/8.1/10.
+Le logiciel est open source, son code source est diponible sur GitHub.
+Ce logiciel supprime tout l'espionnage de Windows. Il enlève pas mal d'éléments dont la télémétrie et en désactive d'autres, par exemeple il désactive Windows Defender, Cortana, et plus encore. Comme le logiciel désactive Windows Update il vous permet de ne plus envoyer de données et de ne plus avoir les nouveaux spyware de Windows.
+La suppression des applications Metro est très bien, parce qu'elles fonctinnent en tâche de fond, et elles consomment pas mal de RAM, et de plus quelques une vous espionnent.
+En plus, le logiciel bloque pas mal d'adresse IP de chez Microsoft, qui recoivent ces données, et il ajoute la plus part des dommaines utilisés dans le fichier Hosts.
+Par contre ce que fait le logiciel est irréversible, les modifications ne peuvent être annulé que via un point de restoration système.
+Pour le moment c'est le logiciel le plus efficace. Le logiciel est développé et amélioré par une large communité d'utilisateur de Windows 10, certain aide à ré-écrire le code pour améliorer son efficacité, d'autre l'aide en le traduisant en de nombreuse langue.
 
-Arguments for the command line:
-/lang= - set the language of the program starts. Example: /lang=en
-/deleteapp= - allows you to delete an application Metro in Windows. Example: /deleteapp=bing or /deleteapp=note
-/destroy - an argument for removing spyware.
-IMPORTANT! Arguments /destroy and /deleteapp= can not be combined, and the argument /deleteapp= can not be used several times.</value>
+Voici les arugments utilisable en ligne de commande:
+/lang= - Modifier la langue utilisé par le logiciel à son lancement. Exemple: /lang=fr
+/deleteapp= - Permet la suppression d'une application Metro. Exemple: /deleteapp=bing ou /deleteapp=note
+/destroy - L'argument permettant la suppression des Spyware.
+ATTENTION! Les arguments /destroy et /deleteapp= ne peuvent pas être utilisé en même temps, et l'argument /deleteapp= ne peut pas être utilisé plusieur fois.</value>
   </data>
 </root>
