@@ -164,6 +164,11 @@ namespace DWS_Lite
                 rm = lang.pt_BR.ResourceManager;
                 comboBoxLanguageSelect.Text = "pt-BR | Portuguese";
             }
+            else if (currentlang.IndexOf("de") > -1)
+            {
+                rm = lang.de_DE.ResourceManager;
+                comboBoxLanguageSelect.Text = "de-DE | German";
+            }
             else
             {
                 rm = lang.en_US.ResourceManager;
@@ -794,7 +799,8 @@ namespace DWS_Lite
                     "oca.telemetry.microsoft.com.nsatc.net",
                     "pre.footprintpredict.com",
                     "spynet2.microsoft.com",
-                    "spynetalt.microsoft.com"
+                    "spynetalt.microsoft.com",
+                    "fe3.delivery.dsp.mp.microsoft.com.nsatc.net",
                 };
                 string hostslocation = system32location + @"drivers\etc\hosts";
                 string hosts = null;
@@ -1157,6 +1163,11 @@ namespace DWS_Lite
                 rm = lang.pt_BR.ResourceManager;
                 ChangeLanguage();
             }
+            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "de-DE")
+            {
+                rm = lang.de_DE.ResourceManager;
+                ChangeLanguage();
+            }
             else
             {
                 rm = lang.en_US.ResourceManager;
@@ -1262,7 +1273,19 @@ namespace DWS_Lite
                 "65.55.252.92",
                 "65.55.252.93",
                 "65.55.29.238",
-                "65.55.39.10"
+                "65.55.39.10",
+                "191.232.139.2",
+                "64.4.23.0-64.4.23.255",
+                "111.221.64.0-111.221.127.255", // singapure
+                "157.55.235.0-157.55.235.255",
+                "157.55.56.0-157.55.56.255",
+                "157.55.52.0-157.55.52.255",
+                "157.55.130.0-157.55.130.255",
+                "157.55.56.0-157.55.56.255",
+                "157.56.52.0-157.55.52.255",
+                "65.55.223.0-65.55.223.255",
+                "213.199.179.0-213.199.179.255" // Ireland
+
             };
             for (int i = 0; i < IpAddr.Length; i++)
             {
@@ -1272,6 +1295,11 @@ namespace DWS_Lite
                 output("Add Windows Firewall rule: \"" + IpAddr[i] + "_Block\"");
             }
             output("Ip list blocked");
+        }
+
+        private void linkLabelLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://www.apache.org/licenses/LICENSE-2.0");
         }
     }
 }

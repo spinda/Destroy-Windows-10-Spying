@@ -117,17 +117,142 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelLicense.Text" xml:space="preserve">
-    <value>Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+  <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
+    <value>Alle Windows Store Apps entfernen</value>
+  </data>
+  <data name="btnDeleteOneDrive" xml:space="preserve">
+    <value>Microsoft OneDrive entfernen</value>
+  </data>
+  <data name="btnOpenAndEditHosts" xml:space="preserve">
+    <value>Die HOSTS-Datei bearbeiten</value>
+  </data>
+  <data name="btnProfessionalMode" xml:space="preserve">
+    <value>Experten-Modus aktivieren</value>
+  </data>
+  <data name="btnRestoreSystem" xml:space="preserve">
+    <value>System wiederherstellen</value>
+  </data>
+  <data name="checkBoxAddToHosts" xml:space="preserve">
+    <value>Automatisch Internetseiten, die spionieren, blockieren.</value>
+  </data>
+  <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
+    <value>Systemwiederherstellungspunkt erstellen</value>
+  </data>
+  <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
+    <value>Alle Windows Store Apps entfernen</value>
+  </data>
+  <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
+    <value>Datenschutzeinstellungen deaktivieren</value>
+  </data>
+  <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
+    <value>Windows Defender (Antivirus) deaktivieren</value>
+  </data>
+  <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
+    <value>Tastaturprotokolle und Benutzerprotokolle löschen</value>
+  </data>
+  <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
+    <value>Windows Bilderanzeige festlegen</value>
+  </data>
+  <data name="checkBoxSPYTasks" xml:space="preserve">
+    <value>Spionageaufträge beenden</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>Fertig</value>
+  </data>
+  <data name="CompleteMSG" xml:space="preserve">
+    <value>Alles erfolgreich erledigt!
 
-     
+Allerdings muss das System neu gestartet werden.
+Wollen Sie jetzt neu starten?</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="DeleteApps" xml:space="preserve">
+    <value>Apps löschen</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Deaktivieren</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Aktivieren</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="ErrorMSG" xml:space="preserve">
+    <value>Vorgang abgeschlossen. Leider ist ein Fehler dabei eingetreten: {0}
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.</value>
+Es ist ein Neustart notwendig. 
+Jetzt neu starten?</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Informationen</value>
+  </data>
+  <data name="labelInfoDeleteMetroApps" xml:space="preserve">
+    <value>Windows Store Apps werden gelöscht. Diese Aktion ist nicht umkehrbar.</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Verweise</value>
+  </data>
+  <data name="PressOkAndWait15" xml:space="preserve">
+    <value>Drücken Sie OK und warten Sie ungefähr 15 Minuten.</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Fragen</value>
+  </data>
+  <data name="Really" xml:space="preserve">
+    <value>Sie sie sicher?</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Es ist ein Neustart notwendig. Soll jetzt neu gestartet werden?</value>
+  </data>
+  <data name="RunOnlyWin10" xml:space="preserve">
+    <value>Das Programm kann leider nur unter Windows 10 laufen.</value>
+  </data>
+  <data name="tabPageAbout" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="tabPageMain" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="tabPageReadMe" xml:space="preserve">
+    <value>Anleitung</value>
+  </data>
+  <data name="tabPageSettings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="tabPageUtilites" xml:space="preserve">
+    <value>Werkzeug</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warnung</value>
+  </data>
+  <data name="RemoveAllOldFirewallRules" xml:space="preserve">
+    <value>Alte Firewall-Regeln von uns entfernen.</value>
+  </data>
+  <data name="ReportABug" xml:space="preserve">
+    <value>Einen Fehler melden.</value>
+  </data>
+  <data name="ReadMeTextBox" xml:space="preserve">
+    <value>Guten Tag. Willkommen bei "Destroy Windows 10 Spying".
+Dieses Programm ist Quelloffen und dient dem Schutz ihrer Privatsphäre. 
+
+Es verhindert, das Windows 10 Daten über Sie und ihre Tätigkeiten erfasst. Weiterhin verhindert es auch zukünftige Programme, die versuchen Ihre Benutzerdaten zu sammeln.
+
+Ferner kann die Anwendung, sofern Sie es wünschen, auch die Windows Store Anwendungen entfernen. Diese laufen oftmals im Hintergrund und verwenden so den Speicher und die Rechenleistung ihrer Computers.
+
+Dieses Programm ist das derzeit beste Programm für diese Aufgabe und wird von einer starken Gemeinde unterstützt. 
+
+--------------
+
+Ferner biete das Programm auch das Starten über Befehlszeilenargumente an:
+/lang=de	(Sie können auch weitere Sprachen wie "en" (Englisch), "es"(Spanisch), "fr"(Französisch), "ru" (Russisch) verwenden)
+/deleteapp=	Löscht eine beliebige Anwendung vom System. Beispiele wären: "bing", "note"...
+/destroy 	Mit diesem Befehl beginnt das Programm seine Reinigung ihrer Systems.
+
+Hinweise: Sie können /destroy und /deleteapp nicht gleichzeitig verwenden. Ferner können Sie /deleteapp nicht mehrfach verwenden.
+
+* Deutsche Übersetzung von: Thomas Roskop *</value>
   </data>
 </root>

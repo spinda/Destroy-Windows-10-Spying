@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DestroyWindowsSpyingMainForm));
             this.FormTabsControl = new System.Windows.Forms.TabControl();
             this.tabPageMain = new System.Windows.Forms.TabPage();
             this.btnDestroyWindows78Spy = new System.Windows.Forms.Button();
@@ -87,6 +88,9 @@
             this.labelBuildDataTime = new System.Windows.Forms.Label();
             this.tabPageReadMe = new System.Windows.Forms.TabPage();
             this.ReadmeRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.tabPageLicense = new System.Windows.Forms.TabPage();
+            this.linkLabelLicense = new System.Windows.Forms.LinkLabel();
+            this.labelLicense = new System.Windows.Forms.Label();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -97,6 +101,7 @@
             this.groupBoxLanguage.SuspendLayout();
             this.groupBoxLinks.SuspendLayout();
             this.tabPageReadMe.SuspendLayout();
+            this.tabPageLicense.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormTabsControl
@@ -106,6 +111,7 @@
             this.FormTabsControl.Controls.Add(this.tabPageUtilites);
             this.FormTabsControl.Controls.Add(this.tabPageAbout);
             this.FormTabsControl.Controls.Add(this.tabPageReadMe);
+            this.FormTabsControl.Controls.Add(this.tabPageLicense);
             this.FormTabsControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FormTabsControl.Location = new System.Drawing.Point(0, 0);
             this.FormTabsControl.Name = "FormTabsControl";
@@ -729,7 +735,8 @@
             "ru-RU | Русский",
             "fr-FR | French",
             "es-ES | Spanish",
-            "pt-BR | Portuguese"});
+            "pt-BR | Portuguese",
+            "de-DE | German"});
             this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
             this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
             this.comboBoxLanguageSelect.Size = new System.Drawing.Size(202, 21);
@@ -907,6 +914,38 @@
             this.ReadmeRichTextBox.TabIndex = 0;
             this.ReadmeRichTextBox.Text = "";
             // 
+            // tabPageLicense
+            // 
+            this.tabPageLicense.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
+            this.tabPageLicense.Controls.Add(this.linkLabelLicense);
+            this.tabPageLicense.Controls.Add(this.labelLicense);
+            this.tabPageLicense.Location = new System.Drawing.Point(4, 22);
+            this.tabPageLicense.Name = "tabPageLicense";
+            this.tabPageLicense.Size = new System.Drawing.Size(445, 400);
+            this.tabPageLicense.TabIndex = 5;
+            this.tabPageLicense.Text = "License";
+            this.tabPageLicense.UseVisualStyleBackColor = true;
+            // 
+            // linkLabelLicense
+            // 
+            this.linkLabelLicense.AutoSize = true;
+            this.linkLabelLicense.Location = new System.Drawing.Point(32, 64);
+            this.linkLabelLicense.Name = "linkLabelLicense";
+            this.linkLabelLicense.Size = new System.Drawing.Size(228, 13);
+            this.linkLabelLicense.TabIndex = 1;
+            this.linkLabelLicense.TabStop = true;
+            this.linkLabelLicense.Text = "http://www.apache.org/licenses/LICENSE-2.0";
+            this.linkLabelLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLicense_LinkClicked);
+            // 
+            // labelLicense
+            // 
+            this.labelLicense.AutoSize = true;
+            this.labelLicense.Location = new System.Drawing.Point(8, 11);
+            this.labelLicense.Name = "labelLicense";
+            this.labelLicense.Size = new System.Drawing.Size(405, 143);
+            this.labelLicense.TabIndex = 0;
+            this.labelLicense.Text = resources.GetString("labelLicense.Text");
+            // 
             // DestroyWindowsSpyingMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -936,6 +975,8 @@
             this.groupBoxLinks.ResumeLayout(false);
             this.groupBoxLinks.PerformLayout();
             this.tabPageReadMe.ResumeLayout(false);
+            this.tabPageLicense.ResumeLayout(false);
+            this.tabPageLicense.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1001,6 +1042,9 @@
         private System.Windows.Forms.ComboBox comboBoxLanguageSelect;
         private System.Windows.Forms.Button btnDestroyWindows78Spy;
         private System.Windows.Forms.RichTextBox ReadmeRichTextBox;
+        private System.Windows.Forms.TabPage tabPageLicense;
+        private System.Windows.Forms.LinkLabel linkLabelLicense;
+        private System.Windows.Forms.Label labelLicense;
     }
 }
 
