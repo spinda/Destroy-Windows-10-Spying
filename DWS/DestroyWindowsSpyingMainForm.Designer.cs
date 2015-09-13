@@ -1,11 +1,14 @@
-﻿namespace DWS_Lite
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace DWS_Lite
 {
     partial class DestroyWindowsSpyingMainForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -983,68 +986,68 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl FormTabsControl;
-        private System.Windows.Forms.TabPage tabPageMain;
-        private System.Windows.Forms.TabPage tabPageSettings;
-        private System.Windows.Forms.TabPage tabPageUtilites;
-        private System.Windows.Forms.TabPage tabPageAbout;
-        private System.Windows.Forms.ProgressBar ProgressBarStatus;
-        private System.Windows.Forms.Button btnDestroyWindowsSpying;
-        private System.Windows.Forms.Label StatusCommandsLable;
-        private System.Windows.Forms.RichTextBox LogOutputTextBox;
-        private System.Windows.Forms.CheckBox checkBoxCreateSystemRestorePoint;
-        private System.Windows.Forms.CheckBox checkBoxKeyLoggerAndTelemetry;
-        private System.Windows.Forms.CheckBox checkBoxAddToHosts;
-        private System.Windows.Forms.CheckBox checkBoxDisablePrivateSettings;
-        private System.Windows.Forms.CheckBox checkBoxDisableWindowsDefender;
-        private System.Windows.Forms.CheckBox checkBoxSetDefaultPhoto;
-        private System.Windows.Forms.CheckBox checkBoxSPYTasks;
-        private System.Windows.Forms.CheckBox checkBoxDeleteWindows10Apps;
-        private System.Windows.Forms.Button btnDeleteAllWindows10Apps;
-        private System.Windows.Forms.CheckBox checkBoxDeleteApp3d;
-        private System.Windows.Forms.CheckBox checkBoxDeleteAppXBOX;
-        private System.Windows.Forms.CheckBox checkBoxDeleteAppVoice;
-        private System.Windows.Forms.CheckBox checkBoxDeleteAppSolit;
-        private System.Windows.Forms.CheckBox checkBoxDeleteAppPhotos;
-        private System.Windows.Forms.CheckBox checkBoxDeleteAppPhone;
-        private System.Windows.Forms.CheckBox checkBoxDeleteAppPeopleOneNote;
-        private System.Windows.Forms.CheckBox checkBoxDeleteAppZune;
-        private System.Windows.Forms.CheckBox checkBoxDeleteAppBing;
-        private System.Windows.Forms.CheckBox checkBoxDeleteMailCalendarMaps;
-        private System.Windows.Forms.CheckBox checkBoxDeleteAppCamera;
-        private System.Windows.Forms.Button btnDisableUac;
-        private System.Windows.Forms.Button btnEnableUac;
-        private System.Windows.Forms.Button btnRestoreSystem;
-        private System.Windows.Forms.Button btnDisableWindowsUpdate;
-        private System.Windows.Forms.Button btnEnableWindowsUpdate;
-        private System.Windows.Forms.Button btnOpenAndEditHosts;
-        private System.Windows.Forms.Label labelBuildDataTime;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label About_Info;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel5;
-        private System.Windows.Forms.GroupBox groupBoxLinks;
-        private System.Windows.Forms.Button btnProfessionalMode;
-        private System.Windows.Forms.GroupBox groupBoxWindowsUpdate;
-        private System.Windows.Forms.GroupBox groupBoxUACEdit;
-        private System.Windows.Forms.LinkLabel linkLabelOtherThanks;
-        private System.Windows.Forms.Button btnDeleteMetroAppsInfo;
-        private System.Windows.Forms.Button btnDeleteOneDrive;
-        private System.Windows.Forms.Label labelInfoDeleteMetroApps;
-        private System.Windows.Forms.TabPage tabPageReadMe;
-        private System.Windows.Forms.LinkLabel linkLabelSourceCode;
-        private System.Windows.Forms.Button btnReportABug;
-        private System.Windows.Forms.Button btnRemoveOldFirewallRules;
-        private System.Windows.Forms.GroupBox groupBoxLanguage;
-        private System.Windows.Forms.ComboBox comboBoxLanguageSelect;
-        private System.Windows.Forms.Button btnDestroyWindows78Spy;
-        private System.Windows.Forms.RichTextBox ReadmeRichTextBox;
-        private System.Windows.Forms.TabPage tabPageLicense;
-        private System.Windows.Forms.LinkLabel linkLabelLicense;
-        private System.Windows.Forms.Label labelLicense;
+        private TabControl FormTabsControl;
+        private TabPage tabPageMain;
+        private TabPage tabPageSettings;
+        private TabPage tabPageUtilites;
+        private TabPage tabPageAbout;
+        private ProgressBar ProgressBarStatus;
+        private Button btnDestroyWindowsSpying;
+        private Label StatusCommandsLable;
+        private RichTextBox LogOutputTextBox;
+        private CheckBox checkBoxCreateSystemRestorePoint;
+        private CheckBox checkBoxKeyLoggerAndTelemetry;
+        private CheckBox checkBoxAddToHosts;
+        private CheckBox checkBoxDisablePrivateSettings;
+        private CheckBox checkBoxDisableWindowsDefender;
+        private CheckBox checkBoxSetDefaultPhoto;
+        private CheckBox checkBoxSPYTasks;
+        private CheckBox checkBoxDeleteWindows10Apps;
+        private Button btnDeleteAllWindows10Apps;
+        private CheckBox checkBoxDeleteApp3d;
+        private CheckBox checkBoxDeleteAppXBOX;
+        private CheckBox checkBoxDeleteAppVoice;
+        private CheckBox checkBoxDeleteAppSolit;
+        private CheckBox checkBoxDeleteAppPhotos;
+        private CheckBox checkBoxDeleteAppPhone;
+        private CheckBox checkBoxDeleteAppPeopleOneNote;
+        private CheckBox checkBoxDeleteAppZune;
+        private CheckBox checkBoxDeleteAppBing;
+        private CheckBox checkBoxDeleteMailCalendarMaps;
+        private CheckBox checkBoxDeleteAppCamera;
+        private Button btnDisableUac;
+        private Button btnEnableUac;
+        private Button btnRestoreSystem;
+        private Button btnDisableWindowsUpdate;
+        private Button btnEnableWindowsUpdate;
+        private Button btnOpenAndEditHosts;
+        private Label labelBuildDataTime;
+        private LinkLabel linkLabel4;
+        private LinkLabel linkLabel3;
+        private LinkLabel linkLabel2;
+        private LinkLabel linkLabel1;
+        private Label About_Info;
+        private Label label1;
+        private LinkLabel linkLabel5;
+        private GroupBox groupBoxLinks;
+        private Button btnProfessionalMode;
+        private GroupBox groupBoxWindowsUpdate;
+        private GroupBox groupBoxUACEdit;
+        private LinkLabel linkLabelOtherThanks;
+        private Button btnDeleteMetroAppsInfo;
+        private Button btnDeleteOneDrive;
+        private Label labelInfoDeleteMetroApps;
+        private TabPage tabPageReadMe;
+        private LinkLabel linkLabelSourceCode;
+        private Button btnReportABug;
+        private Button btnRemoveOldFirewallRules;
+        private GroupBox groupBoxLanguage;
+        private ComboBox comboBoxLanguageSelect;
+        private Button btnDestroyWindows78Spy;
+        private RichTextBox ReadmeRichTextBox;
+        private TabPage tabPageLicense;
+        private LinkLabel linkLabelLicense;
+        private Label labelLicense;
     }
 }
 

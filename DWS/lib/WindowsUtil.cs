@@ -1,21 +1,18 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace DWS_Lite.lib
 {
     class WindowsUtil
     {
-        public static object readSubKeyValue(string subKey, string keyName)
+        public static object ReadSubKeyValue(string subKey, string keyName)
         {
             object result;
             RegistryKey rkSubKey = Registry.LocalMachine.OpenSubKey(subKey);
             if (rkSubKey == null)
             {
-                MessageBox.Show("Error while reading registry key: " + subKey + "\\" + keyName + " does not exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format(@"Error while reading registry key: {0}\{1} does not exist!", subKey, keyName), @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             try
@@ -27,42 +24,30 @@ namespace DWS_Lite.lib
             }
             catch (Exception ex)   //This exception is thrown
             {
-                MessageBox.Show("Error while reading registry key: " + subKey + "\\" + keyName + ". ErrorMessage: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format("Error while reading registry key: {0}\\{1}. ErrorMessage: {2}", subKey, keyName, ex.Message), @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 rkSubKey.Close();
                 return null;
             }
         }
-        public static int getWindowsBuildNumber()
+        public static int GetWindowsBuildNumber()
         {
-            return Convert.ToInt32(readSubKeyValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\", "CurrentBuildNumber"));
+            return Convert.ToInt32(ReadSubKeyValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\", "CurrentBuildNumber"));
         }
-        public static bool isLUAEnabled()
+        public static bool UAC_Status()
         {
-            return !Convert.ToBoolean(readSubKeyValue(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\", "EnableLUA"));
+            return !Convert.ToBoolean(ReadSubKeyValue(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\", "EnableLUA"));
         }
-
-        public static int isSystemRestoreEnabled()
+        public static int SystemRestore_Status()
         {
-            return Convert.ToInt32(readSubKeyValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore\", "RPSessionInterval"));
+            return Convert.ToInt32(ReadSubKeyValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore\", "RPSessionInterval"));
         }
-
-        public static string getSystemProductName()
+        public static string GetProductName()
         {
-            return Convert.ToString(readSubKeyValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\", "ProductName"));
+            return Convert.ToString(ReadSubKeyValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\", "ProductName"));
         }
-
-        public static string getSystemBuild()
+        public static string GetSystemBuild()
         {
-            return Convert.ToString(readSubKeyValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\", "BuildLabEx"));
+            return Convert.ToString(ReadSubKeyValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\", "BuildLabEx"));
         }
-        private string getwindowsbuildorversion()
-        {
-           
-                // в value массив из байт
-                string value = "Product Name: " + getSystemProductName() + "\n";
-                value += "  Build: " + getSystemBuild();
-                return value;
-        }
-
     }
 }

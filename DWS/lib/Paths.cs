@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace DWS_Lite.lib
 {
@@ -12,7 +9,7 @@ namespace DWS_Lite.lib
         public static string ShellCmdLocation = 
             (File.Exists(SysDir + @"Windows\Sysnative\cmd.exe")) ? 
                 SysDir + @"Windows\Sysnative\cmd.exe" : SysDir + @"Windows\System32\cmd.exe";
-        public static string system32location = 
+        public static string System32Location = 
             (File.Exists(SysDir + @"Windows\Sysnative\cmd.exe")) ? 
                 SysDir + @"Windows\System32\" : SysDir + @"Windows\System32\";
 
