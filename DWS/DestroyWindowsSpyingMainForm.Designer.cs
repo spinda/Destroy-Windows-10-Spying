@@ -41,7 +41,6 @@ namespace DWS_Lite
             this.btnDestroyWindowsSpying = new System.Windows.Forms.Button();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
             this.labelInfoDeleteMetroApps = new System.Windows.Forms.Label();
-            this.btnProfessionalMode = new System.Windows.Forms.Button();
             this.checkBoxDeleteAppXBOX = new System.Windows.Forms.CheckBox();
             this.checkBoxDeleteAppVoice = new System.Windows.Forms.CheckBox();
             this.checkBoxDeleteAppSolit = new System.Windows.Forms.CheckBox();
@@ -80,6 +79,7 @@ namespace DWS_Lite
             this.btnReportABug = new System.Windows.Forms.Button();
             this.linkLabelOtherThanks = new System.Windows.Forms.LinkLabel();
             this.groupBoxLinks = new System.Windows.Forms.GroupBox();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabelSourceCode = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
@@ -94,7 +94,7 @@ namespace DWS_Lite
             this.tabPageLicense = new System.Windows.Forms.TabPage();
             this.linkLabelLicense = new System.Windows.Forms.LinkLabel();
             this.labelLicense = new System.Windows.Forms.Label();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+            this.btnProfessionalMode = new System.Windows.Forms.CheckBox();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -205,8 +205,8 @@ namespace DWS_Lite
             this.tabPageSettings.BackColor = System.Drawing.Color.White;
             this.tabPageSettings.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPageSettings.Controls.Add(this.labelInfoDeleteMetroApps);
             this.tabPageSettings.Controls.Add(this.btnProfessionalMode);
+            this.tabPageSettings.Controls.Add(this.labelInfoDeleteMetroApps);
             this.tabPageSettings.Controls.Add(this.checkBoxDeleteAppXBOX);
             this.tabPageSettings.Controls.Add(this.checkBoxDeleteAppVoice);
             this.tabPageSettings.Controls.Add(this.checkBoxDeleteAppSolit);
@@ -238,24 +238,11 @@ namespace DWS_Lite
             this.labelInfoDeleteMetroApps.AutoSize = true;
             this.labelInfoDeleteMetroApps.BackColor = System.Drawing.Color.Transparent;
             this.labelInfoDeleteMetroApps.ForeColor = System.Drawing.Color.Red;
-            this.labelInfoDeleteMetroApps.Location = new System.Drawing.Point(6, 329);
+            this.labelInfoDeleteMetroApps.Location = new System.Drawing.Point(3, 345);
             this.labelInfoDeleteMetroApps.Name = "labelInfoDeleteMetroApps";
             this.labelInfoDeleteMetroApps.Size = new System.Drawing.Size(396, 13);
             this.labelInfoDeleteMetroApps.TabIndex = 20;
             this.labelInfoDeleteMetroApps.Text = "METRO applications are deleted permanently, without the possibility of recovery.";
-            // 
-            // btnProfessionalMode
-            // 
-            this.btnProfessionalMode.BackColor = System.Drawing.Color.Transparent;
-            this.btnProfessionalMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfessionalMode.ForeColor = System.Drawing.Color.Red;
-            this.btnProfessionalMode.Location = new System.Drawing.Point(6, 371);
-            this.btnProfessionalMode.Name = "btnProfessionalMode";
-            this.btnProfessionalMode.Size = new System.Drawing.Size(431, 23);
-            this.btnProfessionalMode.TabIndex = 19;
-            this.btnProfessionalMode.Text = "Enable professional mode";
-            this.btnProfessionalMode.UseVisualStyleBackColor = false;
-            this.btnProfessionalMode.Click += new System.EventHandler(this.btnProfessionalMode_Click);
             // 
             // checkBoxDeleteAppXBOX
             // 
@@ -740,7 +727,8 @@ namespace DWS_Lite
             "fr-FR | French",
             "es-ES | Spanish",
             "pt-BR | Portuguese",
-            "de-DE | German"});
+            "de-DE | German",
+            "pl-PL | Polish"});
             this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
             this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
             this.comboBoxLanguageSelect.Size = new System.Drawing.Size(202, 21);
@@ -787,6 +775,18 @@ namespace DWS_Lite
             this.groupBoxLinks.TabIndex = 8;
             this.groupBoxLinks.TabStop = false;
             this.groupBoxLinks.Text = "Links";
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel6.Location = new System.Drawing.Point(6, 17);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(73, 13);
+            this.linkLabel6.TabIndex = 9;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "dws.wzor.net";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
             // 
             // linkLabelSourceCode
             // 
@@ -951,17 +951,17 @@ namespace DWS_Lite
             this.labelLicense.TabIndex = 0;
             this.labelLicense.Text = resources.GetString("labelLicense.Text");
             // 
-            // linkLabel6
+            // btnProfessionalMode
             // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel6.Location = new System.Drawing.Point(6, 17);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(73, 13);
-            this.linkLabel6.TabIndex = 9;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "dws.wzor.net";
-            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            this.btnProfessionalMode.AutoSize = true;
+            this.btnProfessionalMode.ForeColor = System.Drawing.Color.Red;
+            this.btnProfessionalMode.Location = new System.Drawing.Point(6, 371);
+            this.btnProfessionalMode.Name = "btnProfessionalMode";
+            this.btnProfessionalMode.Size = new System.Drawing.Size(113, 17);
+            this.btnProfessionalMode.TabIndex = 21;
+            this.btnProfessionalMode.Text = "Professional mode";
+            this.btnProfessionalMode.UseVisualStyleBackColor = true;
+            this.btnProfessionalMode.CheckedChanged += new System.EventHandler(this.btnProfessionalMode_Click);
             // 
             // DestroyWindowsSpyingMainForm
             // 
@@ -1044,7 +1044,6 @@ namespace DWS_Lite
         private Label label1;
         private LinkLabel linkLabel5;
         private GroupBox groupBoxLinks;
-        private Button btnProfessionalMode;
         private GroupBox groupBoxWindowsUpdate;
         private GroupBox groupBoxUACEdit;
         private LinkLabel linkLabelOtherThanks;
@@ -1063,6 +1062,7 @@ namespace DWS_Lite
         private LinkLabel linkLabelLicense;
         private Label labelLicense;
         private LinkLabel linkLabel6;
+        private CheckBox btnProfessionalMode;
     }
 }
 

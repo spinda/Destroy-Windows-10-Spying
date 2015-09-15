@@ -28,7 +28,6 @@ namespace DWS_Lite
         private string _logFileName = "DWS.log";
         private bool _win10 = true;
         private int _fatalErrors;
-        private bool _professionalmode;
         private bool _debug;
 
         public DestroyWindowsSpyingMainForm(string[] args)
@@ -176,7 +175,8 @@ namespace DWS_Lite
             }
             return languageName;
         }
-        void SetLanguage(string currentlang = null)
+
+        private void SetLanguage(string currentlang = null)
         {
             if (currentlang == null)
             {
@@ -207,12 +207,18 @@ namespace DWS_Lite
                 _rm = de_DE.ResourceManager;
                 comboBoxLanguageSelect.Text = @"de-DE | German";
             }
+            else if (currentlang.IndexOf("pl", StringComparison.Ordinal) > -1)
+            {
+                _rm = de_DE.ResourceManager;
+                comboBoxLanguageSelect.Text = @"pl-PL | Polish";
+            }
             else
             {
                 _rm = en_US.ResourceManager;
                 comboBoxLanguageSelect.Text = @"en-US | English";
             }
         }
+
         void ChangeLanguage()
         {
             ReadmeRichTextBox.Text = GetTranslateText("ReadMeTextBox");
@@ -1114,8 +1120,7 @@ namespace DWS_Lite
         }
         private void btnProfessionalMode_Click(object sender, EventArgs e)
         {
-            _professionalmode = !_professionalmode;
-            ProfessionalModeSet(_professionalmode);
+            ProfessionalModeSet(btnProfessionalMode.Checked);
         }
         private void ProfessionalModeSet(bool enableordisable)
         {
@@ -1130,16 +1135,6 @@ namespace DWS_Lite
             groupBoxUACEdit.Visible = enableordisable;
             btnDeleteMetroAppsInfo.Visible = enableordisable;
             btnDeleteOneDrive.Visible = enableordisable;
-            if (enableordisable)
-            {
-                Text += @"  !Professional mode!";
-                btnProfessionalMode.Text = btnProfessionalMode.Text.Replace("Enable", "Disable");
-            }
-            else
-            {
-                Text = Text.Replace("  !Professional mode!", null);
-                btnProfessionalMode.Text = btnProfessionalMode.Text.Replace("Disable", "Enable");
-            }
         }
         private void linkLabelOtherThanks_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -1215,6 +1210,7 @@ namespace DWS_Lite
         {
             Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying/issues/new");
         }
+
         private void comboBoxLanguageSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "ru-RU")
@@ -1242,12 +1238,18 @@ namespace DWS_Lite
                 _rm = de_DE.ResourceManager;
                 ChangeLanguage();
             }
+            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "pl-PL")
+            {
+                _rm = pl_PL.ResourceManager;
+                ChangeLanguage();
+            }
             else
             {
                 _rm = en_US.ResourceManager;
                 ChangeLanguage();
             }
         }
+
         private void btnDestroyWindows78Spy_Click(object sender, EventArgs e)
         {
             btnDestroyWindows78Spy.Enabled = false;
