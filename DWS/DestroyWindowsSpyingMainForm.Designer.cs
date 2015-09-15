@@ -94,6 +94,7 @@ namespace DWS_Lite
             this.tabPageLicense = new System.Windows.Forms.TabPage();
             this.linkLabelLicense = new System.Windows.Forms.LinkLabel();
             this.labelLicense = new System.Windows.Forms.Label();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -773,6 +774,7 @@ namespace DWS_Lite
             // groupBoxLinks
             // 
             this.groupBoxLinks.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxLinks.Controls.Add(this.linkLabel6);
             this.groupBoxLinks.Controls.Add(this.linkLabelSourceCode);
             this.groupBoxLinks.Controls.Add(this.linkLabel1);
             this.groupBoxLinks.Controls.Add(this.linkLabel5);
@@ -790,7 +792,7 @@ namespace DWS_Lite
             // 
             this.linkLabelSourceCode.AutoSize = true;
             this.linkLabelSourceCode.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelSourceCode.Location = new System.Drawing.Point(6, 37);
+            this.linkLabelSourceCode.Location = new System.Drawing.Point(69, 37);
             this.linkLabelSourceCode.Name = "linkLabelSourceCode";
             this.linkLabelSourceCode.Size = new System.Drawing.Size(116, 13);
             this.linkLabelSourceCode.TabIndex = 8;
@@ -802,7 +804,7 @@ namespace DWS_Lite
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Location = new System.Drawing.Point(6, 17);
+            this.linkLabel1.Location = new System.Drawing.Point(117, 17);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(66, 13);
             this.linkLabel1.TabIndex = 2;
@@ -814,7 +816,7 @@ namespace DWS_Lite
             // 
             this.linkLabel5.AutoSize = true;
             this.linkLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel5.Location = new System.Drawing.Point(128, 37);
+            this.linkLabel5.Location = new System.Drawing.Point(191, 37);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(113, 13);
             this.linkLabel5.TabIndex = 7;
@@ -827,7 +829,7 @@ namespace DWS_Lite
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabel4.Location = new System.Drawing.Point(247, 37);
+            this.linkLabel4.Location = new System.Drawing.Point(310, 37);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(110, 13);
             this.linkLabel4.TabIndex = 5;
@@ -839,7 +841,7 @@ namespace DWS_Lite
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Location = new System.Drawing.Point(78, 17);
+            this.linkLabel2.Location = new System.Drawing.Point(189, 17);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(50, 13);
             this.linkLabel2.TabIndex = 3;
@@ -851,7 +853,7 @@ namespace DWS_Lite
             // 
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel3.Location = new System.Drawing.Point(134, 17);
+            this.linkLabel3.Location = new System.Drawing.Point(245, 17);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(175, 13);
             this.linkLabel3.TabIndex = 4;
@@ -948,6 +950,18 @@ namespace DWS_Lite
             this.labelLicense.Size = new System.Drawing.Size(405, 143);
             this.labelLicense.TabIndex = 0;
             this.labelLicense.Text = resources.GetString("labelLicense.Text");
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel6.Location = new System.Drawing.Point(6, 17);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(73, 13);
+            this.linkLabel6.TabIndex = 9;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "dws.wzor.net";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
             // 
             // DestroyWindowsSpyingMainForm
             // 
@@ -1048,6 +1062,7 @@ namespace DWS_Lite
         private TabPage tabPageLicense;
         private LinkLabel linkLabelLicense;
         private Label labelLicense;
+        private LinkLabel linkLabel6;
     }
 }
 

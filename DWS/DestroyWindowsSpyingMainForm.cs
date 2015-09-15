@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Management;
+using System.Net;
 using System.Resources;
 using System.Security.AccessControl;
 using System.Text;
@@ -51,6 +52,34 @@ namespace DWS_Lite
             SetLanguage(_GetLang(args));
             ChangeLanguage();
             StealthMode(args);
+            new Thread(CheckUpdates).Start();
+        }
+
+        void CheckUpdates()
+        {
+            try
+            {
+                string latestVersion = new WebClient().DownloadString(
+                    "http://raw.githubusercontent.com/Nummer/Destroy-Windows-10-Spying/master/DWS/Resources/build_number.txt");
+                if (Convert.ToInt32(Resources.build_number) <
+                    Convert.ToInt32(latestVersion))
+                {
+                    if (
+                        MessageBox.Show(
+                            string.Format("New version found.\nBuild number: {0}\nDownload now?", latestVersion),
+                            @"Update",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying/releases/latest");
+                    }
+                }
+                _OutPut(string.Format("Latest version number: {0}", latestVersion));
+            }
+            catch (Exception ex)
+            {
+                _OutPut("Error check updates.", LogLevel.Error);
+                if (_debug) _OutPut(ex.Message, LogLevel.Debug);
+            }
         }
 
         public override sealed string Text
@@ -1341,6 +1370,11 @@ namespace DWS_Lite
         private void linkLabelLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://www.apache.org/licenses/LICENSE-2.0");
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://dws.wzor.net/");
         }
     }
 }
