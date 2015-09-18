@@ -204,9 +204,6 @@ Un reinicio es necesario para deshabilitar todo el spyware. Reiniciar ahora?</va
     <value>Requiere un reinicio.
 ¿Reiniciar ahora?</value>
   </data>
-  <data name="RunOnlyWin10" xml:space="preserve">
-    <value>Esta aplicación solo funciona en Windows 10</value>
-  </data>
   <data name="tabPageAbout" xml:space="preserve">
     <value>Acerca de</value>
   </data>

@@ -118,138 +118,131 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
-    <value>Alle Windows Store Apps entfernen</value>
+    <value>Cancellare tutti applicazioni Metro di Win 10</value>
   </data>
   <data name="btnDeleteOneDrive" xml:space="preserve">
-    <value>Microsoft OneDrive entfernen</value>
+    <value>Cancellare One Drive</value>
   </data>
   <data name="btnOpenAndEditHosts" xml:space="preserve">
-    <value>Die HOSTS-Datei bearbeiten</value>
+    <value>Aprire hosts per modificare</value>
   </data>
   <data name="btnProfessionalMode" xml:space="preserve">
-    <value>Experten-Modus aktivieren</value>
+    <value>Attivare la modalità Proffesionale</value>
   </data>
   <data name="btnRestoreSystem" xml:space="preserve">
-    <value>System wiederherstellen</value>
+    <value>Ripristinare il sistema</value>
   </data>
   <data name="checkBoxAddToHosts" xml:space="preserve">
-    <value>Automatisch Internetseiten, die spionieren, blockieren.</value>
+    <value>Aggiungere domini spia in hosts, Firewall</value>
   </data>
   <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
-    <value>Systemwiederherstellungspunkt erstellen</value>
+    <value>Creare un punto di ripristino</value>
   </data>
   <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
-    <value>Alle Windows Store Apps entfernen</value>
+    <value>Cancellare tutti applicazioni Metro di Win 10</value>
   </data>
   <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
-    <value>Datenschutzeinstellungen deaktivieren</value>
+    <value>Disabilitare le impostazioni private</value>
   </data>
   <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
-    <value>Windows Defender (Antivirus) deaktivieren</value>
+    <value>Disabilitare Windows Defender</value>
   </data>
   <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
-    <value>Tastaturprotokolle und Benutzerprotokolle löschen</value>
+    <value>Disabilitare KeyLogger e telemetria</value>
   </data>
   <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
-    <value>Windows Bilderanzeige festlegen</value>
+    <value>Impostare un visualizzatore di foto standard</value>
   </data>
   <data name="checkBoxSPYTasks" xml:space="preserve">
-    <value>Spionageaufträge beenden</value>
+    <value>Disabilitare programmi spia</value>
   </data>
   <data name="Complete" xml:space="preserve">
-    <value>Fertig</value>
+    <value>Completato</value>
   </data>
   <data name="CompleteMSG" xml:space="preserve">
-    <value>Alles erfolgreich erledigt!
-
-Allerdings muss das System neu gestartet werden.
-Wollen Sie jetzt neu starten?</value>
+    <value>Completato.
+E' necessario riavviare il PC.
+Riavviare ora?</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Löschen</value>
+    <value>Cancellare</value>
   </data>
   <data name="DeleteApps" xml:space="preserve">
-    <value>Apps löschen</value>
+    <value>Cancellare le applicazioni</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Deaktivieren</value>
+    <value>Disabilitare</value>
   </data>
   <data name="Enable" xml:space="preserve">
-    <value>Aktivieren</value>
+    <value>Abilitare</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Fehler</value>
+    <value>Errore</value>
   </data>
   <data name="ErrorMSG" xml:space="preserve">
-    <value>Vorgang abgeschlossen. Leider ist ein Fehler dabei eingetreten: {0}
-
-Es ist ein Neustart notwendig. 
-Jetzt neu starten?</value>
+    <value>Oh qualcosa è andato storto. Errore - {0}
+Comunque bisogna riavviare il PC.
+Riavviare ora?</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Informationen</value>
+    <value>Informazione</value>
   </data>
   <data name="labelInfoDeleteMetroApps" xml:space="preserve">
-    <value>Windows Store Apps werden gelöscht. Diese Aktion ist nicht umkehrbar.</value>
+    <value>alcune applicazioni Metro vengono cacnellati definitivamente</value>
   </data>
   <data name="Links" xml:space="preserve">
-    <value>Verweise</value>
+    <value>collegamenti</value>
   </data>
   <data name="PressOkAndWait15" xml:space="preserve">
-    <value>Drücken Sie OK und warten Sie ungefähr 15 Minuten.</value>
+    <value>Premere Ok ed aspettare 15 minuti.</value>
   </data>
   <data name="Question" xml:space="preserve">
-    <value>Fragen</value>
+    <value>Domanda</value>
   </data>
   <data name="Really" xml:space="preserve">
-    <value>Sie sie sicher?</value>
+    <value>Realmente?</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Es ist ein Neustart notwendig. Soll jetzt neu gestartet werden?</value>
+    <value>E' necessario riavviare il sistema
+Riavviare ora?</value>
   </data>
   <data name="tabPageAbout" xml:space="preserve">
-    <value>Über</value>
+    <value>Informazioni</value>
   </data>
   <data name="tabPageMain" xml:space="preserve">
-    <value>Start</value>
+    <value>Pagina principale</value>
   </data>
   <data name="tabPageReadMe" xml:space="preserve">
-    <value>Anleitung</value>
+    <value>Leggimi</value>
   </data>
   <data name="tabPageSettings" xml:space="preserve">
-    <value>Einstellungen</value>
+    <value>Impostazioni</value>
   </data>
   <data name="tabPageUtilites" xml:space="preserve">
-    <value>Werkzeug</value>
+    <value>Pagine utili</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warnung</value>
+    <value>Attenzione</value>
   </data>
   <data name="RemoveAllOldFirewallRules" xml:space="preserve">
-    <value>Alte Firewall-Regeln von uns entfernen.</value>
+    <value>Rimuovere vecchie impostazioni di Firewall</value>
   </data>
   <data name="ReportABug" xml:space="preserve">
-    <value>Einen Fehler melden.</value>
+    <value>Riportare bug</value>
   </data>
   <data name="ReadMeTextBox" xml:space="preserve">
-    <value>Guten Tag. Willkommen bei "Destroy Windows 10 Spying".
-Dieses Programm ist Quelloffen und dient dem Schutz ihrer Privatsphäre. 
+    <value>Questo software cancella spionaggio in Windows 7/8/8.1/10
+questo software ha il codice sorgente aperto e si trova in github.
+Questo programma elimina completamente spionaggio. Rimuove alcuni elementi di telemetria e l'altra disabilita, inoltre disabilita Windows Defender, Kortanu, e molt' altro. Inoltre  il programma disabilita Windows Update, che consente di mantenere l'anonimato e non  ricevere aggiornamenti su nuovi spyware.
+L'eliminazione delle applicazioni Metro  è ottimo, perché questi lavorano in background, e impegnano molta memoria,alcuni di loro vi spiano.
+Inoltre il programma blocca molti indirizzi IP di Microsoft, che raccolgano vostri dati e aggiunge maggior parte degli host spia in hosts. 
+Quasi tutti azioni del programma sono irreversibili, e non possono essere ripristinate
+Al momento questo software è più efficace, ci lavora sopra  una vasta comunità di utenti di Windows 10, alcuni aiutano a riscrivere il codice, ed altri traducano in altre lingue
 
-Es verhindert, das Windows 10 Daten über Sie und ihre Tätigkeiten erfasst. Weiterhin verhindert es auch zukünftige Programme, die versuchen Ihre Benutzerdaten zu sammeln.
-
-Ferner kann die Anwendung, sofern Sie es wünschen, auch die Windows Store Anwendungen entfernen. Diese laufen oftmals im Hintergrund und verwenden so den Speicher und die Rechenleistung ihrer Computers.
-
-Dieses Programm ist das derzeit beste Programm für diese Aufgabe und wird von einer starken Gemeinde unterstützt. 
-
---------------
-
-Ferner biete das Programm auch das Starten über Befehlszeilenargumente an:
-/lang=de	(Sie können auch weitere Sprachen wie "en" (Englisch), "es"(Spanisch), "fr"(Französisch), "ru" (Russisch) verwenden)
-/deleteapp=	Löscht eine beliebige Anwendung vom System. Beispiele wären: "bing", "note"...
-/destroy 	Mit diesem Befehl beginnt das Programm seine Reinigung ihrer Systems.
-
-Hinweise: Sie können /destroy und /deleteapp nicht gleichzeitig verwenden. Ferner können Sie /deleteapp nicht mehrfach verwenden.
-
-* Deutsche Übersetzung von: Thomas Roskop *</value>
+I commandi per la riga di comandi:
+/lang= - Impostare la lingua del programma, dopo = bisogna scrivere la lingua, ad esempio /lang=en-US
+/deleteapp= - Permette di cancellare le applicazioni Metro in Windows. Dopo = bisogna scrivere il nome o una sua parte, ad esempio  /deleteapp=bing или /deleteapp=note
+/destroy - Il comando per la rimozione di spyware
+ATTENZIONE:I comandi /destroy e /deleteapp= non devono essere usati insieme, e il comando /deleteapp= non dev'essere usato più volte</value>
   </data>
 </root>

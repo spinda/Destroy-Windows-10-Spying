@@ -206,9 +206,6 @@ Redémarrer maintenant?</value>
     <value>Nécessite un redémarrage.
 Redémarrer maintenant ?</value>
   </data>
-  <data name="RunOnlyWin10" xml:space="preserve">
-    <value>Ce programme ne fonctionne que sur Windows 10</value>
-  </data>
   <data name="tabPageAbout" xml:space="preserve">
     <value>À propos</value>
   </data>

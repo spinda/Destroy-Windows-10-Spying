@@ -206,9 +206,6 @@ Restart now?</value>
     <value>Requires restart.
 Restart now?</value>
   </data>
-  <data name="RunOnlyWin10" xml:space="preserve">
-    <value>This program works only on Windows 10</value>
-  </data>
   <data name="tabPageAbout" xml:space="preserve">
     <value>About</value>
   </data>

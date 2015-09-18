@@ -206,9 +206,6 @@ Reiniciar agora?</value>
     <value>É necessário reiniciar.
 Reiniciar agora?</value>
   </data>
-  <data name="RunOnlyWin10" xml:space="preserve">
-    <value>Este aplicativo funciona somente no Windows 10</value>
-  </data>
   <data name="tabPageAbout" xml:space="preserve">
     <value>Sobre</value>
   </data>

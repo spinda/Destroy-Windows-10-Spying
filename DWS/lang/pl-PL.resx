@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
-    <value>Usuń wszystkie aplikacje metro Windows 10</value>
+    <value>Usuń wszystkie aplikacje Metro Windows 10</value>
   </data>
   <data name="btnDeleteOneDrive" xml:space="preserve">
     <value>Odinstaluj OneDrive</value>
@@ -133,7 +133,7 @@
     <value>Przywracanie systemu</value>
   </data>
   <data name="checkBoxAddToHosts" xml:space="preserve">
-    <value>Dodaj domeny szpiegujące do pliku hosts i zablokuj je w Zaporze systemu Windows</value>
+    <value>Zablokuj domeny szpiegujące w pliku hosts i Zaporze systemu Windows</value>
   </data>
   <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
     <value>Utwórz punkt przywracania systemu</value>
@@ -151,7 +151,7 @@
     <value>Usuń keylogger i telemetrię</value>
   </data>
   <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
-    <value>Ustaw program 'Przeglądarka fotografii systemu Windows' jako domyślną przeglądarkę obrazów</value>
+    <value>Ustaw program 'Przeglądarka fotografii systemu Windows' jako domyślny</value>
   </data>
   <data name="checkBoxSPYTasks" xml:space="preserve">
     <value>Wyłącz śledzące zadania</value>
@@ -205,9 +205,6 @@ Czy chcesz zrobić to teraz?</value>
     <value>Aby zakończyć proces, należy uruchomić ponownie komputer.
 Czy chcesz zrobić to teraz?</value>
   </data>
-  <data name="RunOnlyWin10" xml:space="preserve">
-    <value>Ten program działa tylko na systemie Windows 10</value>
-  </data>
   <data name="tabPageAbout" xml:space="preserve">
     <value>O programie</value>
   </data>
@@ -215,7 +212,7 @@ Czy chcesz zrobić to teraz?</value>
     <value>Strona główna</value>
   </data>
   <data name="tabPageReadMe" xml:space="preserve">
-    <value>Przed korzystaniem</value>
+    <value>Opis programu</value>
   </data>
   <data name="tabPageSettings" xml:space="preserve">
     <value>Ustawienia</value>

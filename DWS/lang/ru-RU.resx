@@ -206,9 +206,6 @@
     <value>Требуется перезагрузка
 Перезагрузить сейчас?</value>
   </data>
-  <data name="RunOnlyWin10" xml:space="preserve">
-    <value>Данная программа работает только под Windows 10</value>
-  </data>
   <data name="tabPageAbout" xml:space="preserve">
     <value>О программе</value>
   </data>

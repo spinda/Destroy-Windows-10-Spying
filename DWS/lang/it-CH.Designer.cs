@@ -22,14 +22,14 @@ namespace DWS_Lite.lang {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class fr_FR {
+    internal class it_CH {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal fr_FR() {
+        internal it_CH() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace DWS_Lite.lang {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DWS_Lite.lang.fr-FR", typeof(fr_FR).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DWS_Lite.lang.it-CH", typeof(it_CH).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer toutes les applications Metro de Windows 10.
+        ///   Looks up a localized string similar to Cancellare tutti applicazioni Metro di Win 10.
         /// </summary>
         internal static string btnDeleteAllWindows10Apps {
             get {
@@ -70,7 +70,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer OneDrive.
+        ///   Looks up a localized string similar to Cancellare One Drive.
         /// </summary>
         internal static string btnDeleteOneDrive {
             get {
@@ -79,7 +79,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ouvrir et Modifier le fichier HOSTS.
+        ///   Looks up a localized string similar to Aprire hosts per modificare.
         /// </summary>
         internal static string btnOpenAndEditHosts {
             get {
@@ -88,7 +88,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Activer le Mode Professionnel.
+        ///   Looks up a localized string similar to Attivare la modalità Proffesionale.
         /// </summary>
         internal static string btnProfessionalMode {
             get {
@@ -97,7 +97,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restaurer le Système.
+        ///   Looks up a localized string similar to Ripristinare il sistema.
         /// </summary>
         internal static string btnRestoreSystem {
             get {
@@ -106,7 +106,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ajouter des domaines espion au fichier HOSTS et bloquer les IP dans le pare-feu Windows.
+        ///   Looks up a localized string similar to Aggiungere domini spia in hosts, Firewall.
         /// </summary>
         internal static string checkBoxAddToHosts {
             get {
@@ -115,7 +115,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Créer un point de restauration système.
+        ///   Looks up a localized string similar to Creare un punto di ripristino.
         /// </summary>
         internal static string checkBoxCreateSystemRestorePoint {
             get {
@@ -124,7 +124,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer les applications Métro de Windows 10.
+        ///   Looks up a localized string similar to Cancellare tutti applicazioni Metro di Win 10.
         /// </summary>
         internal static string checkBoxDeleteWindows10Apps {
             get {
@@ -133,7 +133,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Désactiver les paramètres privés.
+        ///   Looks up a localized string similar to Disabilitare le impostazioni private.
         /// </summary>
         internal static string checkBoxDisablePrivateSettings {
             get {
@@ -142,7 +142,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Désactiver Windows Defender.
+        ///   Looks up a localized string similar to Disabilitare Windows Defender.
         /// </summary>
         internal static string checkBoxDisableWindowsDefender {
             get {
@@ -151,7 +151,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer le KeyLogger et la Télémétrie.
+        ///   Looks up a localized string similar to Disabilitare KeyLogger e telemetria.
         /// </summary>
         internal static string checkBoxKeyLoggerAndTelemetry {
             get {
@@ -160,7 +160,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mettre la Visionneuse de photos Windows par défaut.
+        ///   Looks up a localized string similar to Impostare un visualizzatore di foto standard.
         /// </summary>
         internal static string checkBoxSetDefaultPhoto {
             get {
@@ -169,7 +169,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Désactiver les tâches de l&apos;Espion.
+        ///   Looks up a localized string similar to Disabilitare programmi spia.
         /// </summary>
         internal static string checkBoxSPYTasks {
             get {
@@ -178,7 +178,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fini.
+        ///   Looks up a localized string similar to Completato.
         /// </summary>
         internal static string Complete {
             get {
@@ -187,9 +187,9 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fini!
-        ///Un redémarrage est nécessaire pour désactiver tous les logiciels espions.
-        ///Redémarrer maintenant ?.
+        ///   Looks up a localized string similar to Completato.
+        ///E&apos; necessario riavviare il PC.
+        ///Riavviare ora?.
         /// </summary>
         internal static string CompleteMSG {
             get {
@@ -198,7 +198,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer.
+        ///   Looks up a localized string similar to Cancellare.
         /// </summary>
         internal static string Delete {
             get {
@@ -207,7 +207,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supprimer les applications.
+        ///   Looks up a localized string similar to Cancellare le applicazioni.
         /// </summary>
         internal static string DeleteApps {
             get {
@@ -216,16 +216,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Détruire les Espions de Windows 10.
-        /// </summary>
-        internal static string DestroyWindowsSpying {
-            get {
-                return ResourceManager.GetString("DestroyWindowsSpying", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Désactiver.
+        ///   Looks up a localized string similar to Disabilitare.
         /// </summary>
         internal static string Disable {
             get {
@@ -234,7 +225,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Activer.
+        ///   Looks up a localized string similar to Abilitare.
         /// </summary>
         internal static string Enable {
             get {
@@ -243,7 +234,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erreur.
+        ///   Looks up a localized string similar to Errore.
         /// </summary>
         internal static string Error {
             get {
@@ -252,9 +243,9 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fini avec des erreurs - {0}
-        ///Un redémarrage est nécessaire pour désactiver tous les logiciels espions.
-        ///Redémarrer maintenant?.
+        ///   Looks up a localized string similar to Oh qualcosa è andato storto. Errore - {0}
+        ///Comunque bisogna riavviare il PC.
+        ///Riavviare ora?.
         /// </summary>
         internal static string ErrorMSG {
             get {
@@ -263,7 +254,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Info.
+        ///   Looks up a localized string similar to Informazione.
         /// </summary>
         internal static string Info {
             get {
@@ -272,7 +263,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Les applications Metro seront définitivement supprimés, sans possibilité de les réinstaller..
+        ///   Looks up a localized string similar to alcune applicazioni Metro vengono cacnellati definitivamente.
         /// </summary>
         internal static string labelInfoDeleteMetroApps {
             get {
@@ -281,7 +272,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Liens.
+        ///   Looks up a localized string similar to collegamenti.
         /// </summary>
         internal static string Links {
             get {
@@ -290,7 +281,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Appuyez sur OK et attendez 15 minutes..
+        ///   Looks up a localized string similar to Premere Ok ed aspettare 15 minuti..
         /// </summary>
         internal static string PressOkAndWait15 {
             get {
@@ -299,7 +290,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Question.
+        ///   Looks up a localized string similar to Domanda.
         /// </summary>
         internal static string Question {
             get {
@@ -308,10 +299,10 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ce logiciel supprime les espions de Windows 7/8/8.1/10.
-        ///Le logiciel est open source, son code source est diponible sur GitHub.
-        ///Ce logiciel supprime tout l&apos;espionnage de Windows. Il enlève pas mal d&apos;éléments dont la télémétrie et en désactive d&apos;autres, par exemeple il désactive Windows Defender, Cortana, et plus encore. Comme le logiciel désactive Windows Update il vous permet de ne plus envoyer de données et de ne plus avoir les nouveaux spyware de Windows.
-        ///La suppression des applications Metro est très  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Questo software cancella spionaggio in Windows 7/8/8.1/10
+        ///questo software ha il codice sorgente aperto e si trova in github.
+        ///Questo programma elimina completamente spionaggio. Rimuove alcuni elementi di telemetria e l&apos;altra disabilita, inoltre disabilita Windows Defender, Kortanu, e molt&apos; altro. Inoltre  il programma disabilita Windows Update, che consente di mantenere l&apos;anonimato e non  ricevere aggiornamenti su nuovi spyware.
+        ///L&apos;eliminazione delle applicazioni Metro  è ottimo, perché questi lavorano in  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReadMeTextBox {
             get {
@@ -320,7 +311,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vraiment ?.
+        ///   Looks up a localized string similar to Realmente?.
         /// </summary>
         internal static string Really {
             get {
@@ -329,7 +320,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enlever les anciennes règles DWS du pare-feu Windows.
+        ///   Looks up a localized string similar to Rimuovere vecchie impostazioni di Firewall.
         /// </summary>
         internal static string RemoveAllOldFirewallRules {
             get {
@@ -338,7 +329,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Signaler un bug.
+        ///   Looks up a localized string similar to Riportare bug.
         /// </summary>
         internal static string ReportABug {
             get {
@@ -347,8 +338,8 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nécessite un redémarrage.
-        ///Redémarrer maintenant ?.
+        ///   Looks up a localized string similar to E&apos; necessario riavviare il sistema
+        ///Riavviare ora?.
         /// </summary>
         internal static string Restart {
             get {
@@ -357,7 +348,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to À propos.
+        ///   Looks up a localized string similar to Informazioni.
         /// </summary>
         internal static string tabPageAbout {
             get {
@@ -366,7 +357,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Principal.
+        ///   Looks up a localized string similar to Pagina principale.
         /// </summary>
         internal static string tabPageMain {
             get {
@@ -375,7 +366,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lisez Moi.
+        ///   Looks up a localized string similar to Leggimi.
         /// </summary>
         internal static string tabPageReadMe {
             get {
@@ -384,7 +375,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paramètres.
+        ///   Looks up a localized string similar to Impostazioni.
         /// </summary>
         internal static string tabPageSettings {
             get {
@@ -393,7 +384,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Utilitaires.
+        ///   Looks up a localized string similar to Pagine utili.
         /// </summary>
         internal static string tabPageUtilites {
             get {
@@ -402,7 +393,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Attention.
+        ///   Looks up a localized string similar to Attenzione.
         /// </summary>
         internal static string Warning {
             get {

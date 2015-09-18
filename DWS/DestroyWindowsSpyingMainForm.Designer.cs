@@ -40,6 +40,7 @@ namespace DWS_Lite
             this.ProgressBarStatus = new System.Windows.Forms.ProgressBar();
             this.btnDestroyWindowsSpying = new System.Windows.Forms.Button();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
+            this.btnProfessionalMode = new System.Windows.Forms.CheckBox();
             this.labelInfoDeleteMetroApps = new System.Windows.Forms.Label();
             this.checkBoxDeleteAppXBOX = new System.Windows.Forms.CheckBox();
             this.checkBoxDeleteAppVoice = new System.Windows.Forms.CheckBox();
@@ -94,7 +95,6 @@ namespace DWS_Lite
             this.tabPageLicense = new System.Windows.Forms.TabPage();
             this.linkLabelLicense = new System.Windows.Forms.LinkLabel();
             this.labelLicense = new System.Windows.Forms.Label();
-            this.btnProfessionalMode = new System.Windows.Forms.CheckBox();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -158,7 +158,7 @@ namespace DWS_Lite
             // 
             this.LogOutputTextBox.BackColor = System.Drawing.Color.Blue;
             this.LogOutputTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LogOutputTextBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LogOutputTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LogOutputTextBox.ForeColor = System.Drawing.Color.Yellow;
             this.LogOutputTextBox.Location = new System.Drawing.Point(8, 113);
             this.LogOutputTextBox.Name = "LogOutputTextBox";
@@ -232,6 +232,18 @@ namespace DWS_Lite
             this.tabPageSettings.Size = new System.Drawing.Size(445, 400);
             this.tabPageSettings.TabIndex = 1;
             this.tabPageSettings.Text = "Settings";
+            // 
+            // btnProfessionalMode
+            // 
+            this.btnProfessionalMode.AutoSize = true;
+            this.btnProfessionalMode.ForeColor = System.Drawing.Color.Red;
+            this.btnProfessionalMode.Location = new System.Drawing.Point(6, 371);
+            this.btnProfessionalMode.Name = "btnProfessionalMode";
+            this.btnProfessionalMode.Size = new System.Drawing.Size(113, 17);
+            this.btnProfessionalMode.TabIndex = 21;
+            this.btnProfessionalMode.Text = "Professional mode";
+            this.btnProfessionalMode.UseVisualStyleBackColor = true;
+            this.btnProfessionalMode.CheckedChanged += new System.EventHandler(this.btnProfessionalMode_Click);
             // 
             // labelInfoDeleteMetroApps
             // 
@@ -728,7 +740,8 @@ namespace DWS_Lite
             "es-ES | Spanish",
             "pt-BR | Portuguese",
             "de-DE | German",
-            "pl-PL | Polish"});
+            "pl-PL | Polish",
+            "it-CH | Italian"});
             this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
             this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
             this.comboBoxLanguageSelect.Size = new System.Drawing.Size(202, 21);
@@ -751,7 +764,7 @@ namespace DWS_Lite
             // 
             this.linkLabelOtherThanks.AutoSize = true;
             this.linkLabelOtherThanks.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelOtherThanks.Location = new System.Drawing.Point(188, 223);
+            this.linkLabelOtherThanks.Location = new System.Drawing.Point(188, 207);
             this.linkLabelOtherThanks.Name = "linkLabelOtherThanks";
             this.linkLabelOtherThanks.Size = new System.Drawing.Size(70, 13);
             this.linkLabelOtherThanks.TabIndex = 9;
@@ -869,13 +882,13 @@ namespace DWS_Lite
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(272, 33);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Сделано в России! (Made in Russia!) ®";
+            this.label1.Text = "Сделано на другой стороне луны ®";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // About_Info
             // 
             this.About_Info.BackColor = System.Drawing.Color.Transparent;
-            this.About_Info.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.About_Info.Font = new System.Drawing.Font("Consolas", 12F);
             this.About_Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.About_Info.Location = new System.Drawing.Point(6, 36);
             this.About_Info.Margin = new System.Windows.Forms.Padding(3);
@@ -883,8 +896,7 @@ namespace DWS_Lite
             this.About_Info.Size = new System.Drawing.Size(439, 184);
             this.About_Info.TabIndex = 1;
             this.About_Info.Text = "\r\nCreated by Nummer (@nummerok)\r\n\r\n©WZT\r\n\r\nThanks: @WZorNET , @MicrosoftInside ,\r" +
-    "\n@rgadguard, @DiamondMonday, @Ratiborus58\r\n\r\ntesters: artemiy, DiamondMonday, mo" +
-    "ldabekovm";
+    "\n@rgadguard, @DiamondMonday, @Ratiborus58";
             this.About_Info.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // labelBuildDataTime
@@ -950,18 +962,6 @@ namespace DWS_Lite
             this.labelLicense.Size = new System.Drawing.Size(405, 143);
             this.labelLicense.TabIndex = 0;
             this.labelLicense.Text = resources.GetString("labelLicense.Text");
-            // 
-            // btnProfessionalMode
-            // 
-            this.btnProfessionalMode.AutoSize = true;
-            this.btnProfessionalMode.ForeColor = System.Drawing.Color.Red;
-            this.btnProfessionalMode.Location = new System.Drawing.Point(6, 371);
-            this.btnProfessionalMode.Name = "btnProfessionalMode";
-            this.btnProfessionalMode.Size = new System.Drawing.Size(113, 17);
-            this.btnProfessionalMode.TabIndex = 21;
-            this.btnProfessionalMode.Text = "Professional mode";
-            this.btnProfessionalMode.UseVisualStyleBackColor = true;
-            this.btnProfessionalMode.CheckedChanged += new System.EventHandler(this.btnProfessionalMode_Click);
             // 
             // DestroyWindowsSpyingMainForm
             // 

@@ -209,8 +209,13 @@ namespace DWS_Lite
             }
             else if (currentlang.IndexOf("pl", StringComparison.Ordinal) > -1)
             {
-                _rm = de_DE.ResourceManager;
+                _rm = pl_PL.ResourceManager;
                 comboBoxLanguageSelect.Text = @"pl-PL | Polish";
+            }
+            else if (currentlang.IndexOf("it", StringComparison.Ordinal) > -1)
+            {
+                _rm = it_CH.ResourceManager;
+                comboBoxLanguageSelect.Text = @"it-CH | Italian";
             }
             else
             {
@@ -1121,6 +1126,9 @@ namespace DWS_Lite
         private void btnProfessionalMode_Click(object sender, EventArgs e)
         {
             ProfessionalModeSet(btnProfessionalMode.Checked);
+            this.Text = btnProfessionalMode.Checked
+                ? string.Format("{0}  !Professional mode!", this.Text)
+                : this.Text.Replace("  !Professional mode!", String.Empty);
         }
         private void ProfessionalModeSet(bool enableordisable)
         {
@@ -1138,7 +1146,7 @@ namespace DWS_Lite
         }
         private void linkLabelOtherThanks_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show(@"Чёрная поганка, Архангел", @"Thanks");
+            MessageBox.Show(@"Чёрная поганка, Архангел, Yele, TRoskop, artemiy , moldabekovm", @"Thanks");
         }
         private void btnDeleteMetroAppsInfo_Click(object sender, EventArgs e)
         {
@@ -1241,6 +1249,11 @@ namespace DWS_Lite
             else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "pl-PL")
             {
                 _rm = pl_PL.ResourceManager;
+                ChangeLanguage();
+            }
+            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "it-CH")
+            {
+                _rm = it_CH.ResourceManager;
                 ChangeLanguage();
             }
             else
