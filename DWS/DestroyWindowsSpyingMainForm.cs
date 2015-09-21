@@ -217,6 +217,11 @@ namespace DWS_Lite
                 _rm = it_CH.ResourceManager;
                 comboBoxLanguageSelect.Text = @"it-CH | Italian";
             }
+            else if (currentlang.IndexOf("cs", StringComparison.Ordinal) > -1)
+            {
+                _rm = cs_CZ.ResourceManager;
+                comboBoxLanguageSelect.Text = @"cs-CZ | Czech";
+            }
             else
             {
                 _rm = en_US.ResourceManager;
@@ -1256,6 +1261,11 @@ namespace DWS_Lite
                 _rm = it_CH.ResourceManager;
                 ChangeLanguage();
             }
+            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "cs-CZ")
+            {
+                _rm = cs_CZ.ResourceManager;
+                ChangeLanguage();
+            }
             else
             {
                 _rm = en_US.ResourceManager;
@@ -1286,16 +1296,19 @@ namespace DWS_Lite
             {
                     "3080149",
                     "3075249",
-                    "2952664",
-                    "3035583",
                     "3068708",
+                    "3044374",
+                    "3035583",
                     "3022345",
                     "3021917",
-                    "2976978",
-                    "3044374",
+                    "3015249",
+                    "3012973",
                     "2990214",
-                    "971033",
-                    "3075851"
+                    "2977759",
+                    "2976978",
+                    "2952664",
+                    "2922324",
+                    "971033"
             };
             for (int i = 0; i < updatesnumberlist.Length; i++)
             {

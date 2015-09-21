@@ -741,7 +741,8 @@ namespace DWS_Lite
             "pt-BR | Portuguese",
             "de-DE | German",
             "pl-PL | Polish",
-            "it-CH | Italian"});
+            "it-CH | Italian",
+            "cs-CZ | Czech"});
             this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
             this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
             this.comboBoxLanguageSelect.Size = new System.Drawing.Size(202, 21);
