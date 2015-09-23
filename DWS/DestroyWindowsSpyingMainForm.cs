@@ -1438,9 +1438,9 @@ namespace DWS_Lite
                     MessageBox.Show(GetTranslateText("FindOffice16FileT"), GetTranslateText("Info"),
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     OpenFileDialog opnFileDialog = new OpenFileDialog();
-                    opnFileDialog.InitialDirectory = @"C:\Program Files\Microsoft Office\Office15\";
+                    opnFileDialog.InitialDirectory = @"C:\Program Files\Microsoft Office\Office16\";
                     opnFileDialog.Filter = "msosync.exe|msosync.exe";
-                    string officePath = @"C:\Program Files\Microsoft Office\Office15\msosync.exe";
+                    string officePath = @"C:\Program Files\Microsoft Office\Office16\msosync.exe";
                     if (opnFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         if (File.Exists(opnFileDialog.FileName))
