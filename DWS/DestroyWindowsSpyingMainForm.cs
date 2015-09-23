@@ -1448,6 +1448,8 @@ namespace DWS_Lite
                             officePath = opnFileDialog.FileName;
                         }
                     }
+
+                    RunCmd("/c TASKKILL /F /IM msosync.exe");
                     RunCmd(String.Format("/c takeown /f \"{0}\" /d y", officePath));
                     RunCmd(String.Format("/c icacls \"{0}\" /grant {1}:F /q", officePath, userName));
                     DeleteFile(officePath);
