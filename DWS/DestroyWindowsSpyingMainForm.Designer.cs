@@ -62,6 +62,7 @@ namespace DWS_Lite
             this.checkBoxKeyLoggerAndTelemetry = new System.Windows.Forms.CheckBox();
             this.checkBoxCreateSystemRestorePoint = new System.Windows.Forms.CheckBox();
             this.tabPageUtilites = new System.Windows.Forms.TabPage();
+            this.btnDisableOfficeUpdate = new System.Windows.Forms.Button();
             this.btnRemoveOldFirewallRules = new System.Windows.Forms.Button();
             this.btnDeleteOneDrive = new System.Windows.Forms.Button();
             this.btnDeleteMetroAppsInfo = new System.Windows.Forms.Button();
@@ -544,6 +545,7 @@ namespace DWS_Lite
             this.tabPageUtilites.BackColor = System.Drawing.Color.White;
             this.tabPageUtilites.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageUtilites.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageUtilites.Controls.Add(this.btnDisableOfficeUpdate);
             this.tabPageUtilites.Controls.Add(this.btnRemoveOldFirewallRules);
             this.tabPageUtilites.Controls.Add(this.btnDeleteOneDrive);
             this.tabPageUtilites.Controls.Add(this.btnDeleteMetroAppsInfo);
@@ -557,6 +559,17 @@ namespace DWS_Lite
             this.tabPageUtilites.Size = new System.Drawing.Size(445, 400);
             this.tabPageUtilites.TabIndex = 2;
             this.tabPageUtilites.Text = "Utilites";
+            // 
+            // btnDisableOfficeUpdate
+            // 
+            this.btnDisableOfficeUpdate.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDisableOfficeUpdate.Location = new System.Drawing.Point(14, 147);
+            this.btnDisableOfficeUpdate.Name = "btnDisableOfficeUpdate";
+            this.btnDisableOfficeUpdate.Size = new System.Drawing.Size(202, 23);
+            this.btnDisableOfficeUpdate.TabIndex = 6;
+            this.btnDisableOfficeUpdate.Text = "Disable Office 2016 Telemetry";
+            this.btnDisableOfficeUpdate.UseVisualStyleBackColor = false;
+            this.btnDisableOfficeUpdate.Click += new System.EventHandler(this.btnDisableOfficeUpdate_Click);
             // 
             // btnRemoveOldFirewallRules
             // 
@@ -734,15 +747,16 @@ namespace DWS_Lite
             this.comboBoxLanguageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLanguageSelect.FormattingEnabled = true;
             this.comboBoxLanguageSelect.Items.AddRange(new object[] {
-            "en-US | English",
-            "ru-RU | Русский",
-            "fr-FR | French",
-            "es-ES | Spanish",
-            "pt-BR | Portuguese",
+            "cs-CZ | Czech",
             "de-DE | German",
-            "pl-PL | Polish",
+            "en-US | English",
+            "es-ES | Spanish",
+            "fr-FR | French",
             "it-CH | Italian",
-            "cs-CZ | Czech"});
+            "pl-PL | Polish",
+            "pt-BR | Portuguese",
+            "ru-RU | Русский",
+            "zh-CN | 中文(简体)"});
             this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
             this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
             this.comboBoxLanguageSelect.Size = new System.Drawing.Size(202, 21);
@@ -1064,6 +1078,7 @@ namespace DWS_Lite
         private Label labelLicense;
         private LinkLabel linkLabel6;
         private CheckBox btnProfessionalMode;
+        private Button btnDisableOfficeUpdate;
     }
 }
 

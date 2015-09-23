@@ -7,6 +7,7 @@ using System.Management;
 using System.Net;
 using System.Resources;
 using System.Security.AccessControl;
+using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -222,6 +223,11 @@ namespace DWS_Lite
                 _rm = cs_CZ.ResourceManager;
                 comboBoxLanguageSelect.Text = @"cs-CZ | Czech";
             }
+            else if (currentlang.IndexOf("cn", StringComparison.Ordinal) > -1)
+            {
+                _rm = zh_CN.ResourceManager;
+                comboBoxLanguageSelect.Text = @"zh-CN | 中文(简体)";
+            }
             else
             {
                 _rm = en_US.ResourceManager;
@@ -253,6 +259,7 @@ namespace DWS_Lite
             labelInfoDeleteMetroApps.Text = GetTranslateText("labelInfoDeleteMetroApps");
             btnEnableUac.Text = string.Format("{0} UAC", GetTranslateText("Enable"));
             btnDisableUac.Text = string.Format("{0} UAC", GetTranslateText("Disable"));
+            btnDisableOfficeUpdate.Text = string.Format("{0} Office 2016 Telemetry", GetTranslateText("Disable"));
             btnDisableWindowsUpdate.Text = string.Format("{0} Windows Update", GetTranslateText("Disable"));
             btnEnableWindowsUpdate.Text = string.Format("{0} Windows Update", GetTranslateText("Enable"));
             checkBoxDeleteApp3d.Text = string.Format("{0} Builder 3D", GetTranslateText("Delete"));
@@ -477,7 +484,7 @@ namespace DWS_Lite
         }
         public void DeleteFile(string filepath)
         {
-            RunCmd("/c del /F /Q " + filepath);
+            RunCmd(String.Format("/c del /F /Q \"{0}\"", filepath));
         }
 
         public void RunCmd(string args)
@@ -564,23 +571,32 @@ namespace DWS_Lite
         }
         private void SetRegValueHklm(string regkeyfolder, string paramname, string paramvalue, RegistryValueKind keytype)
         {
-            RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(regkeyfolder);
-            if (registryKey != null)
-                registryKey.Close();
-            RegistryKey myKey = Registry.LocalMachine.OpenSubKey(regkeyfolder, RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
             try
             {
-                if (myKey != null)
+                RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(regkeyfolder);
+                if (registryKey != null)
+                    registryKey.Close();
+                RegistryKey myKey = Registry.LocalMachine.OpenSubKey(regkeyfolder,
+                    RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
+                try
                 {
-                    myKey.SetValue(paramname, paramvalue, keytype);
+                    if (myKey != null)
+                    {
+                        myKey.SetValue(paramname, paramvalue, keytype);
+                    }
                 }
+                catch (Exception ex)
+                {
+                    _fatalErrors++;
+                    _OutPut(GetTranslateText("Error") + ": " + ex.Message, LogLevel.Error);
+                }
+                if (myKey != null) myKey.Close();
             }
             catch (Exception ex)
             {
                 _fatalErrors++;
                 _OutPut(GetTranslateText("Error") + ": " + ex.Message, LogLevel.Error);
             }
-            if (myKey != null) myKey.Close();
         }
         #endregion
         private void DeleteWindows10MetroApp(string appname)
@@ -1131,9 +1147,9 @@ namespace DWS_Lite
         private void btnProfessionalMode_Click(object sender, EventArgs e)
         {
             ProfessionalModeSet(btnProfessionalMode.Checked);
-            this.Text = btnProfessionalMode.Checked
-                ? string.Format("{0}  !Professional mode!", this.Text)
-                : this.Text.Replace("  !Professional mode!", String.Empty);
+            Text = btnProfessionalMode.Checked
+                ? string.Format("{0}  !Professional mode!", Text)
+                : Text.Replace("  !Professional mode!", String.Empty);
         }
         private void ProfessionalModeSet(bool enableordisable)
         {
@@ -1266,6 +1282,11 @@ namespace DWS_Lite
                 _rm = cs_CZ.ResourceManager;
                 ChangeLanguage();
             }
+            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "zh-CN")
+            {
+                _rm = zh_CN.ResourceManager;
+                ChangeLanguage();
+            }
             else
             {
                 _rm = en_US.ResourceManager;
@@ -1282,6 +1303,7 @@ namespace DWS_Lite
                 AddToHostsAndFirewall();
                 DisableSpyingTasks();
                 DeleteUpdatesWin78();
+                RunCmd("/c REG ADD HKLM\\SYSTEM\\CurrentControlSet\\Control\\WMI\\AutoLogger\\AutoLogger-Diagtrack-Listener /v Start /t REG_DWORD /d 0 /f");
                 Invoke(new MethodInvoker(delegate
                 {
                     btnDestroyWindows78Spy.Enabled = true;
@@ -1403,6 +1425,39 @@ namespace DWS_Lite
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://dws.wzor.net/");
+        }
+
+        private void btnDisableOfficeUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var windowsIdentityUser = WindowsIdentity.GetCurrent();
+                if (windowsIdentityUser != null)
+                {
+                    string userName = windowsIdentityUser.Name.Split('\\')[1];
+                    MessageBox.Show(GetTranslateText("FindOffice16FileT"), GetTranslateText("Info"),
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    OpenFileDialog opnFileDialog = new OpenFileDialog();
+                    opnFileDialog.InitialDirectory = @"C:\Program Files\Microsoft Office\Office15\";
+                    opnFileDialog.Filter = "msosync.exe|msosync.exe";
+                    string officePath = @"C:\Program Files\Microsoft Office\Office15\msosync.exe";
+                    if (opnFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        if (File.Exists(opnFileDialog.FileName))
+                        {
+                            officePath = opnFileDialog.FileName;
+                        }
+                    }
+                    RunCmd(String.Format("/c takeown /f \"{0}\" /d y", officePath));
+                    RunCmd(String.Format("/c icacls \"{0}\" /grant {1}:F /q", officePath, userName));
+                    DeleteFile(officePath);
+                    _OutPut("Complete",LogLevel.Info);
+                }
+            }
+            catch (Exception ex)
+            {
+                _OutPut(ex.Message, LogLevel.Error);
+            }
         }
     }
 }

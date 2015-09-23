@@ -245,4 +245,7 @@ Argumenty příkazového řádku:
 /destroy - odstranění spyware.
 DŮLEŽITÉ! Argumenty /destroy a /deleteapp= nelze kombinovat a argument /deleteapp= nemůže být použit vícekrát.</value>
   </data>
+  <data name="FindOffice16FileT" xml:space="preserve">
+    <value>Please specify the path to the file msosync.exe. If Office 2016 is installed as standard on the drive C, press "Cancel"</value>
+  </data>
 </root>

@@ -254,6 +254,15 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please specify the path to the file msosync.exe. If Office 2016 is installed as standard on the drive C, press &quot;Cancel&quot;.
+        /// </summary>
+        internal static string FindOffice16FileT {
+            get {
+                return ResourceManager.GetString("FindOffice16FileT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Informazione.
         /// </summary>
         internal static string Info {

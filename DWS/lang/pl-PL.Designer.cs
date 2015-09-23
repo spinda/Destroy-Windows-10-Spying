@@ -124,7 +124,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Usuń aplikacje metro Windows 10.
+        ///   Looks up a localized string similar to Usuń aplikacje Metro Windows 10.
         /// </summary>
         internal static string checkBoxDeleteWindows10Apps {
             get {
@@ -253,6 +253,15 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please specify the path to the file msosync.exe. If Office 2016 is installed as standard on the drive C, press &quot;Cancel&quot;.
+        /// </summary>
+        internal static string FindOffice16FileT {
+            get {
+                return ResourceManager.GetString("FindOffice16FileT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Informacja.
         /// </summary>
         internal static string Info {
@@ -319,7 +328,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Usuń wszystkie stare reguły zapory DWS.
+        ///   Looks up a localized string similar to Usuń stare reguły zapory od DWS.
         /// </summary>
         internal static string RemoveAllOldFirewallRules {
             get {
@@ -392,7 +401,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ostrzeżenia.
+        ///   Looks up a localized string similar to Ostrzeżenie.
         /// </summary>
         internal static string Warning {
             get {

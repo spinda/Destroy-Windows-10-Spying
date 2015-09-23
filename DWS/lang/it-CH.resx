@@ -245,4 +245,7 @@ I commandi per la riga di comandi:
 /destroy - Il comando per la rimozione di spyware
 ATTENZIONE:I comandi /destroy e /deleteapp= non devono essere usati insieme, e il comando /deleteapp= non dev'essere usato più volte</value>
   </data>
+  <data name="FindOffice16FileT" xml:space="preserve">
+    <value>Please specify the path to the file msosync.exe. If Office 2016 is installed as standard on the drive C, press "Cancel"</value>
+  </data>
 </root>

@@ -118,135 +118,132 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
-    <value>Supprimer toutes les applications Metro de Windows 10</value>
+    <value>删除所有 Windows 10 的 Metro 应用</value>
   </data>
   <data name="btnDeleteOneDrive" xml:space="preserve">
-    <value>Supprimer OneDrive</value>
+    <value>删除 One Drive</value>
   </data>
   <data name="btnOpenAndEditHosts" xml:space="preserve">
-    <value>Ouvrir et Modifier le fichier HOSTS</value>
+    <value>打开并编辑 HOSTS 文件</value>
   </data>
   <data name="btnProfessionalMode" xml:space="preserve">
-    <value>Activer le Mode Professionnel</value>
+    <value>开启专业模式</value>
   </data>
   <data name="btnRestoreSystem" xml:space="preserve">
-    <value>Restaurer le Système</value>
+    <value>还原系统</value>
   </data>
   <data name="checkBoxAddToHosts" xml:space="preserve">
-    <value>Ajouter des domaines espion au fichier HOSTS et bloquer les IP dans le pare-feu Windows</value>
+    <value>添加监视域名到 HOSTS 文件，并在 Windows 防火墙中添加阻止规则</value>
   </data>
   <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
-    <value>Créer un point de restauration système</value>
+    <value>创建系统还原点</value>
   </data>
   <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
-    <value>Supprimer les applications Métro de Windows 10</value>
+    <value>删除 Windows 10 的 Metro 应用</value>
   </data>
   <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
-    <value>Désactiver les paramètres privés</value>
+    <value>禁用隐私设置</value>
   </data>
   <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
-    <value>Désactiver Windows Defender</value>
+    <value>禁用 Windows Defender</value>
   </data>
   <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
-    <value>Supprimer le KeyLogger et la Télémétrie</value>
+    <value>删除键盘记录程序和遥测程序</value>
   </data>
   <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
-    <value>Mettre la Visionneuse de photos Windows par défaut</value>
+    <value>设置默认的 Windows 照片查看器</value>
   </data>
   <data name="checkBoxSPYTasks" xml:space="preserve">
-    <value>Désactiver les tâches de l'Espion</value>
+    <value>禁用监视计划任务</value>
   </data>
   <data name="Complete" xml:space="preserve">
-    <value>Fini</value>
+    <value>完成</value>
   </data>
   <data name="CompleteMSG" xml:space="preserve">
-    <value>Fini!
-Un redémarrage est nécessaire pour désactiver tous les logiciels espions.
-Redémarrer maintenant ?</value>
+    <value>完成！
+需要重启以禁用所有的监视软件。
+现在就重启？</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Supprimer</value>
+    <value>删除</value>
   </data>
   <data name="DeleteApps" xml:space="preserve">
-    <value>Supprimer les applications</value>
+    <value>删除应用</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Désactiver</value>
+    <value>禁用</value>
   </data>
   <data name="Enable" xml:space="preserve">
-    <value>Activer</value>
+    <value>启用</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Erreur</value>
+    <value>错误</value>
   </data>
   <data name="ErrorMSG" xml:space="preserve">
-    <value>Fini avec des erreurs - {0}
-Un redémarrage est nécessaire pour désactiver tous les logiciels espions.
-Redémarrer maintenant?</value>
+    <value>完成。 错误 - {0}
+需要重启以禁用所有的监视软件。
+现在就重启？</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Info</value>
+    <value>信息</value>
   </data>
   <data name="labelInfoDeleteMetroApps" xml:space="preserve">
-    <value>Les applications Metro seront définitivement supprimés, sans possibilité de les réinstaller.</value>
+    <value>METRO 应用将永久删除，无法恢复。</value>
   </data>
   <data name="Links" xml:space="preserve">
-    <value>Liens</value>
+    <value>链接</value>
   </data>
   <data name="PressOkAndWait15" xml:space="preserve">
-    <value>Appuyez sur OK et attendez 15 minutes.</value>
+    <value>点击 OK，并等待 15 分钟</value>
   </data>
   <data name="Question" xml:space="preserve">
-    <value>Question</value>
+    <value>问题</value>
   </data>
   <data name="Really" xml:space="preserve">
-    <value>Vraiment ?</value>
+    <value>真的？</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Nécessite un redémarrage.
-Redémarrer maintenant ?</value>
+    <value>需要重启。
+现在就重启？</value>
   </data>
   <data name="tabPageAbout" xml:space="preserve">
-    <value>À propos</value>
+    <value>关于</value>
   </data>
   <data name="tabPageMain" xml:space="preserve">
-    <value>Principal</value>
+    <value>主界面</value>
   </data>
   <data name="tabPageReadMe" xml:space="preserve">
-    <value>Lisez Moi</value>
+    <value>自述</value>
   </data>
   <data name="tabPageSettings" xml:space="preserve">
-    <value>Paramètres</value>
+    <value>设置</value>
   </data>
   <data name="tabPageUtilites" xml:space="preserve">
-    <value>Utilitaires</value>
+    <value>工具</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Attention</value>
-  </data>
-  <data name="DestroyWindowsSpying" xml:space="preserve">
-    <value>Détruire les Espions de Windows 10</value>
+    <value>警告</value>
   </data>
   <data name="RemoveAllOldFirewallRules" xml:space="preserve">
-    <value>Enlever les anciennes règles DWS du pare-feu Windows</value>
+    <value>移除所有旧的 DWS 防火墙规则</value>
   </data>
   <data name="ReportABug" xml:space="preserve">
-    <value>Signaler un bug</value>
+    <value>报告 bug</value>
   </data>
   <data name="ReadMeTextBox" xml:space="preserve">
-    <value>Ce logiciel supprime les espions de Windows 7/8/8.1/10.
-Le logiciel est open source, son code source est diponible sur GitHub.
-Ce logiciel supprime tout l'espionnage de Windows. Il enlève pas mal d'éléments dont la télémétrie et en désactive d'autres, par exemeple il désactive Windows Defender, Cortana, et plus encore. Comme le logiciel désactive Windows Update il vous permet de ne plus envoyer de données et de ne plus avoir les nouveaux spyware de Windows.
-La suppression des applications Metro est très bien, parce qu'elles fonctinnent en tâche de fond, et elles consomment pas mal de RAM, et de plus quelques une vous espionnent.
-En plus, le logiciel bloque pas mal d'adresse IP de chez Microsoft, qui recoivent ces données, et il ajoute la plus part des dommaines utilisés dans le fichier Hosts.
-Par contre ce que fait le logiciel est irréversible, les modifications ne peuvent être annulé que via un point de restoration système.
-Pour le moment c'est le logiciel le plus efficace. Le logiciel est développé et amélioré par une large communité d'utilisateur de Windows 10, certain aide à ré-écrire le code pour améliorer son efficacité, d'autre l'aide en le traduisant en de nombreuse langue.
+    <value>这个程序是用来破坏 Windows 7/8/8.1/10 上的监视功能的。
+整个程序是开源的，托管在 Github 上。
+它能完全地破坏监视功能。移除遥测的一些内容并关掉其他的内容，禁用 Windows Defender、Cortana 和还有其他一些的东西。程序可禁用 Windows 更新，让你保持匿名并不再接收新的监视软件的更新。
+删除 Metro 应用也是相当有用的，因为这些应用在后台运行，占用内存，其中的一些也会监视你的电脑。
+还有，程序也能阻止微软收集数据的 IP 地址，并可以添加几乎所有的监视软件的 ip 到 HOSTS 文件中。
+程序操作的大多数部分是不可逆的，甚至系统还原也不能回退更改。
+现在来说，它是相当有效的程序。它正处在开发中，并拥有一个由 Windows 10 的用户组成的社区。其中一些人帮助重写代码以提高程序的高效性，另一些则将程序翻译成其他语言。
 
-Voici les arugments utilisable en ligne de commande:
-/lang= - Modifier la langue utilisé par le logiciel à son lancement. Exemple: /lang=fr
-/deleteapp= - Permet la suppression d'une application Metro. Exemple: /deleteapp=bing ou /deleteapp=note
-/destroy - L'argument permettant la suppression des Spyware.
-ATTENTION! Les arguments /destroy et /deleteapp= ne peuvent pas être utilisé en même temps, et l'argument /deleteapp= ne peut pas être utilisé plusieur fois.</value>
+命令行参数：
+/lang= - 设置程序启动时的语言。例子: /lang=en
+/deleteapp= - 允许你删除 Windows 的一个 Metro 应用。 例子: /deleteapp=bing or /deleteapp=note
+/destroy - 移除监视软件的参数。
+重要！参数 /destroy and /deleteapp= 不能同时使用，且参数 /deleteapp= 不能多次使用。</value>
   </data>
   <data name="FindOffice16FileT" xml:space="preserve">
     <value>Please specify the path to the file msosync.exe. If Office 2016 is installed as standard on the drive C, press "Cancel"</value>

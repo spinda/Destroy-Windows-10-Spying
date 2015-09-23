@@ -22,14 +22,14 @@ namespace DWS_Lite.lang {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ru_RU {
+    internal class zh_CN {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ru_RU() {
+        internal zh_CN() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace DWS_Lite.lang {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DWS_Lite.lang.ru-RU", typeof(ru_RU).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DWS_Lite.lang.zh-CN", typeof(zh_CN).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить все Win 10 Metro приложения.
+        ///   Looks up a localized string similar to 删除所有 Windows 10 的 Metro 应用.
         /// </summary>
         internal static string btnDeleteAllWindows10Apps {
             get {
@@ -70,7 +70,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить One Drive.
+        ///   Looks up a localized string similar to 删除 One Drive.
         /// </summary>
         internal static string btnDeleteOneDrive {
             get {
@@ -79,7 +79,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Открыть для редактирования hosts.
+        ///   Looks up a localized string similar to 打开并编辑 HOSTS 文件.
         /// </summary>
         internal static string btnOpenAndEditHosts {
             get {
@@ -88,7 +88,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Включить профессиональный режим.
+        ///   Looks up a localized string similar to 开启专业模式.
         /// </summary>
         internal static string btnProfessionalMode {
             get {
@@ -97,7 +97,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Восстановить систему.
+        ///   Looks up a localized string similar to 还原系统.
         /// </summary>
         internal static string btnRestoreSystem {
             get {
@@ -106,7 +106,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить шпионские домены в hosts, и Windows Firewall.
+        ///   Looks up a localized string similar to 添加监视域名到 HOSTS 文件，并在 Windows 防火墙中添加阻止规则.
         /// </summary>
         internal static string checkBoxAddToHosts {
             get {
@@ -115,7 +115,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Создать точку восстановления системы.
+        ///   Looks up a localized string similar to 创建系统还原点.
         /// </summary>
         internal static string checkBoxCreateSystemRestorePoint {
             get {
@@ -124,7 +124,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить Win 10 Metro приложения.
+        ///   Looks up a localized string similar to 删除 Windows 10 的 Metro 应用.
         /// </summary>
         internal static string checkBoxDeleteWindows10Apps {
             get {
@@ -133,7 +133,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отключить приватные настройки.
+        ///   Looks up a localized string similar to 禁用隐私设置.
         /// </summary>
         internal static string checkBoxDisablePrivateSettings {
             get {
@@ -142,7 +142,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отключить Windows Defender.
+        ///   Looks up a localized string similar to 禁用 Windows Defender.
         /// </summary>
         internal static string checkBoxDisableWindowsDefender {
             get {
@@ -151,7 +151,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отключить кейлоггер, и телеметрию.
+        ///   Looks up a localized string similar to 删除键盘记录程序和遥测程序.
         /// </summary>
         internal static string checkBoxKeyLoggerAndTelemetry {
             get {
@@ -160,7 +160,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Установить стандартный просмотрщик фото.
+        ///   Looks up a localized string similar to 设置默认的 Windows 照片查看器.
         /// </summary>
         internal static string checkBoxSetDefaultPhoto {
             get {
@@ -169,7 +169,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отключить шпионские задачи.
+        ///   Looks up a localized string similar to 禁用监视计划任务.
         /// </summary>
         internal static string checkBoxSPYTasks {
             get {
@@ -178,7 +178,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Завершено.
+        ///   Looks up a localized string similar to 完成.
         /// </summary>
         internal static string Complete {
             get {
@@ -187,9 +187,9 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Завершено!
-        ///Требуется перезагрузить компьютер.
-        ///Перезагрузить сейчас?.
+        ///   Looks up a localized string similar to 完成！
+        ///需要重启以禁用所有的监视软件。
+        ///现在就重启？.
         /// </summary>
         internal static string CompleteMSG {
             get {
@@ -198,7 +198,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить.
+        ///   Looks up a localized string similar to 删除.
         /// </summary>
         internal static string Delete {
             get {
@@ -207,7 +207,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить приложения.
+        ///   Looks up a localized string similar to 删除应用.
         /// </summary>
         internal static string DeleteApps {
             get {
@@ -216,7 +216,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отключить.
+        ///   Looks up a localized string similar to 禁用.
         /// </summary>
         internal static string Disable {
             get {
@@ -225,7 +225,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Включить.
+        ///   Looks up a localized string similar to 启用.
         /// </summary>
         internal static string Enable {
             get {
@@ -234,7 +234,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ошибка.
+        ///   Looks up a localized string similar to 错误.
         /// </summary>
         internal static string Error {
             get {
@@ -243,9 +243,9 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Упс. Что-то пошло не так. Ошибок - {0} 
-        ///Но всё равно требуется перезагрузить компьютер.
-        ///Перезагрузить сейчас?.
+        ///   Looks up a localized string similar to 完成。 错误 - {0}
+        ///需要重启以禁用所有的监视软件。
+        ///现在就重启？.
         /// </summary>
         internal static string ErrorMSG {
             get {
@@ -254,7 +254,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Пожалуйста, укажите путь до файла msosync.exe . Если Office 2016 установлен стандартно на диск C, то нажмите &quot;Отмена&quot;.
+        ///   Looks up a localized string similar to Please specify the path to the file msosync.exe. If Office 2016 is installed as standard on the drive C, press &quot;Cancel&quot;.
         /// </summary>
         internal static string FindOffice16FileT {
             get {
@@ -263,7 +263,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация.
+        ///   Looks up a localized string similar to 信息.
         /// </summary>
         internal static string Info {
             get {
@@ -272,7 +272,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Некоторые METRO приложения удаляются навсегда, и их нельзя восстановить.
+        ///   Looks up a localized string similar to METRO 应用将永久删除，无法恢复。.
         /// </summary>
         internal static string labelInfoDeleteMetroApps {
             get {
@@ -281,7 +281,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ссылки.
+        ///   Looks up a localized string similar to 链接.
         /// </summary>
         internal static string Links {
             get {
@@ -290,7 +290,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Нажмите ОК, и подождите 15 минут..
+        ///   Looks up a localized string similar to 点击 OK，并等待 15 分钟.
         /// </summary>
         internal static string PressOkAndWait15 {
             get {
@@ -299,7 +299,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вопрос..
+        ///   Looks up a localized string similar to 问题.
         /// </summary>
         internal static string Question {
             get {
@@ -308,10 +308,17 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Данная программа уничтожает шпионство на Windows 7/8/8.1/10.
-        ///У программы открытый исходный код,который находится на github.
-        ///Данная программа уничтожает шпионство полностью. Удаляет некоторые элементы Телеметрии,а остальные отключает, отключает Windows Defender, Кортану,и многое другое. Так же программа отключает Windows Update, что позволяет вам остаться анонимным, и не получать новых шпионских обновлений.
-        ///Функция удаления Metro приложений очень хороша, т.к. они работают в фоновом режиме, и жрут оператив [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to 这个程序是用来破坏 Windows 7/8/8.1/10 上的监视功能的。
+        ///整个程序是开源的，托管在 Github 上。
+        ///它能完全地破坏监视功能。移除遥测的一些内容并关掉其他的内容，禁用 Windows Defender、Cortana 和还有其他一些的东西。程序可禁用 Windows 更新，让你保持匿名并不再接收新的监视软件的更新。
+        ///删除 Metro 应用也是相当有用的，因为这些应用在后台运行，占用内存，其中的一些也会监视你的电脑。
+        ///还有，程序也能阻止微软收集数据的 IP 地址，并可以添加几乎所有的监视软件的 ip 到 HOSTS 文件中。
+        ///程序操作的大多数部分是不可逆的，甚至系统还原也不能回退更改。
+        ///现在来说，它是相当有效的程序。它正处在开发中，并拥有一个由 Windows 10 的用户组成的社区。其中一些人帮助重写代码以提高程序的高效性，另一些则将程序翻译成其他语言。
+        ///
+        ///命令行参数：
+        ////lang= - 设置程序启动时的语言。例子: /lang=en
+        ////deleteapp= - 允许你删除 Windows 的一个 Metro 应用。 例子: /deleteapp=bing or /deleteapp=no [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReadMeTextBox {
             get {
@@ -320,7 +327,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Реально? О_о.
+        ///   Looks up a localized string similar to 真的？.
         /// </summary>
         internal static string Really {
             get {
@@ -329,7 +336,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить старые правила файрволла.
+        ///   Looks up a localized string similar to 移除所有旧的 DWS 防火墙规则.
         /// </summary>
         internal static string RemoveAllOldFirewallRules {
             get {
@@ -338,7 +345,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сообщить о баге.
+        ///   Looks up a localized string similar to 报告 bug.
         /// </summary>
         internal static string ReportABug {
             get {
@@ -347,8 +354,8 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Требуется перезагрузка
-        ///Перезагрузить сейчас?.
+        ///   Looks up a localized string similar to 需要重启。
+        ///现在就重启？.
         /// </summary>
         internal static string Restart {
             get {
@@ -357,7 +364,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to О программе.
+        ///   Looks up a localized string similar to 关于.
         /// </summary>
         internal static string tabPageAbout {
             get {
@@ -366,7 +373,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Главная.
+        ///   Looks up a localized string similar to 主界面.
         /// </summary>
         internal static string tabPageMain {
             get {
@@ -375,7 +382,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Прочитай меня.
+        ///   Looks up a localized string similar to 自述.
         /// </summary>
         internal static string tabPageReadMe {
             get {
@@ -384,7 +391,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Настройки.
+        ///   Looks up a localized string similar to 设置.
         /// </summary>
         internal static string tabPageSettings {
             get {
@@ -393,7 +400,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Утилиты.
+        ///   Looks up a localized string similar to 工具.
         /// </summary>
         internal static string tabPageUtilites {
             get {
@@ -402,7 +409,7 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Внимание.
+        ///   Looks up a localized string similar to 警告.
         /// </summary>
         internal static string Warning {
             get {

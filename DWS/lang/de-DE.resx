@@ -248,8 +248,6 @@ Ferner biete das Programm auch das Starten über Befehlszeilenargumente an:
 /deleteapp=	Löscht eine beliebige Anwendung vom System. Beispiele wären: "bing", "note"...
 /destroy 	Mit diesem Befehl beginnt das Programm seine Reinigung ihrer Systems.
 
-Hinweise: Sie können /destroy und /deleteapp nicht gleichzeitig verwenden. Ferner können Sie /deleteapp nicht mehrfach verwenden.
-
-* Deutsche Übersetzung von: Thomas Roskop *</value>
+Hinweise: Sie können /destroy und /deleteapp nicht gleichzeitig verwenden. Ferner können Sie /deleteapp nicht mehrfach verwenden.</value>
   </data>
 </root>

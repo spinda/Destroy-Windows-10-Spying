@@ -139,7 +139,7 @@
     <value>Utwórz punkt przywracania systemu</value>
   </data>
   <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
-    <value>Usuń aplikacje metro Windows 10</value>
+    <value>Usuń aplikacje Metro Windows 10</value>
   </data>
   <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
     <value>Wyłącz wysyłanie prywatnych danych</value>
@@ -221,10 +221,10 @@ Czy chcesz zrobić to teraz?</value>
     <value>Narzędzia</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Ostrzeżenia</value>
+    <value>Ostrzeżenie</value>
   </data>
   <data name="RemoveAllOldFirewallRules" xml:space="preserve">
-    <value>Usuń wszystkie stare reguły zapory DWS</value>
+    <value>Usuń stare reguły zapory od DWS</value>
   </data>
   <data name="ReportABug" xml:space="preserve">
     <value>Zgłoś błąd</value>
@@ -243,6 +243,9 @@ Parametry linii poleceń:
 /lang= - określa język programu. Na przykład: /lang=pl
 /deleteapp= - pozwala ci usunąć wybraną aplikację Metro. Na przykład: /deleteapp=bing lub /deleteapp=note
 /destroy - pozwala ci usunąć elementy szpiegujące.
-Zwróć uwagę na to, że parametrów /destroy i /deleteapp= nie można używać jednocześnie, a parametr /deleteapp= może zostać użyty tylko raz dla danej aplikacji.</value>
+Zwróć uwagę na to, że parametrów /destroy i /deleteapp= nie można używać jednocześnie, a parametr /deleteapp= może zostać użyty tylko raz w jednym poleceniu.</value>
+  </data>
+  <data name="FindOffice16FileT" xml:space="preserve">
+    <value>Please specify the path to the file msosync.exe. If Office 2016 is installed as standard on the drive C, press "Cancel"</value>
   </data>
 </root>

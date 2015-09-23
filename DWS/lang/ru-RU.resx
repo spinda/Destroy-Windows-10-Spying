@@ -247,4 +247,7 @@
 	
 </value>
   </data>
+  <data name="FindOffice16FileT" xml:space="preserve">
+    <value>Пожалуйста, укажите путь до файла msosync.exe . Если Office 2016 установлен стандартно на диск C, то нажмите "Отмена"</value>
+  </data>
 </root>
