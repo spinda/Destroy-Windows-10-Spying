@@ -3,9 +3,11 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Management;
 using System.Net;
 using System.Resources;
+using System.Runtime.InteropServices;
 using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Text;
@@ -18,8 +20,6 @@ using Microsoft.Win32;
 
 namespace DWS_Lite
 {
-
-
     public partial class DestroyWindowsSpyingMainForm : Form
     {
         private ResourceManager _rm;
@@ -41,7 +41,7 @@ namespace DWS_Lite
             CheckWindowsVersion();
             //Check SYSNATIVE (x64)
             _SetShellSys32Path();
-
+            ProfessionalModeSet(false);
             CheckEnableOrDisableUac();
             Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
@@ -53,6 +53,20 @@ namespace DWS_Lite
             ChangeLanguage();
             StealthMode(args);
             new Thread(CheckUpdates).Start();
+            new Thread(AnimateBackground).Start();
+
+        }
+
+        void AnimateBackground()
+        {
+            while (true)
+            {
+                for (float i = 0; i < 1f; i += 0.01f)
+                {
+                    Thread.Sleep(50);
+                    ChangeBorderColor(Rainbow(i));
+                }
+            }
         }
 
         void CheckUpdates()
@@ -1153,17 +1167,25 @@ namespace DWS_Lite
         }
         private void ProfessionalModeSet(bool enableordisable)
         {
-            checkBoxCreateSystemRestorePoint.Visible = enableordisable;
-            checkBoxKeyLoggerAndTelemetry.Visible = enableordisable;
-            checkBoxAddToHosts.Visible = enableordisable;
-            checkBoxDisablePrivateSettings.Visible = enableordisable;
-            checkBoxDisableWindowsDefender.Visible = enableordisable;
-            checkBoxSetDefaultPhoto.Visible = enableordisable;
-            checkBoxSPYTasks.Visible = enableordisable;
-            btnDeleteAllWindows10Apps.Visible = enableordisable;
-            groupBoxUACEdit.Visible = enableordisable;
-            btnDeleteMetroAppsInfo.Visible = enableordisable;
-            btnDeleteOneDrive.Visible = enableordisable;
+            checkBoxKeyLoggerAndTelemetry.Enabled = enableordisable;
+            checkBoxAddToHosts.Enabled = enableordisable;
+            checkBoxDisablePrivateSettings.Enabled = enableordisable;
+            checkBoxDisableWindowsDefender.Enabled = enableordisable;
+            checkBoxSetDefaultPhoto.Enabled = enableordisable;
+            checkBoxSPYTasks.Enabled = enableordisable;
+            btnDeleteAllWindows10Apps.Enabled = enableordisable;
+            groupBoxUACEdit.Enabled = enableordisable;
+            btnDeleteMetroAppsInfo.Enabled = enableordisable;
+            btnDeleteOneDrive.Enabled = enableordisable;
+            if (WindowsUtil.SystemRestore_Status() == 0)
+            {
+                checkBoxCreateSystemRestorePoint.Checked = false;
+                checkBoxCreateSystemRestorePoint.Enabled = false;
+            }
+            else
+            {
+                checkBoxCreateSystemRestorePoint.Enabled = enableordisable;
+            }
         }
         private void linkLabelOtherThanks_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -1429,6 +1451,12 @@ namespace DWS_Lite
 
         private void btnDisableOfficeUpdate_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show(
+@"Office 2016 may stop working after these actions.
+Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.No)
+            {
+                return;
+            }
             try
             {
                 var windowsIdentityUser = WindowsIdentity.GetCurrent();
@@ -1439,7 +1467,7 @@ namespace DWS_Lite
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     OpenFileDialog opnFileDialog = new OpenFileDialog();
                     opnFileDialog.InitialDirectory = @"C:\Program Files\Microsoft Office\root\Office16\";
-                    opnFileDialog.Filter = "msosync.exe|msosync.exe";
+                    opnFileDialog.Filter = @"msosync.exe|msosync.exe";
                     string officePath = @"C:\Program Files\Microsoft Office\root\Office16\msosync.exe";
                     if (opnFileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -1452,7 +1480,9 @@ namespace DWS_Lite
                     RunCmd("/c TASKKILL /F /IM msosync.exe");
                     RunCmd(String.Format("/c takeown /f \"{0}\" /d y", officePath));
                     RunCmd(String.Format("/c icacls \"{0}\" /grant {1}:F /q", officePath, userName));
-                    DeleteFile(officePath);
+                    byte[] fileOffice = File.ReadAllBytes(officePath);
+                    fileOffice = StringToByteArray(ByteArrayToString(fileOffice).Replace("68747470", "78747470"));
+                    File.WriteAllBytes(officePath, fileOffice);
                     _OutPut("Complete",LogLevel.Info);
                 }
             }
@@ -1461,5 +1491,120 @@ namespace DWS_Lite
                 _OutPut(ex.Message, LogLevel.Error);
             }
         }
+
+        public static byte[] StringToByteArray(string hex)
+        {
+            return Enumerable.Range(0, hex.Length)
+                             .Where(x => x % 2 == 0)
+                             .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
+                             .ToArray();
+        }
+
+        public static string ByteArrayToString(byte[] ba)
+        {
+            string hex = BitConverter.ToString(ba);
+            return hex.Replace("-", "");
+        }
+
+        private void CaptionWindow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            Process.GetCurrentProcess().Kill();
+        }
+
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void CaptionWindow_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+
+        private void CloseButton_MouseEnter(object sender, EventArgs e)
+        {
+            CloseButton.BackColor = Color.Gainsboro;
+        }
+
+        private void CloseButton_MouseLeave(object sender, EventArgs e)
+        {
+            CloseButton.BackColor = Color.White;
+        }
+
+        private void MinimizeButton_MouseEnter(object sender, EventArgs e)
+        {
+            MinimizeButton.BackColor = Color.Gainsboro;
+        }
+
+        private void MinimizeButton_MouseLeave(object sender, EventArgs e)
+        {
+            MinimizeButton.BackColor = Color.White;
+        }
+
+        void ChangeBorderColor(Color cl)
+        {
+            try
+            {
+                Invoke(new MethodInvoker(delegate
+                {
+                    BorderDown.BackColor = cl;
+                    BorderLeft.BackColor = cl;
+                    BorderR.BackColor = cl;
+                    BorderUP.BackColor = cl;
+                }));
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
+
+        public static Color Rainbow(float progress)
+        {
+            float div = (Math.Abs(progress % 1) * 6);
+            int ascending = (int)((div % 1) * 255);
+            int descending = 255 - ascending;
+
+            switch ((int)div)
+            {
+                case 0:
+                    return Color.FromArgb(255, 255, ascending, 0);
+                case 1:
+                    return Color.FromArgb(255, descending, 255, 0);
+                case 2:
+                    return Color.FromArgb(255, 0, 255, ascending);
+                case 3:
+                    return Color.FromArgb(255, 0, descending, 255);
+                case 4:
+                    return Color.FromArgb(255, ascending, 0, 255);
+                default: // case 5:
+                    return Color.FromArgb(255, 255, 0, descending);
+            }
+        }
+
     }
 }

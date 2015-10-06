@@ -195,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="other_cat.ico" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
