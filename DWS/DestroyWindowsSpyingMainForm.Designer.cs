@@ -139,7 +139,6 @@ namespace DWS_Lite
             // tabPageMain
             // 
             this.tabPageMain.BackColor = System.Drawing.Color.White;
-            this.tabPageMain.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPageMain.Controls.Add(this.btnDestroyWindows78Spy);
             this.tabPageMain.Controls.Add(this.LogOutputTextBox);
@@ -218,7 +217,6 @@ namespace DWS_Lite
             // tabPageSettings
             // 
             this.tabPageSettings.BackColor = System.Drawing.Color.White;
-            this.tabPageSettings.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPageSettings.Controls.Add(this.btnProfessionalMode);
             this.tabPageSettings.Controls.Add(this.labelInfoDeleteMetroApps);
@@ -550,7 +548,6 @@ namespace DWS_Lite
             // tabPageUtilites
             // 
             this.tabPageUtilites.BackColor = System.Drawing.Color.White;
-            this.tabPageUtilites.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageUtilites.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPageUtilites.Controls.Add(this.btnDisableOfficeUpdate);
             this.tabPageUtilites.Controls.Add(this.btnRemoveOldFirewallRules);
@@ -919,15 +916,15 @@ namespace DWS_Lite
             // About_Info
             // 
             this.About_Info.BackColor = System.Drawing.Color.Transparent;
-            this.About_Info.Font = new System.Drawing.Font("Consolas", 12F);
+            this.About_Info.Font = new System.Drawing.Font("Calibri", 12F);
             this.About_Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.About_Info.Location = new System.Drawing.Point(6, 36);
             this.About_Info.Margin = new System.Windows.Forms.Padding(3);
             this.About_Info.Name = "About_Info";
             this.About_Info.Size = new System.Drawing.Size(439, 184);
             this.About_Info.TabIndex = 1;
-            this.About_Info.Text = "\r\nCreated by Nummer (@nummerok)\r\n\r\n©WZT\r\n\r\nThanks: @WZorNET , @MicrosoftInside ,\r" +
-    "\n@rgadguard, @DiamondMonday, @Ratiborus58";
+            this.About_Info.Text = "\r\nCreated by Nummer (@nummerok)\r\n\r\n©WZT\r\n\r\nThanks: @WZorNET, @MicrosoftInside,\r\n@" +
+    "rgadguard, @DiamondMonday, @Ratiborus58";
             this.About_Info.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // labelBuildDataTime
@@ -964,7 +961,6 @@ namespace DWS_Lite
             // 
             // tabPageLicense
             // 
-            this.tabPageLicense.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageLicense.Controls.Add(this.linkLabelLicense);
             this.tabPageLicense.Controls.Add(this.labelLicense);
             this.tabPageLicense.Location = new System.Drawing.Point(4, 22);
@@ -996,7 +992,7 @@ namespace DWS_Lite
             // 
             // CaptionWindow
             // 
-            this.CaptionWindow.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.CaptionWindow.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.CaptionWindow.Dock = System.Windows.Forms.DockStyle.Top;
             this.CaptionWindow.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CaptionWindow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -1013,27 +1009,29 @@ namespace DWS_Lite
             // CloseButton
             // 
             this.CloseButton.BackColor = System.Drawing.Color.White;
-            this.CloseButton.BackgroundImage = global::DWS_Lite.Properties.Resources.close;
-            this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseButton.Location = new System.Drawing.Point(423, 7);
+            this.CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.CloseButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.CloseButton.Location = new System.Drawing.Point(423, 1);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(18, 16);
+            this.CloseButton.Size = new System.Drawing.Size(29, 29);
             this.CloseButton.TabIndex = 2;
             this.CloseButton.TabStop = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.CloseButton.Paint += new System.Windows.Forms.PaintEventHandler(this.CloseButton_Paint);
             this.CloseButton.MouseEnter += new System.EventHandler(this.CloseButton_MouseEnter);
             this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
             // 
             // MinimizeButton
             // 
-            this.MinimizeButton.BackgroundImage = global::DWS_Lite.Properties.Resources.minimize;
-            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MinimizeButton.Location = new System.Drawing.Point(399, 7);
+            this.MinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.MinimizeButton.Location = new System.Drawing.Point(395, 1);
             this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(18, 16);
+            this.MinimizeButton.Size = new System.Drawing.Size(29, 29);
             this.MinimizeButton.TabIndex = 3;
             this.MinimizeButton.TabStop = false;
             this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.MinimizeButton.Paint += new System.Windows.Forms.PaintEventHandler(this.MinimizeButton_Paint);
             this.MinimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_MouseEnter);
             this.MinimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_MouseLeave);
             // 
@@ -1079,9 +1077,9 @@ namespace DWS_Lite
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(453, 457);
-            this.Controls.Add(this.BorderR);
             this.Controls.Add(this.BorderLeft);
             this.Controls.Add(this.BorderDown);
+            this.Controls.Add(this.BorderR);
             this.Controls.Add(this.BorderUP);
             this.Controls.Add(this.MinimizeButton);
             this.Controls.Add(this.CloseButton);

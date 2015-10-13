@@ -8,8 +8,7 @@ namespace DWS_Lite.lib
     {
         public static object ReadSubKeyValue(string subKey, string keyName)
         {
-            object result;
-            RegistryKey rkSubKey = Registry.LocalMachine.OpenSubKey(subKey);
+            var rkSubKey = Registry.LocalMachine.OpenSubKey(subKey);
             if (rkSubKey == null)
             {
                 MessageBox.Show(string.Format(@"Error while reading registry key: {0}\{1} does not exist!", subKey, keyName), @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -17,7 +16,7 @@ namespace DWS_Lite.lib
             }
             try
             {
-                result = rkSubKey.GetValue(keyName);
+                var result = rkSubKey.GetValue(keyName);
                 rkSubKey.Close();
                 return result;
 

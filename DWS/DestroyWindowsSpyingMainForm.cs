@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
@@ -26,7 +27,10 @@ namespace DWS_Lite
         private readonly string _systemPath = Path.GetPathRoot(Environment.SystemDirectory);
         private string _shellCmdLocation;
         private string _system32Location;
-        private string _logFileName = "DWS.log";
+        private const string LogFileName = "DWS.log";
+        // ReSharper disable once CollectionNeverQueried.Local
+        // ReSharper disable once FieldCanBeMadeReadOnly.Local
+        private List<string> _errorsList = new List<string>(); 
         private bool _win10 = true;
         private int _fatalErrors;
         private bool _debug;
@@ -36,36 +40,49 @@ namespace DWS_Lite
 
             InitializeComponent();
             // Re create log file
-            RecreateLogFile(_logFileName);
+            RecreateLogFile(LogFileName);
             // Check windows version
             CheckWindowsVersion();
             //Check SYSNATIVE (x64)
             _SetShellSys32Path();
             ProfessionalModeSet(false);
             CheckEnableOrDisableUac();
+            /*
+             * Get icon
+             */
             Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             Text += Resources.build_number;
             labelBuildDataTime.Text = @"Build number:" + Resources.build_number + @"  |  Build Time:" +
                                       Resources.build_datatime;
 
-            SetLanguage(_GetLang(args));
-            ChangeLanguage();
-            StealthMode(args);
-            new Thread(CheckUpdates).Start();
-            new Thread(AnimateBackground).Start();
+            SetLanguage(_GetLang(args)); // set language
+            ChangeLanguage(); // change language
+            StealthMode(args); //check args
+            new Thread(CheckUpdates).Start(); // check for updates (new thread)
+            new Thread(AnimateBackground).Start(); // animate border (new thread)
 
         }
 
+        /* 
+         * Feature animation is calculated borders.
+         */
         void AnimateBackground()
         {
-            while (true)
+            try
             {
-                for (float i = 0; i < 1f; i += 0.01f)
+                while (true)
                 {
-                    Thread.Sleep(50);
-                    ChangeBorderColor(Rainbow(i));
+                    for (float i = 0; i < 1f; i += 0.01f)
+                    {
+                        Thread.Sleep(50); // thread slleep. Too fast.
+                        ChangeBorderColor(Rainbow(i)); //call change border function
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                // ignored
             }
         }
 
@@ -73,8 +90,8 @@ namespace DWS_Lite
         {
             try
             {
-                string latestVersion = new WebClient().DownloadString(
-                    "http://raw.githubusercontent.com/Nummer/Destroy-Windows-10-Spying/master/DWS/Resources/build_number.txt");
+                var latestVersion = new WebClient().DownloadString(
+                    "http://raw.githubusercontent.com/Nummer/Destroy-Windows-10-Spying/master/DWS/Resources/build_number.txt"); // download latest build number on github
                 if (Convert.ToInt32(Resources.build_number) <
                     Convert.ToInt32(latestVersion))
                 {
@@ -99,47 +116,58 @@ namespace DWS_Lite
         public override sealed string Text
         {
             get { return base.Text; }
-            set { base.Text = value; }
+            set { base.Text = value;
+                CaptionWindow.Text = value;
+            }
         }
 
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
+            /*
+             * Check windows system restore Enabled status
+             */
             if (WindowsUtil.SystemRestore_Status() == 0) _OutPut("Windows Restore DISABLE", LogLevel.Warning);
         }
 
+
+        /*
+         * Check function arguments
+         */
         void StealthMode(string[] args)
         {
-            for (int i = 0; i < args.Length; i++)
+            foreach (var currentArg in args)
             {
-                if (args[i].IndexOf("-debug", StringComparison.Ordinal) > -1)
+                if (currentArg.IndexOf("-debug", StringComparison.Ordinal) > -1)
                 {
                     _debug = true;
                 }
-                if (args[i].IndexOf("/deleteapp=", StringComparison.Ordinal) > -1)
+                if (currentArg.IndexOf("/deleteapp=", StringComparison.Ordinal) > -1)
                 {
-                    DeleteWindows10MetroApp(args[i].Replace("/deleteapp=", null));
+                    DeleteWindows10MetroApp(currentArg.Replace("/deleteapp=", null));
                     Process.GetCurrentProcess().Kill();
                 }
-                if (args[i].IndexOf("/destroy", StringComparison.Ordinal) > -1)
+                if (currentArg.IndexOf("/destroy", StringComparison.Ordinal) <= -1) continue;
+                WindowState = FormWindowState.Minimized;
+                ShowInTaskbar = false;
+                //Windows 10
+                if (_win10)
                 {
-                    WindowState = FormWindowState.Minimized;
-                    ShowInTaskbar = false;
-                    //Windows 10
-                    if (_win10)
-                    {
-                        DestroyWindowsSpyingMainThread();
-                    }
-                    else
-                    {
-                        AddToHostsAndFirewall();
-                        DisableSpyingTasks();
-                        DeleteUpdatesWin78();
-                    }
-                    Process.GetCurrentProcess().Kill();
+                    DestroyWindowsSpyingMainThread();
                 }
+                else
+                {
+                    AddToHostsAndFirewall();
+                    DisableSpyingTasks();
+                    DeleteUpdatesWin78();
+                }
+                Process.GetCurrentProcess().Kill();
             }
         }
+
+        /*
+         * Constant
+         */
         private void _SetShellSys32Path()
         {
             if (File.Exists(_systemPath + @"Windows\Sysnative\cmd.exe"))
@@ -153,9 +181,13 @@ namespace DWS_Lite
                 _system32Location = _systemPath + @"Windows\System32\";
             }
         }
+
+        /*
+         * Check windows build number (win 10 or 7/8)
+         */
         private void CheckWindowsVersion()
         {
-            int windowsBuildNumber = WindowsUtil.GetWindowsBuildNumber();
+            var windowsBuildNumber = WindowsUtil.GetWindowsBuildNumber();
 
             if (windowsBuildNumber < 7600)
             {
@@ -165,27 +197,27 @@ namespace DWS_Lite
             }
 
             // check Win 7 or 8.1
-            if (windowsBuildNumber < 10000)
-            {
-                _win10 = false;
-                tabPageUtilites.Enabled = false;
-                tabPageSettings.Enabled = false;
-                btnDestroyWindowsSpying.Visible = false;
-                btnDestroyWindows78Spy.Visible = true;
-            }
+            if (windowsBuildNumber >= 10000) return;
+            _win10 = false;
+            tabPageSettings.Enabled = false;
+            btnDeleteOneDrive.Enabled = false;
+            checkBoxDeleteWindows10Apps.Enabled = false;
+            btnDestroyWindowsSpying.Visible = false;
+            btnDestroyWindows78Spy.Visible = true;
             //------------------------------------------
 
         }
+
         #region Language
         private string _GetLang(string[] args)
         {
             string languageName = null;
             // check args lang
-            for (int i = 0; i < args.Length; i++)
+            foreach (var currentArg in args)
             {
-                if (args[i].IndexOf("/lang=", StringComparison.Ordinal) > -1)
+                if (currentArg.IndexOf("/lang=", StringComparison.Ordinal) > -1)
                 {
-                    languageName = args[i].Replace("/lang=", null);
+                    languageName = currentArg.Replace("/lang=", null);
                 }
             }
             return languageName;
@@ -193,14 +225,15 @@ namespace DWS_Lite
 
         private void SetLanguage(string currentlang = null)
         {
+            
             if (currentlang == null)
             {
                 currentlang = CultureInfo.CurrentUICulture.Name.ToLower();
             }
             if (currentlang.IndexOf("ru", StringComparison.Ordinal) > -1)
             {
-                _rm = ru_RU.ResourceManager;
-                comboBoxLanguageSelect.Text = @"ru-RU | Русский";
+                _rm = ru_RU.ResourceManager; // change resource language manager.
+                comboBoxLanguageSelect.Text = @"ru-RU | Русский"; // set combobox text language.
             }
             else if (currentlang.IndexOf("fr", StringComparison.Ordinal) > -1)
             {
@@ -251,6 +284,7 @@ namespace DWS_Lite
 
         void ChangeLanguage()
         {
+            // Transtale all controls
             ReadmeRichTextBox.Text = GetTranslateText("ReadMeTextBox");
             tabPageMain.Text = GetTranslateText("tabPageMain");
             tabPageAbout.Text = GetTranslateText("tabPageAbout");
@@ -317,12 +351,9 @@ namespace DWS_Lite
                 btnDisableUac.Enabled = true;
             }
 
-            if (WindowsUtil.SystemRestore_Status() == 0)
-            {
-                checkBoxCreateSystemRestorePoint.Checked = false;
-                checkBoxCreateSystemRestorePoint.Enabled = false;
-            }
-
+            if (WindowsUtil.SystemRestore_Status() != 0) return;
+            checkBoxCreateSystemRestorePoint.Checked = false;
+            checkBoxCreateSystemRestorePoint.Enabled = false;
         }
         private void btnDestroyWindowsSpying_Click(object sender, EventArgs e)
         {
@@ -335,19 +366,11 @@ namespace DWS_Lite
             LogOutputTextBox.ScrollToCaret();
         }
 
-        private void _OutPut(string str)
-        {
-            _OutPut(str, LogLevel.Info);
-        }
-
         private void _OutPutSplit()
         {
             try
             {
-                Invoke(new MethodInvoker(delegate
-                {
-                    OutPutSplitInvoke();
-                }));
+                Invoke(new MethodInvoker(OutPutSplitInvoke));
             }
             catch
             {
@@ -355,14 +378,15 @@ namespace DWS_Lite
                 {
                     OutPutSplitInvoke();
                 }
-                catch
+                catch (Exception ex)
                 {
                     _fatalErrors++;
+                    _errorsList.Add("Error in outputsplit. Message: " + ex.Message);
                 }
             }
         }
 
-        private void _OutPut(string str, LogLevel logLevel)
+        private void _OutPut(string str, LogLevel logLevel = LogLevel.Info)
         {
             try
             {
@@ -377,9 +401,10 @@ namespace DWS_Lite
                 {
                     _OutPutInvoke(str, logLevel);
                 }
-                catch
+                catch(Exception ex)
                 {
                     _fatalErrors++;
+                    _errorsList.Add("Error in output. Message: " + ex.Message);
                 }
             }
         }
@@ -394,7 +419,7 @@ namespace DWS_Lite
         };
         private void _OutPutInvoke(string str, LogLevel logLevel)
         {
-            if(logLevel == LogLevel.Debug && String.IsNullOrEmpty(str))
+            if(logLevel == LogLevel.Debug && string.IsNullOrEmpty(str))
                 return;
 
             switch (logLevel)
@@ -415,15 +440,15 @@ namespace DWS_Lite
                     str = "[DEBUG] " + str;
                     break;
             }
-            File.WriteAllText(_logFileName, File.ReadAllText(_logFileName) + str + Environment.NewLine);
+            File.WriteAllText(LogFileName, File.ReadAllText(LogFileName) + str + Environment.NewLine);
             Console.WriteLine(str);
             LogOutputTextBox.Text += str + Environment.NewLine;
         }
 
         private void OutPutSplitInvoke()
         {
-            string splittext = "==========================" + Environment.NewLine;
-            File.WriteAllText(_logFileName, File.ReadAllText(_logFileName) + splittext);
+            var splittext = "==========================" + Environment.NewLine;
+            File.WriteAllText(LogFileName, File.ReadAllText(LogFileName) + splittext);
             LogOutputTextBox.Text += splittext;
         }
 
@@ -498,7 +523,7 @@ namespace DWS_Lite
         }
         public void DeleteFile(string filepath)
         {
-            RunCmd(String.Format("/c del /F /Q \"{0}\"", filepath));
+            RunCmd(string.Format("/c del /F /Q \"{0}\"", filepath));
         }
 
         public void RunCmd(string args)
@@ -535,16 +560,17 @@ namespace DWS_Lite
                 _OutPut("Error start prog " + name + " " + args, LogLevel.Error);
                 if (_debug) _OutPut(ex.Message, LogLevel.Debug);
                 _fatalErrors++;
+                _errorsList.Add("Error start prog " + name + " " + args);
             }
         }
-        private void CreateRestorePoint(string description)
+        private static void CreateRestorePoint(string description)
         {
-            ManagementScope oScope = new ManagementScope("\\\\localhost\\root\\default");
-            ManagementPath oPath = new ManagementPath("SystemRestore");
-            ObjectGetOptions oGetOp = new ObjectGetOptions();
-            ManagementClass oProcess = new ManagementClass(oScope, oPath, oGetOp);
+            var oScope = new ManagementScope("\\\\localhost\\root\\default");
+            var oPath = new ManagementPath("SystemRestore");
+            var oGetOp = new ObjectGetOptions();
+            var oProcess = new ManagementClass(oScope, oPath, oGetOp);
 
-            ManagementBaseObject oInParams =
+            var oInParams =
                 oProcess.GetMethodParameters("CreateRestorePoint");
             oInParams["Description"] = description;
             oInParams["RestorePointType"] = 12; // MODIFY_SETTINGS
@@ -552,11 +578,11 @@ namespace DWS_Lite
 
             oProcess.InvokeMethod("CreateRestorePoint", oInParams, null);
         }
-        private string GetWindowsBuildVersion()
+        private static string GetWindowsBuildVersion()
         {
 
             // в value массив из байт
-            string value = "Product Name: " + WindowsUtil.GetProductName() + Environment.NewLine;
+            var value = "Product Name: " + WindowsUtil.GetProductName() + Environment.NewLine;
             value += "  Build: " + WindowsUtil.GetSystemBuild();
             return value;
 
@@ -564,10 +590,10 @@ namespace DWS_Lite
         #region registry
         private void SetRegValueHkcu(string regkeyfolder, string paramname, string paramvalue, RegistryValueKind keytype)
         {
-            RegistryKey registryKey = Registry.CurrentUser.CreateSubKey(regkeyfolder);
+            var registryKey = Registry.CurrentUser.CreateSubKey(regkeyfolder);
             if (registryKey != null)
                 registryKey.Close();
-            RegistryKey myKey = Registry.CurrentUser.OpenSubKey(regkeyfolder, RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
+            var myKey = Registry.CurrentUser.OpenSubKey(regkeyfolder, RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
             try
             {
                 if (myKey != null)
@@ -578,40 +604,36 @@ namespace DWS_Lite
             catch (Exception ex)
             {
                 _fatalErrors++;
+                _errorsList.Add("Error SetRegValueHkcu. Message: " + ex.Message);
                 _OutPut(GetTranslateText("Error") + ": " + ex.Message, LogLevel.Error);
             }
 
             if (myKey != null) myKey.Close();
         }
+
         private void SetRegValueHklm(string regkeyfolder, string paramname, string paramvalue, RegistryValueKind keytype)
         {
+            var registryKey = Registry.LocalMachine.CreateSubKey(regkeyfolder);
+            if (registryKey != null)
+                registryKey.Close();
+            var myKey = Registry.LocalMachine.OpenSubKey(regkeyfolder,
+                RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
             try
             {
-                RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(regkeyfolder);
-                if (registryKey != null)
-                    registryKey.Close();
-                RegistryKey myKey = Registry.LocalMachine.OpenSubKey(regkeyfolder,
-                    RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
-                try
+                if (myKey != null)
                 {
-                    if (myKey != null)
-                    {
-                        myKey.SetValue(paramname, paramvalue, keytype);
-                    }
+                    myKey.SetValue(paramname, paramvalue, keytype);
                 }
-                catch (Exception ex)
-                {
-                    _fatalErrors++;
-                    _OutPut(GetTranslateText("Error") + ": " + ex.Message, LogLevel.Error);
-                }
-                if (myKey != null) myKey.Close();
             }
             catch (Exception ex)
             {
                 _fatalErrors++;
+                _errorsList.Add("Error SetRegValueHklm. Message: " + ex.Message);
                 _OutPut(GetTranslateText("Error") + ": " + ex.Message, LogLevel.Error);
             }
+            if (myKey != null) myKey.Close();
         }
+
         #endregion
         private void DeleteWindows10MetroApp(string appname)
         {
@@ -619,12 +641,13 @@ namespace DWS_Lite
         }
         private void StartDestroyWindowsSpying()
         {
+            _errorsList.Clear();
+            _fatalErrors = 0;
             EnableOrDisableTab(false);
             SetCompleteText(true);
             _OutPut(string.Format("Starting: {0}.", DateTime.Now));
             _OutPut(GetWindowsBuildVersion());
             _OutPutSplit();
-            _fatalErrors = 0;
             ProgressBarStatus.Value = 0;
             new Thread(DestroyWindowsSpyingMainThread).Start();
         }
@@ -634,7 +657,7 @@ namespace DWS_Lite
             {
                 try
                 {
-                    string restorepointName = "DestroyWindowsSpying " + DateTime.Now;
+                    var restorepointName = "DestroyWindowsSpying " + DateTime.Now;
                     _OutPut("Creating restore point " + restorepointName + "...");
                     CreateRestorePoint(restorepointName);
                     _OutPut("Restore point " + restorepointName + " created.");
@@ -750,6 +773,7 @@ namespace DWS_Lite
                     _OutPut("Error disable windows Defender", LogLevel.Error);
                     if (_debug) _OutPut(ex.Message, LogLevel.Debug);
                     _fatalErrors++;
+                    _errorsList.Add("Error disable Windows Defender. Message: " + ex.Message);
                 }
             }
             Progressbaradd(5); //60
@@ -808,34 +832,37 @@ namespace DWS_Lite
                 {
                     StatusCommandsLable.Text = string.Format("Destroy Windows 10 Spying - {0}!", GetTranslateText("Complete"));
                     StatusCommandsLable.ForeColor = Color.DarkGreen;
-                    if (
-                        MessageBox.Show(GetTranslateText("CompleteMSG"), GetTranslateText("Info"),
-                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
-                        DialogResult.Yes)
-                    {
-                        Process.Start("shutdown.exe", "-r -t 0");
-                        Process.GetCurrentProcess().Kill();
-                    }
+                    if (MessageBox.Show(GetTranslateText("CompleteMSG"), GetTranslateText("Info"),
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+                    Process.Start("shutdown.exe", "-r -t 0");
+                    Process.GetCurrentProcess().Kill();
                 }
                 else
                 {
                     StatusCommandsLable.Text = string.Format("Destroy Windows 10 Spying - errors: {0}", _fatalErrors);
                     StatusCommandsLable.ForeColor = Color.Red;
-                    if (
-                        MessageBox.Show(string.Format(GetTranslateText("ErrorMSG"), _fatalErrors), GetTranslateText("Info"),
-                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
-                        DialogResult.Yes)
+                    try
                     {
-                        Process.Start("shutdown.exe", "-r -t 0");
-                        Process.GetCurrentProcess().Kill();
+                        var errorsMsg = _errorsList.Aggregate<string, string>(null, (current, errorMsg) => current + (errorMsg + "\r\n"));
+                        var errorFilePath = Path.GetTempPath() + @"\errors.log";
+                        File.Create(errorFilePath).Close();
+                        File.WriteAllText(errorFilePath, errorsMsg);
+                        Process.Start(errorFilePath);
                     }
+                    catch
+                    {
+                        // ignored
+                    }
+                    if (MessageBox.Show(string.Format(GetTranslateText("ErrorMSG"), _fatalErrors),
+                        GetTranslateText("Info"),
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
+                    Process.Start("shutdown.exe", "-r -t 0");
+                    Process.GetCurrentProcess().Kill();
                 }
             }
         }
         void DisableSpyingTasks()
         {
-
-
             string[] disabletaskslist =
                 {
                     @"Microsoft\Office\Office ClickToRun Service Monitor",
@@ -877,12 +904,13 @@ namespace DWS_Lite
                     @"Microsoft\Windows\Media Center\SqlLiteRecoveryTask",
                     @"Microsoft\Windows\Media Center\UpdateRecordPath"
                 };
-            for (int i = 0; i < disabletaskslist.Length; i++)
+            foreach (var currentTask in disabletaskslist)
             {
-                ProcStartargs("SCHTASKS", "/Change /TN \"" + disabletaskslist[i] + "\" /disable");
-                _OutPut("Disabled task: " + disabletaskslist[i]);
+                ProcStartargs("SCHTASKS", "/Change /TN \"" + currentTask + "\" /disable");
+                _OutPut("Disabled task: " + currentTask);
             }
         }
+
         void AddToHostsAndFirewall()
         {
             try
@@ -952,7 +980,7 @@ namespace DWS_Lite
                     "spynetalt.microsoft.com",
                     "fe3.delivery.dsp.mp.microsoft.com.nsatc.net"
                 };
-                string hostslocation = _system32Location + @"drivers\etc\hosts";
+                var hostslocation = _system32Location + @"drivers\etc\hosts";
                 string hosts = null;
                 if (File.Exists(hostslocation))
                 {
@@ -962,19 +990,17 @@ namespace DWS_Lite
                 }
                 File.Create(hostslocation).Close();
                 File.WriteAllText(hostslocation, hosts + Environment.NewLine);
-                for (int i = 0; i < hostsdomains.Length; i++)
+                foreach (var currentHostsDomain in hostsdomains.Where(currentHostsDomain => hosts != null && hosts.IndexOf(currentHostsDomain, StringComparison.Ordinal) == -1))
                 {
-                    if (hosts != null && hosts.IndexOf(hostsdomains[i], StringComparison.Ordinal) == -1)
-                    {
-                        ProcStartargs(_shellCmdLocation,
-                            "/c echo " + "0.0.0.0 " + hostsdomains[i] + " >> \"" + hostslocation +
-                            "\"");
-                        _OutPut("Add to hosts - " + hostsdomains[i]);
-                    }
+                    ProcStartargs(_shellCmdLocation,
+                        "/c echo " + "0.0.0.0 " + currentHostsDomain + " >> \"" + hostslocation +
+                        "\"");
+                    _OutPut("Add to hosts - " + currentHostsDomain);
                 }
             }
             catch (Exception ex)
             {
+                _errorsList.Add("Error add to hosts. Message: " + ex.Message);
                 _fatalErrors++;
                 _OutPut("Error add HOSTS", LogLevel.Error);
                 if (_debug) _OutPut(ex.Message, LogLevel.Debug);
@@ -1140,30 +1166,30 @@ namespace DWS_Lite
         }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://goo.gl/EpFSzj");
+            Process.Start("https://goo.gl/EpFSzj"); //https://twitter.com/nummerok
         }
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://goo.gl/fxEkcl");
+            Process.Start("http://goo.gl/fxEkcl"); //http://wzor.net/
         }
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://goo.gl/CDaZye");
+            Process.Start("http://goo.gl/CDaZye"); //http://forum.ru-board.com/topic.cgi?forum=2&topic=5328
         }
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://goo.gl/Xb9sy7");
+            Process.Start("http://goo.gl/Xb9sy7"); //http://forums.mydigitallife.info/threads/64692-Program-Destroy-Windows-Spying-(DWS)
         }
         private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://goo.gl/sZIfQD");
+            Process.Start("http://goo.gl/sZIfQD"); //http://rutracker.org/forum/viewtopic.php?t=5054236
         }
         private void btnProfessionalMode_Click(object sender, EventArgs e)
         {
             ProfessionalModeSet(btnProfessionalMode.Checked);
             Text = btnProfessionalMode.Checked
                 ? string.Format("{0}  !Professional mode!", Text)
-                : Text.Replace("  !Professional mode!", String.Empty);
+                : Text.Replace("  !Professional mode!", string.Empty);
         }
         private void ProfessionalModeSet(bool enableordisable)
         {
@@ -1173,10 +1199,10 @@ namespace DWS_Lite
             checkBoxDisableWindowsDefender.Enabled = enableordisable;
             checkBoxSetDefaultPhoto.Enabled = enableordisable;
             checkBoxSPYTasks.Enabled = enableordisable;
-            btnDeleteAllWindows10Apps.Enabled = enableordisable;
+            btnDeleteAllWindows10Apps.Enabled = _win10 && enableordisable;
             groupBoxUACEdit.Enabled = enableordisable;
             btnDeleteMetroAppsInfo.Enabled = enableordisable;
-            btnDeleteOneDrive.Enabled = enableordisable;
+            btnDeleteOneDrive.Enabled = _win10 && enableordisable;
             if (WindowsUtil.SystemRestore_Status() == 0)
             {
                 checkBoxCreateSystemRestorePoint.Checked = false;
@@ -1352,14 +1378,17 @@ namespace DWS_Lite
                     "2976978",
                     "2952664",
                     "2922324",
-                    "971033"
+                    "971033",
+                    "3083324", //win7
+                    "3083325" //win8
             };
-            for (int i = 0; i < updatesnumberlist.Length; i++)
+            foreach (var updateNumber in updatesnumberlist)
             {
-                RunCmd("/c start /wait wusa /uninstall /norestart /quiet /kb:" + updatesnumberlist[i]);
-                _OutPut("Remove update KB" + updatesnumberlist[i]);
+                RunCmd("/c start /wait wusa /uninstall /norestart /quiet /kb:" + updateNumber);
+                _OutPut("Remove update KB" + updateNumber);
             }
         }
+
         void BlockIpAddr()
         {
             string[] ipAddr =
@@ -1427,12 +1456,12 @@ namespace DWS_Lite
                 "195.138.255.0-195.138.255.255"
 
             };
-            for (int i = 0; i < ipAddr.Length; i++)
+            foreach (var currentIpAddr in ipAddr)
             {
-                RunCmd("/c route -p ADD " + ipAddr[i] + " MASK 255.255.255.255 0.0.0.0");
-                RunCmd("/c netsh advfirewall firewall delete rule name=\"" + ipAddr[i] + "_Block\"");
-                RunCmd("/c netsh advfirewall firewall add rule name=\"" + ipAddr[i] + "_Block\" dir=out interface=any action=block remoteip=" + ipAddr[i]);
-                _OutPut("Add Windows Firewall rule: \"" + ipAddr[i] + "_Block\"");
+                RunCmd("/c route -p ADD " + currentIpAddr + " MASK 255.255.255.255 0.0.0.0");
+                RunCmd("/c netsh advfirewall firewall delete rule name=\"" + currentIpAddr + "_Block\"");
+                RunCmd("/c netsh advfirewall firewall add rule name=\"" + currentIpAddr + "_Block\" dir=out interface=any action=block remoteip=" + currentIpAddr);
+                _OutPut("Add Windows Firewall rule: \"" + currentIpAddr + "_Block\"");
             }
             RunCmd("/c netsh advfirewall firewall delete rule name=\"WSearch_Block\"");
             RunCmd("/c netsh advfirewall firewall add rule name=\"WSearch_Block\" dir=out interface=any action=block service=WSearch");
@@ -1462,13 +1491,15 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
                 var windowsIdentityUser = WindowsIdentity.GetCurrent();
                 if (windowsIdentityUser != null)
                 {
-                    string userName = windowsIdentityUser.Name.Split('\\')[1];
+                    var userName = windowsIdentityUser.Name.Split('\\')[1];
                     MessageBox.Show(GetTranslateText("FindOffice16FileT"), GetTranslateText("Info"),
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    OpenFileDialog opnFileDialog = new OpenFileDialog();
-                    opnFileDialog.InitialDirectory = @"C:\Program Files\Microsoft Office\root\Office16\";
-                    opnFileDialog.Filter = @"msosync.exe|msosync.exe";
-                    string officePath = @"C:\Program Files\Microsoft Office\root\Office16\msosync.exe";
+                    var opnFileDialog = new OpenFileDialog
+                    {
+                        InitialDirectory = @"C:\Program Files\Microsoft Office\root\Office16\",
+                        Filter = @"msosync.exe|msosync.exe"
+                    };
+                    var officePath = @"C:\Program Files\Microsoft Office\root\Office16\msosync.exe";
                     if (opnFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         if (File.Exists(opnFileDialog.FileName))
@@ -1480,10 +1511,10 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
                     RunCmd("/c TASKKILL /F /IM msosync.exe");
                     RunCmd(String.Format("/c takeown /f \"{0}\" /d y", officePath));
                     RunCmd(String.Format("/c icacls \"{0}\" /grant {1}:F /q", officePath, userName));
-                    byte[] fileOffice = File.ReadAllBytes(officePath);
-                    fileOffice = StringToByteArray(ByteArrayToString(fileOffice).Replace("68747470", "78747470"));
+                    var fileOffice = File.ReadAllBytes(officePath);
+                    fileOffice = StringToByteArray(ByteArrayToString(fileOffice).Replace("68747470", "78747470")); // find "http" and replace to "xttp".
                     File.WriteAllBytes(officePath, fileOffice);
-                    _OutPut("Complete",LogLevel.Info);
+                    _OutPut("Complete");
                 }
             }
             catch (Exception ex)
@@ -1502,7 +1533,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
 
         public static string ByteArrayToString(byte[] ba)
         {
-            string hex = BitConverter.ToString(ba);
+            var hex = BitConverter.ToString(ba);
             return hex.Replace("-", "");
         }
 
@@ -1527,10 +1558,13 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
             SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
 
+        // ReSharper disable once InconsistentNaming
         public const int WM_NCLBUTTONDOWN = 0xA1;
+        // ReSharper disable once InconsistentNaming
         public const int HT_CAPTION = 0x2;
 
         [DllImportAttribute("user32.dll")]
+        // ReSharper disable once InconsistentNaming
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
@@ -1538,8 +1572,9 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
         {
             get
             {
+                // ReSharper disable once InconsistentNaming
                 const int CS_DROPSHADOW = 0x20000;
-                CreateParams cp = base.CreateParams;
+                var cp = base.CreateParams;
                 cp.ClassStyle |= CS_DROPSHADOW;
                 return cp;
             }
@@ -1547,7 +1582,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
 
         private void CloseButton_MouseEnter(object sender, EventArgs e)
         {
-            CloseButton.BackColor = Color.Gainsboro;
+            CloseButton.BackColor = Color.WhiteSmoke;
         }
 
         private void CloseButton_MouseLeave(object sender, EventArgs e)
@@ -1557,7 +1592,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
 
         private void MinimizeButton_MouseEnter(object sender, EventArgs e)
         {
-            MinimizeButton.BackColor = Color.Gainsboro;
+            MinimizeButton.BackColor = Color.WhiteSmoke;
         }
 
         private void MinimizeButton_MouseLeave(object sender, EventArgs e)
@@ -1577,17 +1612,17 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
                     BorderUP.BackColor = cl;
                 }));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                
+                // ignored
             }
         }
 
         public static Color Rainbow(float progress)
         {
-            float div = (Math.Abs(progress % 1) * 6);
-            int ascending = (int)((div % 1) * 255);
-            int descending = 255 - ascending;
+            var div = (Math.Abs(progress % 1) * 6);
+            var ascending = (int)((div % 1) * 255);
+            var descending = 255 - ascending;
 
             switch ((int)div)
             {
@@ -1604,6 +1639,18 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
                 default: // case 5:
                     return Color.FromArgb(255, 255, 0, descending);
             }
+        }
+
+        private void MinimizeButton_Paint(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            g.DrawImage(Resources.minimize, MinimizeButton.Width - Resources.minimize.Width - 5, MinimizeButton.Height - Resources.minimize.Height - 7);
+        }
+
+        private void CloseButton_Paint(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            g.DrawImage(Resources.close, CloseButton.Width - Resources.close.Width - 5, CloseButton.Height - Resources.close.Height - 7);
         }
 
     }
