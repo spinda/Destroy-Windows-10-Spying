@@ -748,7 +748,7 @@ namespace DWS_Lite
             // 
             this.groupBoxLanguage.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxLanguage.Controls.Add(this.comboBoxLanguageSelect);
-            this.groupBoxLanguage.Location = new System.Drawing.Point(221, 248);
+            this.groupBoxLanguage.Location = new System.Drawing.Point(223, 248);
             this.groupBoxLanguage.Name = "groupBoxLanguage";
             this.groupBoxLanguage.Size = new System.Drawing.Size(214, 54);
             this.groupBoxLanguage.TabIndex = 12;
@@ -760,15 +760,18 @@ namespace DWS_Lite
             this.comboBoxLanguageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLanguageSelect.FormattingEnabled = true;
             this.comboBoxLanguageSelect.Items.AddRange(new object[] {
+            "ar-LY | Arabic",
             "cs-CZ | Czech",
             "de-DE | German",
             "en-US | English",
             "es-ES | Spanish",
             "fr-FR | French",
             "it-CH | Italian",
+            "nl-NL | Dutch",
             "pl-PL | Polish",
             "pt-BR | Portuguese",
             "ru-RU | Русский",
+            "tr-TR | Turkish",
             "zh-CN | 中文(简体)"});
             this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
             this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
@@ -780,19 +783,20 @@ namespace DWS_Lite
             // 
             this.btnReportABug.BackColor = System.Drawing.Color.Transparent;
             this.btnReportABug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportABug.Location = new System.Drawing.Point(8, 279);
+            this.btnReportABug.Location = new System.Drawing.Point(8, 268);
             this.btnReportABug.Name = "btnReportABug";
             this.btnReportABug.Size = new System.Drawing.Size(138, 23);
             this.btnReportABug.TabIndex = 10;
             this.btnReportABug.Text = "Report a bug";
             this.btnReportABug.UseVisualStyleBackColor = false;
             this.btnReportABug.Click += new System.EventHandler(this.btnReportABug_Click);
+            this.btnReportABug.Paint += new System.Windows.Forms.PaintEventHandler(this.btnReportABug_Paint);
             // 
             // linkLabelOtherThanks
             // 
             this.linkLabelOtherThanks.AutoSize = true;
             this.linkLabelOtherThanks.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelOtherThanks.Location = new System.Drawing.Point(188, 207);
+            this.linkLabelOtherThanks.Location = new System.Drawing.Point(198, 207);
             this.linkLabelOtherThanks.Name = "linkLabelOtherThanks";
             this.linkLabelOtherThanks.Size = new System.Drawing.Size(70, 13);
             this.linkLabelOtherThanks.TabIndex = 9;
@@ -923,8 +927,8 @@ namespace DWS_Lite
             this.About_Info.Name = "About_Info";
             this.About_Info.Size = new System.Drawing.Size(439, 184);
             this.About_Info.TabIndex = 1;
-            this.About_Info.Text = "\r\nCreated by Nummer (@nummerok)\r\n\r\n©WZT\r\n\r\nThanks: @WZorNET, @MicrosoftInside,\r\n@" +
-    "rgadguard, @DiamondMonday, @Ratiborus58";
+            this.About_Info.Text = "\r\nCreated by Nummer (@nummerok)\r\n\r\n©WZT\r\n\r\nThanks: @WZorNET, @rgadguard,\r\n@Diamon" +
+    "dMonday, @Ratiborus58";
             this.About_Info.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // labelBuildDataTime
@@ -1090,7 +1094,7 @@ namespace DWS_Lite
             this.MaximizeBox = false;
             this.Name = "DestroyWindowsSpyingMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DWS Lite                       build ";
+            this.Text = "DWS Lite   build ";
             this.TransparencyKey = System.Drawing.Color.Magenta;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DestroyWindowsSpyingMainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DestroyWindowsSpyingMainForm_FormClosed);

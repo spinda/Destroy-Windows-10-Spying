@@ -308,7 +308,7 @@ namespace DWS_Lite.lang {
         ///
         ///Ferner kann die Anwendung, sofern Sie es wünschen, auch die Windows Store Anwendungen entfernen. Diese laufen oftmals im Hintergrund und verwenden so den Speicher und die Rechenleistung ihrer Computers.
         ///
-        /// [rest of string was truncated]&quot;;.
+        ///Dieses  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReadMeTextBox {
             get {

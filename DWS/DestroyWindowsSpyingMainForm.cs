@@ -50,8 +50,14 @@ namespace DWS_Lite
             /*
              * Get icon
              */
-            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
-
+            try
+            {
+                Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            }
+            catch
+            {
+                _OutPut("Error get icon.",LogLevel.Error);
+            }
             Text += Resources.build_number;
             labelBuildDataTime.Text = @"Build number:" + Resources.build_number + @"  |  Build Time:" +
                                       Resources.build_datatime;
@@ -134,7 +140,7 @@ namespace DWS_Lite
         /*
          * Check function arguments
          */
-        void StealthMode(string[] args)
+        void StealthMode(IEnumerable<string> args)
         {
             foreach (var currentArg in args)
             {
@@ -209,16 +215,13 @@ namespace DWS_Lite
         }
 
         #region Language
-        private string _GetLang(string[] args)
+        private string _GetLang(IEnumerable<string> args)
         {
             string languageName = null;
             // check args lang
-            foreach (var currentArg in args)
+            foreach (var currentArg in args.Where(currentArg => currentArg.IndexOf("/lang=", StringComparison.Ordinal) > -1))
             {
-                if (currentArg.IndexOf("/lang=", StringComparison.Ordinal) > -1)
-                {
-                    languageName = currentArg.Replace("/lang=", null);
-                }
+                languageName = currentArg.Replace("/lang=", null);
             }
             return languageName;
         }
@@ -274,6 +277,21 @@ namespace DWS_Lite
             {
                 _rm = zh_CN.ResourceManager;
                 comboBoxLanguageSelect.Text = @"zh-CN | 中文(简体)";
+            }
+            else if (currentlang.IndexOf("tr", StringComparison.Ordinal) > -1)
+            {
+                _rm = tr_TR.ResourceManager;
+                comboBoxLanguageSelect.Text = @"tr-TR | Turkish";
+            }
+            else if (currentlang.IndexOf("ar", StringComparison.Ordinal) > -1)
+            {
+                _rm = ar_LY.ResourceManager;
+                comboBoxLanguageSelect.Text = @"tr-TR | Turkish";
+            }
+            else if (currentlang.IndexOf("ar", StringComparison.Ordinal) > -1)
+            {
+                _rm = nl_NL.ResourceManager;
+                comboBoxLanguageSelect.Text = @"nl-NL | Dutch";
             }
             else
             {
@@ -553,6 +571,7 @@ namespace DWS_Lite
                 {
                     line += Environment.NewLine + proc.StandardOutput.ReadLine();
                 }
+                proc.WaitForExit();
                 if (_debug) _OutPut("Start: " + name + " " + args + Environment.NewLine + "Output: " + line, LogLevel.Debug);
             }
             catch (Exception ex)
@@ -582,8 +601,9 @@ namespace DWS_Lite
         {
 
             // в value массив из байт
-            var value = "Product Name: " + WindowsUtil.GetProductName() + Environment.NewLine;
-            value += "  Build: " + WindowsUtil.GetSystemBuild();
+            var value = string.Format("\r\nWindows Version: {0}\r\nBuild: {1}",
+                WindowsUtil.GetProductName(),
+                WindowsUtil.GetSystemBuild());
             return value;
 
         }
@@ -711,48 +731,25 @@ namespace DWS_Lite
             Progressbaradd(20); //45
             if (checkBoxDisablePrivateSettings.Checked)
             {
-
-                SetRegValueHkcu(
+                string[] regkeyvalandother ={
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{21157C1F-2651-4CC1-90CA-1F28B02263F6}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{2EEF81BE-33FA-4800-9670-1CD474972C3F}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{7D7E8402-7C54-4821-A34E-AEEFD62DED93}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{992AFA70-6F47-4148-B3E9-3003349C1548}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{9D9E0118-1807-4F2E-96E4-2CE57142E196}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{A8804298-2D5F-42E3-9531-9C8C39EB29CE}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{B19F89AF-E3EB-444B-8DEA-202575A71599}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{C1D23ACC-752B-43E5-8448-8D0E519CD6D6}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{D89823BA-7180-4B81-B50C-7E471E6121A3}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{E5323777-F976-4f5b-9B55-B94699C46E44}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{E6AD100E-5F4E-44CD-BE0F-2265D88D14F5}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{E83AF229-8640-4D18-A213-E22675EBB2C3}",
-                    "Value", "Deny", RegistryValueKind.String);
-                SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\LooselyCoupled",
-                    "Value", "Deny", RegistryValueKind.String);
+                    @"SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\LooselyCoupled"};
+                foreach (var currentRegKey in regkeyvalandother)
+                {
+                    SetRegValueHkcu(currentRegKey, "Value", "Deny", RegistryValueKind.String);
+                }
                 _OutPut("Disable private settings");
                 SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Search", "CortanaEnabled", "0",
                     RegistryValueKind.DWord);
@@ -767,13 +764,17 @@ namespace DWS_Lite
                     SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows Defender", "DisableAntiSpyware", "1",
                         RegistryValueKind.DWord);
                     _OutPut("Disable Windows Defender.");
+                    SetRegValueHklm(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer", "SmartScreenEnabled", "Off",
+                                            RegistryValueKind.String);
+                    _OutPut("Disable smart screen.");
+
                 }
                 catch (Exception ex)
                 {
-                    _OutPut("Error disable windows Defender", LogLevel.Error);
+                    _OutPut("Error disable windows Defender or Smart Screen", LogLevel.Error);
                     if (_debug) _OutPut(ex.Message, LogLevel.Debug);
                     _fatalErrors++;
-                    _errorsList.Add("Error disable Windows Defender. Message: " + ex.Message);
+                    _errorsList.Add("Error disable Windows Defender or Smart Screen. Message: " + ex.Message);
                 }
             }
             Progressbaradd(5); //60
@@ -1290,55 +1291,60 @@ namespace DWS_Lite
 
         private void comboBoxLanguageSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "ru-RU")
+            switch (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", ""))
             {
-                _rm = ru_RU.ResourceManager;
-                ChangeLanguage();
-            }
-            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "fr-FR")
-            {
-                _rm = fr_FR.ResourceManager;
-                ChangeLanguage();
-            }
-            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "es-ES")
-            {
-                _rm = es_ES.ResourceManager;
-                ChangeLanguage();
-            }
-            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "pt-BR")
-            {
-                _rm = pt_BR.ResourceManager;
-                ChangeLanguage();
-            }
-            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "de-DE")
-            {
-                _rm = de_DE.ResourceManager;
-                ChangeLanguage();
-            }
-            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "pl-PL")
-            {
-                _rm = pl_PL.ResourceManager;
-                ChangeLanguage();
-            }
-            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "it-CH")
-            {
-                _rm = it_CH.ResourceManager;
-                ChangeLanguage();
-            }
-            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "cs-CZ")
-            {
-                _rm = cs_CZ.ResourceManager;
-                ChangeLanguage();
-            }
-            else if (comboBoxLanguageSelect.Text.Split('|')[0].Replace(" ", "") == "zh-CN")
-            {
-                _rm = zh_CN.ResourceManager;
-                ChangeLanguage();
-            }
-            else
-            {
-                _rm = en_US.ResourceManager;
-                ChangeLanguage();
+                case "ru-RU":
+                    _rm = ru_RU.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "fr-FR":
+                    _rm = fr_FR.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "es-ES":
+                    _rm = es_ES.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "pt-BR":
+                    _rm = pt_BR.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "de-DE":
+                    _rm = de_DE.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "pl-PL":
+                    _rm = pl_PL.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "it-CH":
+                    _rm = it_CH.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "cs-CZ":
+                    _rm = cs_CZ.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "zh-CN":
+                    _rm = zh_CN.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "tr-TR":
+                    _rm = tr_TR.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "ar-LY":
+                    _rm = ar_LY.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "nl-NL":
+                    _rm = nl_NL.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                default:
+                    _rm = en_US.ResourceManager;
+                    ChangeLanguage();
+                    break;
             }
         }
 
@@ -1380,7 +1386,12 @@ namespace DWS_Lite
                     "2922324",
                     "971033",
                     "3083324", //win7
-                    "3083325" //win8
+                    "3083325", //win8
+					"3088195",
+					"3093983",
+					"3093513",
+					"3042058",
+					"3083710"
             };
             foreach (var updateNumber in updatesnumberlist)
             {
@@ -1568,13 +1579,13 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
+        // ReSharper disable once InconsistentNaming
+        private const int CS_DROPSHADOW = 0x00020000;
         protected override CreateParams CreateParams
         {
             get
             {
-                // ReSharper disable once InconsistentNaming
-                const int CS_DROPSHADOW = 0x20000;
-                var cp = base.CreateParams;
+                CreateParams cp = base.CreateParams;
                 cp.ClassStyle |= CS_DROPSHADOW;
                 return cp;
             }
@@ -1651,6 +1662,10 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
         {
             var g = e.Graphics;
             g.DrawImage(Resources.close, CloseButton.Width - Resources.close.Width - 5, CloseButton.Height - Resources.close.Height - 7);
+        }
+
+        private void btnReportABug_Paint(object sender, PaintEventArgs e)
+        {
         }
 
     }

@@ -68,6 +68,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="lang\ar-LY.Designer.cs">
+      <DependentUpon>ar-LY.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lang\nl-NL.Designer.cs">
+      <DependentUpon>nl-NL.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="lang\tr-TR.Designer.cs">
+      <DependentUpon>tr-TR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="lang\pl-PL.Designer.cs">
       <DependentUpon>pl-PL.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -123,6 +138,18 @@
     <EmbeddedResource Include="lang\cs-CZ.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>cs-CZ.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lang\ar-LY.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ar-LY.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lang\nl-NL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>nl-NL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lang\tr-TR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>tr-TR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="lang\pl-PL.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -118,134 +118,124 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
-    <value>Usuń wszystkie aplikacje Metro Windows 10</value>
+    <value>Tüm Metro Uygulamalarını Sil</value>
   </data>
   <data name="btnDeleteOneDrive" xml:space="preserve">
-    <value>Odinstaluj OneDrive</value>
+    <value>One Drive'ı Sil</value>
   </data>
   <data name="btnOpenAndEditHosts" xml:space="preserve">
-    <value>Edytuj plik hosts</value>
+    <value>Hosts Dosyasını Aç ve Düzenle</value>
   </data>
   <data name="btnProfessionalMode" xml:space="preserve">
-    <value>Włącz tryb zaawansowany</value>
+    <value>Profesyonel Modu Etkinleştir</value>
   </data>
   <data name="btnRestoreSystem" xml:space="preserve">
-    <value>Przywracanie systemu</value>
+    <value>Sistemi Geri Düzelt</value>
   </data>
   <data name="checkBoxAddToHosts" xml:space="preserve">
-    <value>Zablokuj domeny szpiegujące w pliku hosts i Zaporze systemu Windows</value>
+    <value>Casus Domainleri Hosts Dosyasına Ekle, ve Windows Firewallda Engelle</value>
   </data>
   <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
-    <value>Utwórz punkt przywracania systemu</value>
+    <value>Sistem Geri Yükleme Noktası Oluştur</value>
   </data>
   <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
-    <value>Usuń aplikacje Metro Windows 10</value>
+    <value>Windows 10 Metro Uygulamalarını Sil</value>
   </data>
   <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
-    <value>Wyłącz wysyłanie prywatnych danych</value>
+    <value>Özel Ayarları Devre Dışı Bırak</value>
   </data>
   <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
-    <value>Wyłącz Windows Defender</value>
+    <value>Windows Defenderı Devre Dışı Bırak</value>
   </data>
   <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
-    <value>Usuń keylogger i telemetrię</value>
+    <value>Telemetriyi ve Keylogger'ı Sil</value>
   </data>
   <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
-    <value>Ustaw program 'Przeglądarka fotografii systemu Windows' jako domyślny</value>
-  </data>
+    
+  <value>Varsayılan Fotoğraf Görüntüleyiciyi etkinleştir</value></data>
   <data name="checkBoxSPYTasks" xml:space="preserve">
-    <value>Wyłącz śledzące zadania</value>
+    <value>Casus İşlemleri Devre Dışı Bırak</value>
   </data>
   <data name="Complete" xml:space="preserve">
-    <value>Gotowe</value>
+    <value>Başarılı</value>
   </data>
   <data name="CompleteMSG" xml:space="preserve">
-    <value>Aby zakończyć wprowadzanie zmian, należy uruchomić ponownie komputer.
-Czy chcesz zrobić to teraz?</value>
+    <value>Başarılı!
+Casus Uyguluamaları Devredışı Bırakmak İçin Yeniden Başlatma Gerekiyor.Yeniden Başlatılsınmı ?</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Usuń</value>
+    <value>Sil</value>
   </data>
   <data name="DeleteApps" xml:space="preserve">
-    <value>Usuń aplikacje</value>
+    <value>Uygulamaları Sil</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Wyłącz</value>
+    <value>Devredışı Bırak</value>
   </data>
   <data name="Enable" xml:space="preserve">
-    <value>Włącz</value>
+    <value>Etkinleştir</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Wystąpił błąd</value>
+    <value>Hata</value>
   </data>
   <data name="ErrorMSG" xml:space="preserve">
-    <value>Podczas wprowadzania zmian wystąpiły {0} błędy.
-Aby zakończyć proces, należy uruchomić ponownie komputer.
-Czy chcesz zrobić to teraz?</value>
+    <value>Başarılı. Hatalar - {0}Casus Uyguluamaları Devredışı Bırakmak İçin Yeniden Başlatma Gerekiyor.Yeniden Başlatılsınmı ?</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Informacja</value>
+    <value>Bilgi</value>
   </data>
   <data name="labelInfoDeleteMetroApps" xml:space="preserve">
-    <value>Aplikacje Metro zostaną usunięte na stałe i nie będzie możliwości ich przywrócenia.</value>
+    <value>Metro Uygulamaları Geri Dönüş Olmadan Tamamen Silindi.</value>
   </data>
   <data name="Links" xml:space="preserve">
-    <value>Linki</value>
+    <value>Linkler</value>
   </data>
   <data name="PressOkAndWait15" xml:space="preserve">
-    <value>Kliknij przycisk 'OK' i poczekaj 15 minut.</value>
+    <value>OK butonuna basın ve 15 Dakika Bekleyin</value>
   </data>
   <data name="Question" xml:space="preserve">
-    <value>Pytanie</value>
+    <value>Sorular</value>
   </data>
   <data name="Really" xml:space="preserve">
-    <value>Czy jesteś pewny swojej decyzji?</value>
+    <value>Eminmisiniz ?</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Aby zakończyć proces, należy uruchomić ponownie komputer.
-Czy chcesz zrobić to teraz?</value>
+    <value>Yeniden Başlatma Gerekiyor.Yeniden Başlatılsınmı?</value>
   </data>
   <data name="tabPageAbout" xml:space="preserve">
-    <value>O programie</value>
+    <value>Hakkında</value>
   </data>
   <data name="tabPageMain" xml:space="preserve">
-    <value>Strona główna</value>
+    <value>Ana</value>
   </data>
   <data name="tabPageReadMe" xml:space="preserve">
-    <value>Opis programu</value>
+    <value>Beni Oku</value>
   </data>
   <data name="tabPageSettings" xml:space="preserve">
-    <value>Ustawienia</value>
+    <value>Ayarlar</value>
   </data>
   <data name="tabPageUtilites" xml:space="preserve">
-    <value>Narzędzia</value>
+    <value>Hizmetler</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Ostrzeżenie</value>
+    <value>Uyarı</value>
   </data>
   <data name="RemoveAllOldFirewallRules" xml:space="preserve">
-    <value>Usuń stare reguły zapory od DWS</value>
+    <value>Eski DWS firewall kurallarını etkisizleştir.</value>
   </data>
   <data name="ReportABug" xml:space="preserve">
-    <value>Zgłoś błąd</value>
+    <value>Bug Bildir.</value>
   </data>
   <data name="ReadMeTextBox" xml:space="preserve">
-    <value>Dzięki tej aplikacji możesz usunąć oprogramowanie szpiegujące w systemach Windows 7/8/8.1/10.
-Jest to program o otwartym źródle, które jest dostępne na Github.
-Usuwane są elementy telemetrii, wyłączany jest Windows Defender, Cortana, a także wiele innych niepożądanych części systemu. Aplikacja wyłącza także Windows Update, co pozwala ci na pozostanie anonimowym. Kolejną korzyścią jest nieotrzymywanie aktualizacji wbudowanego oprogramowania szpiegującego.
-Jedną z funkcji aplikacji jest usuwanie aplikacji Metro. Jest to bardzo przydatne, ponieważ działają one w tle i niepotrzebnie marnują pamięć, a niektóre z nich cię szpiegują.
-W dodatku program blokuje za pomocą pliku hosts wiele adresów IP pochodzących od firmy Microsoft, gdzie przesyłane są zebrane dane.
-Większość zmian wprowadzanych przez program jest niemożliwa do cofnięcia, nawet korzystając z wcześniej utworzonego punktu przywracania.
-W tej chwili jest to najlepszy program, który pozwala na zablokowanie wbudowanego oprogramowania szpiegującego.
-Jest on cały czas rozwijany przez użytkowników Windows 10. Niektórzy z nich poprawiają kod, aby był bardziej wydajny, a inni pomagają tłumaczyć program na inne języki.
-
-Parametry linii poleceń:
-/lang= - określa język programu. Na przykład: /lang=pl
-/deleteapp= - pozwala ci usunąć wybraną aplikację Metro. Na przykład: /deleteapp=bing lub /deleteapp=note
-/destroy - pozwala ci usunąć elementy szpiegujące.
-Zwróć uwagę na to, że parametrów /destroy i /deleteapp= nie można używać jednocześnie, a parametr /deleteapp= może zostać użyty tylko raz w jednym poleceniu.</value>
+    <value>Bu Yazılım Windows 7/8/8.1/10'daki casus yazılımları temizler .
+Program Github ile yapılmıştır ve açık kaynak kodludur..Bu Program Takip Edilmeyi Tamamen Yok eder. Telemetriden bazı şeyleri siler ve etkisizleştirir,Windows Defender'ı, Cortana'yı, ve daha bir çok şeyi siler. Programı Windows Update'i devredışı bırakarak takip edilme riskinizi ortadan kaldırır.
+Metro uygulamaları silmek gerçekten faydalı çünkü arkaplanda çalışarak belleğinizi yorar. ve tabiki takip edilmenize olanak sağlar.Ayrıca program birçok windows ip'sini engelleyerek izlenmenizi ve sizden bilgi alınmasını önler.Program geri çevrilemez. geri yükleme noktasına dönmemeniz gerekir.Şuan En etkili programdır. Program Çoğu Windows 10 kullanıcısına ulaşmaktadır.Programın daha etkili olması veya diğer dillere çevrilmesi için yardımcı olabilirsiniz.komut dizinleri için argümanlar:
+/lang= -Programın Başlangıç dilini seçer. Örnek: /lang=en
+/deleteapp= - Metro uygulamalarını silmenize olanak sağlar. Örnek: /deleteapp=bing or /deleteapp=note
+/destroy - Casus Yazılımları silmenize olanak sağlar.
+ÖNEMLİ! Arguments /destroy and /deleteapp= birlikte kullanılamaz, ve argument /deleteapp=birkaç kez kullanılamaz.</value>
   </data>
   <data name="FindOffice16FileT" xml:space="preserve">
-    <value>Określ ścieżkę do pliku msosync.exe. Jeśli Office 2016 jest zainstalowany w zwykły sposób na dysku C, kliknij przycisk "Anuluj"</value>
+    <value> msosync.exe yolunu belirtin. eğer Office 2016 standart olarak C'ye yüklü ise, "Cancel" a basın.</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,134 +118,138 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
-    <value>Usuń wszystkie aplikacje Metro Windows 10</value>
+    <value>حذف كل تطبيقات ويندوز 10</value>
   </data>
   <data name="btnDeleteOneDrive" xml:space="preserve">
-    <value>Odinstaluj OneDrive</value>
+    <value>One Drive حذف </value>
   </data>
   <data name="btnOpenAndEditHosts" xml:space="preserve">
-    <value>Edytuj plik hosts</value>
+    <value> HOSTS فتح و تعديل ملف</value>
   </data>
   <data name="btnProfessionalMode" xml:space="preserve">
-    <value>Włącz tryb zaawansowany</value>
+    <value>تمكين الوضع المتقدم</value>
   </data>
   <data name="btnRestoreSystem" xml:space="preserve">
-    <value>Przywracanie systemu</value>
+    <value>استعادة النظام</value>
   </data>
   <data name="checkBoxAddToHosts" xml:space="preserve">
-    <value>Zablokuj domeny szpiegujące w pliku hosts i Zaporze systemu Windows</value>
+    <value>إضافة نطاقات التجسس لملف هوست و حجبها بجدار وندوز  </value>
   </data>
   <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
-    <value>Utwórz punkt przywracania systemu</value>
+    <value>انشاء نقطة استعادة</value>
   </data>
   <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
-    <value>Usuń aplikacje Metro Windows 10</value>
+    <value>حذف تطبيقات ويندوز 10</value>
   </data>
   <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
-    <value>Wyłącz wysyłanie prywatnych danych</value>
+    <value>تعطيل إعدادات الخصوصية</value>
   </data>
   <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
-    <value>Wyłącz Windows Defender</value>
+    <value>windows defender تعطيل</value>
   </data>
   <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
-    <value>Usuń keylogger i telemetrię</value>
+    <value>حذف التجسس وكيلوجر </value>
   </data>
   <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
-    <value>Ustaw program 'Przeglądarka fotografii systemu Windows' jako domyślny</value>
+    <value>استعادة عارض صور ويندوز</value>
   </data>
   <data name="checkBoxSPYTasks" xml:space="preserve">
-    <value>Wyłącz śledzące zadania</value>
+    <value>تعطيل مهمات التجسس</value>
   </data>
   <data name="Complete" xml:space="preserve">
-    <value>Gotowe</value>
+    <value>اكتمل</value>
   </data>
   <data name="CompleteMSG" xml:space="preserve">
-    <value>Aby zakończyć wprowadzanie zmian, należy uruchomić ponownie komputer.
-Czy chcesz zrobić to teraz?</value>
+    <value>اكتمل!
+مطلوب إعادة تشغيل لتعطيل كافة برامج التجسس.
+إعادة التشغيل الآن؟</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Usuń</value>
+    <value>حذف</value>
   </data>
   <data name="DeleteApps" xml:space="preserve">
-    <value>Usuń aplikacje</value>
+    <value>حذف التطبيقات</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Wyłącz</value>
+    <value>تعطيل</value>
   </data>
   <data name="Enable" xml:space="preserve">
-    <value>Włącz</value>
+    <value>تفعيل</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Wystąpił błąd</value>
+    <value>خطأ</value>
   </data>
   <data name="ErrorMSG" xml:space="preserve">
-    <value>Podczas wprowadzania zmian wystąpiły {0} błędy.
-Aby zakończyć proces, należy uruchomić ponownie komputer.
-Czy chcesz zrobić to teraz?</value>
+    <value>
+اكتمل. أخطاء - {0}
+مطلوب إعادة تشغيل لتعطيل كافة برامج التجسس.
+إعادة التشغيل الآن؟</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Informacja</value>
+    <value>معلومة</value>
   </data>
   <data name="labelInfoDeleteMetroApps" xml:space="preserve">
-    <value>Aplikacje Metro zostaną usunięte na stałe i nie będzie możliwości ich przywrócenia.</value>
+    <value>تطبيقات وندوز تحذف نهائيا و لا يمكن استرجاعها</value>
   </data>
   <data name="Links" xml:space="preserve">
-    <value>Linki</value>
+    <value>روابط</value>
   </data>
   <data name="PressOkAndWait15" xml:space="preserve">
-    <value>Kliknij przycisk 'OK' i poczekaj 15 minut.</value>
+    <value>اضغط موافق و انتظر 15 دقيقة</value>
   </data>
   <data name="Question" xml:space="preserve">
-    <value>Pytanie</value>
+    <value>سؤال</value>
   </data>
   <data name="Really" xml:space="preserve">
-    <value>Czy jesteś pewny swojej decyzji?</value>
+    <value>حقا؟</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Aby zakończyć proces, należy uruchomić ponownie komputer.
-Czy chcesz zrobić to teraz?</value>
+    <value>إعادة التشغيل مطلوبة. إعادة التشغيل الآن؟</value>
   </data>
   <data name="tabPageAbout" xml:space="preserve">
-    <value>O programie</value>
+    <value>عن</value>
   </data>
   <data name="tabPageMain" xml:space="preserve">
-    <value>Strona główna</value>
+    <value>الرئيسية</value>
   </data>
   <data name="tabPageReadMe" xml:space="preserve">
-    <value>Opis programu</value>
+    <value>إقرأني</value>
   </data>
   <data name="tabPageSettings" xml:space="preserve">
-    <value>Ustawienia</value>
+    <value>إعدادات</value>
   </data>
   <data name="tabPageUtilites" xml:space="preserve">
-    <value>Narzędzia</value>
+    <value>أدوات</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Ostrzeżenie</value>
+    <value>تحذير</value>
   </data>
   <data name="RemoveAllOldFirewallRules" xml:space="preserve">
-    <value>Usuń stare reguły zapory od DWS</value>
+    <value>DWS إزالة كل قواعد الجدار الناري القديمة بواسطة</value>
   </data>
   <data name="ReportABug" xml:space="preserve">
-    <value>Zgłoś błąd</value>
+    <value>تقرير خطأ</value>
   </data>
   <data name="ReadMeTextBox" xml:space="preserve">
-    <value>Dzięki tej aplikacji możesz usunąć oprogramowanie szpiegujące w systemach Windows 7/8/8.1/10.
-Jest to program o otwartym źródle, które jest dostępne na Github.
-Usuwane są elementy telemetrii, wyłączany jest Windows Defender, Cortana, a także wiele innych niepożądanych części systemu. Aplikacja wyłącza także Windows Update, co pozwala ci na pozostanie anonimowym. Kolejną korzyścią jest nieotrzymywanie aktualizacji wbudowanego oprogramowania szpiegującego.
-Jedną z funkcji aplikacji jest usuwanie aplikacji Metro. Jest to bardzo przydatne, ponieważ działają one w tle i niepotrzebnie marnują pamięć, a niektóre z nich cię szpiegują.
-W dodatku program blokuje za pomocą pliku hosts wiele adresów IP pochodzących od firmy Microsoft, gdzie przesyłane są zebrane dane.
-Większość zmian wprowadzanych przez program jest niemożliwa do cofnięcia, nawet korzystając z wcześniej utworzonego punktu przywracania.
-W tej chwili jest to najlepszy program, który pozwala na zablokowanie wbudowanego oprogramowania szpiegującego.
-Jest on cały czas rozwijany przez użytkowników Windows 10. Niektórzy z nich poprawiają kod, aby był bardziej wydajny, a inni pomagają tłumaczyć program na inne języki.
+    <value>هذا البرنامج يدمر التجسس على ويندوز 8/7/ 8.1/ 10.
+هذا البرنامج مفتوح المصدر، وهو على GitHub.
+هذا البرنامج يدمر تماما التجسس. يزيل بعض عناصر القياس ويوقف الآخر، يعطل ويندوز ديفندر ، كورتانا، وأكثر من ذلك بكثير. كتعطيل تحديث ويندوز، و الذي يمنع الكشف عن هويتك، بمنع تلقي تحديثات تحتوي على برامج تجسس جديدة.
+حذف تطبيقات جيد، لأنها تعمل في الخلفية، وتلتهم الذاكرة، ومنها مايتجسس عليك.
+أيضا، البرنامج عديد من نطاقات مايكروسوفت التي تجمع البيانات، ويضيف معظم برامج التجسس لملف هوست.
+البرنامج يقوم بهذا بشكل لا رجعة فيه، وينبغي عدم التراجع حتى بعد استعادة النظام.
+في هذه اللحظة هو البرنامج الأكثر فعالية. هذا البرنامج هو تطوير عدد كبير من مستخدمي ويندوز 10، البعض ساعد بكتابة التعليمات البرمجية لتصبح أكثر إنتاجية، والبعض ساعد بترجمة البرنامج إلى لغات أخرى.
 
-Parametry linii poleceń:
-/lang= - określa język programu. Na przykład: /lang=pl
-/deleteapp= - pozwala ci usunąć wybraną aplikację Metro. Na przykład: /deleteapp=bing lub /deleteapp=note
-/destroy - pozwala ci usunąć elementy szpiegujące.
-Zwróć uwagę na to, że parametrów /destroy i /deleteapp= nie można używać jednocześnie, a parametr /deleteapp= może zostać użyty tylko raz w jednym poleceniu.</value>
+الوسيطات لسطر الأوامر:
+/lang= - تحدد لغة البرنامج. مثل: /lang=en
+/deleteapp= - لحذف تطبيق من ويندوز. مثلا: /deleteapp=bing أو /deleteapp=note
+/destroy -  لإزالة التجسس.
+هام!  /destroy و /deleteapp= لايمكن جمعها /deleteapp= و لا يمكن تكرار استخدامها.
+
+
+
+</value>
   </data>
   <data name="FindOffice16FileT" xml:space="preserve">
-    <value>Określ ścieżkę do pliku msosync.exe. Jeśli Office 2016 jest zainstalowany w zwykły sposób na dysku C, kliknij przycisk "Anuluj"</value>
+    <value>يرجى تحديد المسار لملف msosync.exe . إذا تم تثبيت Office 2016 على محرك الأقراص C، اضغط على "إلغاء"</value>
   </data>
 </root>
