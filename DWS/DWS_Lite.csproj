@@ -78,6 +78,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="lang\uk-UA.Designer.cs">
+      <DependentUpon>uk-UA.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="lang\tr-TR.Designer.cs">
       <DependentUpon>tr-TR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -113,7 +118,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="lang\ru-RU - Copy.Designer.cs">
+    <Compile Include="lang\zh-CN1.Designer.cs">
       <DependentUpon>zh-CN.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,6 +152,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>nl-NL.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="lang\uk-UA.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>uk-UA.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="lang\tr-TR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>tr-TR.Designer.cs</LastGenOutput>
@@ -177,7 +186,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="lang\zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ru-RU - Copy.Designer.cs</LastGenOutput>
+      <LastGenOutput>zh-CN1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="lang\ru-RU.resx">
       <Generator>ResXFileCodeGenerator</Generator>

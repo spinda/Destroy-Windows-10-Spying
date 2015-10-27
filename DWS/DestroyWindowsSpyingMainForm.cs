@@ -34,6 +34,7 @@ namespace DWS_Lite
         private bool _win10 = true;
         private int _fatalErrors;
         private bool _debug;
+        private bool _destroyFlag;
 
         public DestroyWindowsSpyingMainForm(string[] args)
         {
@@ -156,6 +157,7 @@ namespace DWS_Lite
                 if (currentArg.IndexOf("/destroy", StringComparison.Ordinal) <= -1) continue;
                 WindowState = FormWindowState.Minimized;
                 ShowInTaskbar = false;
+                _destroyFlag = true;
                 //Windows 10
                 if (_win10)
                 {
@@ -286,12 +288,17 @@ namespace DWS_Lite
             else if (currentlang.IndexOf("ar", StringComparison.Ordinal) > -1)
             {
                 _rm = ar_LY.ResourceManager;
-                comboBoxLanguageSelect.Text = @"tr-TR | Turkish";
+                comboBoxLanguageSelect.Text = @"ar-LY | Arabic";
             }
-            else if (currentlang.IndexOf("ar", StringComparison.Ordinal) > -1)
+            else if (currentlang.IndexOf("nl", StringComparison.Ordinal) > -1)
             {
                 _rm = nl_NL.ResourceManager;
                 comboBoxLanguageSelect.Text = @"nl-NL | Dutch";
+            }
+            else if (currentlang.IndexOf("UA", StringComparison.Ordinal) > -1)
+            {
+                _rm = uk_UA.ResourceManager;
+                comboBoxLanguageSelect.Text = @"uk-UA | Українська";
             }
             else
             {
@@ -506,6 +513,7 @@ namespace DWS_Lite
                 Invoke(new MethodInvoker(delegate
                 {
                     this.ControlBox = enableordisable;
+                    _CloseButton.Enabled = enableordisable;
                     btnDestroyWindowsSpying.Enabled = enableordisable;
                     tabPageSettings.Enabled = enableordisable;
                     tabPageUtilites.Enabled = enableordisable;
@@ -822,6 +830,8 @@ namespace DWS_Lite
         }
         private void SetCompleteText(bool start = false)
         {
+            if (_destroyFlag)
+                return;
             if (start)
             {
                 StatusCommandsLable.Text = @"Destroy Windows 10 Spying";
@@ -979,7 +989,8 @@ namespace DWS_Lite
                     "pre.footprintpredict.com",
                     "spynet2.microsoft.com",
                     "spynetalt.microsoft.com",
-                    "fe3.delivery.dsp.mp.microsoft.com.nsatc.net"
+                    "fe3.delivery.dsp.mp.microsoft.com.nsatc.net",
+                    "cache.datamart.windows.com"
                 };
                 var hostslocation = _system32Location + @"drivers\etc\hosts";
                 string hosts = null;
@@ -1275,7 +1286,8 @@ namespace DWS_Lite
                 "MS telemetry block 1",
                 "MS telemetry block 2",
                 "185.13.160.61_Block",
-                "184.86.56.12_Block"
+                "184.86.56.12_Block",
+                "204.79.197.200_Block" // bing.com
             };
             foreach (var hostname in rulename)
             {
@@ -1341,6 +1353,10 @@ namespace DWS_Lite
                     _rm = nl_NL.ResourceManager;
                     ChangeLanguage();
                     break;
+                case "uk-UA":
+                    _rm = uk_UA.ResourceManager;
+                    ChangeLanguage();
+                    break;
                 default:
                     _rm = en_US.ResourceManager;
                     ChangeLanguage();
@@ -1351,6 +1367,7 @@ namespace DWS_Lite
         private void btnDestroyWindows78Spy_Click(object sender, EventArgs e)
         {
             btnDestroyWindows78Spy.Enabled = false;
+            _CloseButton.Enabled = false; 
             _fatalErrors = 0;
             new Thread(() =>
             {
@@ -1361,6 +1378,7 @@ namespace DWS_Lite
                 Invoke(new MethodInvoker(delegate
                 {
                     btnDestroyWindows78Spy.Enabled = true;
+                    _CloseButton.Enabled = true;
                     MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"), MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }));
@@ -1423,7 +1441,7 @@ namespace DWS_Lite
                 "191.232.80.58",
                 "191.232.80.62",
                 "191.237.208.126",
-                "204.79.197.200",
+                //"204.79.197.200", // BING.COM
                 "207.46.101.29",
                 "207.46.114.58",
                 "207.46.223.94",
@@ -1464,7 +1482,8 @@ namespace DWS_Lite
                 "157.55.130.0-157.55.130.255",
                 "65.55.223.0-65.55.223.255",
                 "213.199.179.0-213.199.179.255", // Ireland
-                "195.138.255.0-195.138.255.255"
+                "195.138.255.0-195.138.255.255",
+                "23.223.20.82" // cache.datamart.windows.com
 
             };
             foreach (var currentIpAddr in ipAddr)
@@ -1574,10 +1593,10 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
         // ReSharper disable once InconsistentNaming
         public const int HT_CAPTION = 0x2;
 
-        [DllImportAttribute("user32.dll")]
+        [DllImport("user32.dll")]
         // ReSharper disable once InconsistentNaming
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
+        [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         // ReSharper disable once InconsistentNaming
         private const int CS_DROPSHADOW = 0x00020000;
@@ -1593,12 +1612,12 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
 
         private void CloseButton_MouseEnter(object sender, EventArgs e)
         {
-            CloseButton.BackColor = Color.WhiteSmoke;
+            _CloseButton.BackColor = Color.WhiteSmoke;
         }
 
         private void CloseButton_MouseLeave(object sender, EventArgs e)
         {
-            CloseButton.BackColor = Color.White;
+            _CloseButton.BackColor = Color.White;
         }
 
         private void MinimizeButton_MouseEnter(object sender, EventArgs e)
@@ -1609,6 +1628,18 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
         private void MinimizeButton_MouseLeave(object sender, EventArgs e)
         {
             MinimizeButton.BackColor = Color.White;
+        }
+
+        private void MinimizeButton_Paint(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            g.DrawImage(Resources.minimize, MinimizeButton.Width - Resources.minimize.Width - 5, MinimizeButton.Height - Resources.minimize.Height - 7);
+        }
+
+        private void CloseButton_Paint(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            g.DrawImage(Resources.close, _CloseButton.Width - Resources.close.Width - 5, _CloseButton.Height - Resources.close.Height - 7);
         }
 
         void ChangeBorderColor(Color cl)
@@ -1652,21 +1683,14 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
             }
         }
 
-        private void MinimizeButton_Paint(object sender, PaintEventArgs e)
+        private void CloseButton_MouseDown(object sender, MouseEventArgs e)
         {
-            var g = e.Graphics;
-            g.DrawImage(Resources.minimize, MinimizeButton.Width - Resources.minimize.Width - 5, MinimizeButton.Height - Resources.minimize.Height - 7);
+            _CloseButton.BackColor = Color.LightGray;
         }
 
-        private void CloseButton_Paint(object sender, PaintEventArgs e)
+        private void MinimizeButton_MouseDown(object sender, MouseEventArgs e)
         {
-            var g = e.Graphics;
-            g.DrawImage(Resources.close, CloseButton.Width - Resources.close.Width - 5, CloseButton.Height - Resources.close.Height - 7);
+            MinimizeButton.BackColor = Color.LightGray;
         }
-
-        private void btnReportABug_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
     }
 }

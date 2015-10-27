@@ -88,7 +88,7 @@ namespace DWS_Lite
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelMoonInfo = new System.Windows.Forms.Label();
             this.About_Info = new System.Windows.Forms.Label();
             this.labelBuildDataTime = new System.Windows.Forms.Label();
             this.tabPageReadMe = new System.Windows.Forms.TabPage();
@@ -97,7 +97,7 @@ namespace DWS_Lite
             this.linkLabelLicense = new System.Windows.Forms.LinkLabel();
             this.labelLicense = new System.Windows.Forms.Label();
             this.CaptionWindow = new System.Windows.Forms.Label();
-            this.CloseButton = new System.Windows.Forms.PictureBox();
+            this._CloseButton = new System.Windows.Forms.PictureBox();
             this.MinimizeButton = new System.Windows.Forms.PictureBox();
             this.BorderUP = new System.Windows.Forms.PictureBox();
             this.BorderDown = new System.Windows.Forms.PictureBox();
@@ -114,7 +114,7 @@ namespace DWS_Lite
             this.groupBoxLinks.SuspendLayout();
             this.tabPageReadMe.SuspendLayout();
             this.tabPageLicense.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderUP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderDown)).BeginInit();
@@ -735,7 +735,7 @@ namespace DWS_Lite
             this.tabPageAbout.Controls.Add(this.btnReportABug);
             this.tabPageAbout.Controls.Add(this.linkLabelOtherThanks);
             this.tabPageAbout.Controls.Add(this.groupBoxLinks);
-            this.tabPageAbout.Controls.Add(this.label1);
+            this.tabPageAbout.Controls.Add(this.labelMoonInfo);
             this.tabPageAbout.Controls.Add(this.About_Info);
             this.tabPageAbout.Controls.Add(this.labelBuildDataTime);
             this.tabPageAbout.Location = new System.Drawing.Point(4, 22);
@@ -772,6 +772,7 @@ namespace DWS_Lite
             "pt-BR | Portuguese",
             "ru-RU | Русский",
             "tr-TR | Turkish",
+            "uk-UA | Українська",
             "zh-CN | 中文(简体)"});
             this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
             this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
@@ -790,7 +791,6 @@ namespace DWS_Lite
             this.btnReportABug.Text = "Report a bug";
             this.btnReportABug.UseVisualStyleBackColor = false;
             this.btnReportABug.Click += new System.EventHandler(this.btnReportABug_Click);
-            this.btnReportABug.Paint += new System.Windows.Forms.PaintEventHandler(this.btnReportABug_Paint);
             // 
             // linkLabelOtherThanks
             // 
@@ -906,16 +906,16 @@ namespace DWS_Lite
             this.linkLabel3.Text = "Best windows activator (KMS Auto)";
             this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
-            // label1
+            // labelMoonInfo
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(173, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(272, 33);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Сделано на другой стороне луны ®";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelMoonInfo.BackColor = System.Drawing.Color.Transparent;
+            this.labelMoonInfo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMoonInfo.Location = new System.Drawing.Point(173, 0);
+            this.labelMoonInfo.Name = "labelMoonInfo";
+            this.labelMoonInfo.Size = new System.Drawing.Size(272, 33);
+            this.labelMoonInfo.TabIndex = 6;
+            this.labelMoonInfo.Text = "Сделано на другой стороне луны ®";
+            this.labelMoonInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // About_Info
             // 
@@ -1010,20 +1010,21 @@ namespace DWS_Lite
             this.CaptionWindow.Click += new System.EventHandler(this.CaptionWindow_Click);
             this.CaptionWindow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CaptionWindow_MouseDown);
             // 
-            // CloseButton
+            // _CloseButton
             // 
-            this.CloseButton.BackColor = System.Drawing.Color.White;
-            this.CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.CloseButton.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.CloseButton.Location = new System.Drawing.Point(423, 1);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(29, 29);
-            this.CloseButton.TabIndex = 2;
-            this.CloseButton.TabStop = false;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            this.CloseButton.Paint += new System.Windows.Forms.PaintEventHandler(this.CloseButton_Paint);
-            this.CloseButton.MouseEnter += new System.EventHandler(this.CloseButton_MouseEnter);
-            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
+            this._CloseButton.BackColor = System.Drawing.Color.White;
+            this._CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this._CloseButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this._CloseButton.Location = new System.Drawing.Point(423, 1);
+            this._CloseButton.Name = "_CloseButton";
+            this._CloseButton.Size = new System.Drawing.Size(29, 29);
+            this._CloseButton.TabIndex = 2;
+            this._CloseButton.TabStop = false;
+            this._CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this._CloseButton.Paint += new System.Windows.Forms.PaintEventHandler(this.CloseButton_Paint);
+            this._CloseButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseDown);
+            this._CloseButton.MouseEnter += new System.EventHandler(this.CloseButton_MouseEnter);
+            this._CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
             // 
             // MinimizeButton
             // 
@@ -1036,6 +1037,7 @@ namespace DWS_Lite
             this.MinimizeButton.TabStop = false;
             this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             this.MinimizeButton.Paint += new System.Windows.Forms.PaintEventHandler(this.MinimizeButton_Paint);
+            this.MinimizeButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MinimizeButton_MouseDown);
             this.MinimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_MouseEnter);
             this.MinimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_MouseLeave);
             // 
@@ -1086,7 +1088,7 @@ namespace DWS_Lite
             this.Controls.Add(this.BorderR);
             this.Controls.Add(this.BorderUP);
             this.Controls.Add(this.MinimizeButton);
-            this.Controls.Add(this.CloseButton);
+            this.Controls.Add(this._CloseButton);
             this.Controls.Add(this.CaptionWindow);
             this.Controls.Add(this.FormTabsControl);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1113,7 +1115,7 @@ namespace DWS_Lite
             this.tabPageReadMe.ResumeLayout(false);
             this.tabPageLicense.ResumeLayout(false);
             this.tabPageLicense.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._CloseButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderUP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderDown)).EndInit();
@@ -1166,7 +1168,7 @@ namespace DWS_Lite
         private LinkLabel linkLabel2;
         private LinkLabel linkLabel1;
         private Label About_Info;
-        private Label label1;
+        private Label labelMoonInfo;
         private LinkLabel linkLabel5;
         private GroupBox groupBoxLinks;
         private GroupBox groupBoxWindowsUpdate;
@@ -1190,7 +1192,7 @@ namespace DWS_Lite
         private CheckBox btnProfessionalMode;
         private Button btnDisableOfficeUpdate;
         private Label CaptionWindow;
-        private PictureBox CloseButton;
+        private PictureBox _CloseButton;
         private PictureBox MinimizeButton;
         private PictureBox BorderUP;
         private PictureBox BorderDown;
