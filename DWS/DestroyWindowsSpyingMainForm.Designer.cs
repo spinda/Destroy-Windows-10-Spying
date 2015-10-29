@@ -76,6 +76,7 @@ namespace DWS_Lite
             this.btnRestoreSystem = new System.Windows.Forms.Button();
             this.btnDeleteAllWindows10Apps = new System.Windows.Forms.Button();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
+            this.DonatePictureBox = new System.Windows.Forms.PictureBox();
             this.groupBoxLanguage = new System.Windows.Forms.GroupBox();
             this.comboBoxLanguageSelect = new System.Windows.Forms.ComboBox();
             this.btnReportABug = new System.Windows.Forms.Button();
@@ -103,6 +104,7 @@ namespace DWS_Lite
             this.BorderDown = new System.Windows.Forms.PictureBox();
             this.BorderLeft = new System.Windows.Forms.PictureBox();
             this.BorderR = new System.Windows.Forms.PictureBox();
+            this.SecretButton = new System.Windows.Forms.PictureBox();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -110,6 +112,7 @@ namespace DWS_Lite
             this.groupBoxWindowsUpdate.SuspendLayout();
             this.groupBoxUACEdit.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DonatePictureBox)).BeginInit();
             this.groupBoxLanguage.SuspendLayout();
             this.groupBoxLinks.SuspendLayout();
             this.tabPageReadMe.SuspendLayout();
@@ -120,6 +123,7 @@ namespace DWS_Lite
             ((System.ComponentModel.ISupportInitialize)(this.BorderDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SecretButton)).BeginInit();
             this.SuspendLayout();
             // 
             // FormTabsControl
@@ -731,6 +735,7 @@ namespace DWS_Lite
             this.tabPageAbout.BackColor = System.Drawing.Color.White;
             this.tabPageAbout.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageAbout.Controls.Add(this.DonatePictureBox);
             this.tabPageAbout.Controls.Add(this.groupBoxLanguage);
             this.tabPageAbout.Controls.Add(this.btnReportABug);
             this.tabPageAbout.Controls.Add(this.linkLabelOtherThanks);
@@ -743,6 +748,19 @@ namespace DWS_Lite
             this.tabPageAbout.Size = new System.Drawing.Size(445, 400);
             this.tabPageAbout.TabIndex = 3;
             this.tabPageAbout.Text = "About";
+            // 
+            // DonatePictureBox
+            // 
+            this.DonatePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.DonatePictureBox.BackgroundImage = global::DWS_Lite.Properties.Resources.donatebtn;
+            this.DonatePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DonatePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DonatePictureBox.Location = new System.Drawing.Point(8, 214);
+            this.DonatePictureBox.Name = "DonatePictureBox";
+            this.DonatePictureBox.Size = new System.Drawing.Size(150, 48);
+            this.DonatePictureBox.TabIndex = 13;
+            this.DonatePictureBox.TabStop = false;
+            this.DonatePictureBox.Click += new System.EventHandler(this.DonatePictureBox_Click);
             // 
             // groupBoxLanguage
             // 
@@ -757,7 +775,9 @@ namespace DWS_Lite
             // 
             // comboBoxLanguageSelect
             // 
+            this.comboBoxLanguageSelect.BackColor = System.Drawing.Color.Gainsboro;
             this.comboBoxLanguageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLanguageSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxLanguageSelect.FormattingEnabled = true;
             this.comboBoxLanguageSelect.Items.AddRange(new object[] {
             "ar-LY | Arabic",
@@ -1077,12 +1097,24 @@ namespace DWS_Lite
             this.BorderR.TabIndex = 7;
             this.BorderR.TabStop = false;
             // 
+            // SecretButton
+            // 
+            this.SecretButton.BackColor = System.Drawing.Color.Transparent;
+            this.SecretButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SecretButton.Location = new System.Drawing.Point(447, 39);
+            this.SecretButton.Name = "SecretButton";
+            this.SecretButton.Size = new System.Drawing.Size(5, 5);
+            this.SecretButton.TabIndex = 8;
+            this.SecretButton.TabStop = false;
+            this.SecretButton.Click += new System.EventHandler(this.SecretButton_Click);
+            // 
             // DestroyWindowsSpyingMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(453, 457);
+            this.Controls.Add(this.SecretButton);
             this.Controls.Add(this.BorderLeft);
             this.Controls.Add(this.BorderDown);
             this.Controls.Add(this.BorderR);
@@ -1109,6 +1141,7 @@ namespace DWS_Lite
             this.groupBoxUACEdit.ResumeLayout(false);
             this.tabPageAbout.ResumeLayout(false);
             this.tabPageAbout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DonatePictureBox)).EndInit();
             this.groupBoxLanguage.ResumeLayout(false);
             this.groupBoxLinks.ResumeLayout(false);
             this.groupBoxLinks.PerformLayout();
@@ -1121,6 +1154,7 @@ namespace DWS_Lite
             ((System.ComponentModel.ISupportInitialize)(this.BorderDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SecretButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1198,6 +1232,8 @@ namespace DWS_Lite
         private PictureBox BorderDown;
         private PictureBox BorderLeft;
         private PictureBox BorderR;
+        private PictureBox SecretButton;
+        private PictureBox DonatePictureBox;
     }
 }
 

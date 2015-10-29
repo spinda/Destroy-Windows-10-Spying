@@ -44,7 +44,7 @@ namespace DWS_Lite.lang {
         internal static ResourceManager ResourceManager {
             get {
                 if (ReferenceEquals(resourceMan, null)) {
-                    ResourceManager temp = new ResourceManager("DWS_Lite.lang.it-CH", typeof(it_CH).Assembly);
+                    var temp = new ResourceManager("DWS_Lite.lang.it-CH", typeof(it_CH).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
