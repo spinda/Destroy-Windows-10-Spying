@@ -137,6 +137,12 @@
     <Compile Include="Lib\WindowsUtil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecretForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecretForm.Designer.cs">
+      <DependentUpon>SecretForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DestroyWindowsSpyingMainForm.resx">
       <DependentUpon>DestroyWindowsSpyingMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +212,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SecretForm.resx">
+      <DependentUpon>SecretForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -231,6 +240,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="other_cat.ico" />
+    <None Include="Resources\donatebtn.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\minimize.png" />
     <None Include="Resources\warning.png" />

@@ -59,7 +59,7 @@ namespace DWS_Lite
             {
                 _OutPut("Error get icon.",LogLevel.Error);
             }
-            Text += Resources.build_number + " !TEST!";
+            Text += Resources.build_number + @" !TEST!";
             labelBuildDataTime.Text = @"Build number:" + Resources.build_number + @"  |  Build Time:" +
                                       Resources.build_datatime;
 
@@ -1374,6 +1374,7 @@ namespace DWS_Lite
                 AddToHostsAndFirewall();
                 DisableSpyingTasks();
                 DeleteUpdatesWin78();
+                GwxDelete();
                 RunCmd("/c REG ADD HKLM\\SYSTEM\\CurrentControlSet\\Control\\WMI\\AutoLogger\\AutoLogger-Diagtrack-Listener /v Start /t REG_DWORD /d 0 /f");
                 Invoke(new MethodInvoker(delegate
                 {
@@ -1384,6 +1385,42 @@ namespace DWS_Lite
                 }));
             }).Start();
         }
+
+        void GwxDelete()
+        {
+            try
+            {
+                var windowsIdentityUser = WindowsIdentity.GetCurrent();
+                var gwxDir = Environment.SystemDirectory + @"\GWX";
+                if (windowsIdentityUser != null)
+                {
+                    var userName = windowsIdentityUser.Name.Split('\\')[1];
+                    if (Directory.Exists(gwxDir))
+                    {
+                        RunCmd("/c TASKKILL /F /IM gwx.exe");
+                        RunCmd(String.Format("/c takeown /f \"{0}\" /d y", gwxDir));
+                        RunCmd(String.Format("/c icacls \"{0}\" /grant {1}:F /q", gwxDir, userName));
+                        RunCmd(String.Format("/c rmdir /s /q {0}", gwxDir));
+                        _OutPut("Delete GWX");
+                    }
+                    else
+                    {
+                        _OutPut("GWX NOT FOUND", LogLevel.Warning);
+                    }
+                }
+                else
+                {
+                    _OutPut("Error delete GWX #1221", LogLevel.Error);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                _fatalErrors++;
+                _OutPut(ex.Message, LogLevel.Error);
+            }
+        }
+
         void DeleteUpdatesWin78()
         {
             string[] updatesnumberlist =
@@ -1604,7 +1641,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
         {
             get
             {
-                CreateParams cp = base.CreateParams;
+                var cp = base.CreateParams;
                 cp.ClassStyle |= CS_DROPSHADOW;
                 return cp;
             }
@@ -1691,6 +1728,19 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == D
         private void MinimizeButton_MouseDown(object sender, MouseEventArgs e)
         {
             MinimizeButton.BackColor = Color.LightGray;
+        }
+
+        private void SecretButton_Click(object sender, EventArgs e)
+        {
+            var sf = new SecretForm();
+            sf.ShowDialog();
+            sf.Close();
+            
+        }
+
+        private void DonatePictureBox_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WCCLBQNQPMS6C");
         }
     }
 }
