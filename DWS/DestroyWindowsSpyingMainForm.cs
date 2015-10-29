@@ -59,7 +59,10 @@ namespace DWS_Lite
             {
                 _OutPut("Error get icon.",LogLevel.Error);
             }
-            Text += Resources.build_number + @" !TEST!";
+            Text += Resources.build_number;
+#if DEBUG
+            Text += @" !TEST!";
+#endif
             labelBuildDataTime.Text = @"Build number:" + Resources.build_number + @"  |  Build Time:" +
                                       Resources.build_datatime;
 

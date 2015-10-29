@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
+using System.Net;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace DWS_Lite
@@ -49,6 +52,7 @@ Bom-bom-bom-tra-ly-ly! LAlLALLALAL!";
             }
             else
             {
+                GraphicsTimer.Enabled = false;
                 graphics.DrawLines(
                     new Pen(
                         Color.Green,
@@ -85,6 +89,25 @@ Bom-bom-bom-tra-ly-ly! LAlLALLALAL!";
                         new Point(63, 48),
                         new Point(63, 101)
                     });
+                new Thread(() =>
+                {
+                    try
+                    {
+                        byte[] Img = new WebClient().DownloadData("http://i.imgur.com/m6l7hmO.jpg");
+                        MemoryStream ms = new MemoryStream(Img);
+                        Image returnImage = Image.FromStream(ms);
+                        Thread.Sleep(5000);
+                        Invoke(new MethodInvoker(delegate
+                        {
+                            BackgroundImage = returnImage;
+                            BackgroundImageLayout = ImageLayout.Stretch;
+                        }));
+                    }
+                    catch (Exception)
+                    {
+                        // ignored
+                    }
+                }).Start();
             }
         }
 
