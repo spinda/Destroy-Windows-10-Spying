@@ -31,7 +31,6 @@ namespace DWS_Lite
         // ReSharper disable once InconsistentNaming
         private const int CS_DROPSHADOW = 0x00020000;
         private readonly string _systemPath = Path.GetPathRoot(Environment.SystemDirectory);
-        private bool _debug;
         private bool _destroyFlag;
         // ReSharper disable once CollectionNeverQueried.Local
         // ReSharper disable once FieldCanBeMadeReadOnly.Local
@@ -115,9 +114,11 @@ namespace DWS_Lite
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // ignored
+#if DEBUG
+                _OutPut("Error in AnimateBackground: " + ex.Message, LogLevel.Debug);
+#endif
             }
         }
 
@@ -145,7 +146,9 @@ namespace DWS_Lite
             catch (Exception ex)
             {
                 _OutPut("Error check updates.", LogLevel.Error);
-                if (_debug) _OutPut(ex.Message, LogLevel.Debug);
+#if DEBUG
+                _OutPut(ex.Message, LogLevel.Debug);
+#endif
             }
         }
 
@@ -166,10 +169,6 @@ namespace DWS_Lite
         {
             foreach (var currentArg in args)
             {
-                if (currentArg.IndexOf("-debug", StringComparison.Ordinal) > -1)
-                {
-                    _debug = true;
-                }
                 if (currentArg.IndexOf("/deleteapp=", StringComparison.Ordinal) > -1)
                 {
                     DeleteWindows10MetroApp(currentArg.Replace("/deleteapp=", null));
@@ -328,7 +327,9 @@ namespace DWS_Lite
             }
             catch (Exception ex)
             {
-                if (_debug) _OutPut(ex.Message, LogLevel.Debug);
+#if DEBUG
+                _OutPut(ex.Message, LogLevel.Debug);
+#endif
             }
         }
 
@@ -365,13 +366,16 @@ namespace DWS_Lite
                     line += Environment.NewLine + proc.StandardOutput.ReadLine();
                 }
                 proc.WaitForExit();
-                if (_debug)
-                    _OutPut("Start: " + name + " " + args + Environment.NewLine + "Output: " + line, LogLevel.Debug);
+#if DEBUG
+                _OutPut("Start: " + name + " " + args + Environment.NewLine + "Output: " + line, LogLevel.Debug);
+#endif
             }
             catch (Exception ex)
             {
                 _OutPut("Error start prog " + name + " " + args, LogLevel.Error);
-                if (_debug) _OutPut(ex.Message, LogLevel.Debug);
+#if DEBUG
+                _OutPut(ex.Message, LogLevel.Debug);
+#endif
                 _fatalErrors++;
                 _errorsList.Add("Error start prog " + name + " " + args);
             }
@@ -432,7 +436,9 @@ namespace DWS_Lite
                 catch (Exception ex)
                 {
                     _OutPut("Error creating restore point.");
-                    if (_debug) _OutPut(ex.Message, LogLevel.Debug);
+#if DEBUG
+                    _OutPut(ex.Message, LogLevel.Debug);
+#endif
                 }
             }
             Progressbaradd(10);
@@ -534,7 +540,9 @@ namespace DWS_Lite
                 catch (Exception ex)
                 {
                     _OutPut("Error disable windows Defender or Smart Screen", LogLevel.Error);
-                    if (_debug) _OutPut(ex.Message, LogLevel.Debug);
+#if DEBUG
+                    _OutPut(ex.Message, LogLevel.Debug);
+#endif
                     _fatalErrors++;
                     _errorsList.Add("Error disable Windows Defender or Smart Screen. Message: " + ex.Message);
                 }
@@ -575,7 +583,9 @@ namespace DWS_Lite
                 }
                 catch (Exception ex)
                 {
-                    if (_debug) _OutPut(ex.Message, LogLevel.Debug);
+#if DEBUG
+                    _OutPut(ex.Message, LogLevel.Debug);
+#endif
                 }
             }
         }
@@ -744,7 +754,8 @@ namespace DWS_Lite
                     "spynet2.microsoft.com",
                     "spynetalt.microsoft.com",
                     "fe3.delivery.dsp.mp.microsoft.com.nsatc.net",
-                    "cache.datamart.windows.com"
+                    "cache.datamart.windows.com",
+                    "db3wns2011111.wns.windows.com" // NEW TH2 spy hosts
                 };
                 var hostslocation = _system32Location + @"drivers\etc\hosts";
                 string hosts = null;
@@ -773,7 +784,9 @@ namespace DWS_Lite
                 _errorsList.Add("Error add to hosts. Message: " + ex.Message);
                 _fatalErrors++;
                 _OutPut("Error add HOSTS", LogLevel.Error);
-                if (_debug) _OutPut(ex.Message, LogLevel.Debug);
+#if DEBUG
+                _OutPut(ex.Message, LogLevel.Debug);
+#endif
             }
             RunCmd("/c ipconfig /flushdns");
 
@@ -1047,7 +1060,9 @@ namespace DWS_Lite
                         MessageBox.Show(ex.Message, GetTranslateText("Error"), MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }));
-                    if (_debug) _OutPut(ex.Message, LogLevel.Debug);
+#if DEBUG
+                    _OutPut(ex.Message, LogLevel.Debug);
+#endif
                 }
                 Invoke(new MethodInvoker(delegate
                 {
@@ -1307,7 +1322,9 @@ namespace DWS_Lite
                 "65.55.223.0-65.55.223.255",
                 "213.199.179.0-213.199.179.255", // Ireland
                 "195.138.255.0-195.138.255.255",
-                "23.223.20.82" // cache.datamart.windows.com
+                "23.223.20.82", // cache.datamart.windows.com
+                "77.67.29.176", // NEW TH2 Spy IP
+                "157.56.124.87" // NEW TH2 Spy IP
             };
             foreach (var currentIpAddr in ipAddr)
             {
@@ -1662,8 +1679,10 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             }
             catch (Exception ex)
             {
-                if (_debug) _OutPut(ex.Message, LogLevel.Debug);
-                return null;
+#if DEBUG
+                _OutPut($"Error get translate {name}. \nError: {ex.Message}", LogLevel.Debug);
+#endif
+                return en_US.ResourceManager.GetString(name);
             }
         }
 

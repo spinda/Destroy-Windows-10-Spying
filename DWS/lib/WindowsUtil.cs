@@ -20,7 +20,6 @@ namespace DWS_Lite.lib
                 var result = rkSubKey.GetValue(keyName);
                 rkSubKey.Close();
                 return result;
-
             }
             catch (Exception ex) //This exception is thrown
             {
