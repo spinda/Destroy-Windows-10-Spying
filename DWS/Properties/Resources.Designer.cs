@@ -71,7 +71,7 @@ namespace DWS_Lite.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 29-Oct-15 17:04:17.91 
+        ///   Looks up a localized string similar to 29-Oct-15 20:55:48.73 
         ///.
         /// </summary>
         internal static string build_datatime {
@@ -81,7 +81,7 @@ namespace DWS_Lite.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 574.
+        ///   Looks up a localized string similar to 600.
         /// </summary>
         internal static string build_number {
             get {

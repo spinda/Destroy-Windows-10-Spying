@@ -8,15 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.CodeDom.Compiler;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.Resources;
-using System.Runtime.CompilerServices;
-
 namespace DWS_Lite.lang {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -24,27 +19,27 @@ namespace DWS_Lite.lang {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [GeneratedCode("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
-    [DebuggerNonUserCode()]
-    [CompilerGenerated()]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class uk_UA {
         
-        private static ResourceManager resourceMan;
+        private static global::System.Resources.ResourceManager resourceMan;
         
-        private static CultureInfo resourceCulture;
+        private static global::System.Globalization.CultureInfo resourceCulture;
         
-        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal uk_UA() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
-        internal static ResourceManager ResourceManager {
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
-                if (ReferenceEquals(resourceMan, null)) {
-                    var temp = new ResourceManager("DWS_Lite.lang.uk-UA", typeof(uk_UA).Assembly);
+                if (object.ReferenceEquals(resourceMan, null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DWS_Lite.lang.uk-UA", typeof(uk_UA).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -55,8 +50,8 @@ namespace DWS_Lite.lang {
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
-        internal static CultureInfo Culture {
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -194,7 +189,7 @@ namespace DWS_Lite.lang {
         /// <summary>
         ///   Looks up a localized string similar to Завершено!
         ///Треба перезавантажити комп’ютер.
-        ///Перезавантажити зараз?
+        ///Перезавантажити зараз?.
         /// </summary>
         internal static string CompleteMSG {
             get {
@@ -250,7 +245,7 @@ namespace DWS_Lite.lang {
         /// <summary>
         ///   Looks up a localized string similar to Йой. Щось пішло не так. Помилок — {0} 
         ///Але в будь-якому разі треба перезавантажити комп’ютер.
-        ///Перезавантажити зараз?
+        ///Перезавантажити зараз?.
         /// </summary>
         internal static string ErrorMSG {
             get {
@@ -316,16 +311,7 @@ namespace DWS_Lite.lang {
         ///   Looks up a localized string similar to Ця програма унеможливлює шпигунство у Windows 7/8/8.1/10.
         ///У неї відкритий початковий код, який можна знайти на github.
         ///Ця програма цілком унеможливлює шпигунство. Видаляє елементи Телеметрії, а інші вимикає, вимикає Windows Defender, Кортану та чимало іншого. Також вона вимикає Windows Update, що дозволяє Вам лишатись анонімним і не отримувати нових шпигунських оновлень.
-        ///Функція видалення застосунків Metro дуже потрібна, тому що вони працюють у тлі та споживають оперативну пам’ять, а деякі з них шпигують за Вами.
-        ///Крім того програма блокує багацько IP адрес Microsoft, на які надсилаються дані, та додає більшість шпигунських хостів у hosts.
-        ///Майже всі дії програми незворотні та їх не скасувати навіть через точку відновлення системи.
-        ///Нині це найефективніша програма, які допомагає розробляти та покращувати велика спільнота користувачів Windows 10, дехто допомагає переписати код на продуктивніший, а дехто — з перекладом програми іншими мовами.
-        ///
-        ///Аргументи для командного рядка:
-        /// /lang= — встановити мову запуску програми. Після = треба написати назву мови. Наприклад, /lang=uk-UA
-        /// /deleteapp= — дозволяє видалити застосунки Metro у Windows. Після = треба написати повну назву або частину назви застосунку. Наприклад, /deleteapp=bing або /deleteapp=note
-        /// /destroy — аргумент для видалення шпигунських модулів.
-        ///ВАЖЛИВО! Аргументи /destroy та /deleteapp= не можна комбінувати між собою і аргумент /deleteapp= не можна використовувати кілька разів..
+        ///Функція видалення застосунків Metro дуже потрібна, тому що вони працюють у тлі та споживають оперативну пам’ять, а деякі з них шпигують за [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReadMeTextBox {
             get {
