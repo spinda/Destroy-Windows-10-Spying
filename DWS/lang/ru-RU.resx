@@ -250,4 +250,10 @@
   <data name="FindOffice16FileT" xml:space="preserve">
     <value>Пожалуйста, укажите путь до файла msosync.exe . Если Office 2016 установлен стандартно на диск C, то нажмите "Отмена"</value>
   </data>
+  <data name="checkBoxDeleteGWX" xml:space="preserve">
+    <value>Удалить GWX (Получить Windows 10)</value>
+  </data>
+  <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
+    <value>Удалить шпионские обновления.</value>
+  </data>
 </root>

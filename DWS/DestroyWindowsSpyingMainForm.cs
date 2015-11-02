@@ -128,7 +128,7 @@ namespace DWS_Lite
             try
             {
                 var latestVersion = new WebClient().DownloadString(
-                    "http://raw.githubusercontent.com/Nummer/Destroy-Windows-10-Spying/master/DWS/Resources/build_number.txt");
+                    "http://raw.githubusercontent.com/Nummer/Destroy-Windows-10-Spying/master/DWS/Resources/build_number.txt"); // download latest build number on github
                 // download latest build number on github
                 if (Convert.ToInt32(Resources.build_number) <
                     Convert.ToInt32(latestVersion))
@@ -138,7 +138,7 @@ namespace DWS_Lite
                             @"Update",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying/releases/latest");
+                        Process.Start("http://dws.wzor.net/");
                     }
                 }
                 _OutPut(string.Format("Latest version number: {0}",latestVersion));
@@ -186,9 +186,7 @@ namespace DWS_Lite
                 }
                 else
                 {
-                    AddToHostsAndFirewall();
-                    DisableSpyingTasks();
-                    DeleteUpdatesWin78();
+                    Dws78MainThread();
                 }
                 Process.GetCurrentProcess().Kill();
             }
@@ -230,8 +228,10 @@ namespace DWS_Lite
             // check Win 7 or 8.1
             if (windowsBuildNumber >= 10000) return;
             _win10 = false;
-            tabPageSettings.Enabled = false;
-            btnDeleteOneDrive.Enabled = false;
+            Windows78Panel.Enabled = true;
+            Windows78Panel.Visible = true;
+            Win10SettingsPanel.Enabled = false;
+            Win10SettingsPanel.Visible = false;
             checkBoxDeleteWindows10Apps.Enabled = false;
             btnDestroyWindowsSpying.Visible = false;
             btnDestroyWindows78Spy.Visible = true;
@@ -1001,14 +1001,18 @@ namespace DWS_Lite
         {
             checkBoxKeyLoggerAndTelemetry.Enabled = enableordisable;
             checkBoxAddToHosts.Enabled = enableordisable;
+            checkBoxAddToHosts78.Enabled = enableordisable;
             checkBoxDisablePrivateSettings.Enabled = enableordisable;
             checkBoxDisableWindowsDefender.Enabled = enableordisable;
             checkBoxSetDefaultPhoto.Enabled = enableordisable;
             checkBoxSPYTasks.Enabled = enableordisable;
+            checkBoxSPYTasks78.Enabled = enableordisable;
+            checkBoxDeleteWindows78Updates.Enabled = enableordisable;
+            checkBoxDeleteGWX.Enabled = enableordisable;
             btnDeleteAllWindows10Apps.Enabled = _win10 && enableordisable;
             groupBoxUACEdit.Enabled = enableordisable;
             btnDeleteMetroAppsInfo.Enabled = enableordisable;
-            btnDeleteOneDrive.Enabled = _win10 && enableordisable;
+            btnDeleteOneDrive.Enabled = enableordisable;
             if (WindowsUtil.SystemRestore_Status() == 0)
             {
                 checkBoxCreateSystemRestorePoint.Checked = false;
@@ -1172,22 +1176,34 @@ namespace DWS_Lite
             btnDestroyWindows78Spy.Enabled = false;
             _CloseButton.Enabled = false;
             _fatalErrors = 0;
-            new Thread(() =>
+            new Thread(Dws78MainThread).Start();
+        }
+
+        void Dws78MainThread()
+        {
+            if (checkBoxAddToHosts78.Checked)
             {
                 AddToHostsAndFirewall();
+            }
+            if (checkBoxSPYTasks78.Checked)
+            {
                 DisableSpyingTasks();
+            }
+            if (checkBoxDeleteWindows78Updates.Checked)
+            {
                 DeleteUpdatesWin78();
+            }
+            if (checkBoxDeleteGWX.Checked)
+            {
                 GwxDelete();
-                RunCmd(
-                    "/c REG ADD HKLM\\SYSTEM\\CurrentControlSet\\Control\\WMI\\AutoLogger\\AutoLogger-Diagtrack-Listener /v Start /t REG_DWORD /d 0 /f");
-                Invoke(new MethodInvoker(delegate
-                {
-                    btnDestroyWindows78Spy.Enabled = true;
-                    _CloseButton.Enabled = true;
-                    MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"), MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                }));
-            }).Start();
+            }
+            Invoke(new MethodInvoker(delegate
+            {
+                btnDestroyWindows78Spy.Enabled = true;
+                _CloseButton.Enabled = true;
+                MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"), MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }));
         }
 
         private void GwxDelete()
@@ -1325,7 +1341,8 @@ namespace DWS_Lite
                 "195.138.255.0-195.138.255.255",
                 "23.223.20.82", // cache.datamart.windows.com
                 "77.67.29.176", // NEW TH2 Spy IP
-                "157.56.124.87" // NEW TH2 Spy IP
+                "157.56.124.87", // NEW TH2 Spy IP
+                "157.55.236.0-157.55.236.255" // NEW TH2 SPY IP
             };
             foreach (var currentIpAddr in ipAddr)
             {
@@ -1334,6 +1351,9 @@ namespace DWS_Lite
                 RunCmd(string.Format("/c netsh advfirewall firewall add rule name=\"{0}_Block\" dir=out interface=any action=block remoteip={0}", currentIpAddr));
                 _OutPut(string.Format("Add Windows Firewall rule: \"{0}_Block\"", currentIpAddr));
             }
+            RunCmd("/c netsh advfirewall firewall delete rule name=\"Explorer.EXE_BLOCK\"");
+            RunCmd(
+                string.Format("/c netsh advfirewall firewall add rule name=\"Explorer.EXE_BLOCK\" dir=out interface=any action=block program=\"{0}Windows\\explorer.exe\"", Path.GetPathRoot(Environment.SystemDirectory)));
             RunCmd("/c netsh advfirewall firewall delete rule name=\"WSearch_Block\"");
             RunCmd(
                 "/c netsh advfirewall firewall add rule name=\"WSearch_Block\" dir=out interface=any action=block service=WSearch");
@@ -1642,6 +1662,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             btnProfessionalMode.Text = GetTranslateText("btnProfessionalMode");
             btnRestoreSystem.Text = GetTranslateText("btnRestoreSystem");
             checkBoxAddToHosts.Text = GetTranslateText("checkBoxAddToHosts");
+            checkBoxAddToHosts78.Text = GetTranslateText("checkBoxAddToHosts");
             checkBoxCreateSystemRestorePoint.Text = GetTranslateText("checkBoxCreateSystemRestorePoint");
             checkBoxDeleteWindows10Apps.Text = GetTranslateText("checkBoxDeleteWindows10Apps");
             checkBoxDisablePrivateSettings.Text = GetTranslateText("checkBoxDisablePrivateSettings");
@@ -1649,6 +1670,9 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             checkBoxKeyLoggerAndTelemetry.Text = GetTranslateText("checkBoxKeyLoggerAndTelemetry");
             checkBoxSetDefaultPhoto.Text = GetTranslateText("checkBoxSetDefaultPhoto");
             checkBoxSPYTasks.Text = GetTranslateText("checkBoxSPYTasks");
+            checkBoxSPYTasks78.Text = GetTranslateText("checkBoxSPYTasks");
+            checkBoxDeleteWindows78Updates.Text = GetTranslateText("checkBoxDeleteWindows78Updates");
+            checkBoxDeleteGWX.Text = GetTranslateText("checkBoxDeleteGWX");
             labelInfoDeleteMetroApps.Text = GetTranslateText("labelInfoDeleteMetroApps");
             btnEnableUac.Text = string.Format("{0} UAC", GetTranslateText("Enable"));
             btnDisableUac.Text = string.Format("{0} UAC", GetTranslateText("Disable"));
@@ -1675,7 +1699,15 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
         {
             try
             {
-                return _rm.GetString(name);
+                var textupdate = _rm.GetString(name);
+                if (textupdate != null)
+                {
+                    return textupdate;
+                }
+                else
+                {
+                    return en_US.ResourceManager.GetString(name);
+                }
             }
                 // ReSharper disable once UnusedVariable
             catch (Exception ex)

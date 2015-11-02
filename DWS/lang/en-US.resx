@@ -248,4 +248,10 @@ IMPORTANT! Arguments /destroy and /deleteapp= can not be combined, and the argum
   <data name="FindOffice16FileT" xml:space="preserve">
     <value>Please specify the path to the file msosync.exe. If Office 2016 is installed as standard on the drive C, press "Cancel"</value>
   </data>
+  <data name="checkBoxDeleteGWX" xml:space="preserve">
+    <value>Delete GWX</value>
+  </data>
+  <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
+    <value>Delete spying updates.</value>
+  </data>
 </root>
