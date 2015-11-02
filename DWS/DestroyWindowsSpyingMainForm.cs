@@ -65,7 +65,7 @@ namespace DWS_Lite
             }
             Text += Resources.build_number;
 #if DEBUG
-            Text += @" !TEST!";
+            Text += @" DEBUG ";
 #endif
             labelBuildDataTime.Text = @"Build number:" + Resources.build_number + @"  |  Build Time:" +
                                       Resources.build_datatime;
@@ -456,8 +456,6 @@ namespace DWS_Lite
                 RunCmd("/c sc config WMPNetworkSvc start=disabled ");
                 RunCmd(
                     "/c REG ADD HKLM\\SYSTEM\\ControlSet001\\Control\\WMI\\AutoLogger\\AutoLogger-Diagtrack-Listener /v Start /t REG_DWORD /d 0 /f");
-                RunCmd("/c net stop dmwappushservice");
-                RunCmd("/c net stop diagtrack");
                 RunCmd("/c sc delete dmwappushsvc");
                 RunCmd("/c sc delete \"Diagnostics Tracking Service\"");
                 RunCmd("/c sc delete diagtrack");
@@ -481,10 +479,6 @@ namespace DWS_Lite
                     "/c reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\WMI\\AutoLogger\\SQMLogger\" /v \"Start\" /t REG_DWORD /d 0 /f ");
                 RunCmd(
                     "/c reg add \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Siuf\\Rules\" /v \"NumberOfSIUFInPeriod\" /t REG_DWORD /d 0 /f ");
-                RunCmd(
-                    "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppCompat\" /v \"DisableUAR\" /t REG_DWORD /d 1 /f ");
-                RunCmd(
-                    "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\SQMClient\\Windows\" /v \"CEIPEnable\" /t REG_DWORD /d 0 /f ");
                 RunCmd(
                     "/c reg delete \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Siuf\\Rules\" /v \"PeriodInNanoSeconds\" /f ");
                 // DELETE KEYLOGGER
