@@ -12,15 +12,15 @@ Features:
 
 ## Determination of the system language
 We get the language from the command-line arguments to the function:
-```cs
+```c#
 private string _GetLang(IEnumerable<string> args)
 ```
 Next we set language in function:
-```cs
+```c#
 private void SetLanguage(string currentlang = null)
 ```
 And call function to change the language:
-```cs
+```c#
 private void ChangeLanguage()
 ```
 
