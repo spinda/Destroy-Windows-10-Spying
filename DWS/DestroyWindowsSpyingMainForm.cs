@@ -757,7 +757,9 @@ namespace DWS_Lite
                     "spynetalt.microsoft.com",
                     "fe3.delivery.dsp.mp.microsoft.com.nsatc.net",
                     "cache.datamart.windows.com",
-                    "db3wns2011111.wns.windows.com" // NEW TH2 spy hosts
+                    "db3wns2011111.wns.windows.com", // NEW TH2 spy hosts
+                    "deploy.static.akamaitechnologies.com",
+                    "akamaitechnologies.com"
                 };
                 var hostslocation = _system32Location + @"drivers\etc\hosts";
                 string hosts = null;
@@ -1265,7 +1267,8 @@ namespace DWS_Lite
                 "3093983",
                 "3093513",
                 "3042058",
-                "3083710"
+                "3083710",
+                "3050265"  //Windows update, get win 10.
             };
             foreach (var updateNumber in updatesnumberlist)
             {
@@ -1342,7 +1345,11 @@ namespace DWS_Lite
                 "23.223.20.82", // cache.datamart.windows.com
                 "77.67.29.176", // NEW TH2 Spy IP
                 "157.56.124.87", // NEW TH2 Spy IP
-                "157.55.236.0-157.55.236.255" // NEW TH2 SPY IP
+                "157.55.236.0-157.55.236.255", // NEW TH2 SPY IP
+                "104.96.147.3",
+                "23.57.107.27",
+                "23.57.107.163",
+                "23.57.101.163"
             };
             foreach (var currentIpAddr in ipAddr)
             {
