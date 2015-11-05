@@ -37,7 +37,6 @@ namespace DWS_Lite
         private List<string> _errorsList = new List<string>();
         private int _fatalErrors;
         private ResourceManager _rm;
-        private string _shellCmdLocation;
         private string _system32Location;
         private bool _win10 = true;
 
@@ -200,12 +199,10 @@ namespace DWS_Lite
         {
             if (File.Exists(_systemPath + @"Windows\Sysnative\cmd.exe"))
             {
-                _shellCmdLocation = _systemPath + @"Windows\Sysnative\cmd.exe";
-                _system32Location = _systemPath + @"Windows\System32\";
+                _system32Location = _systemPath + @"Windows\Sysnative\";
             }
             else
             {
-                _shellCmdLocation = _systemPath + @"Windows\System32\cmd.exe";
                 _system32Location = _systemPath + @"Windows\System32\";
             }
         }
@@ -489,6 +486,9 @@ namespace DWS_Lite
                     "/c reg delete \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Siuf\\Rules\" /v \"PeriodInNanoSeconds\" /f ");
                 // DELETE KEYLOGGER
                 _OutPut("Delete keylogger...");
+                RunCmd(
+                    "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search\" /v \"AllowCortana\" /t REG_DWORD /d 0 /f "); // disable Cortana;
+                _OutPut("Cortana disable #1");
             }
             Progressbaradd(15); //25
             if (checkBoxAddToHosts.Checked)
@@ -519,11 +519,62 @@ namespace DWS_Lite
                 {
                     SetRegValueHkcu(currentRegKey, "Value", "Deny", RegistryValueKind.String);
                 }
-                _OutPut("Disable private settings");
                 SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Search", "CortanaEnabled", "0",
                     RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\InputPersonalization", "RestrictImplicitInkCollection", "1",
+                    RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\Windows Search", "DisableWebSearch", "1",
+                    RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\Windows Search", "ConnectedSearchUseWeb", "0",
+                    RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors", "DisableLocation", "1",
+                    RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors",
+                    "DisableWindowsLocationProvider", "1", RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors", "DisableLocationScripting",
+                    "1", RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors", "DisableSensors", "1",
+                    RegistryValueKind.DWord);
+                SetRegValueHklm(@"SYSTEM\CurrentControlSet\Services\lfsvc\Service\Configuration", "Status", "0",
+                    RegistryValueKind.DWord);
+                SetRegValueHklm(
+                    @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}",
+                    "SensorPermissionState", "0", RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\Siuf\Rules", "NumberOfSIUFInPeriod", "0", RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\Siuf\Rules", "PeriodInNanoSeconds", "0", RegistryValueKind.DWord);
                 SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Search", "BingSearchEnabled", "0",
                     RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\TabletPC", "PreventHandwritingDataSharing", "1",
+                    RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\HandwritingErrorReports",
+                    "PreventHandwritingErrorReports", "1", RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\AppCompat", "DisableInventory", "1",
+                    RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\Personalization", "NoLockScreenCamera", "1",
+                    RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo", "Enabled", "0",
+                    RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo", "Enabled", "0",
+                    RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\Input\TIPC", "Enabled", "0", RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Biometrics", "Enabled", "0", RegistryValueKind.DWord);
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\CredUI", "DisablePasswordReveal", "1",
+                    RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync", "SyncPolicy", "5",
+                    RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Personalization",
+                    "Enabled", "0", RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\BrowserSettings",
+                    "Enabled", "0", RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Credentials", "Enabled",
+                    "0", RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Language", "Enabled", "0",
+                    RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Accessibility", "Enabled",
+                    "0", RegistryValueKind.DWord);
+                SetRegValueHkcu(@"SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Windows", "Enabled", "0",
+                    RegistryValueKind.DWord);
+                _OutPut("Disable private settings");
             }
             Progressbaradd(10); //55
             if (checkBoxDisableWindowsDefender.Checked)
@@ -531,6 +582,12 @@ namespace DWS_Lite
                 try
                 {
                     SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows Defender", "DisableAntiSpyware", "1",
+                        RegistryValueKind.DWord);
+                    SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows Defender\Spynet", "SpyNetReporting", "0",
+                        RegistryValueKind.DWord);
+                    SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows Defender\Spynet", "SubmitSamplesConsent", "2",
+                        RegistryValueKind.DWord);
+                    SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\MRT", "DontReportInfectionInformation", "1",
                         RegistryValueKind.DWord);
                     _OutPut("Disable Windows Defender.");
                     SetRegValueHklm(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer", "SmartScreenEnabled", "Off",
@@ -544,7 +601,8 @@ namespace DWS_Lite
                     _OutPut(ex.Message, LogLevel.Debug);
 #endif
                     _fatalErrors++;
-                    _errorsList.Add(string.Format("Error disable Windows Defender or Smart Screen. Message: {0}", ex.Message));
+                    _errorsList.Add(string.Format("Error disable Windows Defender or Smart Screen. Message: {0}",
+                        ex.Message));
                 }
             }
             Progressbaradd(5); //60
@@ -777,8 +835,7 @@ namespace DWS_Lite
                             currentHostsDomain =>
                                 hosts != null && hosts.IndexOf(currentHostsDomain, StringComparison.Ordinal) == -1))
                 {
-                    ProcStartargs(_shellCmdLocation,
-                        string.Format("/c echo 0.0.0.0 {0} >> \"{1}\"", currentHostsDomain, hostslocation));
+                    RunCmd(string.Format("/c echo 0.0.0.0 {0} >> \"{1}\"", currentHostsDomain, hostslocation));
                     _OutPut(string.Format("Add to hosts - {0}", currentHostsDomain));
                 }
             }
@@ -947,6 +1004,7 @@ namespace DWS_Lite
             RunCmd("/c netsh advfirewall firewall delete rule name=\"WindowsUpdateBlock\"");
             RunCmd(
                 "/c netsh advfirewall firewall add rule name=\"WindowsUpdateBlock\" dir=out interface=any action=block service=wuauserv");
+            
             _OutPut("Windows Update disabled");
         }
 
@@ -1055,10 +1113,10 @@ namespace DWS_Lite
                     RunCmd("/c rd \"C:\\OneDriveTemp\" /Q /S > NUL 2>&1");
                     RunCmd("/c rd \"%LOCALAPPDATA%\\Microsoft\\OneDrive\" /Q /S > NUL 2>&1");
                     RunCmd("/c rd \"%PROGRAMDATA%\\Microsoft OneDrive\" /Q /S > NUL 2>&1");
-                    ProcStartargs(_shellCmdLocation,
-                        "/c REG DELETE \"HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}\" /f > NUL 2>&1");
-                    ProcStartargs(_shellCmdLocation,
-                        "/c REG DELETE \"HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}\" /f > NUL 2>&1");
+                    RunCmd("/c REG DELETE \"HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}\" /f > NUL 2>&1");
+                    RunCmd("/c REG DELETE \"HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}\" /f > NUL 2>&1");
+
+                    SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\OneDrive", "DisableFileSyncNGSC", "1", RegistryValueKind.DWord);
                 }
                 catch (Exception ex)
                 {
@@ -1164,6 +1222,10 @@ namespace DWS_Lite
                     break;
                 case "uk-UA":
                     _rm = uk_UA.ResourceManager;
+                    ChangeLanguage();
+                    break;
+                case "lt-LT":
+                    _rm = lt_LT.ResourceManager;
                     ChangeLanguage();
                     break;
                 default:
@@ -1646,6 +1708,11 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             {
                 _rm = uk_UA.ResourceManager;
                 comboBoxLanguageSelect.Text = @"uk-UA | Українська";
+            }
+            else if (currentlang.IndexOf("lt", StringComparison.Ordinal) > -1)
+            {
+                _rm = lt_LT.ResourceManager;
+                comboBoxLanguageSelect.Text = @"lt-LT | Lithuanian";
             }
             else
             {

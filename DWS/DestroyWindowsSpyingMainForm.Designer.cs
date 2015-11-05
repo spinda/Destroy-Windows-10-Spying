@@ -82,6 +82,7 @@ namespace DWS_Lite
             this.btnRestoreSystem = new System.Windows.Forms.Button();
             this.btnDeleteAllWindows10Apps = new System.Windows.Forms.Button();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
+            this.ReleaseName = new System.Windows.Forms.Label();
             this.DonatePictureBox = new System.Windows.Forms.PictureBox();
             this.groupBoxLanguage = new System.Windows.Forms.GroupBox();
             this.comboBoxLanguageSelect = new System.Windows.Forms.ComboBox();
@@ -111,7 +112,6 @@ namespace DWS_Lite
             this.BorderLeft = new System.Windows.Forms.PictureBox();
             this.BorderR = new System.Windows.Forms.PictureBox();
             this.SecretButton = new System.Windows.Forms.PictureBox();
-            this.ReleaseName = new System.Windows.Forms.Label();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -837,6 +837,18 @@ namespace DWS_Lite
             this.tabPageAbout.TabIndex = 3;
             this.tabPageAbout.Text = "About";
             // 
+            // ReleaseName
+            // 
+            this.ReleaseName.AutoSize = true;
+            this.ReleaseName.BackColor = System.Drawing.Color.Transparent;
+            this.ReleaseName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReleaseName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.ReleaseName.Location = new System.Drawing.Point(3, 3);
+            this.ReleaseName.Name = "ReleaseName";
+            this.ReleaseName.Size = new System.Drawing.Size(124, 19);
+            this.ReleaseName.TabIndex = 14;
+            this.ReleaseName.Text = "TH2 RTM Ready";
+            // 
             // DonatePictureBox
             // 
             this.DonatePictureBox.BackColor = System.Drawing.Color.Transparent;
@@ -875,6 +887,7 @@ namespace DWS_Lite
             "es-ES | Spanish",
             "fr-FR | French",
             "it-CH | Italian",
+            "lt-LT | Lithuanian",
             "nl-NL | Dutch",
             "pl-PL | Polish",
             "pt-BR | Portuguese",
@@ -1196,18 +1209,6 @@ namespace DWS_Lite
             this.SecretButton.TabIndex = 8;
             this.SecretButton.TabStop = false;
             this.SecretButton.Click += new System.EventHandler(this.SecretButton_Click);
-            // 
-            // ReleaseName
-            // 
-            this.ReleaseName.AutoSize = true;
-            this.ReleaseName.BackColor = System.Drawing.Color.Transparent;
-            this.ReleaseName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ReleaseName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ReleaseName.Location = new System.Drawing.Point(3, 3);
-            this.ReleaseName.Name = "ReleaseName";
-            this.ReleaseName.Size = new System.Drawing.Size(124, 19);
-            this.ReleaseName.TabIndex = 14;
-            this.ReleaseName.Text = "TH2 RTM Ready";
             // 
             // DestroyWindowsSpyingMainForm
             // 

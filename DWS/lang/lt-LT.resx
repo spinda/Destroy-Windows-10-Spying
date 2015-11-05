@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
+    <value>Ištrinti Windows 10 metro progr.</value>
+  </data>
+  <data name="btnDeleteOneDrive" xml:space="preserve">
+    <value>Ištrinti One Drive</value>
+  </data>
+  <data name="btnOpenAndEditHosts" xml:space="preserve">
+    <value>Atverti HOSTS filą redagavimui</value>
+  </data>
+  <data name="btnProfessionalMode" xml:space="preserve">
+    <value>Įgalinti profesionalų režimą</value>
+  </data>
+  <data name="btnRestoreSystem" xml:space="preserve">
+    <value>Atkurti sistemą</value>
+  </data>
+  <data name="checkBoxAddToHosts" xml:space="preserve">
+    <value>Pridėti šnipinėjimo adresus į hosts failą ir užblokuoti juos Windows ugniasienėje</value>
+  </data>
+  <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
+    <value>Sukurti sistemos atkūrimo tašką</value>
+  </data>
+  <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
+    <value>Ištrinti Windows 10 metro programėles</value>
+  </data>
+  <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
+    <value>Išjungti privatumo nustatymus</value>
+  </data>
+  <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
+    <value>Išjungti Windows Defender</value>
+  </data>
+  <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
+    <value>Ištrinti klavišų sekimą ir telemetriją</value>
+  </data>
+  <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
+    <value>Padaryti Windows Photo Viewer numatyta paveikslėlių peržiūros programa</value>
+  </data>
+  <data name="checkBoxSPYTasks" xml:space="preserve">
+    <value>Išjungti sekimo užduotis</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>Atlikta</value>
+  </data>
+  <data name="CompleteMSG" xml:space="preserve">
+    <value>Atlikta!
+Reikia perkrauti kompiuterį, kad būtų išjungtos visos sekimo programos.
+Perkrauti dabar?</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Ištrinti</value>
+  </data>
+  <data name="DeleteApps" xml:space="preserve">
+    <value>Ištrinti programas</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Išjungti</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Įjungti</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Klaida</value>
+  </data>
+  <data name="ErrorMSG" xml:space="preserve">
+    <value>Atlikta. Klaidos - {0}
+Reikia perkrauti kompiuterį, kad būtų išjungtos visos sekimo programos.
+Perkrauti dabar?</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Informacija</value>
+  </data>
+  <data name="labelInfoDeleteMetroApps" xml:space="preserve">
+    <value>METRO programos bus ištrintos visam laikui, be galimybės atšaukti pakeitimus.</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Nuorodos</value>
+  </data>
+  <data name="PressOkAndWait15" xml:space="preserve">
+    <value>Paspauskite Gerai ir palaukite 15 minučių.</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Klausimas</value>
+  </data>
+  <data name="Really" xml:space="preserve">
+    <value>Ar tikrai?</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Reikia perkrauti.
+Perkrauti dabar?</value>
+  </data>
+  <data name="tabPageAbout" xml:space="preserve">
+    <value>Apie</value>
+  </data>
+  <data name="tabPageMain" xml:space="preserve">
+    <value>Pagrindinis</value>
+  </data>
+  <data name="tabPageReadMe" xml:space="preserve">
+    <value>Perskaitykite</value>
+  </data>
+  <data name="tabPageSettings" xml:space="preserve">
+    <value>Nustatymai</value>
+  </data>
+  <data name="tabPageUtilites" xml:space="preserve">
+    <value>Įrankiai</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Perspėjimas</value>
+  </data>
+  <data name="RemoveAllOldFirewallRules" xml:space="preserve">
+    <value>Pašalinti senas ugniasienės taisykles</value>
+  </data>
+  <data name="ReportABug" xml:space="preserve">
+    <value>Pranešti apie klaidą</value>
+  </data>
+  <data name="ReadMeTextBox" xml:space="preserve">
+    <value>Ši programa sunaikina šnipinėjimą Windows 7/8/8.1/10 operacinėse sistemose.
+Programos kodas yra atviras, prieinamas github puslapyje.
+Ši programa pašalina kai kuriuos telemetrijos elementus, kitus išjungta, išjungia Windows Defender, Cortana ir daug daugiau. Kadangi programa išjungia Windows Update, jūs negausite šnipinėjančios programinės įrangos atnaujinimų.
+Metro programėlių funkcija yra naudinga, nes šios programėlės dirba fone, naudodamos jūsų kompiuterio resursus ir, kai kurios iš jų, net šnipinėja.
+Be to, programa blokuoja daugelį Microsoft IP adresų, kuriems yra siunčiami jūsų duomenis pridėdama juos į hosts.
+Daugelis šios programos padaromų pakeitimų negali būti atstatyta, net panaudojus sistemos atkūrimo galimybę.
+Šiuo metu tai yra efektyviausia programa, kurią vysto didelė Windows 10 naudotojų bendruomenė.
+
+Komandinės eilutės parametrai:
+/lang= - nustatyti kalbą prieš paleidžiant programą. Po lygybės ženklo reikia nurodyti kalbos pavadinimą. Pavyzdys: /lang=en-US
+/deleteapp= - leidžia ištrinti Metro programėlę. Po lygybės ženklo galima nuroyti pilną arba dalinį pavadinimą. Pavyzdys: /deleteapp=bing arba /deleteapp=note
+/destroy - automatiškai pašalina sekimą.
+SVARBU! Parametrai /destroy ir /deleteapp= negali būti naudojami kartu, o parametro /deleteapp= negalima nurodyti kelis kartus iš eilės.</value>
+  </data>
+  <data name="FindOffice16FileT" xml:space="preserve">
+    <value>Prašome nurodyti kelią iki msosync.exe failo. Jei Office 2016 yra įdiegta C diske numatytoje vietoje, paspauskite "Atšaukti"</value>
+  </data>
+</root>
