@@ -12,11 +12,11 @@ namespace DWS_Lite
         public SecretForm()
         {
             InitializeComponent();
-            graphics = Titres.CreateGraphics();
+            _graphics = Titres.CreateGraphics();
         }
 
-        Graphics graphics;
-        private string _titreesss = @"DWS LITE
+        readonly Graphics _graphics;
+        private const string Titreesss = @"DWS LITE
 (c) 2015
 WZT (nummer, WZorNET, adguard, DiamondMonday)
 
@@ -29,11 +29,11 @@ Bom-bom-bom-tra-ly-ly! LAlLALLALAL!";
 
         private void GraphicsTimer_Tick(object sender, EventArgs e)
         {
-            if (_symbols < _titreesss.Length)
+            if (_symbols < Titreesss.Length)
             {
                 try
                 {
-                    var symboladd = _titreesss.ToCharArray(0, _titreesss.Length)[_symbols].ToString();
+                    var symboladd = Titreesss.ToCharArray(0, Titreesss.Length)[_symbols].ToString();
                     Invoke(new MethodInvoker(delegate {
                                                           Titres.Text += symboladd;
                     }));
@@ -44,7 +44,7 @@ Bom-bom-bom-tra-ly-ly! LAlLALLALAL!";
                     // ignored
                 }
             }
-            else if (_symbols + 1 == _titreesss.Length)
+            else if (_symbols + 1 == Titreesss.Length)
             {
                 Invoke(new MethodInvoker(delegate {
                                                       Titres.BackgroundImageLayout = ImageLayout.Stretch;
@@ -53,7 +53,7 @@ Bom-bom-bom-tra-ly-ly! LAlLALLALAL!";
             else
             {
                 GraphicsTimer.Enabled = false;
-                graphics.DrawLines(
+                _graphics.DrawLines(
                     new Pen(
                         Color.Green,
                         5),
@@ -65,7 +65,7 @@ Bom-bom-bom-tra-ly-ly! LAlLALLALAL!";
                         new Point(84, 66),
                         new Point(103, 12)
                     });
-                graphics.DrawLines(
+                _graphics.DrawLines(
                     new Pen(
                         Color.Red,
                         5),
@@ -78,7 +78,7 @@ Bom-bom-bom-tra-ly-ly! LAlLALLALAL!";
                         new Point(76, 67),
                         new Point(88, 61)
                     });
-                graphics.DrawLines(
+                _graphics.DrawLines(
                     new Pen(
                         Color.Blue,
                         5),
@@ -93,9 +93,9 @@ Bom-bom-bom-tra-ly-ly! LAlLALLALAL!";
                 {
                     try
                     {
-                        byte[] Img = new WebClient().DownloadData("http://i.imgur.com/m6l7hmO.jpg");
-                        MemoryStream ms = new MemoryStream(Img);
-                        Image returnImage = Image.FromStream(ms);
+                        var img = new WebClient().DownloadData("http://i.imgur.com/Cj3gFwv.jpg");
+                        var ms = new MemoryStream(img);
+                        var returnImage = Image.FromStream(ms);
                         Thread.Sleep(5000);
                         Invoke(new MethodInvoker(delegate
                         {
@@ -113,7 +113,7 @@ Bom-bom-bom-tra-ly-ly! LAlLALLALAL!";
 
         private void MouseDownExit(object sender, MouseEventArgs e)
         {
-            graphics.Dispose();
+            _graphics.Dispose();
             Close();
         }
     }

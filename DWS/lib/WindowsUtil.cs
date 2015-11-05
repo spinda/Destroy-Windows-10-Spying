@@ -4,7 +4,7 @@ using Microsoft.Win32;
 
 namespace DWS_Lite.lib
 {
-    class WindowsUtil
+    internal class WindowsUtil
     {
         public static object ReadSubKeyValue(string subKey, string keyName)
         {
