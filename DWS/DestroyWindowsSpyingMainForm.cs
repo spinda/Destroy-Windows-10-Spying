@@ -220,8 +220,8 @@ namespace DWS_Lite
 
             if (windowsBuildNumber < 7600)
             {
-                MessageBox.Show(@"Minimum windows version - 7", @"Error", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                if(MessageBox.Show(@"Minimum windows version - 7\nExit from the program?", @"Error", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Error) == DialogResult.Yes)
                 Process.GetCurrentProcess().Kill();
             }
 
@@ -1360,7 +1360,7 @@ namespace DWS_Lite
             }
             RunCmd("/c netsh advfirewall firewall delete rule name=\"Explorer.EXE_BLOCK\"");
             RunCmd(
-                string.Format("/c netsh advfirewall firewall add rule name=\"Explorer.EXE_BLOCK\" dir=out interface=any action=block program=\"{0}Windows\\explorer.exe\"", Path.GetPathRoot(Environment.SystemDirectory)));
+                string.Format("/c netsh advfirewall firewall add rule name=\"Explorer.EXE_BLOCK\" dir=out interface=any action=block program=\"{0}Windows\\explorer.exe\"", _systemPath));
             RunCmd("/c netsh advfirewall firewall delete rule name=\"WSearch_Block\"");
             RunCmd(
                 "/c netsh advfirewall firewall add rule name=\"WSearch_Block\" dir=out interface=any action=block service=WSearch");

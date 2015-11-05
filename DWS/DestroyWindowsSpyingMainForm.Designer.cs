@@ -111,6 +111,7 @@ namespace DWS_Lite
             this.BorderLeft = new System.Windows.Forms.PictureBox();
             this.BorderR = new System.Windows.Forms.PictureBox();
             this.SecretButton = new System.Windows.Forms.PictureBox();
+            this.ReleaseName = new System.Windows.Forms.Label();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -821,6 +822,7 @@ namespace DWS_Lite
             this.tabPageAbout.BackColor = System.Drawing.Color.White;
             this.tabPageAbout.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageAbout.Controls.Add(this.ReleaseName);
             this.tabPageAbout.Controls.Add(this.DonatePictureBox);
             this.tabPageAbout.Controls.Add(this.groupBoxLanguage);
             this.tabPageAbout.Controls.Add(this.btnReportABug);
@@ -1195,6 +1197,18 @@ namespace DWS_Lite
             this.SecretButton.TabStop = false;
             this.SecretButton.Click += new System.EventHandler(this.SecretButton_Click);
             // 
+            // ReleaseName
+            // 
+            this.ReleaseName.AutoSize = true;
+            this.ReleaseName.BackColor = System.Drawing.Color.Transparent;
+            this.ReleaseName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReleaseName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.ReleaseName.Location = new System.Drawing.Point(3, 3);
+            this.ReleaseName.Name = "ReleaseName";
+            this.ReleaseName.Size = new System.Drawing.Size(124, 19);
+            this.ReleaseName.TabIndex = 14;
+            this.ReleaseName.Text = "TH2 RTM Ready";
+            // 
             // DestroyWindowsSpyingMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1331,6 +1345,7 @@ namespace DWS_Lite
         private CheckBox checkBoxSPYTasks78;
         private CheckBox checkBoxDeleteWindows78Updates;
         private CheckBox checkBoxDeleteGWX;
+        private Label ReleaseName;
     }
 }
 
