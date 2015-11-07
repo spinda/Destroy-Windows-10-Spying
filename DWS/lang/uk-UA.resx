@@ -249,4 +249,10 @@
   <data name="FindOffice16FileT" xml:space="preserve">
     <value>Будь ласка, зазначте шлях до файла msosync.exe. Якщо Office 2016 встановлено типово на диск C, то натисніть „Скасувати“</value>
   </data>
+  <data name="checkBoxDeleteGWX" xml:space="preserve">
+    <value>Видалити GWX (Отримати Windows 10)</value>
+  </data>
+  <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
+    <value>Видалити шпигунські оновлення.</value>
+  </data>
 </root>

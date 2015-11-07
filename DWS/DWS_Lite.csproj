@@ -89,6 +89,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="lang\lt-LT1.Designer.cs">
+      <DependentUpon>lt-LT.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="lang\uk-UA.Designer.cs">
       <DependentUpon>uk-UA.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -168,6 +173,10 @@
     <EmbeddedResource Include="lang\nl-NL.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>nl-NL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lang\lt-LT.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>lt-LT1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="lang\uk-UA.resx">
       <Generator>ResXFileCodeGenerator</Generator>

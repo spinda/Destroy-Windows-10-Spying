@@ -118,146 +118,134 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
-    <value>Supprimer toutes les applications Metro de Windows 10</value>
+    <value>Ištrinti Windows 10 metro progr.</value>
   </data>
   <data name="btnDeleteOneDrive" xml:space="preserve">
-    <value>Supprimer OneDrive</value>
+    <value>Ištrinti One Drive</value>
   </data>
   <data name="btnOpenAndEditHosts" xml:space="preserve">
-    <value>Ouvrir et Modifier le fichier HOSTS</value>
+    <value>Atverti HOSTS filą redagavimui</value>
   </data>
   <data name="btnProfessionalMode" xml:space="preserve">
-    <value>Activer le Mode Professionnel</value>
+    <value>Įgalinti profesionalų režimą</value>
   </data>
   <data name="btnRestoreSystem" xml:space="preserve">
-    <value>Restaurer le Système</value>
+    <value>Atkurti sistemą</value>
   </data>
   <data name="checkBoxAddToHosts" xml:space="preserve">
-    <value>Ajouter des domaines espion au fichier HOSTS
-    et bloquer les IP dans le pare-feu Windows</value>
+    <value>Pridėti šnipinėjimo adresus į hosts failą ir užblokuoti juos Windows ugniasienėje</value>
   </data>
   <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
-    <value>Créer un point de restauration système</value>
+    <value>Sukurti sistemos atkūrimo tašką</value>
   </data>
   <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
-    <value>Supprimer les applications Métro de Windows 10</value>
+    <value>Ištrinti Windows 10 metro programėles</value>
   </data>
   <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
-    <value>Désactiver les paramètres privés</value>
+    <value>Išjungti privatumo nustatymus</value>
   </data>
   <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
-    <value>Désactiver Windows Defender</value>
+    <value>Išjungti Windows Defender</value>
   </data>
   <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
-    <value>Supprimer le KeyLogger et la Télémétrie</value>
+    <value>Ištrinti klavišų sekimą ir telemetriją</value>
   </data>
   <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
-    <value>Mettre la Visionneuse de photos Windows par défaut</value>
+    <value>Padaryti Windows Photo Viewer numatyta paveikslėlių peržiūros programa</value>
   </data>
   <data name="checkBoxSPYTasks" xml:space="preserve">
-    <value>Désactiver les tâches de l'Espion</value>
+    <value>Išjungti sekimo užduotis</value>
   </data>
   <data name="Complete" xml:space="preserve">
-    <value>Fini</value>
+    <value>Atlikta</value>
   </data>
   <data name="CompleteMSG" xml:space="preserve">
-    <value>Fini!
-Un redémarrage est nécessaire pour désactiver tous les logiciels espions.
-Redémarrer maintenant ?</value>
+    <value>Atlikta!
+Reikia perkrauti kompiuterį, kad būtų išjungtos visos sekimo programos.
+Perkrauti dabar?</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Supprimer</value>
+    <value>Ištrinti</value>
   </data>
   <data name="DeleteApps" xml:space="preserve">
-    <value>Supprimer les applications</value>
+    <value>Ištrinti programas</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Désactiver</value>
+    <value>Išjungti</value>
   </data>
   <data name="Enable" xml:space="preserve">
-    <value>Activer</value>
+    <value>Įjungti</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Erreur</value>
+    <value>Klaida</value>
   </data>
   <data name="ErrorMSG" xml:space="preserve">
-    <value>Fini avec des erreurs - {0}
-Un redémarrage est nécessaire pour désactiver les logiciels espions.
-Redémarrer maintenant ?</value>
+    <value>Atlikta. Klaidos - {0}
+Reikia perkrauti kompiuterį, kad būtų išjungtos visos sekimo programos.
+Perkrauti dabar?</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Info</value>
+    <value>Informacija</value>
   </data>
   <data name="labelInfoDeleteMetroApps" xml:space="preserve">
-    <value>Les applications Metro seront définitivement supprimées,
-    sans possibilité de les réinstaller.</value>
+    <value>METRO programos bus ištrintos visam laikui, be galimybės atšaukti pakeitimus.</value>
   </data>
   <data name="Links" xml:space="preserve">
-    <value>Liens</value>
+    <value>Nuorodos</value>
   </data>
   <data name="PressOkAndWait15" xml:space="preserve">
-    <value>Appuyez sur OK et attendez 15 minutes.</value>
+    <value>Paspauskite Gerai ir palaukite 15 minučių.</value>
   </data>
   <data name="Question" xml:space="preserve">
-    <value>Question</value>
+    <value>Klausimas</value>
   </data>
   <data name="Really" xml:space="preserve">
-    <value>Vraiment ?</value>
+    <value>Ar tikrai?</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Nécessite un redémarrage.
-Redémarrer maintenant ?</value>
+    <value>Reikia perkrauti.
+Perkrauti dabar?</value>
   </data>
   <data name="tabPageAbout" xml:space="preserve">
-    <value>À propos</value>
+    <value>Apie</value>
   </data>
   <data name="tabPageMain" xml:space="preserve">
-    <value>Principal</value>
+    <value>Pagrindinis</value>
   </data>
   <data name="tabPageReadMe" xml:space="preserve">
-    <value>Lisez Moi</value>
+    <value>Perskaitykite</value>
   </data>
   <data name="tabPageSettings" xml:space="preserve">
-    <value>Paramètres</value>
+    <value>Nustatymai</value>
   </data>
   <data name="tabPageUtilites" xml:space="preserve">
-    <value>Utilitaires</value>
+    <value>Įrankiai</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Attention</value>
-  </data>
-  <data name="DestroyWindowsSpying" xml:space="preserve">
-    <value>Détruire les Espions de Windows 10</value>
+    <value>Perspėjimas</value>
   </data>
   <data name="RemoveAllOldFirewallRules" xml:space="preserve">
-    <value>Enlever les anciennes règles DWS
-    du pare-feu Windows</value>
+    <value>Pašalinti senas ugniasienės taisykles</value>
   </data>
   <data name="ReportABug" xml:space="preserve">
-    <value>Signaler un bug</value>
+    <value>Pranešti apie klaidą</value>
   </data>
   <data name="ReadMeTextBox" xml:space="preserve">
-    <value>Ce logiciel supprime les espions de Windows 7/8/8.1/10.
-Le logiciel est open source, son code source est disponible sur GitHub.
-Ce logiciel supprime tout l'espionnage de Windows. Il enlève pas mal d'éléments dont la télémétrie et en désactive d'autres, par exemple il désactive Windows Defender, Cortana, et plus encore. Comme le logiciel désactive Windows Update il vous permet de ne plus envoyer de données et de ne plus avoir les nouveaux spyware de Windows.
-La suppression des applications Metro est très bien, parce qu'elles fonctionnent en tâche de fond, et elles consomment pas mal de RAM, et de plus quelques une vous espionnent.
-En plus, le logiciel bloque pas mal d'adresse IP de chez Microsoft, qui reçoivent ces données, et il ajoute la plus part des domaines utilisés dans le fichier Hosts.
-Par contre ce que fait le logiciel est irréversible, les modifications ne peuvent être annulées que via un point de restauration système.
-Pour le moment c'est le logiciel le plus efficace. Le logiciel est développé et amélioré par une large communauté d'utilisateur de Windows 10, certain aide à réécrire le code pour améliorer son efficacité, d'autre l'aide en le traduisant en de nombreuse langue.
+    <value>Ši programa sunaikina šnipinėjimą Windows 7/8/8.1/10 operacinėse sistemose.
+Programos kodas yra atviras, prieinamas github puslapyje.
+Ši programa pašalina kai kuriuos telemetrijos elementus, kitus išjungta, išjungia Windows Defender, Cortana ir daug daugiau. Kadangi programa išjungia Windows Update, jūs negausite šnipinėjančios programinės įrangos atnaujinimų.
+Metro programėlių funkcija yra naudinga, nes šios programėlės dirba fone, naudodamos jūsų kompiuterio resursus ir, kai kurios iš jų, net šnipinėja.
+Be to, programa blokuoja daugelį Microsoft IP adresų, kuriems yra siunčiami jūsų duomenis pridėdama juos į hosts.
+Daugelis šios programos padaromų pakeitimų negali būti atstatyta, net panaudojus sistemos atkūrimo galimybę.
+Šiuo metu tai yra efektyviausia programa, kurią vysto didelė Windows 10 naudotojų bendruomenė.
 
-Voici les arguments utilisables en ligne de commande :
-/lang= - Modifier la langue utilisé par le logiciel à son lancement. Exemple: /lang=fr
-/deleteapp= - Permet la suppression d'une application Metro. Exemple: /deleteapp=bing ou /deleteapp=note
-/destroy - L'argument permettant la suppression des Spyware.
-ATTENTION! Les arguments /destroy et /deleteapp= ne peuvent pas être utilisé en même temps, et l'argument /deleteapp= ne peut pas être utilisé plusieurs fois.</value>
+Komandinės eilutės parametrai:
+/lang= - nustatyti kalbą prieš paleidžiant programą. Po lygybės ženklo reikia nurodyti kalbos pavadinimą. Pavyzdys: /lang=en-US
+/deleteapp= - leidžia ištrinti Metro programėlę. Po lygybės ženklo galima nuroyti pilną arba dalinį pavadinimą. Pavyzdys: /deleteapp=bing arba /deleteapp=note
+/destroy - automatiškai pašalina sekimą.
+SVARBU! Parametrai /destroy ir /deleteapp= negali būti naudojami kartu, o parametro /deleteapp= negalima nurodyti kelis kartus iš eilės.</value>
   </data>
   <data name="FindOffice16FileT" xml:space="preserve">
-    <value>Merci de spécifier le chemin du fichier msosync.exe. Si Office 2016 est installé avec son chemin par défaut sur C:, appuez sur "Annuler"</value>
-  </data>
-    <data name="checkBoxDeleteGWX" xml:space="preserve">
-    <value>Enlever le GWX</value>
-  </data>
-  <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
-    <value>Supprimer les mises à jour espionnes.</value>
+    <value>Prašome nurodyti kelią iki msosync.exe failo. Jei Office 2016 yra įdiegta C diske numatytoje vietoje, paspauskite "Atšaukti"</value>
   </data>
 </root>
