@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
-    <value>Verwijder alle Windows 10 Metro apps</value>
+    <value>Verwijder alle Metro apps (win10)</value>
   </data>
   <data name="btnDeleteOneDrive" xml:space="preserve">
     <value>Verwijder OneDrive</value>
@@ -133,7 +133,7 @@
     <value>Herstel Systeem</value>
   </data>
   <data name="checkBoxAddToHosts" xml:space="preserve">
-    <value>Voeg SPY domeinen aan het Hosts bestand toe, en blokkeer in Windows Firewall</value>
+    <value>Voeg spionage domeinen aan het Hosts bestand toe, en blokkeer in Windows Firewall</value>
   </data>
   <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
     <value>Maak een herstelpunt aan.</value>
@@ -142,7 +142,7 @@
     <value>Verwijder Windows 10 Metro Apps</value>
   </data>
   <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
-    <value>schakel privacy instellingen uit</value>
+    <value>Schakel privacy instellingen uit</value>
   </data>
   <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
     <value>Schakel Windows Defender uit</value>
@@ -154,7 +154,7 @@
     <value>Zet de standaard Windows Photo viewer</value>
   </data>
   <data name="checkBoxSPYTasks" xml:space="preserve">
-    <value>schakel SPY services en taken uit</value>
+    <value>Schakel spionage services en taken uit</value>
   </data>
   <data name="Complete" xml:space="preserve">
     <value>Voltooit!</value>
@@ -219,22 +219,22 @@ Nu opnieuw opstarten?</value>
     <value>Instellingen</value>
   </data>
   <data name="tabPageUtilites" xml:space="preserve">
-    <value>Extra`s</value>
+    <value>Extra functies</value>
   </data>
   <data name="Warning" xml:space="preserve">
     <value>Waarschuwing!</value>
   </data>
   <data name="RemoveAllOldFirewallRules" xml:space="preserve">
-    <value>Verwijder alle oude DWS Windows Firewall instellingen</value>
+    <value>Verwijder oude DWS instellingen (firewall)</value>
   </data>
   <data name="ReportABug" xml:space="preserve">
     <value>Rapporteer een fout.</value>
   </data>
   <data name="ReadMeTextBox" xml:space="preserve">
-    <value>Dit Programma verwijderd de ingebouwde spyware in Windows 7, 8, 8.1 en 10.
+    <value>Dit Programma verwijderd de ingebouwde spyware in Windows 7, 8, 8.1, Server 2008-2012 R2 en 10.
 Het programma is Open-Source, de broncode is te vinden op Github.
 Dit programma verwijderd alle spyware die is ingebouwd door Microsoft in Windows. Sommige Elementen van telematrie worden verwijderd, en de andere worden uitgeschakeld.
-Het programma kan Windows Update uitschakelen, hierdoor blijf je anoniem omdat je geen nieuwe updates ontvangt van spyware.
+Het programma kan Windows Update uitschakelen, hierdoor blijf je annoniem omdat je geen nieuwe updates ontvangt van spyware.
 De verwijder Metro apps functie werkt zeer goed, Metro apps draaien in de achtergrond en nemen geheugen in beslag. Sommige apps bespioneren je.
 Veel IP adressen van Microsoft worden geblokkeerd, waar data naartoe gaat. De meeste spyware wordt in het HOSTS bestand en Windows Firewall geblokkeerd. 
 het meest van dit programma kan niet teruggedraait worden, zelfts niet na een windows herstel doormiddel van een herstelpunt.
@@ -250,5 +250,12 @@ BELANGRIJK! De argumenten /destroy en /deleteapp= kunnen niet worden gecombineer
   </data>
   <data name="FindOffice16FileT" xml:space="preserve">
     <value>wat is het pad naar het bestand "MSOSYNC.EXE". Als Microsoft Office 2016 is geïnstalleerd als standaard op schijf C:\, kies "Annuleren".</value>
+  </data>
+  <data name="checkBoxDeleteGWX" xml:space="preserve">
+    <value>
+Verwijder GWX</value>
+  </data>
+  <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
+    <value>Verwijder spionage updates</value>
   </data>
 </root>

@@ -845,9 +845,9 @@ namespace DWS_Lite
             this.ReleaseName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.ReleaseName.Location = new System.Drawing.Point(3, 3);
             this.ReleaseName.Name = "ReleaseName";
-            this.ReleaseName.Size = new System.Drawing.Size(124, 19);
+            this.ReleaseName.Size = new System.Drawing.Size(76, 19);
             this.ReleaseName.TabIndex = 14;
-            this.ReleaseName.Text = "TH2 RTM Ready";
+            this.ReleaseName.Text = "TH2 RTM";
             // 
             // DonatePictureBox
             // 
