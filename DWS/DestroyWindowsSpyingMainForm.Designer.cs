@@ -41,6 +41,8 @@ namespace DWS_Lite
             this.btnDestroyWindowsSpying = new System.Windows.Forms.Button();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
             this.Windows78Panel = new System.Windows.Forms.Panel();
+            this.labelUninstallUpdates = new System.Windows.Forms.Label();
+            this.checkedListBoxUpdatesW78 = new System.Windows.Forms.CheckedListBox();
             this.checkBoxDeleteGWX = new System.Windows.Forms.CheckBox();
             this.checkBoxDeleteWindows78Updates = new System.Windows.Forms.CheckBox();
             this.checkBoxSPYTasks78 = new System.Windows.Forms.CheckBox();
@@ -244,6 +246,8 @@ namespace DWS_Lite
             // Windows78Panel
             // 
             this.Windows78Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Windows78Panel.Controls.Add(this.labelUninstallUpdates);
+            this.Windows78Panel.Controls.Add(this.checkedListBoxUpdatesW78);
             this.Windows78Panel.Controls.Add(this.checkBoxDeleteGWX);
             this.Windows78Panel.Controls.Add(this.checkBoxDeleteWindows78Updates);
             this.Windows78Panel.Controls.Add(this.checkBoxSPYTasks78);
@@ -255,6 +259,25 @@ namespace DWS_Lite
             this.Windows78Panel.Size = new System.Drawing.Size(434, 365);
             this.Windows78Panel.TabIndex = 23;
             this.Windows78Panel.Visible = false;
+            // 
+            // labelUninstallUpdates
+            // 
+            this.labelUninstallUpdates.AutoSize = true;
+            this.labelUninstallUpdates.Location = new System.Drawing.Point(7, 89);
+            this.labelUninstallUpdates.Name = "labelUninstallUpdates";
+            this.labelUninstallUpdates.Size = new System.Drawing.Size(93, 13);
+            this.labelUninstallUpdates.TabIndex = 5;
+            this.labelUninstallUpdates.Text = "Uninstall updates:";
+            // 
+            // checkedListBoxUpdatesW78
+            // 
+            this.checkedListBoxUpdatesW78.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.checkedListBoxUpdatesW78.Enabled = false;
+            this.checkedListBoxUpdatesW78.FormattingEnabled = true;
+            this.checkedListBoxUpdatesW78.Location = new System.Drawing.Point(6, 105);
+            this.checkedListBoxUpdatesW78.Name = "checkedListBoxUpdatesW78";
+            this.checkedListBoxUpdatesW78.Size = new System.Drawing.Size(210, 162);
+            this.checkedListBoxUpdatesW78.TabIndex = 4;
             // 
             // checkBoxDeleteGWX
             // 
@@ -281,6 +304,7 @@ namespace DWS_Lite
             this.checkBoxDeleteWindows78Updates.TabIndex = 2;
             this.checkBoxDeleteWindows78Updates.Text = "Delete spying updates.";
             this.checkBoxDeleteWindows78Updates.UseVisualStyleBackColor = true;
+            this.checkBoxDeleteWindows78Updates.CheckedChanged += new System.EventHandler(this.checkBoxDeleteWindows78Updates_CheckedChanged);
             // 
             // checkBoxSPYTasks78
             // 
@@ -1127,9 +1151,10 @@ namespace DWS_Lite
             this.CaptionWindow.Name = "CaptionWindow";
             this.CaptionWindow.Size = new System.Drawing.Size(453, 28);
             this.CaptionWindow.TabIndex = 1;
-            this.CaptionWindow.Text = "DWS Lite";
+            this.CaptionWindow.Text = "       DWS Lite";
             this.CaptionWindow.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CaptionWindow.Click += new System.EventHandler(this.CaptionWindow_Click);
+            this.CaptionWindow.Paint += new System.Windows.Forms.PaintEventHandler(this.CaptionWindow_Paint);
             this.CaptionWindow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CaptionWindow_MouseDown);
             // 
             // _CloseButton
@@ -1230,8 +1255,10 @@ namespace DWS_Lite
             this.MaximizeBox = false;
             this.Name = "DestroyWindowsSpyingMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DWS Lite   build ";
+            this.Text = "       DWS Lite   build ";
             this.TransparencyKey = System.Drawing.Color.Magenta;
+            this.Activated += new System.EventHandler(this.DestroyWindowsSpyingMainForm_Activated);
+            this.Deactivate += new System.EventHandler(this.DestroyWindowsSpyingMainForm_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DestroyWindowsSpyingMainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DestroyWindowsSpyingMainForm_FormClosed);
             this.FormTabsControl.ResumeLayout(false);
@@ -1347,6 +1374,8 @@ namespace DWS_Lite
         private CheckBox checkBoxDeleteWindows78Updates;
         private CheckBox checkBoxDeleteGWX;
         private Label ReleaseName;
+        private CheckedListBox checkedListBoxUpdatesW78;
+        private Label labelUninstallUpdates;
     }
 }
 
