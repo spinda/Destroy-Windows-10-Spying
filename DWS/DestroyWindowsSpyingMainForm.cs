@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -43,7 +42,6 @@ namespace DWS_Lite
 
         public DestroyWindowsSpyingMainForm(string[] args)
         {
-            _minimizeButtonState = 0;
             InitializeComponent();
             // Re create log file
             RecreateLogFile(LogFileName);
@@ -221,14 +219,8 @@ namespace DWS_Lite
                 ShowInTaskbar = false;
                 _destroyFlag = true;
                 //Windows 10
-                if (_win10)
-                {
-                    DestroyWindowsSpyingMainThread();
-                }
-                else
-                {
-                    Dws78MainThread();
-                }
+                if (_win10) DestroyWindowsSpyingMainThread();
+                else Dws78MainThread();
                 Process.GetCurrentProcess().Kill();
             }
         }
@@ -256,7 +248,6 @@ namespace DWS_Lite
         private void CheckWindowsVersion()
         {
             var windowsBuildNumber = WindowsUtil.GetWindowsBuildNumber();
-
             if (windowsBuildNumber < 7600)
             {
                 if (MessageBox.Show(@"Minimum windows version - 7\nExit from the program?", @"Error",
@@ -264,7 +255,6 @@ namespace DWS_Lite
                     MessageBoxIcon.Error) == DialogResult.Yes)
                     Process.GetCurrentProcess().Kill();
             }
-
             // check Win 7 or 8.1
             if (windowsBuildNumber >= 10000) return;
             _win10 = false;
@@ -1639,7 +1629,8 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
 
         private void CaptionWindow_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawImage(Icon.ToBitmap(), 3, 1, 28, 28);
+            e.Graphics.FillEllipse(new SolidBrush(Color.WhiteSmoke), 3,3,23,23);
+            e.Graphics.DrawImage(Icon.ToBitmap(), 6, 5, 19, 19);
         }
 
         private void ChangeBorderColor(Color cl)
