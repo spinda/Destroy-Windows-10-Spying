@@ -10,8 +10,8 @@
 
 namespace DWS_Lite.lang {
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,15 +23,15 @@ namespace DWS_Lite.lang {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class zh_CN {
-        
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal zh_CN() {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -45,7 +45,7 @@ namespace DWS_Lite.lang {
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -59,7 +59,7 @@ namespace DWS_Lite.lang {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 删除所有 Windows 10 的 Metro 应用.
         /// </summary>
@@ -68,7 +68,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("btnDeleteAllWindows10Apps", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 删除 One Drive.
         /// </summary>
@@ -77,7 +77,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("btnDeleteOneDrive", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 打开并编辑 HOSTS 文件.
         /// </summary>
@@ -86,7 +86,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("btnOpenAndEditHosts", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 开启专业模式.
         /// </summary>
@@ -95,7 +95,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("btnProfessionalMode", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 还原系统.
         /// </summary>
@@ -104,7 +104,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("btnRestoreSystem", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 添加监视域名到 HOSTS 文件，并在 Windows 防火墙中添加阻止规则.
         /// </summary>
@@ -113,7 +113,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("checkBoxAddToHosts", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 创建系统还原点.
         /// </summary>
@@ -122,7 +122,16 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("checkBoxCreateSystemRestorePoint", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to 删除 GWX(获取 Windows X).
+        /// </summary>
+        internal static string checkBoxDeleteGWX {
+            get {
+                return ResourceManager.GetString("checkBoxDeleteGWX", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to 删除 Windows 10 的 Metro 应用.
         /// </summary>
@@ -131,7 +140,16 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("checkBoxDeleteWindows10Apps", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to 删除用于监视的更新.
+        /// </summary>
+        internal static string checkBoxDeleteWindows78Updates {
+            get {
+                return ResourceManager.GetString("checkBoxDeleteWindows78Updates", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to 禁用隐私设置.
         /// </summary>
@@ -140,7 +158,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("checkBoxDisablePrivateSettings", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 禁用 Windows Defender.
         /// </summary>
@@ -149,7 +167,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("checkBoxDisableWindowsDefender", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 删除键盘记录程序和遥测程序.
         /// </summary>
@@ -158,7 +176,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("checkBoxKeyLoggerAndTelemetry", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 设置默认的 Windows 照片查看器.
         /// </summary>
@@ -167,7 +185,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("checkBoxSetDefaultPhoto", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 禁用监视计划任务.
         /// </summary>
@@ -176,7 +194,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("checkBoxSPYTasks", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 完成.
         /// </summary>
@@ -185,7 +203,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("Complete", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 完成！
         ///需要重启以禁用所有的监视软件。
@@ -196,7 +214,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("CompleteMSG", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 删除.
         /// </summary>
@@ -205,7 +223,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("Delete", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 删除应用.
         /// </summary>
@@ -214,7 +232,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("DeleteApps", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 禁用.
         /// </summary>
@@ -223,7 +241,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("Disable", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 启用.
         /// </summary>
@@ -232,7 +250,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("Enable", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 错误.
         /// </summary>
@@ -241,7 +259,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("Error", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 完成。 错误 - {0}
         ///需要重启以禁用所有的监视软件。
@@ -252,7 +270,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("ErrorMSG", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Please specify the path to the file msosync.exe. If Office 2016 is installed as standard on the drive C, press &quot;Cancel&quot;.
         /// </summary>
@@ -261,7 +279,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("FindOffice16FileT", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 信息.
         /// </summary>
@@ -270,7 +288,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("Info", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to METRO 应用将永久删除，无法恢复。.
         /// </summary>
@@ -279,7 +297,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("labelInfoDeleteMetroApps", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 链接.
         /// </summary>
@@ -288,7 +306,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("Links", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 点击 OK，并等待 15 分钟.
         /// </summary>
@@ -297,7 +315,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("PressOkAndWait15", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 问题.
         /// </summary>
@@ -306,7 +324,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("Question", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 这个程序是用来破坏 Windows 7/8/8.1/10 上的监视功能的。
         ///整个程序是开源的，托管在 Github 上。
@@ -325,7 +343,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("ReadMeTextBox", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 真的？.
         /// </summary>
@@ -334,7 +352,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("Really", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 移除所有旧的 DWS 防火墙规则.
         /// </summary>
@@ -343,7 +361,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("RemoveAllOldFirewallRules", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 报告 bug.
         /// </summary>
@@ -352,7 +370,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("ReportABug", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 需要重启。
         ///现在就重启？.
@@ -362,7 +380,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("Restart", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 关于.
         /// </summary>
@@ -371,7 +389,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("tabPageAbout", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 主界面.
         /// </summary>
@@ -380,7 +398,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("tabPageMain", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 自述.
         /// </summary>
@@ -389,7 +407,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("tabPageReadMe", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 设置.
         /// </summary>
@@ -398,7 +416,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("tabPageSettings", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 工具.
         /// </summary>
@@ -407,7 +425,7 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("tabPageUtilites", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 警告.
         /// </summary>

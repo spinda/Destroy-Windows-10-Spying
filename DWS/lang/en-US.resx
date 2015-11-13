@@ -254,4 +254,7 @@ IMPORTANT! Arguments /destroy and /deleteapp= can not be combined, and the argum
   <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
     <value>Delete spying updates.</value>
   </data>
+  <data name="labelUninstallUpdates" xml:space="preserve">
+    <value>Uninstall updates:</value>
+  </data>
 </root>

@@ -1,236 +1,236 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
+	<!-- 
+		Microsoft ResX Schema 
+		
+		Version 2.0
+		
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+		
+		Example:
+		
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">2.0</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+				<value>[base64 mime encoded serialized .NET Framework object]</value>
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+				<value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+				<comment>This is a comment</comment>
+		</data>
+								
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+		
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+		
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+		
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+		
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value	 : The object must be serialized with 
+						: System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+						: and then encoded with base64 encoding.
+		
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value	 : The object must be serialized with 
+						: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+						: and then encoded with base64 encoding.
 
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
-    <value>Usuń wszystkie aplikacje Metro Windows 10</value>
-  </data>
-  <data name="btnDeleteOneDrive" xml:space="preserve">
-    <value>Odinstaluj OneDrive</value>
-  </data>
-  <data name="btnOpenAndEditHosts" xml:space="preserve">
-    <value>Edytuj plik hosts</value>
-  </data>
-  <data name="btnProfessionalMode" xml:space="preserve">
-    <value>Włącz tryb zaawansowany</value>
-  </data>
-  <data name="btnRestoreSystem" xml:space="preserve">
-    <value>Przywracanie systemu</value>
-  </data>
-  <data name="checkBoxAddToHosts" xml:space="preserve">
-    <value>Zablokuj domeny szpiegujące w pliku hosts i Zaporze systemu Windows</value>
-  </data>
-  <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
-    <value>Utwórz punkt przywracania systemu</value>
-  </data>
-  <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
-    <value>Usuń aplikacje Metro Windows 10</value>
-  </data>
-  <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
-    <value>Wyłącz wysyłanie prywatnych danych</value>
-  </data>
-  <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
-    <value>Wyłącz Windows Defender</value>
-  </data>
-  <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
-    <value>Usuń keylogger i telemetrię</value>
-  </data>
-  <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
-    <value>Ustaw program 'Przeglądarka fotografii systemu Windows' jako domyślny</value>
-  </data>
-  <data name="checkBoxSPYTasks" xml:space="preserve">
-    <value>Wyłącz śledzące zadania</value>
-  </data>
-  <data name="Complete" xml:space="preserve">
-    <value>Gotowe</value>
-  </data>
-  <data name="CompleteMSG" xml:space="preserve">
-    <value>Aby zakończyć wprowadzanie zmian, należy uruchomić ponownie komputer.
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value	 : The object must be serialized into a byte array 
+						: using a System.ComponentModel.TypeConverter
+						: and then encoded with base64 encoding.
+		-->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="btnDeleteAllWindows10Apps" xml:space="preserve">
+		<value>Usuń wszystkie aplikacje Metro Windows 10</value>
+	</data>
+	<data name="btnDeleteOneDrive" xml:space="preserve">
+		<value>Odinstaluj OneDrive</value>
+	</data>
+	<data name="btnOpenAndEditHosts" xml:space="preserve">
+		<value>Edytuj plik hosts</value>
+	</data>
+	<data name="btnProfessionalMode" xml:space="preserve">
+		<value>Włącz tryb zaawansowany</value>
+	</data>
+	<data name="btnRestoreSystem" xml:space="preserve">
+		<value>Przywracanie systemu</value>
+	</data>
+	<data name="checkBoxAddToHosts" xml:space="preserve">
+		<value>Zablokuj domeny szpiegujące w pliku hosts i Zaporze systemu Windows</value>
+	</data>
+	<data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
+		<value>Utwórz punkt przywracania systemu</value>
+	</data>
+	<data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
+		<value>Usuń aplikacje Metro Windows 10</value>
+	</data>
+	<data name="checkBoxDisablePrivateSettings" xml:space="preserve">
+		<value>Wyłącz wysyłanie prywatnych danych</value>
+	</data>
+	<data name="checkBoxDisableWindowsDefender" xml:space="preserve">
+		<value>Wyłącz Windows Defender</value>
+	</data>
+	<data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
+		<value>Usuń keylogger i telemetrię</value>
+	</data>
+	<data name="checkBoxSetDefaultPhoto" xml:space="preserve">
+		<value>Ustaw program 'Przeglądarka fotografii systemu Windows' jako domyślny</value>
+	</data>
+	<data name="checkBoxSPYTasks" xml:space="preserve">
+		<value>Wyłącz śledzące zadania</value>
+	</data>
+	<data name="Complete" xml:space="preserve">
+		<value>Gotowe</value>
+	</data>
+	<data name="CompleteMSG" xml:space="preserve">
+		<value>Aby zakończyć wprowadzanie zmian, należy uruchomić ponownie komputer.
 Czy chcesz zrobić to teraz?</value>
-  </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Usuń</value>
-  </data>
-  <data name="DeleteApps" xml:space="preserve">
-    <value>Usuń aplikacje</value>
-  </data>
-  <data name="Disable" xml:space="preserve">
-    <value>Wyłącz</value>
-  </data>
-  <data name="Enable" xml:space="preserve">
-    <value>Włącz</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Wystąpił błąd</value>
-  </data>
-  <data name="ErrorMSG" xml:space="preserve">
-    <value>Podczas wprowadzania zmian wystąpiły {0} błędy.
+	</data>
+	<data name="Delete" xml:space="preserve">
+		<value>Usuń</value>
+	</data>
+	<data name="DeleteApps" xml:space="preserve">
+		<value>Usuń aplikacje</value>
+	</data>
+	<data name="Disable" xml:space="preserve">
+		<value>Wyłącz</value>
+	</data>
+	<data name="Enable" xml:space="preserve">
+		<value>Włącz</value>
+	</data>
+	<data name="Error" xml:space="preserve">
+		<value>Wystąpił błąd</value>
+	</data>
+	<data name="ErrorMSG" xml:space="preserve">
+		<value>Podczas wprowadzania zmian wystąpiły {0} błędy.
 Aby zakończyć proces, należy uruchomić ponownie komputer.
 Czy chcesz zrobić to teraz?</value>
-  </data>
-  <data name="Info" xml:space="preserve">
-    <value>Informacja</value>
-  </data>
-  <data name="labelInfoDeleteMetroApps" xml:space="preserve">
-    <value>Aplikacje Metro zostaną usunięte na stałe i nie będzie możliwości ich przywrócenia.</value>
-  </data>
-  <data name="Links" xml:space="preserve">
-    <value>Linki</value>
-  </data>
-  <data name="PressOkAndWait15" xml:space="preserve">
-    <value>Kliknij przycisk 'OK' i poczekaj 15 minut.</value>
-  </data>
-  <data name="Question" xml:space="preserve">
-    <value>Pytanie</value>
-  </data>
-  <data name="Really" xml:space="preserve">
-    <value>Czy jesteś pewny swojej decyzji?</value>
-  </data>
-  <data name="Restart" xml:space="preserve">
-    <value>Aby zakończyć proces, należy uruchomić ponownie komputer.
+	</data>
+	<data name="Info" xml:space="preserve">
+		<value>Informacja</value>
+	</data>
+	<data name="labelInfoDeleteMetroApps" xml:space="preserve">
+		<value>Aplikacje Metro zostaną usunięte na stałe i nie będzie możliwości ich przywrócenia.</value>
+	</data>
+	<data name="Links" xml:space="preserve">
+		<value>Linki</value>
+	</data>
+	<data name="PressOkAndWait15" xml:space="preserve">
+		<value>Kliknij przycisk 'OK' i poczekaj 15 minut.</value>
+	</data>
+	<data name="Question" xml:space="preserve">
+		<value>Pytanie</value>
+	</data>
+	<data name="Really" xml:space="preserve">
+		<value>Czy jesteś pewny swojej decyzji?</value>
+	</data>
+	<data name="Restart" xml:space="preserve">
+		<value>Aby zakończyć proces, należy uruchomić ponownie komputer.
 Czy chcesz zrobić to teraz?</value>
-  </data>
-  <data name="tabPageAbout" xml:space="preserve">
-    <value>O programie</value>
-  </data>
-  <data name="tabPageMain" xml:space="preserve">
-    <value>Strona główna</value>
-  </data>
-  <data name="tabPageReadMe" xml:space="preserve">
-    <value>Opis programu</value>
-  </data>
-  <data name="tabPageSettings" xml:space="preserve">
-    <value>Ustawienia</value>
-  </data>
-  <data name="tabPageUtilites" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="Warning" xml:space="preserve">
-    <value>Ostrzeżenie</value>
-  </data>
-  <data name="RemoveAllOldFirewallRules" xml:space="preserve">
-    <value>Usuń stare reguły zapory od DWS</value>
-  </data>
-  <data name="ReportABug" xml:space="preserve">
-    <value>Zgłoś błąd</value>
-  </data>
-  <data name="ReadMeTextBox" xml:space="preserve">
-    <value>Dzięki tej aplikacji możesz usunąć oprogramowanie szpiegujące w systemach Windows 7/8/8.1/10.
+	</data>
+	<data name="tabPageAbout" xml:space="preserve">
+		<value>O programie</value>
+	</data>
+	<data name="tabPageMain" xml:space="preserve">
+		<value>Strona główna</value>
+	</data>
+	<data name="tabPageReadMe" xml:space="preserve">
+		<value>Opis programu</value>
+	</data>
+	<data name="tabPageSettings" xml:space="preserve">
+		<value>Ustawienia</value>
+	</data>
+	<data name="tabPageUtilites" xml:space="preserve">
+		<value>Narzędzia</value>
+	</data>
+	<data name="Warning" xml:space="preserve">
+		<value>Ostrzeżenie</value>
+	</data>
+	<data name="RemoveAllOldFirewallRules" xml:space="preserve">
+		<value>Usuń stare reguły zapory od DWS</value>
+	</data>
+	<data name="ReportABug" xml:space="preserve">
+		<value>Zgłoś błąd</value>
+	</data>
+	<data name="ReadMeTextBox" xml:space="preserve">
+		<value>Dzięki tej aplikacji możesz usunąć oprogramowanie szpiegujące w systemach Windows 7/8/8.1/10.
 Jest to program o otwartym źródle, które jest dostępne na Github.
 Usuwane są elementy telemetrii, wyłączany jest Windows Defender, Cortana, a także wiele innych niepożądanych części systemu. Aplikacja wyłącza także Windows Update, co pozwala ci na pozostanie anonimowym. Kolejną korzyścią jest nieotrzymywanie aktualizacji wbudowanego oprogramowania szpiegującego.
 Jedną z funkcji aplikacji jest usuwanie aplikacji Metro. Jest to bardzo przydatne, ponieważ działają one w tle i niepotrzebnie marnują pamięć, a niektóre z nich cię szpiegują.
@@ -244,8 +244,14 @@ Parametry linii poleceń:
 /deleteapp= - pozwala ci usunąć wybraną aplikację Metro. Na przykład: /deleteapp=bing lub /deleteapp=note
 /destroy - pozwala ci usunąć elementy szpiegujące.
 Zwróć uwagę na to, że parametrów /destroy i /deleteapp= nie można używać jednocześnie, a parametr /deleteapp= może zostać użyty tylko raz w jednym poleceniu.</value>
-  </data>
-  <data name="FindOffice16FileT" xml:space="preserve">
-    <value>Określ ścieżkę do pliku msosync.exe. Jeśli Office 2016 jest zainstalowany w zwykły sposób na dysku C, kliknij przycisk "Anuluj"</value>
-  </data>
+	</data>
+	<data name="FindOffice16FileT" xml:space="preserve">
+		<value>Określ ścieżkę do pliku msosync.exe. Jeśli Office 2016 jest zainstalowany w zwykły sposób na dysku C, kliknij przycisk "Anuluj"</value>
+	</data>
+		<data name="checkBoxDeleteGWX" xml:space="preserve">
+		<value>Usuń GWX</value>
+	</data>
+	<data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
+		<value>Odinstaluj szpiegujące aktualizacje</value>
+	</data>
 </root>

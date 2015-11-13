@@ -299,6 +299,15 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Uninstall updates:.
+        /// </summary>
+        internal static string labelUninstallUpdates {
+            get {
+                return ResourceManager.GetString("labelUninstallUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Links.
         /// </summary>
         internal static string Links {

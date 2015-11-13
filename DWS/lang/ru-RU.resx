@@ -256,4 +256,7 @@
   <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
     <value>Удалить шпионские обновления.</value>
   </data>
+  <data name="labelUninstallUpdates" xml:space="preserve">
+    <value>Удалить следующие обновления:</value>
+  </data>
 </root>
