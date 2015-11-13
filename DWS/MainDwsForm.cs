@@ -21,7 +21,7 @@ using Microsoft.Win32;
 
 namespace DWS_Lite
 {
-    public partial class DestroyWindowsSpyingMainForm : Form
+    public partial class MainDwsForm : Form
     {
         private const string LogFileName = "DWS.log";
         // ReSharper disable once InconsistentNaming
@@ -40,7 +40,7 @@ namespace DWS_Lite
         private string _system32Location;
         private bool _win10 = true;
 
-        public DestroyWindowsSpyingMainForm(string[] args)
+        public MainDwsForm(string[] args)
         {
             InitializeComponent();
             // Re create log file
@@ -207,22 +207,29 @@ namespace DWS_Lite
 
         private void StealthMode(IEnumerable<string> args)
         {
-            foreach (var currentArg in args)
+            var currentArgs = args as string[] ?? args.ToArray();
+            foreach (var currentArg in currentArgs)
             {
                 if (currentArg.IndexOf("/deleteapp=", StringComparison.Ordinal) > -1)
                 {
                     DeleteWindows10MetroApp(currentArg.Replace("/deleteapp=", null));
-                    Process.GetCurrentProcess().Kill();
                 }
-                if (currentArg.IndexOf("/destroy", StringComparison.Ordinal) <= -1) continue;
-                WindowState = FormWindowState.Minimized;
-                ShowInTaskbar = false;
-                _destroyFlag = true;
-                //Windows 10
-                if (_win10) DestroyWindowsSpyingMainThread();
-                else Dws78MainThread();
-                Process.GetCurrentProcess().Kill();
+                if (currentArg.IndexOf("/destroy", StringComparison.Ordinal) > -1)
+                {
+                    WindowState = FormWindowState.Minimized;
+                    ShowInTaskbar = false;
+                    _destroyFlag = true;
+                    //Windows 10
+                    if (_win10) DestroyWindowsSpyingMainThread();
+                    else Dws78MainThread();
+                }
+                if (currentArg.IndexOf("/deleteonedrive", StringComparison.Ordinal) > -1)
+                {
+                    DeleteOneDrive();
+                }
             }
+            if (currentArgs.Any())
+            Process.GetCurrentProcess().Kill();
         }
 
         /*
@@ -1140,48 +1147,51 @@ namespace DWS_Lite
 
         private void btnDeleteOneDrive_Click(object sender, EventArgs e)
         {
-            new Thread(() =>
-            {
-                EnableOrDisableTab(false);
-                try
-                {
-                    RunCmd("/c taskkill /f /im OneDrive.exe > NUL 2>&1");
-                    RunCmd("/c ping 127.0.0.1 -n 5 > NUL 2>&1");
-                    if (File.Exists(_systemPath + @"Windows\System32\OneDriveSetup.exe"))
-                        ProcStartargs(_systemPath + @"Windows\System32\OneDriveSetup.exe", "/uninstall");
-                    if (File.Exists(_systemPath + @"Windows\SysWOW64\OneDriveSetup.exe"))
-                        ProcStartargs(_systemPath + @"Windows\SysWOW64\OneDriveSetup.exe", "/uninstall");
-                    RunCmd("/c ping 127.0.0.1 -n 5 > NUL 2>&1");
-                    RunCmd("/c rd \"%USERPROFILE%\\OneDrive\" /Q /S > NUL 2>&1");
-                    RunCmd("/c rd \"C:\\OneDriveTemp\" /Q /S > NUL 2>&1");
-                    RunCmd("/c rd \"%LOCALAPPDATA%\\Microsoft\\OneDrive\" /Q /S > NUL 2>&1");
-                    RunCmd("/c rd \"%PROGRAMDATA%\\Microsoft OneDrive\" /Q /S > NUL 2>&1");
-                    RunCmd(
-                        "/c REG DELETE \"HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}\" /f > NUL 2>&1");
-                    RunCmd(
-                        "/c REG DELETE \"HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}\" /f > NUL 2>&1");
+            new Thread(DeleteOneDrive).Start();
+        }
 
-                    SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\OneDrive", "DisableFileSyncNGSC", "1",
-                        RegistryValueKind.DWord);
-                }
-                catch (Exception ex)
+        void DeleteOneDrive()
+        {
+
+            EnableOrDisableTab(false);
+            try
+            {
+                RunCmd("/c taskkill /f /im OneDrive.exe > NUL 2>&1");
+                RunCmd("/c ping 127.0.0.1 -n 5 > NUL 2>&1");
+                if (File.Exists(_systemPath + @"Windows\System32\OneDriveSetup.exe"))
+                    ProcStartargs(_systemPath + @"Windows\System32\OneDriveSetup.exe", "/uninstall");
+                if (File.Exists(_systemPath + @"Windows\SysWOW64\OneDriveSetup.exe"))
+                    ProcStartargs(_systemPath + @"Windows\SysWOW64\OneDriveSetup.exe", "/uninstall");
+                RunCmd("/c ping 127.0.0.1 -n 5 > NUL 2>&1");
+                RunCmd("/c rd \"%USERPROFILE%\\OneDrive\" /Q /S > NUL 2>&1");
+                RunCmd("/c rd \"C:\\OneDriveTemp\" /Q /S > NUL 2>&1");
+                RunCmd("/c rd \"%LOCALAPPDATA%\\Microsoft\\OneDrive\" /Q /S > NUL 2>&1");
+                RunCmd("/c rd \"%PROGRAMDATA%\\Microsoft OneDrive\" /Q /S > NUL 2>&1");
+                RunCmd(
+                    "/c REG DELETE \"HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}\" /f > NUL 2>&1");
+                RunCmd(
+                    "/c REG DELETE \"HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}\" /f > NUL 2>&1");
+
+                SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\OneDrive", "DisableFileSyncNGSC", "1",
+                    RegistryValueKind.DWord);
+            }
+            catch (Exception ex)
+            {
+                Invoke(new MethodInvoker(delegate
                 {
-                    Invoke(new MethodInvoker(delegate
-                    {
-                        MessageBox.Show(ex.Message, GetTranslateText("Error"), MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                    }));
+                    MessageBox.Show(ex.Message, GetTranslateText("Error"), MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }));
 #if DEBUG
                     _OutPut(ex.Message, LogLevel.Debug);
 #endif
-                }
-                Invoke(new MethodInvoker(delegate
-                {
-                    MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"), MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                }));
-                EnableOrDisableTab(true);
-            }).Start();
+            }
+            Invoke(new MethodInvoker(delegate
+            {
+                MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"), MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }));
+            EnableOrDisableTab(true);
         }
 
         private void linkLabelSourceCode_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

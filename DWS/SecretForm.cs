@@ -93,7 +93,7 @@ Bom-bom-bom-tra-ly-ly! LAlLALLALAL!";
                 {
                     try
                     {
-                        var img = new WebClient().DownloadData("http://i.imgur.com/Cj3gFwv.jpg");
+                        var img = new WebClient().DownloadData("http://i.imgur.com/RyglB5b.jpg");
                         var ms = new MemoryStream(img);
                         var returnImage = Image.FromStream(ms);
                         Thread.Sleep(5000);

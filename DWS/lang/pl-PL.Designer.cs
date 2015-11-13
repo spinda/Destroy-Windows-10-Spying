@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace DWS_Lite.lang {
+    
     using System;
     
     
@@ -400,6 +401,26 @@ namespace DWS_Lite.lang {
             }
         }
         
+		/// <summary>
+		///   Looks up a localized string similar to Delete GWX.
+		/// </summary>
+		internal static string checkBoxDeleteGWX {
+			get {
+				return ResourceManager.GetString("checkBoxDeleteGWX", resourceCulture);
+
+			}
+		}
+
+
+		/// <summary>
+		///   Looks up a localized string similar to Delete spying updates..
+		/// </summary>
+		internal static string checkBoxDeleteWindows78Updates {
+			get {
+				return ResourceManager.GetString("checkBoxDeleteWindows78Updates", resourceCulture);
+			}
+		}
+	
         /// <summary>
         ///   Looks up a localized string similar to Ostrzeżenie.
         /// </summary>

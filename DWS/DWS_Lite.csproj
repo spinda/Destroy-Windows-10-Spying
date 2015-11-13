@@ -68,11 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DestroyWindowsSpyingMainForm.cs">
+    <Compile Include="MainDwsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DestroyWindowsSpyingMainForm.Designer.cs">
-      <DependentUpon>DestroyWindowsSpyingMainForm.cs</DependentUpon>
+    <Compile Include="MainDwsForm.Designer.cs">
+      <DependentUpon>MainDwsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="lang\cs-CZ.Designer.cs">
       <DependentUpon>cs-CZ.resx</DependentUpon>
@@ -134,7 +134,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="lang\zh-CN1.Designer.cs">
+    <Compile Include="lang\zh-CN.Designer.cs">
       <DependentUpon>zh-CN.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,8 +159,8 @@
     <Compile Include="SecretForm.Designer.cs">
       <DependentUpon>SecretForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DestroyWindowsSpyingMainForm.resx">
-      <DependentUpon>DestroyWindowsSpyingMainForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainDwsForm.resx">
+      <DependentUpon>MainDwsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="lang\cs-CZ.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -212,7 +212,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="lang\zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>zh-CN1.Designer.cs</LastGenOutput>
+      <LastGenOutput>zh-CN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="lang\ru-RU.resx">
       <Generator>ResXFileCodeGenerator</Generator>

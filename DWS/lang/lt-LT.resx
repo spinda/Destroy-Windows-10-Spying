@@ -248,4 +248,10 @@ SVARBU! Parametrai /destroy ir /deleteapp= negali būti naudojami kartu, o param
   <data name="FindOffice16FileT" xml:space="preserve">
     <value>Prašome nurodyti kelią iki msosync.exe failo. Jei Office 2016 yra įdiegta C diske numatytoje vietoje, paspauskite "Atšaukti"</value>
   </data>
+  <data name="checkBoxDeleteGWX" xml:space="preserve">
+    <value>Ištrinti GWX (Windows 10 atsisiuntimo priemonę)</value>
+  </data>
+  <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
+    <value>Ištrinti Windows atnaujinimus su šnipinėjimu</value>
+  </data>
 </root>

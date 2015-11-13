@@ -13,7 +13,7 @@ namespace DWS_Lite
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DestroyWindowsSpyingMainForm(args));
+            Application.Run(new MainDwsForm(args));
         }
     }
 }

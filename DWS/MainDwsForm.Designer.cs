@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace DWS_Lite
 {
-    partial class DestroyWindowsSpyingMainForm
+    partial class MainDwsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace DWS_Lite
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DestroyWindowsSpyingMainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDwsForm));
             this.FormTabsControl = new System.Windows.Forms.TabControl();
             this.tabPageMain = new System.Windows.Forms.TabPage();
             this.btnDestroyWindows78Spy = new System.Windows.Forms.Button();
