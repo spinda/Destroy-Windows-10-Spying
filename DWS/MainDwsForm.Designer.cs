@@ -114,6 +114,7 @@ namespace DWS_Lite
             this.BorderLeft = new System.Windows.Forms.PictureBox();
             this.BorderR = new System.Windows.Forms.PictureBox();
             this.SecretButton = new System.Windows.Forms.PictureBox();
+            this.checkBoxDelKeyloggerTW78 = new System.Windows.Forms.CheckBox();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -246,6 +247,7 @@ namespace DWS_Lite
             // Windows78Panel
             // 
             this.Windows78Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Windows78Panel.Controls.Add(this.checkBoxDelKeyloggerTW78);
             this.Windows78Panel.Controls.Add(this.labelUninstallUpdates);
             this.Windows78Panel.Controls.Add(this.checkedListBoxUpdatesW78);
             this.Windows78Panel.Controls.Add(this.checkBoxDeleteGWX);
@@ -263,7 +265,7 @@ namespace DWS_Lite
             // labelUninstallUpdates
             // 
             this.labelUninstallUpdates.AutoSize = true;
-            this.labelUninstallUpdates.Location = new System.Drawing.Point(7, 89);
+            this.labelUninstallUpdates.Location = new System.Drawing.Point(7, 105);
             this.labelUninstallUpdates.Name = "labelUninstallUpdates";
             this.labelUninstallUpdates.Size = new System.Drawing.Size(93, 13);
             this.labelUninstallUpdates.TabIndex = 5;
@@ -274,7 +276,7 @@ namespace DWS_Lite
             this.checkedListBoxUpdatesW78.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.checkedListBoxUpdatesW78.Enabled = false;
             this.checkedListBoxUpdatesW78.FormattingEnabled = true;
-            this.checkedListBoxUpdatesW78.Location = new System.Drawing.Point(6, 105);
+            this.checkedListBoxUpdatesW78.Location = new System.Drawing.Point(6, 121);
             this.checkedListBoxUpdatesW78.Name = "checkedListBoxUpdatesW78";
             this.checkedListBoxUpdatesW78.Size = new System.Drawing.Size(210, 162);
             this.checkedListBoxUpdatesW78.TabIndex = 4;
@@ -1235,7 +1237,21 @@ namespace DWS_Lite
             this.SecretButton.TabStop = false;
             this.SecretButton.Click += new System.EventHandler(this.SecretButton_Click);
             // 
-            // DestroyWindowsSpyingMainForm
+            // checkBoxDelKeyloggerTW78
+            // 
+            this.checkBoxDelKeyloggerTW78.AutoSize = true;
+            this.checkBoxDelKeyloggerTW78.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxDelKeyloggerTW78.Checked = true;
+            this.checkBoxDelKeyloggerTW78.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxDelKeyloggerTW78.Location = new System.Drawing.Point(3, 71);
+            this.checkBoxDelKeyloggerTW78.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxDelKeyloggerTW78.Name = "checkBoxDelKeyloggerTW78";
+            this.checkBoxDelKeyloggerTW78.Size = new System.Drawing.Size(177, 17);
+            this.checkBoxDelKeyloggerTW78.TabIndex = 6;
+            this.checkBoxDelKeyloggerTW78.Text = "Delete keylogger and telemetry";
+            this.checkBoxDelKeyloggerTW78.UseVisualStyleBackColor = false;
+            // 
+            // MainDwsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1253,7 +1269,7 @@ namespace DWS_Lite
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.Name = "DestroyWindowsSpyingMainForm";
+            this.Name = "MainDwsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "       DWS Lite   build ";
             this.TransparencyKey = System.Drawing.Color.Magenta;
@@ -1376,6 +1392,7 @@ namespace DWS_Lite
         private Label ReleaseName;
         private CheckedListBox checkedListBoxUpdatesW78;
         private Label labelUninstallUpdates;
+        private CheckBox checkBoxDelKeyloggerTW78;
     }
 }
 

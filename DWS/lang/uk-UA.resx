@@ -255,4 +255,7 @@
   <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
     <value>Видалити шпигунські оновлення.</value>
   </data>
+  <data name="labelUninstallUpdates" xml:space="preserve">
+    <value>Видалити наступні онвлення:</value>
+  </data>
 </root>

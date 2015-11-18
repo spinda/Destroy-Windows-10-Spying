@@ -68,6 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="lang\lt-LT.Designer.cs">
+      <DependentUpon>lt-LT.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="MainDwsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +91,6 @@
     </Compile>
     <Compile Include="lang\nl-NL.Designer.cs">
       <DependentUpon>nl-NL.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="lang\lt-LT1.Designer.cs">
-      <DependentUpon>lt-LT.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -129,8 +129,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="lang\it-CH.Designer.cs">
-      <DependentUpon>it-CH.resx</DependentUpon>
+    <Compile Include="lang\it-IT.Designer.cs">
+      <DependentUpon>it-IT.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -159,6 +159,10 @@
     <Compile Include="SecretForm.Designer.cs">
       <DependentUpon>SecretForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="lang\lt-LT.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>lt-LT.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainDwsForm.resx">
       <DependentUpon>MainDwsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,10 +177,6 @@
     <EmbeddedResource Include="lang\nl-NL.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>nl-NL.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="lang\lt-LT.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>lt-LT1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="lang\uk-UA.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -206,9 +206,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>de-DE.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="lang\it-CH.resx">
+    <EmbeddedResource Include="lang\it-IT.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>it-CH.Designer.cs</LastGenOutput>
+      <LastGenOutput>it-IT.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="lang\zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
