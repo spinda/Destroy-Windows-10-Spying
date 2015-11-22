@@ -42,6 +42,7 @@ namespace DWS_Lite
 
         public MainDwsForm(string[] args)
         {
+
             InitializeComponent();
             // Re create log file
             RecreateLogFile(LogFileName);
@@ -77,7 +78,6 @@ namespace DWS_Lite
             {
                 _OutPut("Error get icon.", LogLevel.Error);
             }
-            Text += Resources.build_number;
 #if DEBUG
             Text += @" DEBUG ";
 #endif
@@ -113,7 +113,7 @@ namespace DWS_Lite
             _OutPut("Sertificate installed.");
         }
 
-        public override sealed string Text
+        public sealed override string Text
         {
             get { return base.Text; }
             set
@@ -338,7 +338,7 @@ namespace DWS_Lite
             {
                 Invoke(new MethodInvoker(delegate
                 {
-                    this.ControlBox = enableordisable;
+                    ControlBox = enableordisable;
                     _CloseButton.Enabled = enableordisable;
                     btnDestroyWindowsSpying.Enabled = enableordisable;
                     tabPageSettings.Enabled = enableordisable;
@@ -496,41 +496,7 @@ namespace DWS_Lite
             {
                 // DISABLE TELEMETRY
                 _OutPut("Disable telemetry...");
-                RunCmd("/c net stop DiagTrack ");
-                RunCmd("/c net stop diagnosticshub.standardcollector.service ");
-                RunCmd("/c net stop dmwappushservice ");
-                RunCmd("/c net stop WMPNetworkSvc ");
-                RunCmd("/c sc config DiagTrack start=disabled ");
-                RunCmd("/c sc config diagnosticshub.standardcollector.service start=disabled ");
-                RunCmd("/c sc config dmwappushservice start=disabled ");
-                RunCmd("/c sc config WMPNetworkSvc start=disabled ");
-                RunCmd(
-                    "/c REG ADD HKLM\\SYSTEM\\ControlSet001\\Control\\WMI\\AutoLogger\\AutoLogger-Diagtrack-Listener /v Start /t REG_DWORD /d 0 /f");
-                RunCmd("/c sc delete dmwappushsvc");
-                RunCmd("/c sc delete \"Diagnostics Tracking Service\"");
-                RunCmd("/c sc delete diagtrack");
-                RunCmd(
-                    "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Device Metadata\" /v \"PreventDeviceMetadataFromNetwork\" /t REG_DWORD /d 1 /f ");
-                RunCmd(
-                    "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection\" /v \"AllowTelemetry\" /t REG_DWORD /d 0 /f ");
-                RunCmd(
-                    "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\MRT\" /v \"DontOfferThroughWUAU\" /t REG_DWORD /d 1 /f ");
-                RunCmd(
-                    "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\SQMClient\\Windows\" /v \"CEIPEnable\" /t REG_DWORD /d 0 /f ");
-                RunCmd(
-                    "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppCompat\" /v \"AITEnable\" /t REG_DWORD /d 0 /f ");
-                RunCmd(
-                    "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppCompat\" /v \"DisableUAR\" /t REG_DWORD /d 1 /f ");
-                RunCmd(
-                    "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection\" /v \"AllowTelemetry\" /t REG_DWORD /d 0 /f ");
-                RunCmd(
-                    "/c reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\WMI\\AutoLogger\\AutoLogger-Diagtrack-Listener\" /v \"Start\" /t REG_DWORD /d 0 /f ");
-                RunCmd(
-                    "/c reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\WMI\\AutoLogger\\SQMLogger\" /v \"Start\" /t REG_DWORD /d 0 /f ");
-                RunCmd(
-                    "/c reg add \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Siuf\\Rules\" /v \"NumberOfSIUFInPeriod\" /t REG_DWORD /d 0 /f ");
-                RunCmd(
-                    "/c reg delete \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Siuf\\Rules\" /v \"PeriodInNanoSeconds\" /f ");
+                DigTrackFullRemove();
                 // DELETE KEYLOGGER
                 _OutPut("Delete keylogger...");
                 RunCmd(
@@ -696,6 +662,45 @@ namespace DWS_Lite
 #endif
                 }
             }
+        }
+
+        private void DigTrackFullRemove()
+        {
+            RunCmd("/c net stop DiagTrack ");
+            RunCmd("/c net stop diagnosticshub.standardcollector.service ");
+            RunCmd("/c net stop dmwappushservice ");
+            RunCmd("/c net stop WMPNetworkSvc ");
+            RunCmd("/c sc config DiagTrack start=disabled ");
+            RunCmd("/c sc config diagnosticshub.standardcollector.service start=disabled ");
+            RunCmd("/c sc config dmwappushservice start=disabled ");
+            RunCmd("/c sc config WMPNetworkSvc start=disabled ");
+            RunCmd(
+                "/c REG ADD HKLM\\SYSTEM\\ControlSet001\\Control\\WMI\\AutoLogger\\AutoLogger-Diagtrack-Listener /v Start /t REG_DWORD /d 0 /f");
+            RunCmd("/c sc delete dmwappushsvc");
+            RunCmd("/c sc delete \"Diagnostics Tracking Service\"");
+            RunCmd("/c sc delete diagtrack");
+            RunCmd(
+                "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Device Metadata\" /v \"PreventDeviceMetadataFromNetwork\" /t REG_DWORD /d 1 /f ");
+            RunCmd(
+                "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection\" /v \"AllowTelemetry\" /t REG_DWORD /d 0 /f ");
+            RunCmd(
+                "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\MRT\" /v \"DontOfferThroughWUAU\" /t REG_DWORD /d 1 /f ");
+            RunCmd(
+                "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\SQMClient\\Windows\" /v \"CEIPEnable\" /t REG_DWORD /d 0 /f ");
+            RunCmd(
+                "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppCompat\" /v \"AITEnable\" /t REG_DWORD /d 0 /f ");
+            RunCmd(
+                "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppCompat\" /v \"DisableUAR\" /t REG_DWORD /d 1 /f ");
+            RunCmd(
+                "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection\" /v \"AllowTelemetry\" /t REG_DWORD /d 0 /f ");
+            RunCmd(
+                "/c reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\WMI\\AutoLogger\\AutoLogger-Diagtrack-Listener\" /v \"Start\" /t REG_DWORD /d 0 /f ");
+            RunCmd(
+                "/c reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\WMI\\AutoLogger\\SQMLogger\" /v \"Start\" /t REG_DWORD /d 0 /f ");
+            RunCmd(
+                "/c reg add \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Siuf\\Rules\" /v \"NumberOfSIUFInPeriod\" /t REG_DWORD /d 0 /f ");
+            RunCmd(
+                "/c reg delete \"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Siuf\\Rules\" /v \"PeriodInNanoSeconds\" /f ");
         }
 
         private void SetCompleteText(bool start = false)
@@ -865,8 +870,13 @@ namespace DWS_Lite
                     "fe3.delivery.dsp.mp.microsoft.com.nsatc.net",
                     "cache.datamart.windows.com",
                     "db3wns2011111.wns.windows.com", // NEW TH2 spy hosts
-                    "deploy.static.akamaitechnologies.com",
-                    "akamaitechnologies.com"
+                    //"deploy.static.akamaitechnologies.com",
+                    //"akamaitechnologies.com"
+                    "settings-win.data.microsoft.com",
+                    "v10.vortex-win.data.microsoft.com",
+                    "win10.ipv6.microsoft.com",
+                    "ca.telemetry.microsoft.com",
+                    "i1.services.social.microsoft.com.nsatc.net"
                 };
                 var hostslocation = _system32Location + @"drivers\etc\hosts";
                 string hosts = null;
@@ -1122,6 +1132,7 @@ namespace DWS_Lite
             groupBoxUACEdit.Enabled = enableordisable;
             btnDeleteMetroAppsInfo.Enabled = enableordisable;
             btnDeleteOneDrive.Enabled = enableordisable;
+            checkBoxDelKeyloggerTW78.Enabled = enableordisable;
             checkedListBoxUpdatesW78.Enabled = enableordisable && checkBoxDeleteWindows78Updates.Checked;
             if (WindowsUtil.SystemRestore_Status() == 0)
             {
@@ -1253,7 +1264,7 @@ namespace DWS_Lite
                     ChangeLanguage();
                     break;
                 case "it-CH":
-                    _rm = it_CH.ResourceManager;
+                    _rm = it_IT.ResourceManager;
                     ChangeLanguage();
                     break;
                 case "cs-CZ":
@@ -1317,6 +1328,12 @@ namespace DWS_Lite
             {
                 GwxDelete();
             }
+            if (checkBoxDelKeyloggerTW78.Checked)
+            {
+                DigTrackFullRemove();
+            }
+            if (_destroyFlag)
+                return;
             Invoke(new MethodInvoker(delegate
             {
                 btnDestroyWindows78Spy.Enabled = true;
@@ -1765,7 +1782,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             }
             else if (currentlang.IndexOf("it", StringComparison.Ordinal) > -1)
             {
-                _rm = it_CH.ResourceManager;
+                _rm = it_IT.ResourceManager;
                 comboBoxLanguageSelect.Text = @"it-CH | Italian";
             }
             else if (currentlang.IndexOf("cs", StringComparison.Ordinal) > -1)
@@ -1831,6 +1848,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             checkBoxDisablePrivateSettings.Text = GetTranslateText("checkBoxDisablePrivateSettings");
             checkBoxDisableWindowsDefender.Text = GetTranslateText("checkBoxDisableWindowsDefender");
             checkBoxKeyLoggerAndTelemetry.Text = GetTranslateText("checkBoxKeyLoggerAndTelemetry");
+            checkBoxDelKeyloggerTW78.Text = GetTranslateText("checkBoxKeyLoggerAndTelemetry");
             checkBoxSetDefaultPhoto.Text = GetTranslateText("checkBoxSetDefaultPhoto");
             checkBoxSPYTasks.Text = GetTranslateText("checkBoxSPYTasks");
             checkBoxSPYTasks78.Text = GetTranslateText("checkBoxSPYTasks");

@@ -254,4 +254,7 @@ Zwróć uwagę na to, że parametrów /destroy i /deleteapp= nie można używać
 	<data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
 		<value>Odinstaluj szpiegujące aktualizacje</value>
 	</data>
+	<data name="labelUninstallUpdates" xml:space="preserve">
+	 	<value>Aktualizacje do odinstalowania:</value>
+	</data>
 </root>
