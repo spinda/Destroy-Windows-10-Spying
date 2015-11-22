@@ -42,6 +42,7 @@ namespace DWS_Lite
 
         public MainDwsForm(string[] args)
         {
+
             InitializeComponent();
             // Re create log file
             RecreateLogFile(LogFileName);
@@ -77,7 +78,6 @@ namespace DWS_Lite
             {
                 _OutPut("Error get icon.", LogLevel.Error);
             }
-            Text += Resources.build_number;
 #if DEBUG
             Text += @" DEBUG ";
 #endif
@@ -870,8 +870,13 @@ namespace DWS_Lite
                     "fe3.delivery.dsp.mp.microsoft.com.nsatc.net",
                     "cache.datamart.windows.com",
                     "db3wns2011111.wns.windows.com", // NEW TH2 spy hosts
-                    "deploy.static.akamaitechnologies.com",
-                    "akamaitechnologies.com"
+                    //"deploy.static.akamaitechnologies.com",
+                    //"akamaitechnologies.com"
+                    "settings-win.data.microsoft.com",
+                    "v10.vortex-win.data.microsoft.com",
+                    "win10.ipv6.microsoft.com",
+                    "ca.telemetry.microsoft.com",
+                    "i1.services.social.microsoft.com.nsatc.net"
                 };
                 var hostslocation = _system32Location + @"drivers\etc\hosts";
                 string hosts = null;

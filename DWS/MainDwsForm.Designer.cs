@@ -41,6 +41,7 @@ namespace DWS_Lite
             this.btnDestroyWindowsSpying = new System.Windows.Forms.Button();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
             this.Windows78Panel = new System.Windows.Forms.Panel();
+            this.checkBoxDelKeyloggerTW78 = new System.Windows.Forms.CheckBox();
             this.labelUninstallUpdates = new System.Windows.Forms.Label();
             this.checkedListBoxUpdatesW78 = new System.Windows.Forms.CheckedListBox();
             this.checkBoxDeleteGWX = new System.Windows.Forms.CheckBox();
@@ -114,7 +115,6 @@ namespace DWS_Lite
             this.BorderLeft = new System.Windows.Forms.PictureBox();
             this.BorderR = new System.Windows.Forms.PictureBox();
             this.SecretButton = new System.Windows.Forms.PictureBox();
-            this.checkBoxDelKeyloggerTW78 = new System.Windows.Forms.CheckBox();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -261,6 +261,20 @@ namespace DWS_Lite
             this.Windows78Panel.Size = new System.Drawing.Size(434, 365);
             this.Windows78Panel.TabIndex = 23;
             this.Windows78Panel.Visible = false;
+            // 
+            // checkBoxDelKeyloggerTW78
+            // 
+            this.checkBoxDelKeyloggerTW78.AutoSize = true;
+            this.checkBoxDelKeyloggerTW78.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxDelKeyloggerTW78.Checked = true;
+            this.checkBoxDelKeyloggerTW78.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxDelKeyloggerTW78.Location = new System.Drawing.Point(3, 71);
+            this.checkBoxDelKeyloggerTW78.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxDelKeyloggerTW78.Name = "checkBoxDelKeyloggerTW78";
+            this.checkBoxDelKeyloggerTW78.Size = new System.Drawing.Size(177, 17);
+            this.checkBoxDelKeyloggerTW78.TabIndex = 6;
+            this.checkBoxDelKeyloggerTW78.Text = "Delete keylogger and telemetry";
+            this.checkBoxDelKeyloggerTW78.UseVisualStyleBackColor = false;
             // 
             // labelUninstallUpdates
             // 
@@ -1237,20 +1251,6 @@ namespace DWS_Lite
             this.SecretButton.TabStop = false;
             this.SecretButton.Click += new System.EventHandler(this.SecretButton_Click);
             // 
-            // checkBoxDelKeyloggerTW78
-            // 
-            this.checkBoxDelKeyloggerTW78.AutoSize = true;
-            this.checkBoxDelKeyloggerTW78.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxDelKeyloggerTW78.Checked = true;
-            this.checkBoxDelKeyloggerTW78.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxDelKeyloggerTW78.Location = new System.Drawing.Point(3, 71);
-            this.checkBoxDelKeyloggerTW78.Margin = new System.Windows.Forms.Padding(0);
-            this.checkBoxDelKeyloggerTW78.Name = "checkBoxDelKeyloggerTW78";
-            this.checkBoxDelKeyloggerTW78.Size = new System.Drawing.Size(177, 17);
-            this.checkBoxDelKeyloggerTW78.TabIndex = 6;
-            this.checkBoxDelKeyloggerTW78.Text = "Delete keylogger and telemetry";
-            this.checkBoxDelKeyloggerTW78.UseVisualStyleBackColor = false;
-            // 
             // MainDwsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1271,7 +1271,7 @@ namespace DWS_Lite
             this.MaximizeBox = false;
             this.Name = "MainDwsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "       DWS Lite   build ";
+            this.Text = "       DWS Lite 1.6 FINAL";
             this.TransparencyKey = System.Drawing.Color.Magenta;
             this.Activated += new System.EventHandler(this.DestroyWindowsSpyingMainForm_Activated);
             this.Deactivate += new System.EventHandler(this.DestroyWindowsSpyingMainForm_Deactivate);
