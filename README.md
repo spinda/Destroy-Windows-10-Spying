@@ -7,7 +7,7 @@ Features:
   - Remove Spying services
   - Remove Windows 10 Metro Apps
   - Support Windows 7/8/8.1/10 or Server 2008-2012 R2
-  - Remove Office 2016 thelemetry
+  - Remove Office 2016 telemetry
   - Open Source!
 
 ## Determination of the system language
