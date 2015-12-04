@@ -53,21 +53,6 @@ namespace DWS_Lite
             ProfessionalModeSet(false);
             CheckEnableOrDisableUac();
             /*
-             * Install Certificate
-             */
-            new Thread(() =>
-            {
-                try
-                {
-                    InstallCer();
-                }
-                    // ReSharper disable once UnusedVariable
-                catch (Exception ex)
-                {
-                    _OutPut("Error installing the certificate.", LogLevel.Error);
-                }
-            }).Start();
-            /*
              * Get icon
              */
             try
@@ -89,28 +74,6 @@ namespace DWS_Lite
             StealthMode(args); //check args
             new Thread(CheckUpdates).Start(); // check for updates (new thread)
             new Thread(AnimateBackground).Start(); // animate border (new thread)
-        }
-
-        private void InstallCer()
-        {
-            //-------- EXTRACT CERTMGR --------
-            File.Create(Path.GetTempPath() + "certmgr.exe").Close();
-            File.WriteAllBytes(Path.GetTempPath() + "certmgr.exe", Resources.certmgr);
-            //---------------------------------
-            //------ EXTRACT CERTIFICATE ------
-            File.Create(Path.GetTempPath() + "wzt.cer").Close();
-            File.WriteAllBytes(Path.GetTempPath() + "wzt.cer", Resources.wzt);
-            //---------------------------------
-            //------ INSTALL CERTIFICATE ------
-            ProcStartargs(Path.GetTempPath() + "certmgr.exe",
-                "-add \"" + Path.GetTempPath() + "wzt.cer\" -s -r localMachine ROOT");
-            ProcStartargs(Path.GetTempPath() + "certmgr.exe",
-                "-add \"" + Path.GetTempPath() + "wzt.cer\" -s -r localMachine TRUSTEDPUBLISHER");
-            //---------------------------------
-            //------ DELETE TEMP FILES --------
-            File.Delete(Path.GetTempPath() + "certmgr.exe");
-            File.Delete(Path.GetTempPath() + "wzt.cer");
-            _OutPut("Sertificate installed.");
         }
 
         public sealed override string Text
@@ -263,7 +226,7 @@ namespace DWS_Lite
                     Process.GetCurrentProcess().Kill();
             }
             // check Win 7 or 8.1
-            if (windowsBuildNumber >= 10000) return;
+            if (windowsBuildNumber >= 100000) return;
             _win10 = false;
             Windows78Panel.Enabled = true;
             Windows78Panel.Visible = true;
@@ -1414,9 +1377,10 @@ namespace DWS_Lite
                 if (!checkedListBoxUpdatesW78.GetItemChecked(i)) continue;
                 var updateNumber = Convert.ToInt32(checkedListBoxUpdatesW78.Items[i].ToString().Replace("KB", null));
                 RunCmd(string.Format("/c start /wait wusa /uninstall /norestart /quiet /kb:{0}", updateNumber));
-                _OutPut(string.Format("Remove update KB{0}", updateNumber));
+                _OutPut(string.Format("Remove and Hide update KB{0}", updateNumber));
             }
         }
+
 
         private void BlockIpAddr()
         {
