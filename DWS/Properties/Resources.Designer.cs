@@ -71,7 +71,7 @@ namespace DWS_Lite.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 08-Nov-15 21:09:27.94 
+        ///   Looks up a localized string similar to 04-Dec-15 21:42:36.18 
         ///.
         /// </summary>
         internal static string build_datatime {
@@ -81,21 +81,11 @@ namespace DWS_Lite.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 685.
+        ///   Looks up a localized string similar to 705.
         /// </summary>
         internal static string build_number {
             get {
                 return ResourceManager.GetString("build_number", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] certmgr {
-            get {
-                object obj = ResourceManager.GetObject("certmgr", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         
@@ -176,16 +166,6 @@ namespace DWS_Lite.Properties {
             get {
                 object obj = ResourceManager.GetObject("warning", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] wzt {
-            get {
-                object obj = ResourceManager.GetObject("wzt", resourceCulture);
-                return ((byte[])(obj));
             }
         }
     }
