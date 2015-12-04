@@ -226,7 +226,7 @@ namespace DWS_Lite
                     Process.GetCurrentProcess().Kill();
             }
             // check Win 7 or 8.1
-            if (windowsBuildNumber >= 100000) return;
+            if (windowsBuildNumber >= 10000) return;
             _win10 = false;
             Windows78Panel.Enabled = true;
             Windows78Panel.Visible = true;
