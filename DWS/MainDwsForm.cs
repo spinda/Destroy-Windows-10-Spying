@@ -794,7 +794,6 @@ namespace DWS_Lite
                     "telemetry.microsoft.com",
                     "telemetry.appex.bing.net",
                     "telemetry.urs.microsoft.com",
-                    "telemetry.appex.bing.net:443",
                     "settings-sandbox.data.microsoft.com",
                     "watson.live.com",
                     "statsfe2.ws.microsoft.com",
@@ -1260,11 +1259,21 @@ namespace DWS_Lite
                     _rm = lt_LT.ResourceManager;
                     ChangeLanguage();
                     break;
+                case "ja-JP":
+                    _rm = ja_JP.ResourceManager;
+                    ChangeLanguage();
+                    break;
                 default:
                     _rm = en_US.ResourceManager;
                     ChangeLanguage();
                     break;
             }
+        }
+
+        private void btnFixRotateScreen_Click(object sender, EventArgs e)
+        {
+            SetRegValueHklm(@"SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors", "DisableSensors", "0", RegistryValueKind.DWord);
+            MessageBox.Show(GetTranslateText("Complete"), @"Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnDestroyWindows78Spy_Click(object sender, EventArgs e)
@@ -1386,38 +1395,58 @@ namespace DWS_Lite
         {
             string[] ipAddr =
             {
+                "104.96.147.3",
                 "111.221.29.177",
                 "111.221.29.253",
+                "111.221.64.0-111.221.127.255", // singapure
                 "131.253.40.37",
-                "134.170.30.202",
                 "134.170.115.60",
                 "134.170.165.248",
                 "134.170.165.253",
                 "134.170.185.70",
+                "134.170.30.202",
                 "137.116.81.24",
                 "137.117.235.16",
                 "157.55.129.21",
+                "157.55.130.0-157.55.130.255",
                 "157.55.133.204",
+                "157.55.235.0-157.55.235.255",
+                "157.55.236.0-157.55.236.255", // NEW TH2 SPY IP
+                "157.55.52.0-157.55.52.255",
+                "157.55.56.0-157.55.56.255",
+                "157.56.106.189",
                 "157.56.121.89",
+                "157.56.124.87", // NEW TH2 Spy IP
                 "157.56.91.77",
                 "168.63.108.233",
+                "191.232.139.2",
                 "191.232.139.254",
                 "191.232.80.58",
                 "191.232.80.62",
                 "191.237.208.126",
-                //"204.79.197.200", // BING.COM
+                "195.138.255.0-195.138.255.255",
+                "2.22.61.43",
+                "2.22.61.66",
+                "204.79.197.200",
                 "207.46.101.29",
                 "207.46.114.58",
                 "207.46.223.94",
                 "207.68.166.254",
                 "212.30.134.204",
                 "212.30.134.205",
+                "213.199.179.0-213.199.179.255", // Ireland
                 "23.102.21.4",
-                "23.99.10.11",
                 "23.218.212.69",
+                "23.223.20.82", // cache.datamart.windows.com
+                "23.57.101.163",
+                "23.57.107.163",
+                "23.57.107.27",
+                "23.99.10.11",
+                "64.4.23.0-64.4.23.255",
                 "64.4.54.22",
                 "64.4.54.32",
                 "64.4.6.100",
+                "65.39.117.230",
                 "65.39.117.230",
                 "65.52.100.11",
                 "65.52.100.7",
@@ -1427,43 +1456,19 @@ namespace DWS_Lite
                 "65.52.100.93",
                 "65.52.100.94",
                 "65.52.108.29",
+                "65.52.108.33",
                 "65.55.108.23",
                 "65.55.138.114",
                 "65.55.138.126",
                 "65.55.138.186",
+                "65.55.223.0-65.55.223.255",
                 "65.55.252.63",
                 "65.55.252.71",
                 "65.55.252.92",
                 "65.55.252.93",
                 "65.55.29.238",
                 "65.55.39.10",
-                "191.232.139.2",
-                "64.4.23.0-64.4.23.255",
-                "111.221.64.0-111.221.127.255", // singapure
-                "157.55.235.0-157.55.235.255",
-                "157.55.56.0-157.55.56.255",
-                "157.55.52.0-157.55.52.255",
-                "157.55.130.0-157.55.130.255",
-                "65.55.223.0-65.55.223.255",
-                "213.199.179.0-213.199.179.255", // Ireland
-                "195.138.255.0-195.138.255.255",
-                "23.223.20.82", // cache.datamart.windows.com
-                "77.67.29.176", // NEW TH2 Spy IP
-                "157.56.124.87", // NEW TH2 Spy IP
-                "157.55.236.0-157.55.236.255", // NEW TH2 SPY IP
-                "104.96.147.3",
-                "23.57.107.27",
-                "23.57.107.163",
-                "23.57.101.163",
-                "2.22.61.43",
-                "2.22.61.66",
-                "65.39.117.230",
-                "23.218.212.69",
-                "134.170.30.202",
-                "137.116.81.24",
-                "157.56.106.189",
-                "204.79.197.200",
-                "65.52.108.33"
+                "77.67.29.176" // NEW TH2 Spy IP
             };
             foreach (var currentIpAddr in ipAddr)
             {
@@ -1490,6 +1495,11 @@ namespace DWS_Lite
         private void linkLabelLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://www.apache.org/licenses/LICENSE-2.0");
+        }
+
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://vk.com/dws_wzor_net");
         }
 
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1701,11 +1711,6 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             sf.Close();
         }
 
-        private void DonatePictureBox_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WCCLBQNQPMS6C");
-        }
-
         #region Language
 
         private string _GetLang(IEnumerable<string> args)
@@ -1796,6 +1801,11 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
                 _rm = lt_LT.ResourceManager;
                 comboBoxLanguageSelect.Text = @"lt-LT | Lithuanian";
             }
+            else if (currentlang.IndexOf("ja", StringComparison.Ordinal) > -1)
+            {
+                _rm = ja_JP.ResourceManager;
+                comboBoxLanguageSelect.Text = @"ja-JP | 日本語";
+            }
             else
             {
                 _rm = en_US.ResourceManager;
@@ -1807,6 +1817,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
         {
             // Transtale all controls
             ReadmeRichTextBox.Text = GetTranslateText("ReadMeTextBox");
+            btnFixRotateScreen.Text = GetTranslateText("btnFixRotateScreen");
             tabPageMain.Text = GetTranslateText("tabPageMain");
             tabPageAbout.Text = GetTranslateText("tabPageAbout");
             tabPageReadMe.Text = GetTranslateText("tabPageReadMe");
@@ -2038,5 +2049,6 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
         {
             CaptionWindow.ForeColor = Color.FromArgb(164, 164, 164);
         }
+
     }
 }

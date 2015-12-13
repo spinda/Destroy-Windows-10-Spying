@@ -71,7 +71,7 @@ namespace DWS_Lite.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 04-Dec-15 21:42:36.18 
+        ///   Looks up a localized string similar to 13-Dec-15 15:57:37.25 
         ///.
         /// </summary>
         internal static string build_datatime {
@@ -81,7 +81,7 @@ namespace DWS_Lite.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 705.
+        ///   Looks up a localized string similar to 715.
         /// </summary>
         internal static string build_number {
             get {
@@ -115,16 +115,6 @@ namespace DWS_Lite.Properties {
         internal static System.Drawing.Bitmap close2 {
             get {
                 object obj = ResourceManager.GetObject("close2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap donatebtn {
-            get {
-                object obj = ResourceManager.GetObject("donatebtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

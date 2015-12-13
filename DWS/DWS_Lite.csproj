@@ -73,6 +73,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="lang\ja-JP.Designer.cs">
+      <DependentUpon>ja-JP.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="MainDwsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +172,10 @@
     <EmbeddedResource Include="lang\lt-LT.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lt-LT.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lang\ja-JP.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ja-JP.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MainDwsForm.resx">
       <DependentUpon>MainDwsForm.cs</DependentUpon>
@@ -264,7 +273,6 @@
     <None Include="Resources\close2.png" />
     <None Include="Resources\minimize1.png" />
     <None Include="Resources\close1.png" />
-    <None Include="Resources\donatebtn.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\minimize.png" />
     <None Include="Resources\warning.png" />

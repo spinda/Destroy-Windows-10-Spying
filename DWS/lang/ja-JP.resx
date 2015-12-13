@@ -118,148 +118,143 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
-    <value>Удалить все Win 10 Metro приложения</value>
+    <value>全ての Windows 10 Metroアプリを削除</value>
   </data>
   <data name="btnDeleteOneDrive" xml:space="preserve">
-    <value>Удалить One Drive</value>
+    <value>One Driveを削除</value>
   </data>
   <data name="btnOpenAndEditHosts" xml:space="preserve">
-    <value>Открыть для редактирования hosts</value>
+    <value>HOSTSファイルを開いて編集</value>
   </data>
   <data name="btnProfessionalMode" xml:space="preserve">
-    <value>Включить профессиональный режим</value>
+    <value>プロフェッショナルモードを有効にする</value>
   </data>
   <data name="btnRestoreSystem" xml:space="preserve">
-    <value>Восстановить систему</value>
+    <value>システムを復元</value>
   </data>
   <data name="checkBoxAddToHosts" xml:space="preserve">
-    <value>Добавить шпионские домены в hosts, и Windows Firewall</value>
+    <value>スパイのドメインを hostsファイルに追加して、Windows Firewallに阻止規則を追加する</value>
   </data>
   <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
-    <value>Создать точку восстановления системы</value>
+    <value>システムの復元ポイントを作成する</value>
   </data>
   <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
-    <value>Удалить Win 10 Metro приложения</value>
+    <value>Windows 10 metroアプリを削除する</value>
   </data>
   <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
-    <value>Отключить приватные настройки</value>
+    <value>プラーバシー設定を無効にする</value>
   </data>
   <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
-    <value>Отключить Windows Defender</value>
+    <value>Windows Defenderを無効にする</value>
   </data>
   <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
-    <value>Отключить кейлоггер, и телеметрию</value>
+    <value>キーロガーとテレメトリー（遠隔測定）を削除する</value>
   </data>
   <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
-    <value>Установить стандартный просмотрщик фото</value>
+    <value>デフォルトの Windows Photo viewerを設定する</value>
   </data>
   <data name="checkBoxSPYTasks" xml:space="preserve">
-    <value>Отключить шпионские задачи</value>
+    <value>スパイタスクを無効にする</value>
   </data>
   <data name="Complete" xml:space="preserve">
-    <value>Завершено</value>
+    <value>完了</value>
   </data>
   <data name="CompleteMSG" xml:space="preserve">
-    <value>Завершено!
-Требуется перезагрузить компьютер.
-Перезагрузить сейчас?</value>
+    <value>完了！
+全てのスパイウェアを無効にするには再起動が必要です。
+再起動しますか？</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Удалить</value>
+    <value>削除</value>
   </data>
   <data name="DeleteApps" xml:space="preserve">
-    <value>Удалить приложения</value>
+    <value>アプリを削除</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Отключить</value>
+    <value>無効</value>
   </data>
   <data name="Enable" xml:space="preserve">
-    <value>Включить</value>
+    <value>有効</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Ошибка</value>
+    <value>エラー</value>
   </data>
   <data name="ErrorMSG" xml:space="preserve">
-    <value>Упс. Что-то пошло не так. Ошибок - {0} 
-Но всё равно требуется перезагрузить компьютер.
-Перезагрузить сейчас?</value>
+    <value>完了。 エラー - {0}
+全てのスパイウェアを無効にするには再起動が必要です。
+再起動しますか？</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Информация</value>
+    <value>情報</value>
   </data>
   <data name="labelInfoDeleteMetroApps" xml:space="preserve">
-    <value>Некоторые METRO приложения удаляются навсегда, и их нельзя восстановить</value>
+    <value>Metroアプリを完全に削除します。 復元は出来なくなります。</value>
   </data>
   <data name="Links" xml:space="preserve">
-    <value>Ссылки</value>
+    <value>リンク</value>
   </data>
   <data name="PressOkAndWait15" xml:space="preserve">
-    <value>Нажмите ОК, и подождите 15 минут.</value>
+    <value>OKを押して、15分待ちます。</value>
   </data>
   <data name="Question" xml:space="preserve">
-    <value>Вопрос.</value>
+    <value>質問</value>
   </data>
   <data name="Really" xml:space="preserve">
-    <value>Реально? О_о</value>
+    <value>本当に？</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Требуется перезагрузка
-Перезагрузить сейчас?</value>
+    <value>再起動が必要です。
+再起動しますか？</value>
   </data>
   <data name="tabPageAbout" xml:space="preserve">
-    <value>О программе</value>
+    <value>DWSについて</value>
   </data>
   <data name="tabPageMain" xml:space="preserve">
-    <value>Главная</value>
+    <value>メイン</value>
   </data>
   <data name="tabPageReadMe" xml:space="preserve">
-    <value>Прочитай меня</value>
+    <value>読んでね</value>
   </data>
   <data name="tabPageSettings" xml:space="preserve">
-    <value>Настройки</value>
+    <value>設定</value>
   </data>
   <data name="tabPageUtilites" xml:space="preserve">
-    <value>Утилиты</value>
+    <value>ツール</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Внимание</value>
+    <value>警告</value>
   </data>
   <data name="RemoveAllOldFirewallRules" xml:space="preserve">
-    <value>Удалить старые правила файрволла</value>
+    <value>全ての古いDWSの Firewall設定を削除</value>
   </data>
   <data name="ReportABug" xml:space="preserve">
-    <value>Сообщить о баге</value>
+    <value>バグを報告する</value>
   </data>
   <data name="ReadMeTextBox" xml:space="preserve">
-    <value>Данная программа уничтожает шпионство на Windows 7/8/8.1/10.
-У программы открытый исходный код,который находится на github.
-Данная программа уничтожает шпионство полностью. Удаляет некоторые элементы Телеметрии,а остальные отключает, отключает Windows Defender, Кортану,и многое другое. Так же программа отключает Windows Update, что позволяет вам остаться анонимным, и не получать новых шпионских обновлений.
-Функция удаления Metro приложений очень хороша, т.к. они работают в фоновом режиме, и жрут оперативную память, а некоторые из них шпионят за  вами.
-Так же программа блокирует многие IP адреса Microsoft, на которые идут данные, и добавляет большинство шпионских хостов в hosts. 
-Почти все действия программы необратимы, и их не откатить даже через точку восстановления системы. 
-На данный момент это самая эффективная программа, которую помогает разрабатывать, и улучшать большое сообщество пользователей Windows 10, некоторые помогают переписать код на более производительный, а некоторые помогают с переводом программы на другие языки.
+    <value>このプログラム（以下 DWS）は Windows 7/8/8.1/10のスパイ活動を破壊します。
+DWSはオープンソースで、githubに在ります。
+DWSはスパイ活動を完全に破壊します。テレメトリの幾つかの要素を削除し、その他をオフにします。 Windows Defenderや Cortana、それ以外の物を無効にします。このプログラムは Windows Updateを無効にし、新たなスパイウェアの更新を受信しない様にして、あなたの匿名性を保持します。
+Metroアプリを削除するのは非常に良い、なぜなら、それらは裏で動き、メモリを消費し、それらの幾つかはあなたをスパイしています。
+また、DWSは沢山の Microsoftの IPアドレスをブロックしてデータの収集を防ぎます。hostsファイルにほぼ全てのスパイ活動のアドレスを追加します。
+殆どのプログラムは不可逆的であり、システムの復元ポイントでさえも変更を元に戻す事は出来ません。
+DWSは現時点で一番効果的なプログラムです。DWSは開発中であり、Windows10のユーザーコミュニティによって向上中である。いくつかの助けが DWSのプログラムコードを更に生産的に書き換え、また、いくつかの助けが他の言語への翻訳をします。
 
-Аргументы для командной строки:
-/lang= - установить язык запуска программы. После = надо написать название языка. Пример: /lang=en-US
-/deleteapp= - позволяет удалить приложения Metro в Windows . После знака = надо написать полное название, или часть названия приложения. Пример: /deleteapp=bing или /deleteapp=note
-/destroy - аргумент для удаления шпионских модулей.
-ВАЖНО! Аргументы /destroy и /deleteapp= нельзя комбинировать между собой, и аргумент /deleteapp= нельзя использовать несколько раз.
-	
-</value>
+コマンドライン引数：
+/lang= - プログラム開始時の言語を指定します。 例： /lang=ja
+/deleteapp= - metoroアプリの削除を許可します。 例： /deleteapp=bing または /deleteapp=note
+/destroy - スパイウェアを除去します。
+重要事項！ /destroy と /deleteapp= は同時に使用出来ない、それに、/deleteapp= は複数回の使用は出来ない。</value>
   </data>
   <data name="FindOffice16FileT" xml:space="preserve">
-    <value>Пожалуйста, укажите путь до файла msosync.exe . Если Office 2016 установлен стандартно на диск C, то нажмите "Отмена"</value>
+    <value>msosync.exeファイルの場所を指定して下さい。もし Office 2016をＣドライブに標準インストールしたならば "Cancel"をクリックして下さい。</value>
   </data>
   <data name="checkBoxDeleteGWX" xml:space="preserve">
-    <value>Удалить GWX (Получить Windows 10)</value>
+    <value>GWX（Get Windows 10）を削除する</value>
   </data>
   <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
-    <value>Удалить шпионские обновления.</value>
+    <value>スパイの更新を削除する</value>
   </data>
   <data name="labelUninstallUpdates" xml:space="preserve">
-    <value>Удалить следующие обновления:</value>
-  </data>
-  <data name="btnFixRotateScreen" xml:space="preserve">
-    <value>Починить поворот экрана</value>
+    <value>更新をアンインストール：</value>
   </data>
 </root>

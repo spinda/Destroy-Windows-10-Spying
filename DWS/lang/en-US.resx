@@ -257,4 +257,7 @@ IMPORTANT! Arguments /destroy and /deleteapp= can not be combined, and the argum
   <data name="labelUninstallUpdates" xml:space="preserve">
     <value>Uninstall updates:</value>
   </data>
+  <data name="btnFixRotateScreen" xml:space="preserve">
+    <value>Fix screen rotate</value>
+  </data>
 </root>

@@ -63,6 +63,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
+            this.DoubleBuffered = true;
             this.MinimizeBox = false;
             this.Name = "SecretForm";
             this.ShowIcon = false;

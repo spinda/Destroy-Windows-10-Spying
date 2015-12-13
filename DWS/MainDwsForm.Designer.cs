@@ -71,6 +71,7 @@ namespace DWS_Lite
             this.checkBoxDeleteMailCalendarMaps = new System.Windows.Forms.CheckBox();
             this.btnProfessionalMode = new System.Windows.Forms.CheckBox();
             this.tabPageUtilites = new System.Windows.Forms.TabPage();
+            this.btnFixRotateScreen = new System.Windows.Forms.Button();
             this.btnDisableOfficeUpdate = new System.Windows.Forms.Button();
             this.btnRemoveOldFirewallRules = new System.Windows.Forms.Button();
             this.btnDeleteOneDrive = new System.Windows.Forms.Button();
@@ -86,7 +87,6 @@ namespace DWS_Lite
             this.btnDeleteAllWindows10Apps = new System.Windows.Forms.Button();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
             this.ReleaseName = new System.Windows.Forms.Label();
-            this.DonatePictureBox = new System.Windows.Forms.PictureBox();
             this.groupBoxLanguage = new System.Windows.Forms.GroupBox();
             this.comboBoxLanguageSelect = new System.Windows.Forms.ComboBox();
             this.btnReportABug = new System.Windows.Forms.Button();
@@ -115,6 +115,7 @@ namespace DWS_Lite
             this.BorderLeft = new System.Windows.Forms.PictureBox();
             this.BorderR = new System.Windows.Forms.PictureBox();
             this.SecretButton = new System.Windows.Forms.PictureBox();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -124,7 +125,6 @@ namespace DWS_Lite
             this.groupBoxWindowsUpdate.SuspendLayout();
             this.groupBoxUACEdit.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DonatePictureBox)).BeginInit();
             this.groupBoxLanguage.SuspendLayout();
             this.groupBoxLinks.SuspendLayout();
             this.tabPageReadMe.SuspendLayout();
@@ -680,6 +680,7 @@ namespace DWS_Lite
             // 
             this.tabPageUtilites.BackColor = System.Drawing.Color.White;
             this.tabPageUtilites.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageUtilites.Controls.Add(this.btnFixRotateScreen);
             this.tabPageUtilites.Controls.Add(this.btnDisableOfficeUpdate);
             this.tabPageUtilites.Controls.Add(this.btnRemoveOldFirewallRules);
             this.tabPageUtilites.Controls.Add(this.btnDeleteOneDrive);
@@ -694,6 +695,18 @@ namespace DWS_Lite
             this.tabPageUtilites.Size = new System.Drawing.Size(445, 400);
             this.tabPageUtilites.TabIndex = 2;
             this.tabPageUtilites.Text = "Utilites";
+            // 
+            // btnFixRotateScreen
+            // 
+            this.btnFixRotateScreen.BackColor = System.Drawing.Color.Transparent;
+            this.btnFixRotateScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFixRotateScreen.Location = new System.Drawing.Point(14, 176);
+            this.btnFixRotateScreen.Name = "btnFixRotateScreen";
+            this.btnFixRotateScreen.Size = new System.Drawing.Size(202, 23);
+            this.btnFixRotateScreen.TabIndex = 11;
+            this.btnFixRotateScreen.Text = "Fix screen rotate";
+            this.btnFixRotateScreen.UseVisualStyleBackColor = false;
+            this.btnFixRotateScreen.Click += new System.EventHandler(this.btnFixRotateScreen_Click);
             // 
             // btnDisableOfficeUpdate
             // 
@@ -863,7 +876,6 @@ namespace DWS_Lite
             this.tabPageAbout.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPageAbout.Controls.Add(this.ReleaseName);
-            this.tabPageAbout.Controls.Add(this.DonatePictureBox);
             this.tabPageAbout.Controls.Add(this.groupBoxLanguage);
             this.tabPageAbout.Controls.Add(this.btnReportABug);
             this.tabPageAbout.Controls.Add(this.linkLabelOtherThanks);
@@ -885,22 +897,9 @@ namespace DWS_Lite
             this.ReleaseName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.ReleaseName.Location = new System.Drawing.Point(3, 3);
             this.ReleaseName.Name = "ReleaseName";
-            this.ReleaseName.Size = new System.Drawing.Size(76, 19);
+            this.ReleaseName.Size = new System.Drawing.Size(109, 19);
             this.ReleaseName.TabIndex = 14;
-            this.ReleaseName.Text = "TH2 RTM";
-            // 
-            // DonatePictureBox
-            // 
-            this.DonatePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.DonatePictureBox.BackgroundImage = global::DWS_Lite.Properties.Resources.donatebtn;
-            this.DonatePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DonatePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DonatePictureBox.Location = new System.Drawing.Point(8, 214);
-            this.DonatePictureBox.Name = "DonatePictureBox";
-            this.DonatePictureBox.Size = new System.Drawing.Size(150, 48);
-            this.DonatePictureBox.TabIndex = 13;
-            this.DonatePictureBox.TabStop = false;
-            this.DonatePictureBox.Click += new System.EventHandler(this.DonatePictureBox_Click);
+            this.ReleaseName.Text = "Fixes? O_o :D";
             // 
             // groupBoxLanguage
             // 
@@ -927,6 +926,7 @@ namespace DWS_Lite
             "es-ES | Spanish",
             "fr-FR | French",
             "it-CH | Italian",
+            "ja-JP | 日本語",
             "lt-LT | Lithuanian",
             "nl-NL | Dutch",
             "pl-PL | Polish",
@@ -968,6 +968,7 @@ namespace DWS_Lite
             // groupBoxLinks
             // 
             this.groupBoxLinks.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxLinks.Controls.Add(this.linkLabel7);
             this.groupBoxLinks.Controls.Add(this.linkLabel6);
             this.groupBoxLinks.Controls.Add(this.linkLabelSourceCode);
             this.groupBoxLinks.Controls.Add(this.linkLabel1);
@@ -998,7 +999,7 @@ namespace DWS_Lite
             // 
             this.linkLabelSourceCode.AutoSize = true;
             this.linkLabelSourceCode.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelSourceCode.Location = new System.Drawing.Point(69, 37);
+            this.linkLabelSourceCode.Location = new System.Drawing.Point(6, 37);
             this.linkLabelSourceCode.Name = "linkLabelSourceCode";
             this.linkLabelSourceCode.Size = new System.Drawing.Size(116, 13);
             this.linkLabelSourceCode.TabIndex = 8;
@@ -1010,7 +1011,7 @@ namespace DWS_Lite
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Location = new System.Drawing.Point(117, 17);
+            this.linkLabel1.Location = new System.Drawing.Point(85, 17);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(66, 13);
             this.linkLabel1.TabIndex = 2;
@@ -1047,7 +1048,7 @@ namespace DWS_Lite
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Location = new System.Drawing.Point(189, 17);
+            this.linkLabel2.Location = new System.Drawing.Point(133, 37);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(50, 13);
             this.linkLabel2.TabIndex = 3;
@@ -1251,6 +1252,18 @@ namespace DWS_Lite
             this.SecretButton.TabStop = false;
             this.SecretButton.Click += new System.EventHandler(this.SecretButton_Click);
             // 
+            // linkLabel7
+            // 
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel7.Location = new System.Drawing.Point(164, 17);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(65, 13);
+            this.linkLabel7.TabIndex = 10;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "VKONTAKTE";
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
+            // 
             // MainDwsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1266,6 +1279,7 @@ namespace DWS_Lite
             this.Controls.Add(this._CloseButton);
             this.Controls.Add(this.CaptionWindow);
             this.Controls.Add(this.FormTabsControl);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -1290,7 +1304,6 @@ namespace DWS_Lite
             this.groupBoxUACEdit.ResumeLayout(false);
             this.tabPageAbout.ResumeLayout(false);
             this.tabPageAbout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DonatePictureBox)).EndInit();
             this.groupBoxLanguage.ResumeLayout(false);
             this.groupBoxLinks.ResumeLayout(false);
             this.groupBoxLinks.PerformLayout();
@@ -1382,7 +1395,6 @@ namespace DWS_Lite
         private PictureBox BorderLeft;
         private PictureBox BorderR;
         private PictureBox SecretButton;
-        private PictureBox DonatePictureBox;
         private Panel Win10SettingsPanel;
         private Panel Windows78Panel;
         private CheckBox checkBoxAddToHosts78;
@@ -1393,6 +1405,8 @@ namespace DWS_Lite
         private CheckedListBox checkedListBoxUpdatesW78;
         private Label labelUninstallUpdates;
         private CheckBox checkBoxDelKeyloggerTW78;
+        private Button btnFixRotateScreen;
+        private LinkLabel linkLabel7;
     }
 }
 
