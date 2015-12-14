@@ -254,4 +254,10 @@
   <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
     <value>删除用于监视的更新</value>
   </data>
+  <data name="labelUninstallUpdates" xml:space="preserve">
+    <value>卸载更新程序：</value>
+  </data>
+  <data name="btnFixRotateScreen" xml:space="preserve">
+    <value>修正屏幕不旋转</value>
+  </data>
 </root>
