@@ -258,4 +258,7 @@
   <data name="labelUninstallUpdates" xml:space="preserve">
     <value>Видалити наступні онвлення:</value>
   </data>
+  <data name="btnFixRotateScreen" xml:space="preserve">
+    <value>Виправити поворот екрану</value>
+  </data>
 </root>

@@ -79,6 +79,15 @@ namespace DWS_Lite.lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Löse Bildschirmdrehung.
+        /// </summary>
+        internal static string btnFixRotateScreen {
+            get {
+                return ResourceManager.GetString("btnFixRotateScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Die HOSTS-Datei bearbeiten.
         /// </summary>
         internal static string btnOpenAndEditHosts {
@@ -308,7 +317,7 @@ namespace DWS_Lite.lang {
         ///
         ///Ferner kann die Anwendung, sofern Sie es wünschen, auch die Windows Store Anwendungen entfernen. Diese laufen oftmals im Hintergrund und verwenden so den Speicher und die Rechenleistung ihrer Computers.
         ///
-        ///Dieses  [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReadMeTextBox {
             get {

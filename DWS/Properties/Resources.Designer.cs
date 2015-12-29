@@ -71,25 +71,6 @@ namespace DWS_Lite.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 13-Dec-15 15:57:37.25 
-        ///.
-        /// </summary>
-        internal static string build_datatime {
-            get {
-                return ResourceManager.GetString("build_datatime", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 715.
-        /// </summary>
-        internal static string build_number {
-            get {
-                return ResourceManager.GetString("build_number", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap close {

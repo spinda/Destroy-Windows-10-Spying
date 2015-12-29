@@ -245,4 +245,7 @@ ATTENTION! Les arguments /destroy et /deleteapp= ne peuvent pas être utilisé e
 <data name="labelUninstallUpdates" xml:space="preserve">
 <value>Désinstaller les mises à jour :</value>
 </data>
+<data name="btnFixRotateScreen" xml:space="preserve">
+<value>Corriger la rotation de l'écran</value>
+</data>
 </root>

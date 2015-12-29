@@ -6,7 +6,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
-using System.Net;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.Security.AccessControl;
@@ -21,7 +20,7 @@ using Microsoft.Win32;
 
 namespace DWS_Lite
 {
-    public partial class MainDwsForm : Form
+    public sealed partial class MainDwsForm : Form
     {
         private const string LogFileName = "DWS.log";
         // ReSharper disable once InconsistentNaming
@@ -44,6 +43,7 @@ namespace DWS_Lite
         {
 
             InitializeComponent();
+            DoubleBuffered = true;
             // Re create log file
             RecreateLogFile(LogFileName);
             // Check windows version
@@ -63,20 +63,13 @@ namespace DWS_Lite
             {
                 _OutPut("Error get icon.", LogLevel.Error);
             }
-#if DEBUG
-            Text += @" DEBUG ";
-#endif
-            labelBuildDataTime.Text = string.Format(@"Build number:{0}  |  Build Time:{1}", Resources.build_number,
-                Resources.build_datatime);
-
             SetLanguage(_GetLang(args)); // set language
             ChangeLanguage(); // change language
             StealthMode(args); //check args
-            new Thread(CheckUpdates).Start(); // check for updates (new thread)
             new Thread(AnimateBackground).Start(); // animate border (new thread)
         }
 
-        public sealed override string Text
+        public override string Text
         {
             get { return base.Text; }
             set
@@ -119,38 +112,6 @@ namespace DWS_Lite
             {
 #if DEBUG
                 _OutPut(string.Format("Error in AnimateBackground: {0}", ex.Message), LogLevel.Debug);
-#endif
-            }
-        }
-
-        private void CheckUpdates()
-        {
-            try
-            {
-                var latestVersion = new WebClient().DownloadString(
-                    "http://raw.githubusercontent.com/Nummer/Destroy-Windows-10-Spying/master/DWS/Resources/build_number.txt");
-                    // download latest build number on github
-                // download latest build number on github
-                if (Convert.ToInt32(Resources.build_number) <
-                    Convert.ToInt32(latestVersion))
-                {
-                    if (
-                        MessageBox.Show(
-                            string.Format("New version found.\nBuild number: {0}\nDownload now?", latestVersion),
-                            @"Update",
-                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        Process.Start("http://dws.wzor.net/");
-                    }
-                }
-                _OutPut(string.Format("Latest version number: {0}", latestVersion));
-            }
-                // ReSharper disable once UnusedVariable
-            catch (Exception ex)
-            {
-                _OutPut("Error check updates.", LogLevel.Error);
-#if DEBUG
-                _OutPut(ex.Message, LogLevel.Debug);
 #endif
             }
         }
@@ -754,7 +715,7 @@ namespace DWS_Lite
                 @"Microsoft\Windows\Media Center\RegisterSearch",
                 @"Microsoft\Windows\Media Center\ReindexSearchRoot",
                 @"Microsoft\Windows\Media Center\SqlLiteRecoveryTask",
-                @"Microsoft\Windows\Media Center\UpdateRecordPath"
+                @"Microsoft\Windows\Media Center\UpdateRecordPath",
             };
             foreach (var currentTask in disabletaskslist)
             {
@@ -822,7 +783,6 @@ namespace DWS_Lite
                     "ssw.live.com",
                     "ca.telemetry.microsoft.com",
                     "i1.services.social.microsoft.com",
-                    "i1.services.social.microsoft.com.nsatc.net",
                     "df.telemetry.microsoft.com",
                     "reports.wes.df.telemetry.microsoft.com",
                     "cs1.wpc.v0cdn.net",
@@ -840,7 +800,10 @@ namespace DWS_Lite
                     "v10.vortex-win.data.microsoft.com",
                     "win10.ipv6.microsoft.com",
                     "ca.telemetry.microsoft.com",
-                    "i1.services.social.microsoft.com.nsatc.net"
+                    "i1.services.social.microsoft.com.nsatc.net",
+                    "msnbot-207-46-194-33.search.msn.com",
+                    "settings.data.microsof.com",
+                    "telecommand.telemetry.microsoft.com.nsat­c.net"
                 };
                 var hostslocation = _system32Location + @"drivers\etc\hosts";
                 string hosts = null;
@@ -1051,25 +1014,9 @@ namespace DWS_Lite
             Process.Start("https://goo.gl/EpFSzj"); //https://twitter.com/nummerok
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://goo.gl/fxEkcl"); //http://wzor.net/
-        }
-
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://goo.gl/CDaZye"); //http://forum.ru-board.com/topic.cgi?forum=2&topic=5328
-        }
-
-        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://goo.gl/Xb9sy7");
-            //http://forums.mydigitallife.info/threads/64692-Program-Destroy-Windows-Spying-(DWS)
-        }
-
-        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://goo.gl/sZIfQD"); //http://rutracker.org/forum/viewtopic.php?t=5054236
         }
 
         private void btnProfessionalMode_Click(object sender, EventArgs e)
@@ -1107,11 +1054,6 @@ namespace DWS_Lite
             {
                 checkBoxCreateSystemRestorePoint.Enabled = enableordisable;
             }
-        }
-
-        private void linkLabelOtherThanks_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            MessageBox.Show(@"Чёрная поганка, Архангел, Yele, TRoskop, artemiy , moldabekovm", @"Thanks");
         }
 
         private void btnDeleteMetroAppsInfo_Click(object sender, EventArgs e)
@@ -1192,11 +1134,6 @@ namespace DWS_Lite
             }
 
             MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"));
-        }
-
-        private void btnReportABug_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying/issues/new");
         }
 
         private void comboBoxLanguageSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -1353,30 +1290,33 @@ namespace DWS_Lite
 
         private readonly string[] _updatesnumberlist =
         {
-            "3080149",
-            "3075249",
-            "3068708",
-            "3044374",
-            "3035583",
-            "3022345",
-            "3021917",
-            "3015249",
-            "3012973",
-            "2990214",
-            "2977759",
-            "2976978",
             "2952664",
-            "2922324",
-            "971033",
-            "3083324", //win7
-            "3083325", //win8
-            "3088195",
-            "3093983",
-            "3093513",
+            "2976978",
+            "2990214",
+            "3021917",
+            "3035583",
             "3042058",
+            "3044374",
+            "3050265",
+            "3065987",
+            "3065988",
+            "3068708",
+            "3075249",
+            "3075851",
+            "3075853",
+            "3080149",
+            "3083324",
+            "3083325",
             "3083710",
-            "3050265", //Windows update, get win 10.
-            "3112336" //https://support.microsoft.com/en-us/kb/3112336 - issue #213
+            "3083711",
+            "3088195",
+            "3093513",
+            "3093983",
+            "3102810",
+            "3112336",
+            "971033",
+            "976932"
+            // THX rgadguard
         };
 
         private void DeleteUpdatesWin78()
@@ -1412,12 +1352,14 @@ namespace DWS_Lite
                 "157.55.133.204",
                 "157.55.235.0-157.55.235.255",
                 "157.55.236.0-157.55.236.255", // NEW TH2 SPY IP
+                "157.55.240.220",
                 "157.55.52.0-157.55.52.255",
                 "157.55.56.0-157.55.56.255",
                 "157.56.106.189",
                 "157.56.121.89",
                 "157.56.124.87", // NEW TH2 Spy IP
                 "157.56.91.77",
+                "157.56.96.54",
                 "168.63.108.233",
                 "191.232.139.2",
                 "191.232.139.254",
@@ -1473,6 +1415,7 @@ namespace DWS_Lite
             foreach (var currentIpAddr in ipAddr)
             {
                 RunCmd(string.Format("/c route -p ADD {0} MASK 255.255.255.255 0.0.0.0", currentIpAddr));
+                RunCmd(string.Format("/c route -p change {0} MASK 255.255.255.255 0.0.0.0 if 1", currentIpAddr));
                 RunCmd(string.Format("/c netsh advfirewall firewall delete rule name=\"{0}_Block\"", currentIpAddr));
                 RunCmd(
                     string.Format(
@@ -1490,16 +1433,6 @@ namespace DWS_Lite
                 "/c netsh advfirewall firewall add rule name=\"WSearch_Block\" dir=out interface=any action=block service=WSearch");
             _OutPut("Add Windows Firewall rule: \"WSearch_Block\"");
             _OutPut("Ip list blocked");
-        }
-
-        private void linkLabelLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://www.apache.org/licenses/LICENSE-2.0");
-        }
-
-        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://vk.com/dws_wzor_net");
         }
 
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1704,13 +1637,6 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             MinimizeButton.BackColor = Color.CornflowerBlue;
         }
 
-        private void SecretButton_Click(object sender, EventArgs e)
-        {
-            var sf = new SecretForm();
-            sf.ShowDialog();
-            sf.Close();
-        }
-
         #region Language
 
         private string _GetLang(IEnumerable<string> args)
@@ -1860,8 +1786,6 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             checkBoxDeleteAppVoice.Text = string.Format("{0} Voice Recorder", GetTranslateText("Delete"));
             checkBoxDeleteAppXBOX.Text = string.Format("{0} XBOX", GetTranslateText("Delete"));
             btnRemoveOldFirewallRules.Text = GetTranslateText("RemoveAllOldFirewallRules");
-            btnReportABug.Text = GetTranslateText("ReportABug");
-            groupBoxLinks.Text = GetTranslateText("Links");
         }
 
         private string GetTranslateText(string name)

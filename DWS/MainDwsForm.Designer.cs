@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace DWS_Lite
 {
-    partial class MainDwsForm
+    sealed partial class MainDwsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,6 @@ namespace DWS_Lite
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDwsForm));
             this.FormTabsControl = new System.Windows.Forms.TabControl();
             this.tabPageMain = new System.Windows.Forms.TabPage();
             this.btnDestroyWindows78Spy = new System.Windows.Forms.Button();
@@ -86,27 +85,15 @@ namespace DWS_Lite
             this.btnRestoreSystem = new System.Windows.Forms.Button();
             this.btnDeleteAllWindows10Apps = new System.Windows.Forms.Button();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
-            this.ReleaseName = new System.Windows.Forms.Label();
+            this.linkLabelSourceCode = new System.Windows.Forms.LinkLabel();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBoxLanguage = new System.Windows.Forms.GroupBox();
             this.comboBoxLanguageSelect = new System.Windows.Forms.ComboBox();
-            this.btnReportABug = new System.Windows.Forms.Button();
-            this.linkLabelOtherThanks = new System.Windows.Forms.LinkLabel();
-            this.groupBoxLinks = new System.Windows.Forms.GroupBox();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.linkLabelSourceCode = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.labelMoonInfo = new System.Windows.Forms.Label();
-            this.About_Info = new System.Windows.Forms.Label();
-            this.labelBuildDataTime = new System.Windows.Forms.Label();
             this.tabPageReadMe = new System.Windows.Forms.TabPage();
             this.ReadmeRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.tabPageLicense = new System.Windows.Forms.TabPage();
-            this.linkLabelLicense = new System.Windows.Forms.LinkLabel();
-            this.labelLicense = new System.Windows.Forms.Label();
             this.CaptionWindow = new System.Windows.Forms.Label();
             this._CloseButton = new System.Windows.Forms.PictureBox();
             this.MinimizeButton = new System.Windows.Forms.PictureBox();
@@ -114,8 +101,6 @@ namespace DWS_Lite
             this.BorderDown = new System.Windows.Forms.PictureBox();
             this.BorderLeft = new System.Windows.Forms.PictureBox();
             this.BorderR = new System.Windows.Forms.PictureBox();
-            this.SecretButton = new System.Windows.Forms.PictureBox();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -126,16 +111,13 @@ namespace DWS_Lite
             this.groupBoxUACEdit.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
             this.groupBoxLanguage.SuspendLayout();
-            this.groupBoxLinks.SuspendLayout();
             this.tabPageReadMe.SuspendLayout();
-            this.tabPageLicense.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderUP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SecretButton)).BeginInit();
             this.SuspendLayout();
             // 
             // FormTabsControl
@@ -145,7 +127,6 @@ namespace DWS_Lite
             this.FormTabsControl.Controls.Add(this.tabPageUtilites);
             this.FormTabsControl.Controls.Add(this.tabPageAbout);
             this.FormTabsControl.Controls.Add(this.tabPageReadMe);
-            this.FormTabsControl.Controls.Add(this.tabPageLicense);
             this.FormTabsControl.Location = new System.Drawing.Point(0, 31);
             this.FormTabsControl.Name = "FormTabsControl";
             this.FormTabsControl.SelectedIndex = 0;
@@ -185,16 +166,16 @@ namespace DWS_Lite
             // 
             // LogOutputTextBox
             // 
-            this.LogOutputTextBox.BackColor = System.Drawing.Color.Blue;
+            this.LogOutputTextBox.BackColor = System.Drawing.Color.White;
             this.LogOutputTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LogOutputTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LogOutputTextBox.ForeColor = System.Drawing.Color.Yellow;
+            this.LogOutputTextBox.ForeColor = System.Drawing.Color.Navy;
             this.LogOutputTextBox.Location = new System.Drawing.Point(8, 113);
             this.LogOutputTextBox.Name = "LogOutputTextBox";
             this.LogOutputTextBox.ReadOnly = true;
             this.LogOutputTextBox.Size = new System.Drawing.Size(429, 279);
             this.LogOutputTextBox.TabIndex = 3;
-            this.LogOutputTextBox.Text = "";
+            this.LogOutputTextBox.Text = "Final DWS version.\nhttps://twitter.com/nummerok\n==========================\n";
             this.LogOutputTextBox.TextChanged += new System.EventHandler(this.LogOutputTextBox_TextChanged);
             // 
             // StatusCommandsLable
@@ -875,37 +856,64 @@ namespace DWS_Lite
             this.tabPageAbout.BackColor = System.Drawing.Color.White;
             this.tabPageAbout.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPageAbout.Controls.Add(this.ReleaseName);
+            this.tabPageAbout.Controls.Add(this.linkLabelSourceCode);
+            this.tabPageAbout.Controls.Add(this.linkLabel6);
+            this.tabPageAbout.Controls.Add(this.linkLabel1);
             this.tabPageAbout.Controls.Add(this.groupBoxLanguage);
-            this.tabPageAbout.Controls.Add(this.btnReportABug);
-            this.tabPageAbout.Controls.Add(this.linkLabelOtherThanks);
-            this.tabPageAbout.Controls.Add(this.groupBoxLinks);
+            this.tabPageAbout.Controls.Add(this.linkLabel3);
             this.tabPageAbout.Controls.Add(this.labelMoonInfo);
-            this.tabPageAbout.Controls.Add(this.About_Info);
-            this.tabPageAbout.Controls.Add(this.labelBuildDataTime);
             this.tabPageAbout.Location = new System.Drawing.Point(4, 22);
             this.tabPageAbout.Name = "tabPageAbout";
             this.tabPageAbout.Size = new System.Drawing.Size(445, 400);
             this.tabPageAbout.TabIndex = 3;
             this.tabPageAbout.Text = "About";
             // 
-            // ReleaseName
+            // linkLabelSourceCode
             // 
-            this.ReleaseName.AutoSize = true;
-            this.ReleaseName.BackColor = System.Drawing.Color.Transparent;
-            this.ReleaseName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ReleaseName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ReleaseName.Location = new System.Drawing.Point(3, 3);
-            this.ReleaseName.Name = "ReleaseName";
-            this.ReleaseName.Size = new System.Drawing.Size(109, 19);
-            this.ReleaseName.TabIndex = 14;
-            this.ReleaseName.Text = "Fixes? O_o :D";
+            this.linkLabelSourceCode.AutoSize = true;
+            this.linkLabelSourceCode.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabelSourceCode.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkLabelSourceCode.Location = new System.Drawing.Point(321, 36);
+            this.linkLabelSourceCode.Name = "linkLabelSourceCode";
+            this.linkLabelSourceCode.Size = new System.Drawing.Size(116, 13);
+            this.linkLabelSourceCode.TabIndex = 8;
+            this.linkLabelSourceCode.TabStop = true;
+            this.linkLabelSourceCode.Text = "Source code on GitHub";
+            this.linkLabelSourceCode.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSourceCode_LinkClicked);
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel6.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkLabel6.Location = new System.Drawing.Point(364, 77);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(73, 13);
+            this.linkLabel6.TabIndex = 9;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "dws.wzor.net";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkLabel1.Location = new System.Drawing.Point(371, 56);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(66, 13);
+            this.linkLabel1.TabIndex = 2;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "@nummerok";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // groupBoxLanguage
             // 
             this.groupBoxLanguage.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxLanguage.Controls.Add(this.comboBoxLanguageSelect);
-            this.groupBoxLanguage.Location = new System.Drawing.Point(223, 248);
+            this.groupBoxLanguage.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxLanguage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.groupBoxLanguage.Location = new System.Drawing.Point(8, 3);
             this.groupBoxLanguage.Name = "groupBoxLanguage";
             this.groupBoxLanguage.Size = new System.Drawing.Size(214, 54);
             this.groupBoxLanguage.TabIndex = 12;
@@ -941,126 +949,12 @@ namespace DWS_Lite
             this.comboBoxLanguageSelect.TabIndex = 0;
             this.comboBoxLanguageSelect.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguageSelect_SelectedIndexChanged);
             // 
-            // btnReportABug
-            // 
-            this.btnReportABug.BackColor = System.Drawing.Color.Transparent;
-            this.btnReportABug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportABug.Location = new System.Drawing.Point(8, 268);
-            this.btnReportABug.Name = "btnReportABug";
-            this.btnReportABug.Size = new System.Drawing.Size(138, 23);
-            this.btnReportABug.TabIndex = 10;
-            this.btnReportABug.Text = "Report a bug";
-            this.btnReportABug.UseVisualStyleBackColor = false;
-            this.btnReportABug.Click += new System.EventHandler(this.btnReportABug_Click);
-            // 
-            // linkLabelOtherThanks
-            // 
-            this.linkLabelOtherThanks.AutoSize = true;
-            this.linkLabelOtherThanks.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelOtherThanks.Location = new System.Drawing.Point(198, 207);
-            this.linkLabelOtherThanks.Name = "linkLabelOtherThanks";
-            this.linkLabelOtherThanks.Size = new System.Drawing.Size(70, 13);
-            this.linkLabelOtherThanks.TabIndex = 9;
-            this.linkLabelOtherThanks.TabStop = true;
-            this.linkLabelOtherThanks.Text = "Other thanks";
-            this.linkLabelOtherThanks.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelOtherThanks_LinkClicked);
-            // 
-            // groupBoxLinks
-            // 
-            this.groupBoxLinks.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxLinks.Controls.Add(this.linkLabel7);
-            this.groupBoxLinks.Controls.Add(this.linkLabel6);
-            this.groupBoxLinks.Controls.Add(this.linkLabelSourceCode);
-            this.groupBoxLinks.Controls.Add(this.linkLabel1);
-            this.groupBoxLinks.Controls.Add(this.linkLabel5);
-            this.groupBoxLinks.Controls.Add(this.linkLabel4);
-            this.groupBoxLinks.Controls.Add(this.linkLabel2);
-            this.groupBoxLinks.Controls.Add(this.linkLabel3);
-            this.groupBoxLinks.Location = new System.Drawing.Point(9, 335);
-            this.groupBoxLinks.Name = "groupBoxLinks";
-            this.groupBoxLinks.Size = new System.Drawing.Size(428, 59);
-            this.groupBoxLinks.TabIndex = 8;
-            this.groupBoxLinks.TabStop = false;
-            this.groupBoxLinks.Text = "Links";
-            // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel6.Location = new System.Drawing.Point(6, 17);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(73, 13);
-            this.linkLabel6.TabIndex = 9;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "dws.wzor.net";
-            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
-            // 
-            // linkLabelSourceCode
-            // 
-            this.linkLabelSourceCode.AutoSize = true;
-            this.linkLabelSourceCode.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelSourceCode.Location = new System.Drawing.Point(6, 37);
-            this.linkLabelSourceCode.Name = "linkLabelSourceCode";
-            this.linkLabelSourceCode.Size = new System.Drawing.Size(116, 13);
-            this.linkLabelSourceCode.TabIndex = 8;
-            this.linkLabelSourceCode.TabStop = true;
-            this.linkLabelSourceCode.Text = "Source code on GitHub";
-            this.linkLabelSourceCode.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSourceCode_LinkClicked);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Location = new System.Drawing.Point(85, 17);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(66, 13);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "@nummerok";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // linkLabel5
-            // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel5.Location = new System.Drawing.Point(191, 37);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(113, 13);
-            this.linkLabel5.TabIndex = 7;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Тема на rutracker.org";
-            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabel4.Location = new System.Drawing.Point(310, 37);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(110, 13);
-            this.linkLabel4.TabIndex = 5;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Thread on MDL forum";
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Location = new System.Drawing.Point(133, 37);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(50, 13);
-            this.linkLabel2.TabIndex = 3;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "wzor.net";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel3.Location = new System.Drawing.Point(245, 17);
+            this.linkLabel3.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkLabel3.Location = new System.Drawing.Point(267, 20);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(175, 13);
             this.linkLabel3.TabIndex = 4;
@@ -1072,37 +966,13 @@ namespace DWS_Lite
             // 
             this.labelMoonInfo.BackColor = System.Drawing.Color.Transparent;
             this.labelMoonInfo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMoonInfo.ForeColor = System.Drawing.Color.White;
             this.labelMoonInfo.Location = new System.Drawing.Point(173, 0);
             this.labelMoonInfo.Name = "labelMoonInfo";
             this.labelMoonInfo.Size = new System.Drawing.Size(272, 33);
             this.labelMoonInfo.TabIndex = 6;
             this.labelMoonInfo.Text = "Сделано на другой стороне луны ®";
             this.labelMoonInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // About_Info
-            // 
-            this.About_Info.BackColor = System.Drawing.Color.Transparent;
-            this.About_Info.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.About_Info.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.About_Info.ForeColor = System.Drawing.Color.Green;
-            this.About_Info.Location = new System.Drawing.Point(6, 36);
-            this.About_Info.Margin = new System.Windows.Forms.Padding(3);
-            this.About_Info.Name = "About_Info";
-            this.About_Info.Size = new System.Drawing.Size(439, 184);
-            this.About_Info.TabIndex = 1;
-            this.About_Info.Text = "\r\nCreated by Nummer (@nummerok)\r\n\r\n©WZT\r\n\r\nThanks: @WZorNET, @rgadguard,\r\n@Diamon" +
-    "dMonday, @Ratiborus58";
-            this.About_Info.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // labelBuildDataTime
-            // 
-            this.labelBuildDataTime.AutoSize = true;
-            this.labelBuildDataTime.BackColor = System.Drawing.Color.Transparent;
-            this.labelBuildDataTime.Location = new System.Drawing.Point(6, 315);
-            this.labelBuildDataTime.Name = "labelBuildDataTime";
-            this.labelBuildDataTime.Size = new System.Drawing.Size(32, 13);
-            this.labelBuildDataTime.TabIndex = 0;
-            this.labelBuildDataTime.Text = "Build ";
             // 
             // tabPageReadMe
             // 
@@ -1125,37 +995,6 @@ namespace DWS_Lite
             this.ReadmeRichTextBox.Size = new System.Drawing.Size(445, 400);
             this.ReadmeRichTextBox.TabIndex = 0;
             this.ReadmeRichTextBox.Text = "";
-            // 
-            // tabPageLicense
-            // 
-            this.tabPageLicense.Controls.Add(this.linkLabelLicense);
-            this.tabPageLicense.Controls.Add(this.labelLicense);
-            this.tabPageLicense.Location = new System.Drawing.Point(4, 22);
-            this.tabPageLicense.Name = "tabPageLicense";
-            this.tabPageLicense.Size = new System.Drawing.Size(445, 400);
-            this.tabPageLicense.TabIndex = 5;
-            this.tabPageLicense.Text = "License";
-            this.tabPageLicense.UseVisualStyleBackColor = true;
-            // 
-            // linkLabelLicense
-            // 
-            this.linkLabelLicense.AutoSize = true;
-            this.linkLabelLicense.Location = new System.Drawing.Point(32, 64);
-            this.linkLabelLicense.Name = "linkLabelLicense";
-            this.linkLabelLicense.Size = new System.Drawing.Size(228, 13);
-            this.linkLabelLicense.TabIndex = 1;
-            this.linkLabelLicense.TabStop = true;
-            this.linkLabelLicense.Text = "http://www.apache.org/licenses/LICENSE-2.0";
-            this.linkLabelLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLicense_LinkClicked);
-            // 
-            // labelLicense
-            // 
-            this.labelLicense.AutoSize = true;
-            this.labelLicense.Location = new System.Drawing.Point(8, 11);
-            this.labelLicense.Name = "labelLicense";
-            this.labelLicense.Size = new System.Drawing.Size(405, 143);
-            this.labelLicense.TabIndex = 0;
-            this.labelLicense.Text = resources.GetString("labelLicense.Text");
             // 
             // CaptionWindow
             // 
@@ -1241,36 +1080,12 @@ namespace DWS_Lite
             this.BorderR.TabIndex = 7;
             this.BorderR.TabStop = false;
             // 
-            // SecretButton
-            // 
-            this.SecretButton.BackColor = System.Drawing.Color.Transparent;
-            this.SecretButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SecretButton.Location = new System.Drawing.Point(447, 39);
-            this.SecretButton.Name = "SecretButton";
-            this.SecretButton.Size = new System.Drawing.Size(5, 5);
-            this.SecretButton.TabIndex = 8;
-            this.SecretButton.TabStop = false;
-            this.SecretButton.Click += new System.EventHandler(this.SecretButton_Click);
-            // 
-            // linkLabel7
-            // 
-            this.linkLabel7.AutoSize = true;
-            this.linkLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel7.Location = new System.Drawing.Point(164, 17);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(65, 13);
-            this.linkLabel7.TabIndex = 10;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "VKONTAKTE";
-            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
-            // 
             // MainDwsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(453, 457);
-            this.Controls.Add(this.SecretButton);
             this.Controls.Add(this.BorderLeft);
             this.Controls.Add(this.BorderDown);
             this.Controls.Add(this.BorderR);
@@ -1285,7 +1100,7 @@ namespace DWS_Lite
             this.MaximizeBox = false;
             this.Name = "MainDwsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "       DWS Lite 1.6 FINAL";
+            this.Text = "       DWS (final version)";
             this.TransparencyKey = System.Drawing.Color.Magenta;
             this.Activated += new System.EventHandler(this.DestroyWindowsSpyingMainForm_Activated);
             this.Deactivate += new System.EventHandler(this.DestroyWindowsSpyingMainForm_Deactivate);
@@ -1305,18 +1120,13 @@ namespace DWS_Lite
             this.tabPageAbout.ResumeLayout(false);
             this.tabPageAbout.PerformLayout();
             this.groupBoxLanguage.ResumeLayout(false);
-            this.groupBoxLinks.ResumeLayout(false);
-            this.groupBoxLinks.PerformLayout();
             this.tabPageReadMe.ResumeLayout(false);
-            this.tabPageLicense.ResumeLayout(false);
-            this.tabPageLicense.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._CloseButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderUP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SecretButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1358,32 +1168,21 @@ namespace DWS_Lite
         private Button btnDisableWindowsUpdate;
         private Button btnEnableWindowsUpdate;
         private Button btnOpenAndEditHosts;
-        private Label labelBuildDataTime;
-        private LinkLabel linkLabel4;
         private LinkLabel linkLabel3;
-        private LinkLabel linkLabel2;
         private LinkLabel linkLabel1;
-        private Label About_Info;
         private Label labelMoonInfo;
-        private LinkLabel linkLabel5;
-        private GroupBox groupBoxLinks;
         private GroupBox groupBoxWindowsUpdate;
         private GroupBox groupBoxUACEdit;
-        private LinkLabel linkLabelOtherThanks;
         private Button btnDeleteMetroAppsInfo;
         private Button btnDeleteOneDrive;
         private Label labelInfoDeleteMetroApps;
         private TabPage tabPageReadMe;
         private LinkLabel linkLabelSourceCode;
-        private Button btnReportABug;
         private Button btnRemoveOldFirewallRules;
         private GroupBox groupBoxLanguage;
         private ComboBox comboBoxLanguageSelect;
         private Button btnDestroyWindows78Spy;
         private RichTextBox ReadmeRichTextBox;
-        private TabPage tabPageLicense;
-        private LinkLabel linkLabelLicense;
-        private Label labelLicense;
         private LinkLabel linkLabel6;
         private CheckBox btnProfessionalMode;
         private Button btnDisableOfficeUpdate;
@@ -1394,19 +1193,16 @@ namespace DWS_Lite
         private PictureBox BorderDown;
         private PictureBox BorderLeft;
         private PictureBox BorderR;
-        private PictureBox SecretButton;
         private Panel Win10SettingsPanel;
         private Panel Windows78Panel;
         private CheckBox checkBoxAddToHosts78;
         private CheckBox checkBoxSPYTasks78;
         private CheckBox checkBoxDeleteWindows78Updates;
         private CheckBox checkBoxDeleteGWX;
-        private Label ReleaseName;
         private CheckedListBox checkedListBoxUpdatesW78;
         private Label labelUninstallUpdates;
         private CheckBox checkBoxDelKeyloggerTW78;
         private Button btnFixRotateScreen;
-        private LinkLabel linkLabel7;
     }
 }
 
