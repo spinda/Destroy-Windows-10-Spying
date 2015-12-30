@@ -1,16 +1,18 @@
 # Destroy Windows 10 Spying
 
-Features:
-  - Remove all spyware modules
-  - Remove spying apps
-  - Add to hosts spying domains!
-  - Remove Spying services
-  - Remove Windows 10 Metro Apps
-  - Support Windows 7/8/8.1/10 or Server 2008-2012 R2
-  - Remove Office 2016 telemetry
-  - Open Source!
+### Features
+  
+- Remove all spyware modules
+- Remove spying apps
+- Add spying domains to hosts file!
+- Remove spying services
+- Remove Windows 10 Metro Apps
+- Support Windows 7/8/8.1/10 and Server 2008-2012 R2
+- Remove Office 2016 telemetry
+- Open Source!
 
-## Determination of the system language
+### Determination of the system language
+
 We get the language from the command-line arguments to the function:
 ```c#
 private string _GetLang(IEnumerable<string> args)
@@ -27,7 +29,9 @@ private void ChangeLanguage()
 ### Copyright 2015 Nummer
 
 [Twitter @nummerok](https://twitter.com/nummerok)
-# License
+
+### License
+
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
