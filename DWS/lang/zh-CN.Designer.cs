@@ -79,6 +79,15 @@ namespace DWS_Lite.lang {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to 修正屏幕不旋转.
+        /// </summary>
+        internal static string btnFixRotateScreen {
+            get {
+                return ResourceManager.GetString("btnFixRotateScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 打开并编辑 HOSTS 文件.
         /// </summary>
         internal static string btnOpenAndEditHosts {
@@ -298,6 +307,15 @@ namespace DWS_Lite.lang {
             }
         }
 
+        /// <summary>
+        ///   Looks up a localized string similar to 卸载更新程序：.
+        /// </summary>
+        internal static string labelUninstallUpdates {
+            get {
+                return ResourceManager.GetString("labelUninstallUpdates", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to 链接.
         /// </summary>

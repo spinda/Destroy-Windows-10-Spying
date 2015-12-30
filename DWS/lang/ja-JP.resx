@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
-    <value>全ての Windows 10 Metroアプリを削除</value>
+    <value>全ての Windows 10 Metroアプリ削除</value>
   </data>
   <data name="btnDeleteOneDrive" xml:space="preserve">
     <value>One Driveを削除</value>
@@ -139,7 +139,7 @@
     <value>システムの復元ポイントを作成する</value>
   </data>
   <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
-    <value>Windows 10 metroアプリを削除する</value>
+    <value>Windows 10 Metroアプリを削除する</value>
   </data>
   <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
     <value>プラーバシー設定を無効にする</value>
@@ -256,5 +256,8 @@ DWSは現時点で一番効果的なプログラムです。DWSは開発中で�
   </data>
   <data name="labelUninstallUpdates" xml:space="preserve">
     <value>更新をアンインストール：</value>
+  </data>
+  <data name="btnFixRotateScreen" xml:space="preserve">
+    <value>画面回転しないのを修正</value>
   </data>
 </root>
