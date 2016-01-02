@@ -148,7 +148,7 @@
 		<value>Wyłącz Windows Defender</value>
 	</data>
 	<data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
-		<value>Usuń keylogger i telemetrię</value>
+		<value>Usuń keyloggera i telemetrię</value>
 	</data>
 	<data name="checkBoxSetDefaultPhoto" xml:space="preserve">
 		<value>Ustaw program 'Przeglądarka fotografii systemu Windows' jako domyślny</value>
@@ -212,7 +212,7 @@ Czy chcesz zrobić to teraz?</value>
 		<value>Strona główna</value>
 	</data>
 	<data name="tabPageReadMe" xml:space="preserve">
-		<value>Opis programu</value>
+		<value>Przeczytaj mnie</value>
 	</data>
 	<data name="tabPageSettings" xml:space="preserve">
 		<value>Ustawienia</value>
