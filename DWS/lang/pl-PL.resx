@@ -257,4 +257,7 @@ Zwróć uwagę na to, że parametrów /destroy i /deleteapp= nie można używać
 	<data name="labelUninstallUpdates" xml:space="preserve">
 	 	<value>Aktualizacje do odinstalowania:</value>
 	</data>
+	<data name="btnFixRotateScreen" xml:space="preserve">
+		<value>Rozwiąż problemy z obracaniem ekranu</value>
+	</data>
 </root>
