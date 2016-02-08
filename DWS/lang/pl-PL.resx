@@ -212,7 +212,7 @@ Czy chcesz zrobić to teraz?</value>
 		<value>Strona główna</value>
 	</data>
 	<data name="tabPageReadMe" xml:space="preserve">
-		<value>Przeczytaj mnie</value>
+		<value>Do przeczytania</value>
 	</data>
 	<data name="tabPageSettings" xml:space="preserve">
 		<value>Ustawienia</value>
@@ -232,12 +232,12 @@ Czy chcesz zrobić to teraz?</value>
 	<data name="ReadMeTextBox" xml:space="preserve">
 		<value>Dzięki tej aplikacji możesz usunąć oprogramowanie szpiegujące w systemach Windows 7/8/8.1/10.
 Jest to program o otwartym źródle, które jest dostępne na Github.
-Usuwane są elementy telemetrii, wyłączany jest Windows Defender, Cortana, a także wiele innych niepożądanych części systemu. Aplikacja wyłącza także Windows Update, co pozwala ci na pozostanie anonimowym. Kolejną korzyścią jest nieotrzymywanie aktualizacji wbudowanego oprogramowania szpiegującego.
-Jedną z funkcji aplikacji jest usuwanie aplikacji Metro. Jest to bardzo przydatne, ponieważ działają one w tle i niepotrzebnie marnują pamięć, a niektóre z nich cię szpiegują.
+Usuwa on elementy telemetrii, wyłącza Windows Defender, Cortanę, a także wiele innych niepożądanych części systemu. Dezaktywuje także Windows Update, co pozwala ci na pozostanie anonimowym. Kolejną korzyścią jest nieotrzymywanie aktualizacji wbudowanego oprogramowania szpiegującego.
+Za pomocą tej aplikacji można również pozbyć się aplikacji Metro. Jest to bardzo przydatna funkcja, ponieważ takie aplikacje działają w tle i niepotrzebnie marnują pamięć, a niektóre z nich cię szpiegują.
 W dodatku program blokuje za pomocą pliku hosts wiele adresów IP pochodzących od firmy Microsoft, gdzie przesyłane są zebrane dane.
-Większość zmian wprowadzanych przez program jest niemożliwa do cofnięcia, nawet korzystając z wcześniej utworzonego punktu przywracania.
+Większość wprowadzanych zmian jest niemożliwa do cofnięcia, nawet korzystając z wcześniej utworzonego punktu przywracania.
 W tej chwili jest to najlepszy program, który pozwala na zablokowanie wbudowanego oprogramowania szpiegującego.
-Jest on cały czas rozwijany przez użytkowników Windows 10. Niektórzy z nich poprawiają kod, aby był bardziej wydajny, a inni pomagają tłumaczyć program na inne języki.
+Jest on cały czas rozwijany przez użytkowników Windows 10. Niektórzy z nich poprawiają kod, aby był bardziej wydajny, a inni pomagają go tłumaczyć na inne języki.
 
 Parametry linii poleceń:
 /lang= - określa język programu. Na przykład: /lang=pl
