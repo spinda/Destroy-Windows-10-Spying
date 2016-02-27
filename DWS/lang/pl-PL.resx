@@ -257,6 +257,6 @@ Zwróć uwagę na to, że parametrów /destroy i /deleteapp= nie można używać
 	 	<value>Aktualizacje do odinstalowania:</value>
 	</data>
 	<data name="btnFixRotateScreen" xml:space="preserve">
-		<value>Rozwiąż problemy z obracaniem ekranu</value>
+		<value>Napraw funkcję obracanie ekranu</value>
 	</data>
 </root>
