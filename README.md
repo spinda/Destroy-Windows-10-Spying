@@ -1,3 +1,7 @@
+# NEW DWS VERSION
+# DWS EXTENDED
+[DWS EXTENDED https://github.com/nullptrspace/DWS](https://github.com/nullptrspace/DWS)
+
 # Destroy Windows 10 Spying
 
 Features:
