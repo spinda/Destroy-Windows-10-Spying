@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnDeleteAllWindows10Apps" xml:space="preserve">
+    <value>پاکسازی تمامی اپلیکیشن ها ویندوز 10</value>
+  </data>
+  <data name="btnDeleteOneDrive" xml:space="preserve">
+    <value>حذف وان درایو</value>
+  </data>
+  <data name="btnFixRotateScreen" xml:space="preserve">
+    <value>حل مشکل چرخش صفحه</value>
+  </data>
+  <data name="btnOpenAndEditHosts" xml:space="preserve">
+    <value>Hosts بازکردن و ویرایش فایل</value>
+  </data>
+  <data name="btnProfessionalMode" xml:space="preserve">
+    <value>فعالسازی حالت حرفه ای</value>
+  </data>
+  <data name="btnRestoreSystem" xml:space="preserve">
+    <value>بازگردانی سیستم</value>
+  </data>
+  <data name="checkBoxAddToHosts" xml:space="preserve">
+    <value>اضافه کن , و در فایروال بلاک کن hosts دامنه های جاسوسی را به فایل</value>
+  </data>
+  <data name="checkBoxCreateSystemRestorePoint" xml:space="preserve">
+    <value>ایجاد نقطه بازگردانی</value>
+  </data>
+  <data name="checkBoxDeleteGWX" xml:space="preserve">
+    <value>GWX حذف</value>
+  </data>
+  <data name="checkBoxDeleteWindows10Apps" xml:space="preserve">
+    <value>حذف اپلیکیشن ویندوز 10</value>
+  </data>
+  <data name="checkBoxDeleteWindows78Updates" xml:space="preserve">
+    <value>حذف آپدیت های جاسوسی</value>
+  </data>
+  <data name="checkBoxDisablePrivateSettings" xml:space="preserve">
+    <value>غیرفعال کردن تنظیمات مخفی</value>
+  </data>
+  <data name="checkBoxDisableWindowsDefender" xml:space="preserve">
+    <value>Windows Defender غیرفعال کردن</value>
+  </data>
+  <data name="checkBoxKeyLoggerAndTelemetry" xml:space="preserve">
+    <value>telemtry حذف کیلاگرها و</value>
+  </data>
+  <data name="checkBoxSetDefaultPhoto" xml:space="preserve">
+    <value>تنظیم نمایش دهنده عکس پیش فرض ویندوز</value>
+  </data>
+  <data name="checkBoxSPYTasks" xml:space="preserve">
+    <value>غیرفعال کردن برنامه های جاسوسی</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>کامل شد</value>
+  </data>
+  <data name="CompleteMSG" xml:space="preserve">
+    <value>کامل شد
+نیازمند یک ریستارت است برای اعمال تغییرات
+ایا ریستارت میکنید؟</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="DeleteApps" xml:space="preserve">
+    <value>حذف اپلیکیشن</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>غیرفعالسازی</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>فعالسازی</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="ErrorMSG" xml:space="preserve">
+    <value>نیازمند ریستارت است , آیا ریستارت میکنید؟ Errors - {0} کامل شد</value>
+  </data>
+  <data name="FindOffice16FileT" xml:space="preserve">
+    <value>Please specify the path to the file msosync.exe. If Office 2016 is installed as standard on the drive C, press "Cancel"</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>اطلاعات</value>
+  </data>
+  <data name="labelInfoDeleteMetroApps" xml:space="preserve">
+    <value>اپلیکیشن ها تمامی حذف شدند بطور دائم , امکان بازگردانی وجود ندارد</value>
+  </data>
+  <data name="labelUninstallUpdates" xml:space="preserve">
+    <value>حذف آپدیت ها:</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>لینک ها</value>
+  </data>
+  <data name="PressOkAndWait15" xml:space="preserve">
+    <value>و 15 دقیقه صبر کنید Ok بزنید روی</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>سوال</value>
+  </data>
+  <data name="ReadMeTextBox" xml:space="preserve">
+    <value>This program destroys spying on Windows 7/8/8.1/10.
+The program is open source code, which is on github.
+This program completely destroys spying. Removes some elements of telemetry and the other turns off, disables Windows Defender, Cortana, and much more. As the program disables Windows Update, which allows you to remain anonymous and not to receive updates of new spyware.
+The delete Metro applications is very good, because they work in the background, and devour memory, and some of them spying on you.
+Also, the program blocks many IP address of Microsoft, which are the data, and adds the most spyware to hosts.
+Almost all of the program is irreversible and should not be rolled back even after a system restore point.
+At the moment it is the most effective program. The program is developing and improving a large community of users of Windows 10, some help to rewrite the code to a more productive, and some help with the translation of the program into other languages.
+
+Arguments for the command line:
+/lang= - set the language of the program starts. Example: /lang=en
+/deleteapp= - allows you to delete an application Metro in Windows. Example: /deleteapp=bing or /deleteapp=note
+/destroy - an argument for removing spyware.
+IMPORTANT! Arguments /destroy and /deleteapp= can not be combined, and the argument /deleteapp= can not be used several times.</value>
+  </data>
+  <data name="Really" xml:space="preserve">
+    <value>واقعا؟</value>
+  </data>
+  <data name="RemoveAllOldFirewallRules" xml:space="preserve">
+    <value>DWS حذف شد تمامی قوانین فایروال مربوط به</value>
+  </data>
+  <data name="ReportABug" xml:space="preserve">
+    <value>گزارش باگ</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>نیازمند ریستارت , آیا ریستارت شود؟</value>
+  </data>
+  <data name="tabPageAbout" xml:space="preserve">
+    <value>درباره</value>
+  </data>
+  <data name="tabPageMain" xml:space="preserve">
+    <value>صفحه اصلی</value>
+  </data>
+  <data name="tabPageReadMe" xml:space="preserve">
+    <value>بخوانید</value>
+  </data>
+  <data name="tabPageSettings" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="tabPageUtilites" xml:space="preserve">
+    <value>ابزارها</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>هشدار</value>
+  </data>
+</root>

@@ -101,6 +101,10 @@ namespace DWS_Lite
             this.BorderDown = new System.Windows.Forms.PictureBox();
             this.BorderLeft = new System.Windows.Forms.PictureBox();
             this.BorderR = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -175,7 +179,8 @@ namespace DWS_Lite
             this.LogOutputTextBox.ReadOnly = true;
             this.LogOutputTextBox.Size = new System.Drawing.Size(429, 279);
             this.LogOutputTextBox.TabIndex = 3;
-            this.LogOutputTextBox.Text = "Final DWS version.\nhttps://twitter.com/nummerok\n==========================\n";
+            this.LogOutputTextBox.Text = "Fixup DWS version.\n\nhttps://twitter.com/nummerok\nhttp://nullptr.space\n===========" +
+    "===============\n";
             this.LogOutputTextBox.TextChanged += new System.EventHandler(this.LogOutputTextBox_TextChanged);
             // 
             // StatusCommandsLable
@@ -854,8 +859,11 @@ namespace DWS_Lite
             // tabPageAbout
             // 
             this.tabPageAbout.BackColor = System.Drawing.Color.White;
-            this.tabPageAbout.BackgroundImage = global::DWS_Lite.Properties.Resources.BGProgImg;
             this.tabPageAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageAbout.Controls.Add(this.label2);
+            this.tabPageAbout.Controls.Add(this.linkLabel2);
+            this.tabPageAbout.Controls.Add(this.label1);
+            this.tabPageAbout.Controls.Add(this.textBox1);
             this.tabPageAbout.Controls.Add(this.linkLabelSourceCode);
             this.tabPageAbout.Controls.Add(this.linkLabel6);
             this.tabPageAbout.Controls.Add(this.linkLabel1);
@@ -872,8 +880,8 @@ namespace DWS_Lite
             // 
             this.linkLabelSourceCode.AutoSize = true;
             this.linkLabelSourceCode.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabelSourceCode.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkLabelSourceCode.Location = new System.Drawing.Point(321, 36);
+            this.linkLabelSourceCode.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.linkLabelSourceCode.Location = new System.Drawing.Point(14, 327);
             this.linkLabelSourceCode.Name = "linkLabelSourceCode";
             this.linkLabelSourceCode.Size = new System.Drawing.Size(116, 13);
             this.linkLabelSourceCode.TabIndex = 8;
@@ -885,8 +893,8 @@ namespace DWS_Lite
             // 
             this.linkLabel6.AutoSize = true;
             this.linkLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel6.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkLabel6.Location = new System.Drawing.Point(364, 77);
+            this.linkLabel6.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.linkLabel6.Location = new System.Drawing.Point(11, 377);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(73, 13);
             this.linkLabel6.TabIndex = 9;
@@ -898,8 +906,8 @@ namespace DWS_Lite
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkLabel1.Location = new System.Drawing.Point(371, 56);
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.linkLabel1.Location = new System.Drawing.Point(11, 352);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(66, 13);
             this.linkLabel1.TabIndex = 2;
@@ -912,10 +920,10 @@ namespace DWS_Lite
             this.groupBoxLanguage.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxLanguage.Controls.Add(this.comboBoxLanguageSelect);
             this.groupBoxLanguage.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBoxLanguage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.groupBoxLanguage.Location = new System.Drawing.Point(8, 3);
+            this.groupBoxLanguage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBoxLanguage.Location = new System.Drawing.Point(8, 13);
             this.groupBoxLanguage.Name = "groupBoxLanguage";
-            this.groupBoxLanguage.Size = new System.Drawing.Size(214, 54);
+            this.groupBoxLanguage.Size = new System.Drawing.Size(429, 54);
             this.groupBoxLanguage.TabIndex = 12;
             this.groupBoxLanguage.TabStop = false;
             this.groupBoxLanguage.Text = "Language\\Язык";
@@ -932,6 +940,7 @@ namespace DWS_Lite
             "de-DE | German",
             "en-US | English",
             "es-ES | Spanish",
+            "fa-IR | Persian",
             "fr-FR | French",
             "it-CH | Italian",
             "ja-JP | 日本語",
@@ -945,7 +954,7 @@ namespace DWS_Lite
             "zh-CN | 中文(简体)"});
             this.comboBoxLanguageSelect.Location = new System.Drawing.Point(6, 20);
             this.comboBoxLanguageSelect.Name = "comboBoxLanguageSelect";
-            this.comboBoxLanguageSelect.Size = new System.Drawing.Size(202, 21);
+            this.comboBoxLanguageSelect.Size = new System.Drawing.Size(417, 21);
             this.comboBoxLanguageSelect.TabIndex = 0;
             this.comboBoxLanguageSelect.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguageSelect_SelectedIndexChanged);
             // 
@@ -953,8 +962,8 @@ namespace DWS_Lite
             // 
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel3.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkLabel3.Location = new System.Drawing.Point(267, 20);
+            this.linkLabel3.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.linkLabel3.Location = new System.Drawing.Point(11, 303);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(175, 13);
             this.linkLabel3.TabIndex = 4;
@@ -1007,7 +1016,7 @@ namespace DWS_Lite
             this.CaptionWindow.Name = "CaptionWindow";
             this.CaptionWindow.Size = new System.Drawing.Size(453, 28);
             this.CaptionWindow.TabIndex = 1;
-            this.CaptionWindow.Text = "       DWS Lite";
+            this.CaptionWindow.Text = "DWS Lite Rollup Edition";
             this.CaptionWindow.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CaptionWindow.Click += new System.EventHandler(this.CaptionWindow_Click);
             this.CaptionWindow.Paint += new System.Windows.Forms.PaintEventHandler(this.CaptionWindow_Paint);
@@ -1079,6 +1088,46 @@ namespace DWS_Lite
             this.BorderR.Size = new System.Drawing.Size(1, 500);
             this.BorderR.TabIndex = 7;
             this.BorderR.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(14, 97);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(417, 151);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.Text = "1.6 Build 717 rollup\r\n\r\n- Add Persian Language\r\n- Fix Some things";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Change Log";
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.linkLabel2.Location = new System.Drawing.Point(82, 275);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(70, 13);
+            this.linkLabel2.TabIndex = 15;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Nullptr.space";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 275);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "HomePage:";
             // 
             // MainDwsForm
             // 
@@ -1203,6 +1252,10 @@ namespace DWS_Lite
         private Label labelUninstallUpdates;
         private CheckBox checkBoxDelKeyloggerTW78;
         private Button btnFixRotateScreen;
+        private Label label1;
+        private TextBox textBox1;
+        private LinkLabel linkLabel2;
+        private Label label2;
     }
 }
 

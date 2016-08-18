@@ -68,6 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="lang\fa-IR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fa-IR.resx</DependentUpon>
+    </Compile>
     <Compile Include="lang\lt-LT.Designer.cs">
       <DependentUpon>lt-LT.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -158,6 +163,10 @@
     <Compile Include="Lib\WindowsUtil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="lang\fa-IR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>fa-IR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="lang\lt-LT.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lt-LT.Designer.cs</LastGenOutput>

@@ -1144,6 +1144,10 @@ namespace DWS_Lite
                     _rm = ru_RU.ResourceManager;
                     ChangeLanguage();
                     break;
+                case "fa-IR":
+                    _rm = fa_IR.ResourceManager;
+                    ChangeLanguage();
+                    break;
                 case "fr-FR":
                     _rm = fr_FR.ResourceManager;
                     ChangeLanguage();
@@ -1662,6 +1666,11 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
                 _rm = ru_RU.ResourceManager; // change resource language manager.
                 comboBoxLanguageSelect.Text = @"ru-RU | Русский"; // set combobox text language.
             }
+            else if (currentlang.IndexOf("fa", StringComparison.Ordinal) > -1)
+            {
+                _rm = fr_FR.ResourceManager;
+                comboBoxLanguageSelect.Text = @"fa-IR | Persian";
+            }
             else if (currentlang.IndexOf("fr", StringComparison.Ordinal) > -1)
             {
                 _rm = fr_FR.ResourceManager;
@@ -1974,5 +1983,9 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             CaptionWindow.ForeColor = Color.FromArgb(164, 164, 164);
         }
 
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://nullptr.space");
+        }
     }
 }
