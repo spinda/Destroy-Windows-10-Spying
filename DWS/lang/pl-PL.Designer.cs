@@ -438,5 +438,15 @@ namespace DWS_Lite.lang {
                 return ResourceManager.GetString("Warning", resourceCulture);
             }
         }
+        
+		/// <summary>
+		///   Looks up a localized string similar to Rozwiąż problemy z obracaniem ekranu.
+		/// </summary>
+		internal static string btnFixRotateScreen {
+			get {
+				return ResourceManager.GetString("btnFixRotateScreen", resourceCulture);
+			}
+		}
+        
     }
 }
