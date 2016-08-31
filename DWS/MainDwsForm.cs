@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
+using System.Net;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.Security.AccessControl;
@@ -57,16 +58,51 @@ namespace DWS_Lite
              */
             try
             {
-                Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+                Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                Text +=
+                    $"v{FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).FileVersion}";
             }
             catch
             {
-                _OutPut("Error get icon.", LogLevel.Error);
+                _OutPut("Error get icon or version.", LogLevel.Error);
             }
             SetLanguage(_GetLang(args)); // set language
             ChangeLanguage(); // change language
             StealthMode(args); //check args
             new Thread(AnimateBackground).Start(); // animate border (new thread)
+            new Thread(AutoUpdate).Start(); // auto update
+        }
+
+        void AutoUpdate()
+        {
+            try
+            {
+                var assemblyInfo =
+                    new WebClient().DownloadString(
+                        "http://raw.githubusercontent.com/Nummer/Destroy-Windows-10-Spying/master/DWS/Properties/AssemblyInfo.cs");
+                var readText = assemblyInfo.Split('\n');
+                var versionInfoLines = readText.Where(t => t.Contains("[assembly: AssemblyFileVersion"));
+                var version = "";
+                foreach (var item in versionInfoLines)
+                {
+                    version = item.Substring(item.IndexOf('(') + 2, item.LastIndexOf(')') - item.IndexOf('(') - 3);
+                }
+                if (version !=
+                    FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location)
+                        .FileVersion)
+                {
+                    if (MessageBox.Show($"New version avalible.\n\nVersion: {version} .\n\nDownload now?", @"Update",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying/releases/latest");
+                        Process.GetCurrentProcess().Kill();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error check update.\nMessage: {ex.Message}", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public override string Text
@@ -111,7 +147,7 @@ namespace DWS_Lite
             catch (Exception ex)
             {
 #if DEBUG
-                _OutPut(string.Format("Error in AnimateBackground: {0}", ex.Message), LogLevel.Debug);
+                _OutPut($"Error in AnimateBackground: {ex.Message}", LogLevel.Debug);
 #endif
             }
         }
@@ -304,7 +340,7 @@ namespace DWS_Lite
 
         public void DeleteFile(string filepath)
         {
-            RunCmd(string.Format("/c del /F /Q \"{0}\"", filepath));
+            RunCmd($"/c del /F /Q \"{filepath}\"");
         }
 
         public void RunCmd(string args)
@@ -337,18 +373,18 @@ namespace DWS_Lite
                 }
                 proc.WaitForExit();
 #if DEBUG
-                _OutPut(string.Format("Start: {0} {1}{2}Output: {3}", name, args, Environment.NewLine, line), LogLevel.Debug);
+                _OutPut($"Start: {name} {args}{Environment.NewLine}Output: {line}", LogLevel.Debug);
 #endif
             }
                 // ReSharper disable once UnusedVariable
             catch (Exception ex)
             {
-                _OutPut(string.Format("Error start prog {0} {1}", name, args), LogLevel.Error);
+                _OutPut($"Error start prog {name} {args}", LogLevel.Error);
 #if DEBUG
                 _OutPut(ex.Message, LogLevel.Debug);
 #endif
                 _fatalErrors++;
-                _errorsList.Add(string.Format("Error start prog {0} {1}", name, args));
+                _errorsList.Add($"Error start prog {name} {args}");
             }
         }
 
@@ -371,15 +407,14 @@ namespace DWS_Lite
         private static string GetWindowsBuildVersion()
         {
             // в value массив из байт
-            var value = string.Format("\r\nWindows Version: {0}\r\nBuild: {1}", WindowsUtil.GetProductName(),
-                WindowsUtil.GetSystemBuild());
+            var value = $"\r\nWindows Version: {WindowsUtil.GetProductName()}\r\nBuild: {WindowsUtil.GetSystemBuild()}";
             return value;
         }
 
         private void DeleteWindows10MetroApp(string appname)
         {
             ProcStartargs("powershell",
-                string.Format("-command \"Get-AppxPackage *{0}* | Remove-AppxPackage\"", appname));
+                $"-command \"Get-AppxPackage *{appname}* | Remove-AppxPackage\"");
         }
 
         private void StartDestroyWindowsSpying()
@@ -388,7 +423,7 @@ namespace DWS_Lite
             _fatalErrors = 0;
             EnableOrDisableTab(false);
             SetCompleteText(true);
-            _OutPut(string.Format("Starting: {0}.", DateTime.Now));
+            _OutPut($"Starting: {DateTime.Now}.");
             _OutPut(GetWindowsBuildVersion());
             _OutPutSplit();
             ProgressBarStatus.Value = 0;
@@ -401,10 +436,10 @@ namespace DWS_Lite
             {
                 try
                 {
-                    var restorepointName = string.Format("DestroyWindowsSpying {0}", DateTime.Now);
-                    _OutPut(string.Format("Creating restore point {0}...", restorepointName));
+                    var restorepointName = $"DestroyWindowsSpying {DateTime.Now}";
+                    _OutPut($"Creating restore point {restorepointName}...");
                     CreateRestorePoint(restorepointName);
-                    _OutPut(string.Format("Restore point {0} created.", restorepointName));
+                    _OutPut($"Restore point {restorepointName} created.");
                 }
                     // ReSharper disable once UnusedVariable
                 catch (Exception ex)
@@ -539,8 +574,7 @@ namespace DWS_Lite
                     _OutPut(ex.Message, LogLevel.Debug);
 #endif
                     _fatalErrors++;
-                    _errorsList.Add(string.Format("Error disable Windows Defender or Smart Screen. Message: {0}",
-                        ex.Message));
+                    _errorsList.Add($"Error disable Windows Defender or Smart Screen. Message: {ex.Message}");
                 }
             }
             Progressbaradd(5); //60
@@ -603,6 +637,8 @@ namespace DWS_Lite
             RunCmd("/c sc delete dmwappushsvc");
             RunCmd("/c sc delete \"Diagnostics Tracking Service\"");
             RunCmd("/c sc delete diagtrack");
+            RunCmd("/c reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\"  /v \"{60E6D465-398E-4850-BE86-7EF7620A2377}\" /t REG_SZ /d  \"v2.24|Action=Block|Active=TRUE|Dir=Out|App=C:\\windows\\system32\\svchost.exe|Svc=DiagTrack|Name=Windows  Telemetry|\" /f");
+            RunCmd("/c reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\"  /v \"{2765E0F4-2918-4A46-B9C9-43CDD8FCBA2B}\" /t REG_SZ /d  \"v2.24|Action=Block|Active=TRUE|Dir=Out|App=C:\\windows\\systemapps\\microsoft.windows.cortana_cw5n1h2txyewy\\searchui.exe|Name=Search  and Cortana  application|AppPkgId=S-1-15-2-1861897761-1695161497-2927542615-642690995-327840285-2659745135-2630312742|\"  /f");
             RunCmd(
                 "/c reg add \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Device Metadata\" /v \"PreventDeviceMetadataFromNetwork\" /t REG_DWORD /d 1 /f ");
             RunCmd(
@@ -640,8 +676,7 @@ namespace DWS_Lite
             {
                 if (_fatalErrors == 0)
                 {
-                    StatusCommandsLable.Text = string.Format("Destroy Windows 10 Spying - {0}!",
-                        GetTranslateText("Complete"));
+                    StatusCommandsLable.Text = $"Destroy Windows 10 Spying - {GetTranslateText("Complete")}!";
                     StatusCommandsLable.ForeColor = Color.DarkGreen;
                     if (MessageBox.Show(GetTranslateText("CompleteMSG"), GetTranslateText("Info"),
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
@@ -650,7 +685,7 @@ namespace DWS_Lite
                 }
                 else
                 {
-                    StatusCommandsLable.Text = string.Format("Destroy Windows 10 Spying - errors: {0}", _fatalErrors);
+                    StatusCommandsLable.Text = $"Destroy Windows 10 Spying - errors: {_fatalErrors}";
                     StatusCommandsLable.ForeColor = Color.Red;
                     try
                     {
@@ -678,24 +713,29 @@ namespace DWS_Lite
         {
             string[] disabletaskslist =
             {
+                @"Microsoft\Office\Office 15 Subscription Heartbeat",
                 @"Microsoft\Office\Office ClickToRun Service Monitor",
+                @"Microsoft\Office\OfficeTelemetry\AgentFallBack2016",
+                @"Microsoft\Office\OfficeTelemetry\OfficeTelemetryAgentLogOn2016",
+                @"Microsoft\Office\OfficeTelemetryAgentFallBack",
                 @"Microsoft\Office\OfficeTelemetryAgentFallBack2016",
+                @"Microsoft\Office\OfficeTelemetryAgentLogOn",
                 @"Microsoft\Office\OfficeTelemetryAgentLogOn2016",
-                @"Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask",
-                @"Microsoft\Windows\Customer Experience Improvement Program\UsbCeip",
-                @"Microsoft\Windows\Power Efficiency Diagnostics\AnalyzeSystem",
-                @"Microsoft\Windows\Shell\FamilySafetyMonitor",
-                @"Microsoft\Windows\Shell\FamilySafetyRefresh",
+                @"Microsoft\Windows\AppID\SmartScreenSpecific",
                 @"Microsoft\Windows\Application Experience\AitAgent",
+                @"Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser",
                 @"Microsoft\Windows\Application Experience\ProgramDataUpdater",
                 @"Microsoft\Windows\Application Experience\StartupAppTask",
                 @"Microsoft\Windows\Autochk\Proxy",
+                @"Microsoft\Windows\CloudExperienceHost\CreateObjectTask",
                 @"Microsoft\Windows\Customer Experience Improvement Program\BthSQM",
                 @"Microsoft\Windows\Customer Experience Improvement Program\Consolidator",
-                @"Microsoft\Office\OfficeTelemetry\AgentFallBack2016",
-                @"Microsoft\Office\OfficeTelemetry\OfficeTelemetryAgentLogOn2016",
-                @"Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser",
+                @"Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask",
+                @"Microsoft\Windows\Customer Experience Improvement Program\Uploader",
+                @"Microsoft\Windows\Customer Experience Improvement Program\UsbCeip",
                 @"Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector",
+                @"Microsoft\Windows\DiskFootprint\Diagnostics",
+                @"Microsoft\Windows\FileHistory\File History (maintenance mode)",
                 @"Microsoft\Windows\Maintenance\WinSAT",
                 @"Microsoft\Windows\Media Center\ActivateWindowsSearch",
                 @"Microsoft\Windows\Media Center\ConfigureInternetTimeService",
@@ -716,10 +756,16 @@ namespace DWS_Lite
                 @"Microsoft\Windows\Media Center\ReindexSearchRoot",
                 @"Microsoft\Windows\Media Center\SqlLiteRecoveryTask",
                 @"Microsoft\Windows\Media Center\UpdateRecordPath",
+                @"Microsoft\Windows\PI\Sqm-Tasks",
+                @"Microsoft\Windows\Power Efficiency Diagnostics\AnalyzeSystem",
+                @"Microsoft\Windows\Shell\FamilySafetyMonitor",
+                @"Microsoft\Windows\Shell\FamilySafetyRefresh",
+                @"Microsoft\Windows\Shell\FamilySafetyUpload",
+                @"Microsoft\Windows\Windows Error Reporting\QueueReporting"
             };
             foreach (var currentTask in disabletaskslist)
             {
-                ProcStartargs("SCHTASKS", string.Format("/Change /TN \"{0}\" /disable", currentTask));
+                ProcStartargs("SCHTASKS", $"/Change /TN \"{currentTask}\" /disable");
                 _OutPut("Disabled task: " + currentTask);
             }
         }
@@ -730,80 +776,126 @@ namespace DWS_Lite
             {
                 string[] hostsdomains =
                 {
-                    "statsfe2.update.microsoft.com.akadns.net",
-                    "fe2.update.microsoft.com.akadns.net",
-                    "s0.2mdn.net",
-                    "survey.watson.microsoft.com",
-                    "view.atdmt.com",
-                    "watson.microsoft.com",
-                    "watson.ppe.telemetry.microsoft.com",
-                    "vortex.data.microsoft.com",
-                    "vortex-win.data.microsoft.com",
-                    "telecommand.telemetry.microsoft.com",
-                    "telecommand.telemetry.microsoft.com.nsatc.net",
-                    "oca.telemetry.microsoft.com",
-                    "sqm.telemetry.microsoft.com",
-                    "sqm.telemetry.microsoft.com.nsatc.net",
-                    "watson.telemetry.microsoft.com",
-                    "watson.telemetry.microsoft.com.nsatc.net",
-                    "redir.metaservices.microsoft.com",
-                    "choice.microsoft.com",
-                    "choice.microsoft.com.nsatc.net",
-                    "wes.df.telemetry.microsoft.com",
-                    "services.wes.df.telemetry.microsoft.com",
-                    "sqm.df.telemetry.microsoft.com",
-                    "telemetry.microsoft.com",
-                    "telemetry.appex.bing.net",
-                    "telemetry.urs.microsoft.com",
-                    "settings-sandbox.data.microsoft.com",
-                    "watson.live.com",
-                    "statsfe2.ws.microsoft.com",
-                    "corpext.msitadfs.glbdns2.microsoft.com",
-                    "compatexchange.cloudapp.net",
+                    "a.ads1.msn.com",
+                    "a.ads2.msads.net",
+                    "a.ads2.msn.com",
+                    "a.rad.msn.com",
                     "a-0001.a-msedge.net",
-                    "sls.update.microsoft.com.akadns.net",
-                    "diagnostics.support.microsoft.com",
-                    "corp.sts.microsoft.com",
-                    "statsfe1.ws.microsoft.com",
-                    "feedback.windows.com",
-                    "feedback.microsoft-hohm.com",
-                    "feedback.search.microsoft.com",
-                    "rad.msn.com",
-                    "preview.msn.com",
+                    "a-0002.a-msedge.net",
+                    "a-0003.a-msedge.net",
+                    "a-0004.a-msedge.net",
+                    "a-0005.a-msedge.net",
+                    "a-0006.a-msedge.net",
+                    "a-0007.a-msedge.net",
+                    "a-0008.a-msedge.net",
+                    "a-0009.a-msedge.net",
+                    "ac3.msn.com",
                     "ad.doubleclick.net",
+                    "adnexus.net",
+                    "adnxs.com",
                     "ads.msn.com",
                     "ads1.msads.net",
                     "ads1.msn.com",
-                    "a.ads1.msn.com",
-                    "a.ads2.msn.com",
-                    "adnexus.net",
-                    "adnxs.com",
+                    "aidps.atdmt.com",
+                    "aka-cdn-ns.adtech.de",
+                    "a-msedge.net",
+                    "apps.skype.com",
                     "az361816.vo.msecnd.net",
                     "az512334.vo.msecnd.net",
-                    "ssw.live.com",
+                    "b.ads1.msn.com",
+                    "b.ads2.msads.net",
+                    "b.rad.msn.com",
+                    "bs.serving-sys.com",
+                    "c.atdmt.com",
+                    "c.msn.com",
                     "ca.telemetry.microsoft.com",
-                    "i1.services.social.microsoft.com",
-                    "df.telemetry.microsoft.com",
-                    "reports.wes.df.telemetry.microsoft.com",
+                    "cache.datamart.windows.com",
+                    "cdn.atdmt.com",
+                    "cds26.ams9.msecn.net",
+                    "choice.microsoft.com",
+                    "choice.microsoft.com.nsatc.net",
+                    "compatexchange.cloudapp.net",
+                    "corp.sts.microsoft.com",
+                    "corpext.msitadfs.glbdns2.microsoft.com",
                     "cs1.wpc.v0cdn.net",
-                    "vortex-sandbox.data.microsoft.com",
+                    "db3aqu.atdmt.com",
+                    "db3wns2011111.wns.windows.com",
+                    "df.telemetry.microsoft.com",
+                    "diagnostics.support.microsoft.com",
+                    "ec.atdmt.com",
+                    "fe2.update.microsoft.com.akadns.net",
+                    "fe3.delivery.dsp.mp.microsoft.com.nsatc.net",
+                    "feedback.microsoft-hohm.com",
+                    "feedback.search.microsoft.com",
+                    "feedback.windows.com",
+                    "flex.msn.com",
+                    "g.msn.com",
+                    "h1.msn.com",
+                    "i1.services.social.microsoft.com",
+                    "i1.services.social.microsoft.com.nsatc.net",
+                    "lb1.www.ms.akadns.net",
+                    "live.rads.msn.com",
+                    "m.adnxs.com",
+                    "m.hotmail.com",
+                    "msedge.net",
+                    "msftncsi.com",
+                    "msnbot-207-46-194-33.search.msn.com",
+                    "msnbot-65-55-108-23.search.msn.com",
+                    "msntest.serving-sys.com",
+                    "oca.telemetry.microsoft.com",
                     "oca.telemetry.microsoft.com.nsatc.net",
                     "pre.footprintpredict.com",
+                    "preview.msn.com",
+                    "pricelist.skype.com",
+                    "rad.live.com",
+                    "rad.msn.com",
+                    "redir.metaservices.microsoft.com",
+                    "reports.wes.df.telemetry.microsoft.com",
+                    "s.gateway.messenger.live.com",
+                    "s0.2mdn.net",
+                    "schemas.microsoft.akadns.net ",
+                    "secure.adnxs.com",
+                    "secure.flashtalking.com",
+                    "services.wes.df.telemetry.microsoft.com",
+                    "settings.data.microsof.com",
+                    "settings-sandbox.data.microsoft.com",
+                    "settings-win.data.microsoft.com",
+                    "sls.update.microsoft.com.akadns.net",
+                    "sO.2mdn.net",
                     "spynet2.microsoft.com",
                     "spynetalt.microsoft.com",
-                    "fe3.delivery.dsp.mp.microsoft.com.nsatc.net",
-                    "cache.datamart.windows.com",
-                    "db3wns2011111.wns.windows.com", // NEW TH2 spy hosts
-                    //"deploy.static.akamaitechnologies.com",
-                    //"akamaitechnologies.com"
-                    "settings-win.data.microsoft.com",
+                    "sqm.df.telemetry.microsoft.com",
+                    "sqm.telemetry.microsoft.com",
+                    "sqm.telemetry.microsoft.com.nsatc.net",
+                    "ssw.live.com",
+                    "static.2mdn.net",
+                    "statsfe1.ws.microsoft.com",
+                    "statsfe2.update.microsoft.com.akadns.net",
+                    "statsfe2.ws.microsoft.com",
+                    "survey.watson.microsoft.com",
+                    "telecommand.telemetry.microsoft.com",
+                    "telecommand.telemetry.microsoft.com.nsatc.net",
+                    "telecommand.telemetry.microsoft.com.nsat­c.net",
+                    "telemetry.appex.bing.net",
+                    "telemetry.appex.bing.net:443",
+                    "telemetry.microsoft.com",
+                    "telemetry.urs.microsoft.com",
+                    "ui.skype.com",
                     "v10.vortex-win.data.microsoft.com",
+                    "view.atdmt.com",
+                    "vortex.data.microsoft.com",
+                    "vortex-bn2.metron.live.com.nsatc.net",
+                    "vortex-cy2.metron.live.com.nsatc.net",
+                    "vortex-sandbox.data.microsoft.com",
+                    "vortex-win.data.microsoft.com",
+                    "watson.live.com",
+                    "watson.microsoft.com",
+                    "watson.ppe.telemetry.microsoft.com",
+                    "watson.telemetry.microsoft.com",
+                    "watson.telemetry.microsoft.com.nsatc.net",
+                    "wes.df.telemetry.microsoft.com",
                     "win10.ipv6.microsoft.com",
-                    "ca.telemetry.microsoft.com",
-                    "i1.services.social.microsoft.com.nsatc.net",
-                    "msnbot-207-46-194-33.search.msn.com",
-                    "settings.data.microsof.com",
-                    "telecommand.telemetry.microsoft.com.nsat­c.net"
+                    "www.msftncsi.com",
                 };
                 var hostslocation = _system32Location + @"drivers\etc\hosts";
                 string hosts = null;
@@ -821,13 +913,13 @@ namespace DWS_Lite
                             currentHostsDomain =>
                                 hosts != null && hosts.IndexOf(currentHostsDomain, StringComparison.Ordinal) == -1))
                 {
-                    RunCmd(string.Format("/c echo 0.0.0.0 {0} >> \"{1}\"", currentHostsDomain, hostslocation));
-                    _OutPut(string.Format("Add to hosts - {0}", currentHostsDomain));
+                    RunCmd($"/c echo 0.0.0.0 {currentHostsDomain} >> \"{hostslocation}\"");
+                    _OutPut($"Add to hosts - {currentHostsDomain}");
                 }
             }
             catch (Exception ex)
             {
-                _errorsList.Add(string.Format("Error add to hosts. Message: {0}", ex.Message));
+                _errorsList.Add($"Error add to hosts. Message: {ex.Message}");
                 _fatalErrors++;
                 _OutPut("Error add HOSTS", LogLevel.Error);
 #if DEBUG
@@ -1014,16 +1106,11 @@ namespace DWS_Lite
             Process.Start("https://goo.gl/EpFSzj"); //https://twitter.com/nummerok
         }
 
-        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://goo.gl/CDaZye"); //http://forum.ru-board.com/topic.cgi?forum=2&topic=5328
-        }
-
         private void btnProfessionalMode_Click(object sender, EventArgs e)
         {
             ProfessionalModeSet(btnProfessionalMode.Checked);
             Text = btnProfessionalMode.Checked
-                ? string.Format("{0}  !Professional mode!", Text)
+                ? $"{Text}  !Professional mode!"
                 : Text.Replace("  !Professional mode!", string.Empty);
         }
 
@@ -1130,7 +1217,7 @@ namespace DWS_Lite
             };
             foreach (var hostname in rulename)
             {
-                RunCmd(string.Format("/c netsh advfirewall firewall delete rule name=\"{0}\"", hostname));
+                RunCmd($"/c netsh advfirewall firewall delete rule name=\"{hostname}\"");
             }
 
             MessageBox.Show(GetTranslateText("Complete"), GetTranslateText("Info"));
@@ -1270,9 +1357,9 @@ namespace DWS_Lite
                     if (Directory.Exists(gwxDir))
                     {
                         RunCmd("/c TASKKILL /F /IM gwx.exe");
-                        RunCmd(string.Format("/c takeown /f \"{0}\" /d y", gwxDir));
-                        RunCmd(string.Format("/c icacls \"{0}\" /grant {1}:F /q", gwxDir, userName));
-                        RunCmd(string.Format("/c rmdir /s /q {0}", gwxDir));
+                        RunCmd($"/c takeown /f \"{gwxDir}\" /d y");
+                        RunCmd($"/c icacls \"{gwxDir}\" /grant {userName}:F /q");
+                        RunCmd($"/c rmdir /s /q {gwxDir}");
                         _OutPut("Delete GWX");
                     }
                     else
@@ -1329,8 +1416,8 @@ namespace DWS_Lite
             {
                 if (!checkedListBoxUpdatesW78.GetItemChecked(i)) continue;
                 var updateNumber = Convert.ToInt32(checkedListBoxUpdatesW78.Items[i].ToString().Replace("KB", null));
-                RunCmd(string.Format("/c start /wait wusa /uninstall /norestart /quiet /kb:{0}", updateNumber));
-                _OutPut(string.Format("Remove and Hide update KB{0}", updateNumber));
+                RunCmd($"/c start /wait wusa /uninstall /norestart /quiet /kb:{updateNumber}");
+                _OutPut($"Remove and Hide update KB{updateNumber}");
             }
         }
 
@@ -1418,30 +1505,23 @@ namespace DWS_Lite
             };
             foreach (var currentIpAddr in ipAddr)
             {
-                RunCmd(string.Format("/c route -p ADD {0} MASK 255.255.255.255 0.0.0.0", currentIpAddr));
-                RunCmd(string.Format("/c route -p change {0} MASK 255.255.255.255 0.0.0.0 if 1", currentIpAddr));
-                RunCmd(string.Format("/c netsh advfirewall firewall delete rule name=\"{0}_Block\"", currentIpAddr));
+                RunCmd($"/c route -p ADD {currentIpAddr} MASK 255.255.255.255 0.0.0.0");
+                RunCmd($"/c route -p change {currentIpAddr} MASK 255.255.255.255 0.0.0.0 if 1");
+                RunCmd($"/c netsh advfirewall firewall delete rule name=\"{currentIpAddr}_Block\"");
                 RunCmd(
                     string.Format(
                         "/c netsh advfirewall firewall add rule name=\"{0}_Block\" dir=out interface=any action=block remoteip={0}",
                         currentIpAddr));
-                _OutPut(string.Format("Add Windows Firewall rule: \"{0}_Block\"", currentIpAddr));
+                _OutPut($"Add Windows Firewall rule: \"{currentIpAddr}_Block\"");
             }
             RunCmd("/c netsh advfirewall firewall delete rule name=\"Explorer.EXE_BLOCK\"");
             RunCmd(
-                string.Format(
-                    "/c netsh advfirewall firewall add rule name=\"Explorer.EXE_BLOCK\" dir=out interface=any action=block program=\"{0}Windows\\explorer.exe\"",
-                    _systemPath));
+                $"/c netsh advfirewall firewall add rule name=\"Explorer.EXE_BLOCK\" dir=out interface=any action=block program=\"{_systemPath}Windows\\explorer.exe\"");
             RunCmd("/c netsh advfirewall firewall delete rule name=\"WSearch_Block\"");
             RunCmd(
                 "/c netsh advfirewall firewall add rule name=\"WSearch_Block\" dir=out interface=any action=block service=WSearch");
             _OutPut("Add Windows Firewall rule: \"WSearch_Block\"");
             _OutPut("Ip list blocked");
-        }
-
-        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://dws.wzor.net/");
         }
 
         private void btnDisableOfficeUpdate_Click(object sender, EventArgs e)
@@ -1475,8 +1555,8 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
                     }
 
                     RunCmd("/c TASKKILL /F /IM msosync.exe");
-                    RunCmd(string.Format("/c takeown /f \"{0}\" /d y", officePath));
-                    RunCmd(string.Format("/c icacls \"{0}\" /grant {1}:F /q", officePath, userName));
+                    RunCmd($"/c takeown /f \"{officePath}\" /d y");
+                    RunCmd($"/c icacls \"{officePath}\" /grant {userName}:F /q");
                     var fileOffice = File.ReadAllBytes(officePath);
                     fileOffice = StringToByteArray(ByteArrayToString(fileOffice).Replace("68747470", "78747470"));
                     // find "http" and replace to "xttp".
@@ -1778,22 +1858,22 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             checkBoxDeleteGWX.Text = GetTranslateText("checkBoxDeleteGWX");
             labelUninstallUpdates.Text = GetTranslateText("labelUninstallUpdates");
             labelInfoDeleteMetroApps.Text = GetTranslateText("labelInfoDeleteMetroApps");
-            btnEnableUac.Text = string.Format("{0} UAC", GetTranslateText("Enable"));
-            btnDisableUac.Text = string.Format("{0} UAC", GetTranslateText("Disable"));
-            btnDisableOfficeUpdate.Text = string.Format("{0} Office 2016 Telemetry", GetTranslateText("Disable"));
-            btnDisableWindowsUpdate.Text = string.Format("{0} Windows Update", GetTranslateText("Disable"));
-            btnEnableWindowsUpdate.Text = string.Format("{0} Windows Update", GetTranslateText("Enable"));
-            checkBoxDeleteApp3d.Text = string.Format("{0} Builder 3D", GetTranslateText("Delete"));
-            checkBoxDeleteAppCamera.Text = string.Format("{0} Camera", GetTranslateText("Delete"));
-            checkBoxDeleteMailCalendarMaps.Text = string.Format("{0} Mail, Calendar, Maps", GetTranslateText("Delete"));
-            checkBoxDeleteAppBing.Text = string.Format("{0} Money, Sports, News, Weather", GetTranslateText("Delete"));
-            checkBoxDeleteAppZune.Text = string.Format("{0} Groove Music, Film TV", GetTranslateText("Delete"));
-            checkBoxDeleteAppPeopleOneNote.Text = string.Format("{0} People, OneNote", GetTranslateText("Delete"));
-            checkBoxDeleteAppPhone.Text = string.Format("{0} Phone Companion", GetTranslateText("Delete"));
-            checkBoxDeleteAppPhotos.Text = string.Format("{0} Photos", GetTranslateText("Delete"));
-            checkBoxDeleteAppSolit.Text = string.Format("{0} Solitaire Collection", GetTranslateText("Delete"));
-            checkBoxDeleteAppVoice.Text = string.Format("{0} Voice Recorder", GetTranslateText("Delete"));
-            checkBoxDeleteAppXBOX.Text = string.Format("{0} XBOX", GetTranslateText("Delete"));
+            btnEnableUac.Text = $"{GetTranslateText("Enable")} UAC";
+            btnDisableUac.Text = $"{GetTranslateText("Disable")} UAC";
+            btnDisableOfficeUpdate.Text = $"{GetTranslateText("Disable")} Office 2016 Telemetry";
+            btnDisableWindowsUpdate.Text = $"{GetTranslateText("Disable")} Windows Update";
+            btnEnableWindowsUpdate.Text = $"{GetTranslateText("Enable")} Windows Update";
+            checkBoxDeleteApp3d.Text = $"{GetTranslateText("Delete")} Builder 3D";
+            checkBoxDeleteAppCamera.Text = $"{GetTranslateText("Delete")} Camera";
+            checkBoxDeleteMailCalendarMaps.Text = $"{GetTranslateText("Delete")} Mail, Calendar, Maps";
+            checkBoxDeleteAppBing.Text = $"{GetTranslateText("Delete")} Money, Sports, News, Weather";
+            checkBoxDeleteAppZune.Text = $"{GetTranslateText("Delete")} Groove Music, Film TV";
+            checkBoxDeleteAppPeopleOneNote.Text = $"{GetTranslateText("Delete")} People, OneNote";
+            checkBoxDeleteAppPhone.Text = $"{GetTranslateText("Delete")} Phone Companion";
+            checkBoxDeleteAppPhotos.Text = $"{GetTranslateText("Delete")} Photos";
+            checkBoxDeleteAppSolit.Text = $"{GetTranslateText("Delete")} Solitaire Collection";
+            checkBoxDeleteAppVoice.Text = $"{GetTranslateText("Delete")} Voice Recorder";
+            checkBoxDeleteAppXBOX.Text = $"{GetTranslateText("Delete")} XBOX";
             btnRemoveOldFirewallRules.Text = GetTranslateText("RemoveAllOldFirewallRules");
         }
 
@@ -1815,7 +1895,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
             catch (Exception ex)
             {
 #if DEBUG
-                _OutPut(String.Format("Error get translate {0}. \nError: {1}", name, ex.Message), LogLevel.Debug);
+                _OutPut($"Error get translate {name}. \nError: {ex.Message}", LogLevel.Debug);
 #endif
                 return en_US.ResourceManager.GetString(name);
             }
@@ -1846,7 +1926,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
                 catch (Exception ex)
                 {
                     _fatalErrors++;
-                    _errorsList.Add(string.Format("Error in outputsplit. Message: {0}", ex.Message));
+                    _errorsList.Add($"Error in outputsplit. Message: {ex.Message}");
                 }
             }
         }
@@ -1866,7 +1946,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
                 catch (Exception ex)
                 {
                     _fatalErrors++;
-                    _errorsList.Add(string.Format("Error in output. Message: {0}", ex.Message));
+                    _errorsList.Add($"Error in output. Message: {ex.Message}");
                 }
             }
         }
@@ -1910,7 +1990,7 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
 
         private void OutPutSplitInvoke()
         {
-            var splittext = string.Format("=========================={0}", Environment.NewLine);
+            var splittext = $"=========================={Environment.NewLine}";
             File.WriteAllText(LogFileName, File.ReadAllText(LogFileName) + splittext);
             LogOutputTextBox.Text += splittext;
         }
@@ -1922,48 +2002,40 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
         private void SetRegValueHkcu(string regkeyfolder, string paramname, string paramvalue, RegistryValueKind keytype)
         {
             var registryKey = Registry.CurrentUser.CreateSubKey(regkeyfolder);
-            if (registryKey != null)
-                registryKey.Close();
+            registryKey?.Close();
             var myKey = Registry.CurrentUser.OpenSubKey(regkeyfolder, RegistryKeyPermissionCheck.ReadWriteSubTree,
                 RegistryRights.FullControl);
             try
             {
-                if (myKey != null)
-                {
-                    myKey.SetValue(paramname, paramvalue, keytype);
-                }
+                myKey?.SetValue(paramname, paramvalue, keytype);
             }
             catch (Exception ex)
             {
                 _fatalErrors++;
-                _errorsList.Add(string.Format("Error SetRegValueHkcu. Message: {0}", ex.Message));
-                _OutPut(string.Format("{0}: {1}", GetTranslateText("Error"), ex.Message), LogLevel.Error);
+                _errorsList.Add($"Error SetRegValueHkcu. Message: {ex.Message}");
+                _OutPut($"{GetTranslateText("Error")}: {ex.Message}", LogLevel.Error);
             }
 
-            if (myKey != null) myKey.Close();
+            myKey?.Close();
         }
 
         private void SetRegValueHklm(string regkeyfolder, string paramname, string paramvalue, RegistryValueKind keytype)
         {
             var registryKey = Registry.LocalMachine.CreateSubKey(regkeyfolder);
-            if (registryKey != null)
-                registryKey.Close();
+            registryKey?.Close();
             var myKey = Registry.LocalMachine.OpenSubKey(regkeyfolder,
                 RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
             try
             {
-                if (myKey != null)
-                {
-                    myKey.SetValue(paramname, paramvalue, keytype);
-                }
+                myKey?.SetValue(paramname, paramvalue, keytype);
             }
             catch (Exception ex)
             {
                 _fatalErrors++;
-                _errorsList.Add(string.Format("Error SetRegValueHklm. Message: {0}", ex.Message));
-                _OutPut(string.Format("{0}: {1}", GetTranslateText("Error"), ex.Message), LogLevel.Error);
+                _errorsList.Add($"Error SetRegValueHklm. Message: {ex.Message}");
+                _OutPut($"{GetTranslateText("Error")}: {ex.Message}", LogLevel.Error);
             }
-            if (myKey != null) myKey.Close();
+            myKey?.Close();
         }
 
         #endregion

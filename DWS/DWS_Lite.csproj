@@ -259,9 +259,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BGProgImg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="other_cat.ico" />
     <None Include="Resources\minimize2.png" />
     <None Include="Resources\close2.png" />

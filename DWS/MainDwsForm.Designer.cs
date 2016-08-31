@@ -71,7 +71,6 @@ namespace DWS_Lite
             this.btnProfessionalMode = new System.Windows.Forms.CheckBox();
             this.tabPageUtilites = new System.Windows.Forms.TabPage();
             this.btnFixRotateScreen = new System.Windows.Forms.Button();
-            this.btnDisableOfficeUpdate = new System.Windows.Forms.Button();
             this.btnRemoveOldFirewallRules = new System.Windows.Forms.Button();
             this.btnDeleteOneDrive = new System.Windows.Forms.Button();
             this.btnDeleteMetroAppsInfo = new System.Windows.Forms.Button();
@@ -85,26 +84,25 @@ namespace DWS_Lite
             this.btnRestoreSystem = new System.Windows.Forms.Button();
             this.btnDeleteAllWindows10Apps = new System.Windows.Forms.Button();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.linkLabelSourceCode = new System.Windows.Forms.LinkLabel();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBoxLanguage = new System.Windows.Forms.GroupBox();
             this.comboBoxLanguageSelect = new System.Windows.Forms.ComboBox();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.labelMoonInfo = new System.Windows.Forms.Label();
             this.tabPageReadMe = new System.Windows.Forms.TabPage();
             this.ReadmeRichTextBox = new System.Windows.Forms.RichTextBox();
             this.CaptionWindow = new System.Windows.Forms.Label();
-            this._CloseButton = new System.Windows.Forms.PictureBox();
-            this.MinimizeButton = new System.Windows.Forms.PictureBox();
-            this.BorderUP = new System.Windows.Forms.PictureBox();
-            this.BorderDown = new System.Windows.Forms.PictureBox();
             this.BorderLeft = new System.Windows.Forms.PictureBox();
+            this.BorderDown = new System.Windows.Forms.PictureBox();
             this.BorderR = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.BorderUP = new System.Windows.Forms.PictureBox();
+            this.MinimizeButton = new System.Windows.Forms.PictureBox();
+            this._CloseButton = new System.Windows.Forms.PictureBox();
+            this.btnDisableOfficeUpdate = new System.Windows.Forms.Button();
             this.FormTabsControl.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
@@ -116,12 +114,12 @@ namespace DWS_Lite
             this.tabPageAbout.SuspendLayout();
             this.groupBoxLanguage.SuspendLayout();
             this.tabPageReadMe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._CloseButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BorderUP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BorderDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BorderDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BorderUP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._CloseButton)).BeginInit();
             this.SuspendLayout();
             // 
             // FormTabsControl
@@ -179,8 +177,7 @@ namespace DWS_Lite
             this.LogOutputTextBox.ReadOnly = true;
             this.LogOutputTextBox.Size = new System.Drawing.Size(429, 279);
             this.LogOutputTextBox.TabIndex = 3;
-            this.LogOutputTextBox.Text = "Fixup DWS version.\n\nhttps://twitter.com/nummerok\nhttp://nullptr.space\n===========" +
-    "===============\n";
+            this.LogOutputTextBox.Text = "https://twitter.com/nummerok\nhttp://nullptr.space\n==========================\n\n";
             this.LogOutputTextBox.TextChanged += new System.EventHandler(this.LogOutputTextBox_TextChanged);
             // 
             // StatusCommandsLable
@@ -667,7 +664,6 @@ namespace DWS_Lite
             this.tabPageUtilites.BackColor = System.Drawing.Color.White;
             this.tabPageUtilites.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPageUtilites.Controls.Add(this.btnFixRotateScreen);
-            this.tabPageUtilites.Controls.Add(this.btnDisableOfficeUpdate);
             this.tabPageUtilites.Controls.Add(this.btnRemoveOldFirewallRules);
             this.tabPageUtilites.Controls.Add(this.btnDeleteOneDrive);
             this.tabPageUtilites.Controls.Add(this.btnDeleteMetroAppsInfo);
@@ -676,6 +672,7 @@ namespace DWS_Lite
             this.tabPageUtilites.Controls.Add(this.btnOpenAndEditHosts);
             this.tabPageUtilites.Controls.Add(this.btnRestoreSystem);
             this.tabPageUtilites.Controls.Add(this.btnDeleteAllWindows10Apps);
+            this.tabPageUtilites.Controls.Add(this.btnDisableOfficeUpdate);
             this.tabPageUtilites.Location = new System.Drawing.Point(4, 22);
             this.tabPageUtilites.Name = "tabPageUtilites";
             this.tabPageUtilites.Size = new System.Drawing.Size(445, 400);
@@ -693,20 +690,6 @@ namespace DWS_Lite
             this.btnFixRotateScreen.Text = "Fix screen rotate";
             this.btnFixRotateScreen.UseVisualStyleBackColor = false;
             this.btnFixRotateScreen.Click += new System.EventHandler(this.btnFixRotateScreen_Click);
-            // 
-            // btnDisableOfficeUpdate
-            // 
-            this.btnDisableOfficeUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.btnDisableOfficeUpdate.BackgroundImage = global::DWS_Lite.Properties.Resources.warning;
-            this.btnDisableOfficeUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDisableOfficeUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDisableOfficeUpdate.Location = new System.Drawing.Point(14, 147);
-            this.btnDisableOfficeUpdate.Name = "btnDisableOfficeUpdate";
-            this.btnDisableOfficeUpdate.Size = new System.Drawing.Size(202, 23);
-            this.btnDisableOfficeUpdate.TabIndex = 6;
-            this.btnDisableOfficeUpdate.Text = "Disable Office 2016 Telemetry";
-            this.btnDisableOfficeUpdate.UseVisualStyleBackColor = false;
-            this.btnDisableOfficeUpdate.Click += new System.EventHandler(this.btnDisableOfficeUpdate_Click);
             // 
             // btnRemoveOldFirewallRules
             // 
@@ -865,10 +848,8 @@ namespace DWS_Lite
             this.tabPageAbout.Controls.Add(this.label1);
             this.tabPageAbout.Controls.Add(this.textBox1);
             this.tabPageAbout.Controls.Add(this.linkLabelSourceCode);
-            this.tabPageAbout.Controls.Add(this.linkLabel6);
             this.tabPageAbout.Controls.Add(this.linkLabel1);
             this.tabPageAbout.Controls.Add(this.groupBoxLanguage);
-            this.tabPageAbout.Controls.Add(this.linkLabel3);
             this.tabPageAbout.Controls.Add(this.labelMoonInfo);
             this.tabPageAbout.Location = new System.Drawing.Point(4, 22);
             this.tabPageAbout.Name = "tabPageAbout";
@@ -876,12 +857,54 @@ namespace DWS_Lite
             this.tabPageAbout.TabIndex = 3;
             this.tabPageAbout.Text = "About";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 358);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "HomePage:";
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.linkLabel2.Location = new System.Drawing.Point(84, 358);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(70, 13);
+            this.linkLabel2.TabIndex = 15;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Nullptr.space";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Change Log";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(14, 97);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(417, 258);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.Text = "1.6 Build 722 Support Windows Redstone\r\n- VS 2015 code style\r\n+ add new spying ta" +
+    "sks\r\n+ add auto-update\r\n+ add new spying hosts\r\n\r\n1.6 Build 717 rollup\r\n- Add Pe" +
+    "rsian Language\r\n- Fix Some things";
+            // 
             // linkLabelSourceCode
             // 
             this.linkLabelSourceCode.AutoSize = true;
             this.linkLabelSourceCode.BackColor = System.Drawing.Color.Transparent;
             this.linkLabelSourceCode.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.linkLabelSourceCode.Location = new System.Drawing.Point(14, 327);
+            this.linkLabelSourceCode.Location = new System.Drawing.Point(82, 380);
             this.linkLabelSourceCode.Name = "linkLabelSourceCode";
             this.linkLabelSourceCode.Size = new System.Drawing.Size(116, 13);
             this.linkLabelSourceCode.TabIndex = 8;
@@ -889,25 +912,12 @@ namespace DWS_Lite
             this.linkLabelSourceCode.Text = "Source code on GitHub";
             this.linkLabelSourceCode.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSourceCode_LinkClicked);
             // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel6.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.linkLabel6.Location = new System.Drawing.Point(11, 377);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(73, 13);
-            this.linkLabel6.TabIndex = 9;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "dws.wzor.net";
-            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.linkLabel1.Location = new System.Drawing.Point(11, 352);
+            this.linkLabel1.Location = new System.Drawing.Point(11, 380);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(66, 13);
             this.linkLabel1.TabIndex = 2;
@@ -958,19 +968,6 @@ namespace DWS_Lite
             this.comboBoxLanguageSelect.TabIndex = 0;
             this.comboBoxLanguageSelect.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguageSelect_SelectedIndexChanged);
             // 
-            // linkLabel3
-            // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel3.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.linkLabel3.Location = new System.Drawing.Point(11, 303);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(175, 13);
-            this.linkLabel3.TabIndex = 4;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Best windows activator (KMS Auto)";
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
-            // 
             // labelMoonInfo
             // 
             this.labelMoonInfo.BackColor = System.Drawing.Color.Transparent;
@@ -1016,11 +1013,62 @@ namespace DWS_Lite
             this.CaptionWindow.Name = "CaptionWindow";
             this.CaptionWindow.Size = new System.Drawing.Size(453, 28);
             this.CaptionWindow.TabIndex = 1;
-            this.CaptionWindow.Text = "DWS Lite Rollup Edition";
+            this.CaptionWindow.Text = "DWS Title (include form title)";
             this.CaptionWindow.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CaptionWindow.Click += new System.EventHandler(this.CaptionWindow_Click);
             this.CaptionWindow.Paint += new System.Windows.Forms.PaintEventHandler(this.CaptionWindow_Paint);
             this.CaptionWindow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CaptionWindow_MouseDown);
+            // 
+            // BorderLeft
+            // 
+            this.BorderLeft.BackColor = System.Drawing.Color.Cyan;
+            this.BorderLeft.Location = new System.Drawing.Point(0, -8);
+            this.BorderLeft.Name = "BorderLeft";
+            this.BorderLeft.Size = new System.Drawing.Size(1, 500);
+            this.BorderLeft.TabIndex = 6;
+            this.BorderLeft.TabStop = false;
+            // 
+            // BorderDown
+            // 
+            this.BorderDown.BackColor = System.Drawing.Color.Cyan;
+            this.BorderDown.Location = new System.Drawing.Point(-14, 456);
+            this.BorderDown.Name = "BorderDown";
+            this.BorderDown.Size = new System.Drawing.Size(480, 1);
+            this.BorderDown.TabIndex = 5;
+            this.BorderDown.TabStop = false;
+            // 
+            // BorderR
+            // 
+            this.BorderR.BackColor = System.Drawing.Color.Cyan;
+            this.BorderR.Location = new System.Drawing.Point(452, -22);
+            this.BorderR.Name = "BorderR";
+            this.BorderR.Size = new System.Drawing.Size(1, 500);
+            this.BorderR.TabIndex = 7;
+            this.BorderR.TabStop = false;
+            // 
+            // BorderUP
+            // 
+            this.BorderUP.BackColor = System.Drawing.Color.Cyan;
+            this.BorderUP.Location = new System.Drawing.Point(-7, 0);
+            this.BorderUP.Name = "BorderUP";
+            this.BorderUP.Size = new System.Drawing.Size(480, 1);
+            this.BorderUP.TabIndex = 4;
+            this.BorderUP.TabStop = false;
+            // 
+            // MinimizeButton
+            // 
+            this.MinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.MinimizeButton.Location = new System.Drawing.Point(395, 1);
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Size = new System.Drawing.Size(29, 29);
+            this.MinimizeButton.TabIndex = 3;
+            this.MinimizeButton.TabStop = false;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.MinimizeButton.Paint += new System.Windows.Forms.PaintEventHandler(this.MinimizeButton_Paint);
+            this.MinimizeButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MinimizeButton_MouseDown);
+            this.MinimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_MouseEnter);
+            this.MinimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_MouseLeave);
             // 
             // _CloseButton
             // 
@@ -1038,96 +1086,19 @@ namespace DWS_Lite
             this._CloseButton.MouseEnter += new System.EventHandler(this.CloseButton_MouseEnter);
             this._CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
             // 
-            // MinimizeButton
+            // btnDisableOfficeUpdate
             // 
-            this.MinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MinimizeButton.Location = new System.Drawing.Point(395, 1);
-            this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(29, 29);
-            this.MinimizeButton.TabIndex = 3;
-            this.MinimizeButton.TabStop = false;
-            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
-            this.MinimizeButton.Paint += new System.Windows.Forms.PaintEventHandler(this.MinimizeButton_Paint);
-            this.MinimizeButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MinimizeButton_MouseDown);
-            this.MinimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_MouseEnter);
-            this.MinimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_MouseLeave);
-            // 
-            // BorderUP
-            // 
-            this.BorderUP.BackColor = System.Drawing.Color.Cyan;
-            this.BorderUP.Location = new System.Drawing.Point(-7, 0);
-            this.BorderUP.Name = "BorderUP";
-            this.BorderUP.Size = new System.Drawing.Size(480, 1);
-            this.BorderUP.TabIndex = 4;
-            this.BorderUP.TabStop = false;
-            // 
-            // BorderDown
-            // 
-            this.BorderDown.BackColor = System.Drawing.Color.Cyan;
-            this.BorderDown.Location = new System.Drawing.Point(-14, 456);
-            this.BorderDown.Name = "BorderDown";
-            this.BorderDown.Size = new System.Drawing.Size(480, 1);
-            this.BorderDown.TabIndex = 5;
-            this.BorderDown.TabStop = false;
-            // 
-            // BorderLeft
-            // 
-            this.BorderLeft.BackColor = System.Drawing.Color.Cyan;
-            this.BorderLeft.Location = new System.Drawing.Point(0, -8);
-            this.BorderLeft.Name = "BorderLeft";
-            this.BorderLeft.Size = new System.Drawing.Size(1, 500);
-            this.BorderLeft.TabIndex = 6;
-            this.BorderLeft.TabStop = false;
-            // 
-            // BorderR
-            // 
-            this.BorderR.BackColor = System.Drawing.Color.Cyan;
-            this.BorderR.Location = new System.Drawing.Point(452, -22);
-            this.BorderR.Name = "BorderR";
-            this.BorderR.Size = new System.Drawing.Size(1, 500);
-            this.BorderR.TabIndex = 7;
-            this.BorderR.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(14, 97);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(417, 151);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "1.6 Build 717 rollup\r\n\r\n- Add Persian Language\r\n- Fix Some things";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Change Log";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.linkLabel2.Location = new System.Drawing.Point(82, 275);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(70, 13);
-            this.linkLabel2.TabIndex = 15;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Nullptr.space";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 275);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "HomePage:";
+            this.btnDisableOfficeUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnDisableOfficeUpdate.BackgroundImage = global::DWS_Lite.Properties.Resources.warning;
+            this.btnDisableOfficeUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDisableOfficeUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisableOfficeUpdate.Location = new System.Drawing.Point(14, 147);
+            this.btnDisableOfficeUpdate.Name = "btnDisableOfficeUpdate";
+            this.btnDisableOfficeUpdate.Size = new System.Drawing.Size(202, 23);
+            this.btnDisableOfficeUpdate.TabIndex = 6;
+            this.btnDisableOfficeUpdate.Text = "Disable Office 2016 Telemetry";
+            this.btnDisableOfficeUpdate.UseVisualStyleBackColor = false;
+            this.btnDisableOfficeUpdate.Click += new System.EventHandler(this.btnDisableOfficeUpdate_Click);
             // 
             // MainDwsForm
             // 
@@ -1149,7 +1120,7 @@ namespace DWS_Lite
             this.MaximizeBox = false;
             this.Name = "MainDwsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "       DWS (final version)";
+            this.Text = "       DWS ";
             this.TransparencyKey = System.Drawing.Color.Magenta;
             this.Activated += new System.EventHandler(this.DestroyWindowsSpyingMainForm_Activated);
             this.Deactivate += new System.EventHandler(this.DestroyWindowsSpyingMainForm_Deactivate);
@@ -1170,12 +1141,12 @@ namespace DWS_Lite
             this.tabPageAbout.PerformLayout();
             this.groupBoxLanguage.ResumeLayout(false);
             this.tabPageReadMe.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this._CloseButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BorderUP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BorderDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BorderDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BorderR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BorderUP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimizeButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._CloseButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1217,7 +1188,6 @@ namespace DWS_Lite
         private Button btnDisableWindowsUpdate;
         private Button btnEnableWindowsUpdate;
         private Button btnOpenAndEditHosts;
-        private LinkLabel linkLabel3;
         private LinkLabel linkLabel1;
         private Label labelMoonInfo;
         private GroupBox groupBoxWindowsUpdate;
@@ -1232,7 +1202,6 @@ namespace DWS_Lite
         private ComboBox comboBoxLanguageSelect;
         private Button btnDestroyWindows78Spy;
         private RichTextBox ReadmeRichTextBox;
-        private LinkLabel linkLabel6;
         private CheckBox btnProfessionalMode;
         private Button btnDisableOfficeUpdate;
         private Label CaptionWindow;
