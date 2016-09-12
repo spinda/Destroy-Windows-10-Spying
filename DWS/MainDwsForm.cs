@@ -857,7 +857,7 @@ namespace DWS_Lite
                     "secure.adnxs.com",
                     "secure.flashtalking.com",
                     "services.wes.df.telemetry.microsoft.com",
-                    "settings.data.microsof.com",
+                    "settings.data.microsoft.com",
                     "settings-sandbox.data.microsoft.com",
                     "settings-win.data.microsoft.com",
                     "sls.update.microsoft.com.akadns.net",
