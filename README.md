@@ -1,3 +1,18 @@
+# NOTE
+
+This is a fork of
+[Nummer/Destroy-WIndows-10-Spying](https://github.com/Nummer/Destroy-Windows-10-Spying)
+
+I don't trust the official binary releases, so I've done the following:
+
+- Forked the project
+- Removed some binary files included in the repository
+- Resaved all image files
+- Manually reviewed all other files in the repository
+- Removed/swapped references to upstream from the application
+
+The original README file is reproduced below.
+
 # Destroy Windows 10 Spying
 
 ### Features

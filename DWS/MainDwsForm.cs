@@ -79,7 +79,7 @@ namespace DWS_Lite
             {
                 var assemblyInfo =
                     new WebClient().DownloadString(
-                        "http://raw.githubusercontent.com/Nummer/Destroy-Windows-10-Spying/master/DWS/Properties/AssemblyInfo.cs");
+                        "http://raw.githubusercontent.com/spinda/Destroy-Windows-10-Spying/master/DWS/Properties/AssemblyInfo.cs");
                 var readText = assemblyInfo.Split('\n');
                 var versionInfoLines = readText.Where(t => t.Contains("[assembly: AssemblyFileVersion"));
                 var version = "";
@@ -94,7 +94,7 @@ namespace DWS_Lite
                     if (MessageBox.Show($"New version avalible.\n\nVersion: {version} .\n\nDownload now?", @"Update",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying/releases/latest");
+                        Process.Start("https://github.com/spinda/Destroy-Windows-10-Spying/releases/latest");
                         Process.GetCurrentProcess().Kill();
                     }
                 }
@@ -1101,11 +1101,6 @@ namespace DWS_Lite
             Process.GetCurrentProcess().Kill();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("https://goo.gl/EpFSzj"); //https://twitter.com/nummerok
-        }
-
         private void btnProfessionalMode_Click(object sender, EventArgs e)
         {
             ProfessionalModeSet(btnProfessionalMode.Checked);
@@ -1200,7 +1195,7 @@ namespace DWS_Lite
 
         private void linkLabelSourceCode_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://github.com/Nummer/Destroy-Windows-10-Spying");
+            Process.Start("https://github.com/spinda/Destroy-Windows-10-Spying");
         }
 
         private void btnRemoveOldFirewallRules_Click(object sender, EventArgs e)
@@ -2053,11 +2048,6 @@ Are you sure?", @"Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == 
         private void DestroyWindowsSpyingMainForm_Deactivate(object sender, EventArgs e)
         {
             CaptionWindow.ForeColor = Color.FromArgb(164, 164, 164);
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://nullptr.space");
         }
     }
 }
